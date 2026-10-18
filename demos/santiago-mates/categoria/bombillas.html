@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bombillas | Santiago Mates</title>
+  <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/base.css">
+  
+  
+  
+    <link rel="stylesheet" href="../css/catalogo.css">
+  
+</head>
+<body>
+
+<!-- ═════════════ BARRA DE ANUNCIOS ═════════════ -->
+<div class="anuncios" aria-label="Promociones">
+  <div class="anuncios__pista">
+    
+      <span>Envío gratis en compras desde $150.000</span>
+      <span class="anuncios__sep">✦</span>
+      <span>10% off pagando con transferencia</span>
+      <span class="anuncios__sep">✦</span>
+      <span>3 y 6 cuotas sin interés</span>
+      <span class="anuncios__sep">✦</span>
+      <span>Grabado personalizado en 48 hs</span>
+      <span class="anuncios__sep">✦</span>
+    
+      <span>Envío gratis en compras desde $150.000</span>
+      <span class="anuncios__sep">✦</span>
+      <span>10% off pagando con transferencia</span>
+      <span class="anuncios__sep">✦</span>
+      <span>3 y 6 cuotas sin interés</span>
+      <span class="anuncios__sep">✦</span>
+      <span>Grabado personalizado en 48 hs</span>
+      <span class="anuncios__sep">✦</span>
+    
+  </div>
+</div>
+
+<!-- ═════════════ HEADER ═════════════ -->
+<header class="header" id="header">
+  <div class="header__barra contenedor">
+    <button class="icono-btn header__menu-btn" id="btnMenu" aria-label="Abrir menú" aria-expanded="false">
+      <span class="hamburguesa"></span>
+    </button>
+
+    <form class="buscador" action="#" method="GET" role="search" data-buscador>
+      <input type="search" name="q" value="" placeholder="Buscar productos…" aria-label="Buscar productos"
+             autocomplete="off" maxlength="60" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="sugerencias">
+      <button type="submit" aria-label="Buscar">
+        <svg viewBox="0 0 24 24" width="18" height="18"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      <div class="sugerencias" id="sugerencias" role="listbox" aria-label="Sugerencias" hidden></div>
+    </form>
+
+    <a href="../index.html" class="logo" aria-label="Inicio">
+      
+
+<svg class="logo-svg logo-svg--horizontal " viewBox="0 0 300 70" role="img" aria-label="Santiago Mates · La gran casa matera">
+  <g transform="translate(2 2) scale(0.66)">
+    <path d="M24 40 Q22 33 30 31 L50 31 Q58 33 56 40 Q66 48 66 64 Q66 92 40 96 Q14 92 14 64 Q14 48 24 40 Z" fill="currentColor"/>
+    <path d="M24 40 L56 40" stroke="var(--logo-fondo, transparent)" stroke-width="2.5"/>
+    <path d="M44 34 L52 4 Q53 0 57 0 L64 1" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <text x="54" y="40" class="logo-svg__marca">Santiago<tspan class="logo-svg__marca--fuerte">Mates</tspan></text>
+  <text x="55" y="61" class="logo-svg__bajada">LA GRAN CASA MATERA</text>
+</svg>
+
+
+    </a>
+
+    <div class="header__acciones">
+      <button class="icono-btn header__buscar-movil" id="btnBuscarMovil" aria-label="Buscar">
+        <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      
+      
+        
+        <a href="#" data-demo-off class="icono-btn" aria-label="Iniciar sesión">
+        <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </a>
+      
+      
+      <a href="../favoritos.html" class="icono-btn carrito-btn favoritos-btn" aria-label="Favoritos">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <span class="carrito-btn__contador" id="contadorFavoritos" hidden>0</span>
+      </a>
+      <a href="../carrito.html" class="icono-btn carrito-btn" aria-label="Carrito">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path d="M5 8h14l-1.2 12H6.2L5 8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 8V6a3 3 0 016 0v2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        <span class="carrito-btn__contador" id="contadorCarrito">0</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="buscador-movil contenedor " id="buscadorMovil">
+    <form class="buscador buscador--movil" action="#" method="GET" role="search" data-buscador>
+      <input type="search" name="q" value="" placeholder="Buscar productos…" aria-label="Buscar productos"
+             autocomplete="off" maxlength="60" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="sugerenciasMovil">
+      <button type="submit" aria-label="Buscar">
+        <svg viewBox="0 0 24 24" width="18" height="18"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      <div class="sugerencias" id="sugerenciasMovil" role="listbox" aria-label="Sugerencias" hidden></div>
+    </form>
+  </div>
+
+  <nav class="nav" id="nav" aria-label="Principal">
+    <ul class="nav__lista contenedor">
+      <li class=""><a href="../index.html">Inicio</a></li>
+      
+        <li class=""><a href="mates.html">Mates</a></li>
+      
+        <li class=""><a href="termos.html">Termos</a></li>
+      
+        <li class="nav__item--activo"><a href="bombillas.html">Bombillas</a></li>
+      
+        <li class=""><a href="bolsos-materos.html">Bolsos materos</a></li>
+      
+        <li class=""><a href="combos.html">Combos</a></li>
+      
+        <li class=""><a href="yerbas.html">Yerbas</a></li>
+      
+      <li class="nav__item--movil"><a href="../favoritos.html">Favoritos</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="overlay" id="overlay"></div>
+
+
+
+
+  <!-- ═════════════ HERO / ENCABEZADO DE PÁGINA ═════════════ -->
+  <section class="hero contenedor">
+    <nav class="migas" aria-label="Ruta">
+      <a href="../index.html">Inicio</a>
+      <span>/</span>
+      
+        
+          <span aria-current="page">Bombillas</span>
+        
+      
+    </nav>
+    <div class="hero__fila">
+      <div>
+        
+          <h1 class="hero__titulo">Bombillas</h1>
+          <p class="hero__texto">Piezas pensadas para durar. Elegí la tuya y recibila en tu casa.</p>
+          
+            <nav class="subnav" aria-label="Tipos de Bombillas">
+              <a href="bombillas.html" class="subnav__item activo" data-sub-link="">Todos</a>
+              
+                <a href="#" data-demo-off class="subnav__item " data-sub-link="bombillones-de-alpaca">Bombillones de alpaca</a>
+              
+            </nav>
+          
+        
+      </div>
+      <p class="hero__cantidad"><span id="cantidadVisible">3</span> <span id="cantidadPalabra">productos</span></p>
+    </div>
+  </section>
+
+  <!-- ═════════════ CATÁLOGO ═════════════ -->
+  <main class="catalogo contenedor">
+
+    <!-- Barra de herramientas -->
+    <div class="herramientas">
+      <button class="btn-filtros" id="btnFiltros" aria-controls="filtros">
+        <svg viewBox="0 0 24 24" width="16" height="16"><path d="M4 6h16M7 12h10M10 18h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        Filtros
+        <span class="btn-filtros__badge" id="badgeFiltros" hidden>0</span>
+      </button>
+
+      <div class="chips" id="chipsActivos"></div>
+
+      <div class="herramientas__derecha">
+        <div class="vista" role="group" aria-label="Cambiar vista">
+          <button class="vista__btn" data-columnas="2" aria-label="2 columnas">
+            <svg viewBox="0 0 16 16" width="14" height="14"><rect x="1" y="1" width="6" height="14" fill="currentColor"/><rect x="9" y="1" width="6" height="14" fill="currentColor"/></svg>
+          </button>
+          <button class="vista__btn activo" data-columnas="3" aria-label="3 columnas">
+            <svg viewBox="0 0 16 16" width="14" height="14"><rect x="0.5" y="1" width="4" height="14" fill="currentColor"/><rect x="6" y="1" width="4" height="14" fill="currentColor"/><rect x="11.5" y="1" width="4" height="14" fill="currentColor"/></svg>
+          </button>
+          <button class="vista__btn" data-columnas="4" aria-label="4 columnas">
+            <svg viewBox="0 0 16 16" width="14" height="14"><rect x="0" y="1" width="3" height="14" fill="currentColor"/><rect x="4.3" y="1" width="3" height="14" fill="currentColor"/><rect x="8.6" y="1" width="3" height="14" fill="currentColor"/><rect x="13" y="1" width="3" height="14" fill="currentColor"/></svg>
+          </button>
+        </div>
+
+        <label class="orden">
+          <span class="orden__label">Ordenar</span>
+          <select id="orden">
+            <option value="destacados">Destacados</option>
+            <option value="precio-asc">Precio: menor a mayor</option>
+            <option value="precio-desc">Precio: mayor a menor</option>
+            <option value="nombre-asc">Nombre: A – Z</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div class="catalogo__cuerpo">
+
+      <!-- Filtros (sidebar en PC / panel lateral en celular y tablet) -->
+      <aside class="filtros" id="filtros" data-panel aria-label="Filtros" data-grupo="sub">
+        <div class="filtros__cabecera">
+          <h2>Filtrar</h2>
+          <button class="icono-btn" id="btnCerrarFiltros" aria-label="Cerrar filtros">
+            <svg viewBox="0 0 24 24" width="20" height="20"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+
+        
+        <div class="acordeon abierto">
+          <button class="acordeon__titulo" aria-expanded="true">Tipo <span class="acordeon__icono"></span></button>
+          <div class="acordeon__contenido">
+            
+              <label class="check">
+                <input type="checkbox" name="sub" value="bombillones-de-alpaca" >
+                <span class="check__caja"></span>
+                <span class="check__texto">Bombillones de alpaca</span>
+                <span class="check__cantidad">3</span>
+              </label>
+            
+          </div>
+        </div>
+        
+
+        
+        <div class="acordeon abierto">
+          <button class="acordeon__titulo" aria-expanded="true">Color <span class="acordeon__icono"></span></button>
+          <div class="acordeon__contenido acordeon__contenido--colores">
+            
+              <label class="color" title="Plateado">
+                <input type="checkbox" name="color" value="plateado">
+                <span class="color__muestra" style="--muestra: #b9b9b4"></span>
+                <span class="color__nombre">Plateado <small>(3)</small></span>
+              </label>
+            
+          </div>
+        </div>
+        
+
+        <div class="acordeon">
+          <button class="acordeon__titulo" aria-expanded="false">Precio <span class="acordeon__icono"></span></button>
+          <div class="acordeon__contenido">
+            <div class="rango">
+              <label>
+                <span>Mínimo</span>
+                <input type="number" id="precioMin" placeholder="$ 0" min="0" inputmode="numeric">
+              </label>
+              <span class="rango__guion">—</span>
+              <label>
+                <span>Máximo</span>
+                <input type="number" id="precioMax" placeholder="$ 999.999" min="0" inputmode="numeric">
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="filtros__pie">
+          <button class="btn btn--linea" id="btnLimpiar">Limpiar</button>
+          <button class="btn btn--solido" id="btnAplicar">Ver resultados</button>
+        </div>
+      </aside>
+
+      <!-- Grilla de productos -->
+      <section class="grilla" id="grilla" data-columnas="3" aria-live="polite">
+        
+          <article class="tarjeta"
+         data-id="7"
+         data-nombre="Bombillón de Alpaca Tatuado"
+         data-categoria="Bombillas"
+         data-sub="bombillones-de-alpaca"
+         data-colores="plateado"
+         data-precio="45000"
+         data-orden="0">
+  <div class="tarjeta__media">
+    <a href="../producto/7.html" class="tarjeta__imagen">
+      
+        <span class="tarjeta__etiqueta">Exclusivo</span>
+      
+      
+        <img class="tarjeta__foto" src="../img/productos/bombillon-tatuado.jpg" alt="Bombillón de Alpaca Tatuado" loading="lazy">
+      
+      
+      
+      
+    </a>
+    
+    <button class="tarjeta__fav " data-fav-id="7" aria-pressed="false" aria-label="Agregar a favoritos">
+      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+    </button>
+    
+      <button class="tarjeta__agregar" data-agregar>Agregar al carrito</button>
+    
+  </div>
+
+  <div class="tarjeta__info">
+    <p class="tarjeta__categoria">Bombillas</p>
+    <h3 class="tarjeta__nombre"><a href="../producto/7.html">Bombillón de Alpaca Tatuado</a></h3>
+    <p class="tarjeta__precio">$45.000,00</p>
+    <p class="tarjeta__transferencia">
+      $40.500,00 <span>con transferencia</span>
+    </p>
+  </div>
+</article>
+
+        
+          <article class="tarjeta"
+         data-id="8"
+         data-nombre="Bombillón de Alpaca Joyero"
+         data-categoria="Bombillas"
+         data-sub="bombillones-de-alpaca"
+         data-colores="plateado"
+         data-precio="52000"
+         data-orden="1">
+  <div class="tarjeta__media">
+    <a href="../producto/8.html" class="tarjeta__imagen">
+      
+      
+        <img class="tarjeta__foto" src="../img/productos/bombillon-joyero.jpg" alt="Bombillón de Alpaca Joyero" loading="lazy">
+      
+      
+      
+      
+    </a>
+    
+    <button class="tarjeta__fav " data-fav-id="8" aria-pressed="false" aria-label="Agregar a favoritos">
+      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+    </button>
+    
+      <button class="tarjeta__agregar" data-agregar>Agregar al carrito</button>
+    
+  </div>
+
+  <div class="tarjeta__info">
+    <p class="tarjeta__categoria">Bombillas</p>
+    <h3 class="tarjeta__nombre"><a href="../producto/8.html">Bombillón de Alpaca Joyero</a></h3>
+    <p class="tarjeta__precio">$52.000,00</p>
+    <p class="tarjeta__transferencia">
+      $46.800,00 <span>con transferencia</span>
+    </p>
+  </div>
+</article>
+
+        
+          <article class="tarjeta"
+         data-id="9"
+         data-nombre="Bombillón de Alpaca Hoja"
+         data-categoria="Bombillas"
+         data-sub="bombillones-de-alpaca"
+         data-colores="plateado"
+         data-precio="48000"
+         data-orden="2">
+  <div class="tarjeta__media">
+    <a href="../producto/9.html" class="tarjeta__imagen">
+      
+      
+        <img class="tarjeta__foto" src="../img/productos/bombillon-hoja.jpg" alt="Bombillón de Alpaca Hoja" loading="lazy">
+      
+      
+      
+      
+    </a>
+    
+    <button class="tarjeta__fav " data-fav-id="9" aria-pressed="false" aria-label="Agregar a favoritos">
+      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+    </button>
+    
+      <button class="tarjeta__agregar" data-agregar>Agregar al carrito</button>
+    
+  </div>
+
+  <div class="tarjeta__info">
+    <p class="tarjeta__categoria">Bombillas</p>
+    <h3 class="tarjeta__nombre"><a href="../producto/9.html">Bombillón de Alpaca Hoja</a></h3>
+    <p class="tarjeta__precio">$48.000,00</p>
+    <p class="tarjeta__transferencia">
+      $43.200,00 <span>con transferencia</span>
+    </p>
+  </div>
+</article>
+
+        
+
+        <div class="vacio" id="vacio" hidden>
+          <p class="vacio__titulo">Sin resultados</p>
+          
+            <p>Probá quitando algunos filtros.</p>
+            <button class="btn btn--linea" data-limpiar>Quitar filtros</button>
+          
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <!-- ═════════════ BENEFICIOS ═════════════ -->
+<section class="beneficios">
+  <div class="contenedor beneficios__grilla">
+    <div class="beneficio">
+      <span class="beneficio__num">01</span>
+      <h3>Envíos a todo el país</h3>
+      <p>Gratis en compras desde $150.000.</p>
+    </div>
+    <div class="beneficio">
+      <span class="beneficio__num">02</span>
+      <h3>Cuotas sin interés</h3>
+      <p>3 y 6 cuotas con todas las tarjetas.</p>
+    </div>
+    <div class="beneficio">
+      <span class="beneficio__num">03</span>
+      <h3>Personalizá tu pieza</h3>
+      <p>Grabado a láser con tu diseño.</p>
+    </div>
+    <div class="beneficio">
+      <span class="beneficio__num">04</span>
+      <h3>Compra segura</h3>
+      <p>Cambios y devoluciones sin vueltas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════ FOOTER ═════════════ -->
+
+<footer class="footer">
+  <div class="contenedor footer__grilla">
+    <div class="footer__marca">
+      
+
+<svg class="logo-svg logo-svg--apilado logo-svg--footer" viewBox="0 0 260 190" role="img" aria-label="Santiago Mates · La gran casa matera">
+  <!-- Mate con bombilla -->
+  <g transform="translate(104 6)">
+    <path d="M24 40 Q22 33 30 31 L50 31 Q58 33 56 40 Q66 48 66 64 Q66 92 40 96 Q14 92 14 64 Q14 48 24 40 Z" fill="currentColor"/>
+    <path d="M24 40 L56 40" stroke="var(--logo-fondo, transparent)" stroke-width="2.5"/>
+    <path d="M44 34 L52 4 Q53 0 57 0 L64 1" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <text x="130" y="148" text-anchor="middle" class="logo-svg__marca">Santiago<tspan class="logo-svg__marca--fuerte">Mates</tspan></text>
+  <text x="130" y="176" text-anchor="middle" class="logo-svg__bajada">LA GRAN CASA MATERA</text>
+</svg>
+
+
+      <p>Mates, bombillas y todo para la ronda, hechos a mano con materiales nobles. Enviamos a todo el país.</p>
+      
+    </div>
+    <div>
+      <h4>Tienda</h4>
+      <ul>
+        
+          <li><a href="mates.html">Mates</a></li>
+        
+          <li><a href="termos.html">Termos</a></li>
+        
+          <li><a href="bombillas.html">Bombillas</a></li>
+        
+          <li><a href="bolsos-materos.html">Bolsos materos</a></li>
+        
+          <li><a href="combos.html">Combos</a></li>
+        
+          <li><a href="yerbas.html">Yerbas</a></li>
+        
+      </ul>
+    </div>
+    <div>
+      <h4>Ayuda</h4>
+      <ul>
+        <li><a href="../terminos.html#envios">Envíos</a></li>
+        <li><a href="../terminos.html#pagos">Medios de pago</a></li>
+        <li><a href="../cambios-y-devoluciones.html">Cambios y devoluciones</a></li>
+        
+      </ul>
+    </div>
+    <div>
+      <h4>Legales</h4>
+      <ul>
+        <li><a href="../terminos.html">Términos y condiciones</a></li>
+        <li><a href="../privacidad.html">Política de privacidad</a></li>
+        <li><a href="../cookies.html">Política de cookies</a></li>
+        <li><a href="../arrepentimiento.html" class="footer__arrepentimiento">Botón de arrepentimiento</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="contenedor footer__legal">
+    <span>
+      © 2026 Santiago Mates.
+      
+      Todos los derechos reservados.
+    </span>
+    <span class="footer__oficiales">
+      <a href="https://www.argentina.gob.ar/produccion/defensadelconsumidor/formulario" target="_blank" rel="noopener">Defensa de las y los consumidores. Para reclamos ingrese aquí</a>
+      
+    </span>
+    <span class="footer__pagos">Visa · Mastercard · Amex · Naranja · Mercado Pago · Transferencia</span>
+  </div>
+</footer>
+
+
+
+<!-- Aviso de cookies (solo usamos las necesarias: se muestra una vez) -->
+<div class="aviso-cookies" id="avisoCookies" role="region" aria-label="Aviso de cookies" hidden>
+  <p>
+    Usamos solo las cookies necesarias para que la tienda funcione (tu sesión y tu carrito). No usamos cookies de publicidad.
+    <a href="../cookies.html">Más información</a>
+  </p>
+  <button type="button" class="btn btn--solido btn--chico" id="aceptarCookies">Entendido</button>
+</div>
+
+<!-- Aviso al agregar al carrito -->
+<div class="toast" id="toast" role="status"></div>
+
+
+
+<script src="../js/base.js"></script>
+
+
+  <script src="../js/catalogo.js"></script>
+<script>(function(){var t;function toast(){var d=document.getElementById('__demo_toast');if(!d){d=document.createElement('div');d.id='__demo_toast';d.style.cssText='position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#0b1128;color:#fff;font:600 14px/1.4 system-ui,sans-serif;padding:12px 18px;border-radius:12px;border:1px solid #6366f1;box-shadow:0 10px 30px rgba(0,0,0,.4);z-index:2147483647;max-width:90vw;text-align:center;transition:opacity .3s';d.textContent='Vista de demostración: esta acción no está disponible acá';document.body.appendChild(d)}d.style.opacity=1;clearTimeout(t);t=setTimeout(function(){d.style.opacity=0},2200)}
+document.addEventListener('submit',function(e){e.preventDefault();e.stopImmediatePropagation();toast()},true);
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-demo-off]');if(a){e.preventDefault();toast()}},true);
+var f=window.fetch;window.fetch=function(u,i){var m=((i&&i.method)||(u&&u.method)||'GET').toUpperCase();if(m==='GET')return f.apply(this,arguments);toast();return Promise.reject(new Error('demo'))};
+var o=XMLHttpRequest.prototype.open;XMLHttpRequest.prototype.open=function(m,u){if(m&&m.toUpperCase()!=='GET'){toast()}return o.apply(this,arguments)}})();</script></body>
+</html>

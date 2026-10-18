@@ -1,0 +1,1969 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <title>Street Burger · Menú</title>
+  <link rel="icon" href="img/logo-street-burger.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/cliente.css">
+</head>
+<body>
+  <header class="cab">
+    <button class="ib" id="btnHorarios" type="button" aria-label="Horarios y más">
+      <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <img src="img/logo-street-burger.jpg" alt="Street Burger" class="logo-cab" width="76" height="76">
+    <div class="cab-der">
+      <button class="ib" id="btnBuscar" type="button" aria-label="Buscar">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      </button>
+      <button class="ib" id="btnCarritoTop" type="button" aria-label="Ver mi pedido">
+        <svg viewBox="0 0 24 24"><path d="M3 4h2.5l2.2 11h10.1l2-8H6.4"/><circle cx="9.5" cy="19.5" r="1.4"/><circle cx="17" cy="19.5" r="1.4"/></svg>
+        <b class="insignia" id="insignia" hidden>0</b>
+      </button>
+    </div>
+  </header>
+
+  <div class="buscador" id="buscador" hidden>
+    <input id="q" type="search" placeholder="Buscar en el menú…" autocomplete="off" aria-label="Buscar en el menú">
+  </div>
+
+  <main class="contenedor">
+    
+    <div class="modos" id="modos" role="tablist" aria-label="Tipo de pedido">
+      <button type="button" class="modo activa" data-modo="mesa" role="tab">🍽️ En mesa</button>
+      <button type="button" class="modo" data-modo="delivery" role="tab">🛵 Delivery</button>
+    </div>
+    
+
+    <div class="ubic">
+      <div class="ubic-izq" id="btnMesa">
+        <svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <span id="mesaTxt">Escaneá el QR de tu mesa</span>
+      </div>
+      <button type="button" class="ubic-der" id="ubicDer">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <span id="ubicDerTxt">Ver horarios</span>
+      </button>
+    </div>
+
+    <div class="aviso" id="avisoQr" hidden></div>
+
+    
+
+    <a class="banner" href="index.html#listado" id="banner" aria-label="Ver menú">
+      <img src="img/banner.webp" alt="La verdadera burger en cada bocado" width="717" height="305">
+    </a>
+
+    <nav class="cats" id="cats" aria-label="Categorías">
+      <button type="button" class="cat activa" data-cat="todas">
+        <span class="cat-icono">🍽️</span><span class="cat-nombre">Todas</span>
+      </button>
+      
+        <button type="button" class="cat" data-cat="16">
+          <span class="cat-icono">🍔</span>
+          <span class="cat-nombre">Hamburguesas</span>
+        </button>
+      
+        <button type="button" class="cat" data-cat="17">
+          <span class="cat-icono">🌭</span>
+          <span class="cat-nombre">Panchos Gourmet</span>
+        </button>
+      
+        <button type="button" class="cat" data-cat="18">
+          <span class="cat-icono">🍕</span>
+          <span class="cat-nombre">Pizzas Artesanales</span>
+        </button>
+      
+        <button type="button" class="cat" data-cat="19">
+          <span class="cat-icono">🍟</span>
+          <span class="cat-nombre">Papas Fritas</span>
+        </button>
+      
+        <button type="button" class="cat" data-cat="20">
+          <span class="cat-icono">🥘</span>
+          <span class="cat-nombre">Salchipapas</span>
+        </button>
+      
+        <button type="button" class="cat" data-cat="21">
+          <span class="cat-icono">🥪</span>
+          <span class="cat-nombre">Tostados</span>
+        </button>
+      
+        <button type="button" class="cat" data-cat="22">
+          <span class="cat-icono">🌯</span>
+          <span class="cat-nombre">Sándwich Árabe</span>
+        </button>
+      
+        <button type="button" class="cat" data-cat="23">
+          <span class="cat-icono">🥖</span>
+          <span class="cat-nombre">Sándwiches Salados</span>
+        </button>
+      
+        <button type="button" class="cat" data-cat="24">
+          <span class="cat-icono">🥞</span>
+          <span class="cat-nombre">Desayunos &amp; Meriendas</span>
+        </button>
+      
+        <button type="button" class="cat" data-cat="25">
+          <span class="cat-icono">☕</span>
+          <span class="cat-nombre">Cafetería</span>
+        </button>
+      
+        <button type="button" class="cat" data-cat="26">
+          <span class="cat-icono">🥐</span>
+          <span class="cat-nombre">Panadería</span>
+        </button>
+      
+        <button type="button" class="cat" data-cat="27">
+          <span class="cat-icono">🍰</span>
+          <span class="cat-nombre">Tortas &amp; Dulces del Día</span>
+        </button>
+      
+        <button type="button" class="cat" data-cat="28">
+          <span class="cat-icono">🥤</span>
+          <span class="cat-nombre">Bebidas</span>
+        </button>
+      
+        <button type="button" class="cat" data-cat="29">
+          <span class="cat-icono">🍹</span>
+          <span class="cat-nombre">Licuados</span>
+        </button>
+      
+        <button type="button" class="cat" data-cat="30">
+          <span class="cat-icono">🫐</span>
+          <span class="cat-nombre">Smoothies</span>
+        </button>
+      
+    </nav>
+
+    <div id="listado">
+      
+
+      
+        <section class="categoria" data-cat="16">
+          <div class="cat-cab">
+            <h2>Hamburguesas</h2>
+            <button type="button" class="ver-todas" data-ver="16">Ver todas <span aria-hidden="true">→</span></button>
+          </div>
+          <div class="grilla">
+            
+              <article class="prod" data-id="110" data-txt="la clásica pan de hamburguesa, 1 medallón de carne, queso, lechuga, tomate, mayonesa, mostaza y ketchup. incluye papas fritas. hamburguesas">
+                <div class="prod-img">
+                  <img src="img/hamburguesa.webp" alt="La Clásica" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>La Clásica</h3>
+                  <p class="prod-desc">Pan de hamburguesa, 1 medallón de carne, queso, lechuga, tomate, mayonesa, mostaza y ketchup. Incluye papas fritas.</p>
+                  <span class="prod-cat"><i>🍔</i>Hamburguesas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$7.000</span>
+                  <div class="control" data-control="110"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="111" data-txt="texana pan de hamburguesa, 1 medallón de carne, queso cheddar, bacon crujiente, cebolla caramelizada y salsa bbq. incluye papas fritas. hamburguesas">
+                <div class="prod-img">
+                  <img src="img/hamburguesa.webp" alt="Texana" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Texana</h3>
+                  <p class="prod-desc">Pan de hamburguesa, 1 medallón de carne, queso cheddar, bacon crujiente, cebolla caramelizada y salsa BBQ. Incluye papas fritas.</p>
+                  <span class="prod-cat"><i>🍔</i>Hamburguesas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$8.000</span>
+                  <div class="control" data-control="111"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="112" data-txt="pizza burger pan de hamburguesa, 1 medallón de carne, jamón cocido, queso mozzarella, aceitunas verdes, huevo y salsa de tomate. incluye papas fritas. hamburguesas">
+                <div class="prod-img">
+                  <img src="img/hamburguesa.webp" alt="Pizza Burger" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Pizza Burger</h3>
+                  <p class="prod-desc">Pan de hamburguesa, 1 medallón de carne, jamón cocido, queso mozzarella, aceitunas verdes, huevo y salsa de tomate. Incluye papas fritas.</p>
+                  <span class="prod-cat"><i>🍔</i>Hamburguesas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$8.500</span>
+                  <div class="control" data-control="112"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="113" data-txt="green edition pan de hamburguesa, 1 medallón de carne, queso cheddar, cebolla caramelizada, salsa barbacoa y salsa picante de la casa. incluye papas fritas. hamburguesas">
+                <div class="prod-img">
+                  <img src="img/hamburguesa.webp" alt="Green Edition" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Green Edition</h3>
+                  <p class="prod-desc">Pan de hamburguesa, 1 medallón de carne, queso cheddar, cebolla caramelizada, salsa barbacoa y salsa picante de la casa. Incluye papas fritas.</p>
+                  <span class="prod-cat"><i>🍔</i>Hamburguesas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$8.500</span>
+                  <div class="control" data-control="113"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="114" data-txt="smash pan de hamburguesa, doble medallón de carne, doble queso cheddar, cebolla caramelizada y salsa de la casa. incluye papas fritas. hamburguesas">
+                <div class="prod-img">
+                  <img src="img/hamburguesa.webp" alt="Smash" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Smash</h3>
+                  <p class="prod-desc">Pan de hamburguesa, doble medallón de carne, doble queso cheddar, cebolla caramelizada y salsa de la casa. Incluye papas fritas.</p>
+                  <span class="prod-cat"><i>🍔</i>Hamburguesas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$8.500</span>
+                  <div class="control" data-control="114"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="115" data-txt="crocante pan de hamburguesa, 1 medallón de carne, queso cheddar, cebolla frita, papas pay y salsa de la casa. incluye papas fritas. hamburguesas">
+                <div class="prod-img">
+                  <img src="img/hamburguesa.webp" alt="Crocante" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Crocante</h3>
+                  <p class="prod-desc">Pan de hamburguesa, 1 medallón de carne, queso cheddar, cebolla frita, papas pay y salsa de la casa. Incluye papas fritas.</p>
+                  <span class="prod-cat"><i>🍔</i>Hamburguesas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$7.500</span>
+                  <div class="control" data-control="115"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="116" data-txt="sweet burger pan de hamburguesa, 1 medallón de carne, queso mozzarella, ananá grillado, lechuga, tomate y salsa barbacoa. incluye papas fritas. hamburguesas">
+                <div class="prod-img">
+                  <img src="img/hamburguesa.webp" alt="Sweet Burger" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Sweet Burger</h3>
+                  <p class="prod-desc">Pan de hamburguesa, 1 medallón de carne, queso mozzarella, ananá grillado, lechuga, tomate y salsa barbacoa. Incluye papas fritas.</p>
+                  <span class="prod-cat"><i>🍔</i>Hamburguesas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$8.500</span>
+                  <div class="control" data-control="116"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="117" data-txt="la morita pan de remolacha, 1 medallón de carne, queso cheddar, cebolla caramelizada, tomates, rúcula y mayonesa chipotle. incluye papas fritas. hamburguesas">
+                <div class="prod-img">
+                  <img src="img/hamburguesa.webp" alt="La Morita" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>La Morita</h3>
+                  <p class="prod-desc">Pan de remolacha, 1 medallón de carne, queso cheddar, cebolla caramelizada, tomates, rúcula y mayonesa chipotle. Incluye papas fritas.</p>
+                  <span class="prod-cat"><i>🍔</i>Hamburguesas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$8.500</span>
+                  <div class="control" data-control="117"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="118" data-txt="la criollita pan de hamburguesa, 1 medallón de carne, queso tybo, mayonesa casera, salsa criolla y huevo frito. incluye papas fritas. hamburguesas">
+                <div class="prod-img">
+                  <img src="img/hamburguesa.webp" alt="La Criollita" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>La Criollita</h3>
+                  <p class="prod-desc">Pan de hamburguesa, 1 medallón de carne, queso Tybo, mayonesa casera, salsa criolla y huevo frito. Incluye papas fritas.</p>
+                  <span class="prod-cat"><i>🍔</i>Hamburguesas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$8.500</span>
+                  <div class="control" data-control="118"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="119" data-txt="la bestia street pan de hamburguesa, triple medallón de carne, triple queso cheddar, triple bacon, huevo frito y salsa de la casa. incluye papas fritas. hamburguesas">
+                <div class="prod-img">
+                  <img src="img/hamburguesa.webp" alt="La Bestia Street" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>La Bestia Street</h3>
+                  <p class="prod-desc">Pan de hamburguesa, triple medallón de carne, triple queso cheddar, triple bacon, huevo frito y salsa de la casa. Incluye papas fritas.</p>
+                  <span class="prod-cat"><i>🍔</i>Hamburguesas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$14.000</span>
+                  <div class="control" data-control="119"></div>
+                </div>
+              </article>
+            
+          </div>
+        </section>
+      
+        <section class="categoria" data-cat="17">
+          <div class="cat-cab">
+            <h2>Panchos Gourmet</h2>
+            <button type="button" class="ver-todas" data-ver="17">Ver todas <span aria-hidden="true">→</span></button>
+          </div>
+          <div class="grilla">
+            
+              <article class="prod" data-id="120" data-txt="pancho clásico pan de pancho, 2 salchichas, papas pay, mayonesa, mostaza y ketchup. panchos gourmet">
+                <div class="prod-img">
+                  <img src="img/pancho.webp" alt="Pancho clásico" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Pancho clásico</h3>
+                  <p class="prod-desc">Pan de pancho, 2 salchichas, papas pay, mayonesa, mostaza y ketchup.</p>
+                  <span class="prod-cat"><i>🌭</i>Panchos Gourmet</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$4.500</span>
+                  <div class="control" data-control="120"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="121" data-txt="pancho texano pan de pancho, 2 salchichas, queso cheddar, cebolla caramelizada, bacon y salsa barbacoa. panchos gourmet">
+                <div class="prod-img">
+                  <img src="img/pancho.webp" alt="Pancho texano" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Pancho texano</h3>
+                  <p class="prod-desc">Pan de pancho, 2 salchichas, queso cheddar, cebolla caramelizada, bacon y salsa barbacoa.</p>
+                  <span class="prod-cat"><i>🌭</i>Panchos Gourmet</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$5.500</span>
+                  <div class="control" data-control="121"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="122" data-txt="pancho pizza pan de pancho, 2 salchichas, jamón cocido, queso mozzarella, aceitunas verdes, huevo rallado, orégano y salsa de tomate. panchos gourmet">
+                <div class="prod-img">
+                  <img src="img/pancho.webp" alt="Pancho pizza" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Pancho pizza</h3>
+                  <p class="prod-desc">Pan de pancho, 2 salchichas, jamón cocido, queso mozzarella, aceitunas verdes, huevo rallado, orégano y salsa de tomate.</p>
+                  <span class="prod-cat"><i>🌭</i>Panchos Gourmet</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$6.000</span>
+                  <div class="control" data-control="122"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="123" data-txt="pancho explosivo pan de pancho, 2 salchichas, bacon crocante, cebolla caramelizada, huevo frito, papas pay, queso cheddar y salsa especial de la casa. panchos gourmet">
+                <div class="prod-img">
+                  <img src="img/pancho.webp" alt="Pancho explosivo" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Pancho explosivo</h3>
+                  <p class="prod-desc">Pan de pancho, 2 salchichas, bacon crocante, cebolla caramelizada, huevo frito, papas pay, queso cheddar y salsa especial de la casa.</p>
+                  <span class="prod-cat"><i>🌭</i>Panchos Gourmet</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$7.500</span>
+                  <div class="control" data-control="123"></div>
+                </div>
+              </article>
+            
+          </div>
+        </section>
+      
+        <section class="categoria" data-cat="18">
+          <div class="cat-cab">
+            <h2>Pizzas Artesanales</h2>
+            <button type="button" class="ver-todas" data-ver="18">Ver todas <span aria-hidden="true">→</span></button>
+          </div>
+          <div class="grilla">
+            
+              <article class="prod" data-id="124" data-txt="pizza casera salsa de tomate, mozzarella y orégano. pizzas artesanales">
+                <div class="prod-img">
+                  <img src="img/pizza.webp" alt="Pizza casera" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Pizza casera</h3>
+                  <p class="prod-desc">Salsa de tomate, mozzarella y orégano.</p>
+                  <span class="prod-cat"><i>🍕</i>Pizzas Artesanales</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$10.000</span>
+                  <div class="control" data-control="124"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="125" data-txt="pizza napolitana salsa de tomate, mozzarella, tomate fresco y orégano. pizzas artesanales">
+                <div class="prod-img">
+                  <img src="img/pizza.webp" alt="Pizza napolitana" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Pizza napolitana</h3>
+                  <p class="prod-desc">Salsa de tomate, mozzarella, tomate fresco y orégano.</p>
+                  <span class="prod-cat"><i>🍕</i>Pizzas Artesanales</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$12.000</span>
+                  <div class="control" data-control="125"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="126" data-txt="pizza fugazzeta mozzarella, cebolla y orégano. pizzas artesanales">
+                <div class="prod-img">
+                  <img src="img/pizza.webp" alt="Pizza fugazzeta" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Pizza fugazzeta</h3>
+                  <p class="prod-desc">Mozzarella, cebolla y orégano.</p>
+                  <span class="prod-cat"><i>🍕</i>Pizzas Artesanales</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$12.000</span>
+                  <div class="control" data-control="126"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="127" data-txt="pizza calabresa salsa de tomate, mozzarella, calabresa, aceitunas y orégano. pizzas artesanales">
+                <div class="prod-img">
+                  <img src="img/pizza.webp" alt="Pizza calabresa" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Pizza calabresa</h3>
+                  <p class="prod-desc">Salsa de tomate, mozzarella, calabresa, aceitunas y orégano.</p>
+                  <span class="prod-cat"><i>🍕</i>Pizzas Artesanales</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$12.000</span>
+                  <div class="control" data-control="127"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="128" data-txt="pizza rúcula mozzarella, jamón crudo, tomates cherry, rúcula, queso parmesano y orégano. pizzas artesanales">
+                <div class="prod-img">
+                  <img src="img/pizza.webp" alt="Pizza rúcula" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Pizza rúcula</h3>
+                  <p class="prod-desc">Mozzarella, jamón crudo, tomates cherry, rúcula, queso parmesano y orégano.</p>
+                  <span class="prod-cat"><i>🍕</i>Pizzas Artesanales</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$14.000</span>
+                  <div class="control" data-control="128"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="129" data-txt="pizza de la casa salsa de tomate, doble mozzarella, jamón cocido, morrón, aceitunas, huevo frito y orégano. pizzas artesanales">
+                <div class="prod-img">
+                  <img src="img/pizza.webp" alt="Pizza de la casa" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Pizza de la casa</h3>
+                  <p class="prod-desc">Salsa de tomate, doble mozzarella, jamón cocido, morrón, aceitunas, huevo frito y orégano.</p>
+                  <span class="prod-cat"><i>🍕</i>Pizzas Artesanales</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$12.000</span>
+                  <div class="control" data-control="129"></div>
+                </div>
+              </article>
+            
+          </div>
+        </section>
+      
+        <section class="categoria" data-cat="19">
+          <div class="cat-cab">
+            <h2>Papas Fritas</h2>
+            <button type="button" class="ver-todas" data-ver="19">Ver todas <span aria-hidden="true">→</span></button>
+          </div>
+          <div class="grilla">
+            
+              <article class="prod" data-id="130" data-txt="papas fritas clásicas (individual) porción individual. papas fritas">
+                <div class="prod-img">
+                  <img src="img/papas-fritas.webp" alt="Papas fritas clásicas (individual)" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Papas fritas clásicas (individual)</h3>
+                  <p class="prod-desc">Porción individual.</p>
+                  <span class="prod-cat"><i>🍟</i>Papas Fritas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$5.000</span>
+                  <div class="control" data-control="130"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="131" data-txt="papas fritas especiales (individual) porción individual. papas fritas">
+                <div class="prod-img">
+                  <img src="img/papas-fritas.webp" alt="Papas fritas especiales (individual)" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Papas fritas especiales (individual)</h3>
+                  <p class="prod-desc">Porción individual.</p>
+                  <span class="prod-cat"><i>🍟</i>Papas Fritas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$7.000</span>
+                  <div class="control" data-control="131"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="132" data-txt="papas fritas clásicas (para compartir) porción para compartir. papas fritas">
+                <div class="prod-img">
+                  <img src="img/papas-fritas.webp" alt="Papas fritas clásicas (para compartir)" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Papas fritas clásicas (para compartir)</h3>
+                  <p class="prod-desc">Porción para compartir.</p>
+                  <span class="prod-cat"><i>🍟</i>Papas Fritas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$8.000</span>
+                  <div class="control" data-control="132"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="133" data-txt="papas fritas especiales (para compartir) porción para compartir. papas fritas">
+                <div class="prod-img">
+                  <img src="img/papas-fritas.webp" alt="Papas fritas especiales (para compartir)" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Papas fritas especiales (para compartir)</h3>
+                  <p class="prod-desc">Porción para compartir.</p>
+                  <span class="prod-cat"><i>🍟</i>Papas Fritas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$10.000</span>
+                  <div class="control" data-control="133"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="134" data-txt="papas fritas clásicas (familiar) porción familiar. papas fritas">
+                <div class="prod-img">
+                  <img src="img/papas-fritas.webp" alt="Papas fritas clásicas (familiar)" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Papas fritas clásicas (familiar)</h3>
+                  <p class="prod-desc">Porción familiar.</p>
+                  <span class="prod-cat"><i>🍟</i>Papas Fritas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$15.000</span>
+                  <div class="control" data-control="134"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="135" data-txt="papas fritas especiales (familiar) porción familiar. papas fritas">
+                <div class="prod-img">
+                  <img src="img/papas-fritas.webp" alt="Papas fritas especiales (familiar)" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Papas fritas especiales (familiar)</h3>
+                  <p class="prod-desc">Porción familiar.</p>
+                  <span class="prod-cat"><i>🍟</i>Papas Fritas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$18.000</span>
+                  <div class="control" data-control="135"></div>
+                </div>
+              </article>
+            
+          </div>
+        </section>
+      
+        <section class="categoria" data-cat="20">
+          <div class="cat-cab">
+            <h2>Salchipapas</h2>
+            <button type="button" class="ver-todas" data-ver="20">Ver todas <span aria-hidden="true">→</span></button>
+          </div>
+          <div class="grilla">
+            
+              <article class="prod" data-id="136" data-txt="salchipapa clásica salchicha y papas fritas. salchipapas">
+                <div class="prod-img sin-foto">
+                  <span>🥘</span>
+                </div>
+                <div class="prod-info">
+                  <h3>Salchipapa clásica</h3>
+                  <p class="prod-desc">Salchicha y papas fritas.</p>
+                  <span class="prod-cat"><i>🥘</i>Salchipapas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$8.000</span>
+                  <div class="control" data-control="136"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="137" data-txt="salchipapa especial salchicha, papas fritas, queso cheddar y salsas de la casa. salchipapas">
+                <div class="prod-img sin-foto">
+                  <span>🥘</span>
+                </div>
+                <div class="prod-info">
+                  <h3>Salchipapa especial</h3>
+                  <p class="prod-desc">Salchicha, papas fritas, queso cheddar y salsas de la casa.</p>
+                  <span class="prod-cat"><i>🥘</i>Salchipapas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$10.000</span>
+                  <div class="control" data-control="137"></div>
+                </div>
+              </article>
+            
+          </div>
+        </section>
+      
+        <section class="categoria" data-cat="21">
+          <div class="cat-cab">
+            <h2>Tostados</h2>
+            <button type="button" class="ver-todas" data-ver="21">Ver todas <span aria-hidden="true">→</span></button>
+          </div>
+          <div class="grilla">
+            
+              <article class="prod" data-id="138" data-txt="tostado clásico pan de molde, manteca, jamón cocido y queso. tostados">
+                <div class="prod-img sin-foto">
+                  <span>🥪</span>
+                </div>
+                <div class="prod-info">
+                  <h3>Tostado clásico</h3>
+                  <p class="prod-desc">Pan de molde, manteca, jamón cocido y queso.</p>
+                  <span class="prod-cat"><i>🥪</i>Tostados</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$5.000</span>
+                  <div class="control" data-control="138"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="139" data-txt="tostado especial pan de molde, manteca, jamón cocido, queso y tomate. tostados">
+                <div class="prod-img sin-foto">
+                  <span>🥪</span>
+                </div>
+                <div class="prod-info">
+                  <h3>Tostado especial</h3>
+                  <p class="prod-desc">Pan de molde, manteca, jamón cocido, queso y tomate.</p>
+                  <span class="prod-cat"><i>🥪</i>Tostados</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$6.000</span>
+                  <div class="control" data-control="139"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="140" data-txt="tostado de ternera pan de molde, mayonesa casera, tomate, lechuga y mucha ternera. tostados">
+                <div class="prod-img sin-foto">
+                  <span>🥪</span>
+                </div>
+                <div class="prod-info">
+                  <h3>Tostado de ternera</h3>
+                  <p class="prod-desc">Pan de molde, mayonesa casera, tomate, lechuga y mucha ternera.</p>
+                  <span class="prod-cat"><i>🥪</i>Tostados</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$10.000</span>
+                  <div class="control" data-control="140"></div>
+                </div>
+              </article>
+            
+          </div>
+        </section>
+      
+        <section class="categoria" data-cat="22">
+          <div class="cat-cab">
+            <h2>Sándwich Árabe</h2>
+            <button type="button" class="ver-todas" data-ver="22">Ver todas <span aria-hidden="true">→</span></button>
+          </div>
+          <div class="grilla">
+            
+              <article class="prod" data-id="141" data-txt="sándwich árabe jamón, queso, lechuga, tomate y mayonesa. sándwich árabe">
+                <div class="prod-img sin-foto">
+                  <span>🌯</span>
+                </div>
+                <div class="prod-info">
+                  <h3>Sándwich árabe</h3>
+                  <p class="prod-desc">Jamón, queso, lechuga, tomate y mayonesa.</p>
+                  <span class="prod-cat"><i>🌯</i>Sándwich Árabe</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$10.000</span>
+                  <div class="control" data-control="141"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="142" data-txt="sándwich árabe de ternera mucha ternera, lechuga, tomate y mayonesa. sándwich árabe">
+                <div class="prod-img sin-foto">
+                  <span>🌯</span>
+                </div>
+                <div class="prod-info">
+                  <h3>Sándwich árabe de ternera</h3>
+                  <p class="prod-desc">Mucha ternera, lechuga, tomate y mayonesa.</p>
+                  <span class="prod-cat"><i>🌯</i>Sándwich Árabe</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$12.000</span>
+                  <div class="control" data-control="142"></div>
+                </div>
+              </article>
+            
+          </div>
+        </section>
+      
+        <section class="categoria" data-cat="23">
+          <div class="cat-cab">
+            <h2>Sándwiches Salados</h2>
+            <button type="button" class="ver-todas" data-ver="23">Ver todas <span aria-hidden="true">→</span></button>
+          </div>
+          <div class="grilla">
+            
+              <article class="prod" data-id="143" data-txt="carlitos tostado de pan de miga con jamón, queso y manteca. sándwiches salados">
+                <div class="prod-img sin-foto">
+                  <span>🥖</span>
+                </div>
+                <div class="prod-info">
+                  <h3>Carlitos</h3>
+                  <p class="prod-desc">Tostado de pan de miga con jamón, queso y manteca.</p>
+                  <span class="prod-cat"><i>🥖</i>Sándwiches Salados</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$4.000</span>
+                  <div class="control" data-control="143"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="144" data-txt="croissant (sándwich) relleno con jamón y queso. sándwiches salados">
+                <div class="prod-img sin-foto">
+                  <span>🥖</span>
+                </div>
+                <div class="prod-info">
+                  <h3>Croissant (sándwich)</h3>
+                  <p class="prod-desc">Relleno con jamón y queso.</p>
+                  <span class="prod-cat"><i>🥖</i>Sándwiches Salados</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$5.000</span>
+                  <div class="control" data-control="144"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="145" data-txt="medialunas rellenas con jamón y queso. sándwiches salados">
+                <div class="prod-img sin-foto">
+                  <span>🥖</span>
+                </div>
+                <div class="prod-info">
+                  <h3>Medialunas rellenas</h3>
+                  <p class="prod-desc">Con jamón y queso.</p>
+                  <span class="prod-cat"><i>🥖</i>Sándwiches Salados</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$3.000</span>
+                  <div class="control" data-control="145"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="146" data-txt="croissant especial relleno de palta + huevo + tomate cherry. sándwiches salados">
+                <div class="prod-img sin-foto">
+                  <span>🥖</span>
+                </div>
+                <div class="prod-info">
+                  <h3>Croissant especial</h3>
+                  <p class="prod-desc">Relleno de palta + huevo + tomate cherry.</p>
+                  <span class="prod-cat"><i>🥖</i>Sándwiches Salados</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$7.000</span>
+                  <div class="control" data-control="146"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="147" data-txt="el tostón jamón + queso + tomate + mayonesa. sándwiches salados">
+                <div class="prod-img sin-foto">
+                  <span>🥖</span>
+                </div>
+                <div class="prod-info">
+                  <h3>El Tostón</h3>
+                  <p class="prod-desc">Jamón + queso + tomate + mayonesa.</p>
+                  <span class="prod-cat"><i>🥖</i>Sándwiches Salados</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$5.500</span>
+                  <div class="control" data-control="147"></div>
+                </div>
+              </article>
+            
+          </div>
+        </section>
+      
+        <section class="categoria" data-cat="24">
+          <div class="cat-cab">
+            <h2>Desayunos &amp; Meriendas</h2>
+            <button type="button" class="ver-todas" data-ver="24">Ver todas <span aria-hidden="true">→</span></button>
+          </div>
+          <div class="grilla">
+            
+              <article class="prod" data-id="148" data-txt="french infusión + 2 medialunas o 2 tortillitas. desayunos &amp; meriendas">
+                <div class="prod-img">
+                  <img src="img/medialunas.webp" alt="French" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>French</h3>
+                  <p class="prod-desc">Infusión + 2 medialunas o 2 tortillitas.</p>
+                  <span class="prod-cat"><i>🥞</i>Desayunos &amp; Meriendas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$4.000</span>
+                  <div class="control" data-control="148"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="149" data-txt="french croissant infusión + 1 croissant. desayunos &amp; meriendas">
+                <div class="prod-img">
+                  <img src="img/medialunas.webp" alt="French Croissant" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>French Croissant</h3>
+                  <p class="prod-desc">Infusión + 1 croissant.</p>
+                  <span class="prod-cat"><i>🥞</i>Desayunos &amp; Meriendas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$5.500</span>
+                  <div class="control" data-control="149"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="150" data-txt="clásico light infusión + 2 tostadas + mermelada del día + queso + jugo de naranja + ensalada de fruta + soda o agua. desayunos &amp; meriendas">
+                <div class="prod-img">
+                  <img src="img/medialunas.webp" alt="Clásico Light" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Clásico Light</h3>
+                  <p class="prod-desc">Infusión + 2 tostadas + mermelada del día + queso + jugo de naranja + ensalada de fruta + soda o agua.</p>
+                  <span class="prod-cat"><i>🥞</i>Desayunos &amp; Meriendas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$6.000</span>
+                  <div class="control" data-control="150"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="151" data-txt="campiña infusión + pan de campo + dulce de leche + manteca + jugo de naranja + soda o agua. desayunos &amp; meriendas">
+                <div class="prod-img">
+                  <img src="img/medialunas.webp" alt="Campiña" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Campiña</h3>
+                  <p class="prod-desc">Infusión + pan de campo + dulce de leche + manteca + jugo de naranja + soda o agua.</p>
+                  <span class="prod-cat"><i>🥞</i>Desayunos &amp; Meriendas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$5.500</span>
+                  <div class="control" data-control="151"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="152" data-txt="dulcero infusión + torta o tarta del día. desayunos &amp; meriendas">
+                <div class="prod-img">
+                  <img src="img/medialunas.webp" alt="Dulcero" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Dulcero</h3>
+                  <p class="prod-desc">Infusión + torta o tarta del día.</p>
+                  <span class="prod-cat"><i>🥞</i>Desayunos &amp; Meriendas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$7.500</span>
+                  <div class="control" data-control="152"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="153" data-txt="bowl de yogur yogur + frutas de estación + granola + miel o pasta de maní. desayunos &amp; meriendas">
+                <div class="prod-img">
+                  <img src="img/medialunas.webp" alt="Bowl de Yogur" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Bowl de Yogur</h3>
+                  <p class="prod-desc">Yogur + frutas de estación + granola + miel o pasta de maní.</p>
+                  <span class="prod-cat"><i>🥞</i>Desayunos &amp; Meriendas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$7.000</span>
+                  <div class="control" data-control="153"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="154" data-txt="proteico infusión + tostadas integral + huevos revueltos + jamón y queso + fruta de estación + jugo de naranja + soda o agua. desayunos &amp; meriendas">
+                <div class="prod-img">
+                  <img src="img/medialunas.webp" alt="Proteico" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Proteico</h3>
+                  <p class="prod-desc">Infusión + tostadas integral + huevos revueltos + jamón y queso + fruta de estación + jugo de naranja + soda o agua.</p>
+                  <span class="prod-cat"><i>🥞</i>Desayunos &amp; Meriendas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$9.500</span>
+                  <div class="control" data-control="154"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="155" data-txt="avocado infusión + tostadas + huevos revueltos + palta + tomate cherry + queso crema + nueces. desayunos &amp; meriendas">
+                <div class="prod-img">
+                  <img src="img/medialunas.webp" alt="Avocado" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Avocado</h3>
+                  <p class="prod-desc">Infusión + tostadas + huevos revueltos + palta + tomate cherry + queso crema + nueces.</p>
+                  <span class="prod-cat"><i>🥞</i>Desayunos &amp; Meriendas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$7.000</span>
+                  <div class="control" data-control="155"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="156" data-txt="torre mixta (para compartir) 2 infusiones + cookies + brownie + jugo + soda + medialunas + pan de campo + jamón + queso. desayunos &amp; meriendas">
+                <div class="prod-img">
+                  <img src="img/medialunas.webp" alt="Torre Mixta (para compartir)" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Torre Mixta (para compartir)</h3>
+                  <p class="prod-desc">2 infusiones + cookies + brownie + jugo + soda + medialunas + pan de campo + jamón + queso.</p>
+                  <span class="prod-cat"><i>🥞</i>Desayunos &amp; Meriendas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$21.000</span>
+                  <div class="control" data-control="156"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="157" data-txt="full fit infusión + panqueque de avena (chocolate o vainilla) + fruta de estación + miel o pasta de maní + jugo de naranja + soda o agua. desayunos &amp; meriendas">
+                <div class="prod-img">
+                  <img src="img/medialunas.webp" alt="Full Fit" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Full Fit</h3>
+                  <p class="prod-desc">Infusión + panqueque de avena (chocolate o vainilla) + fruta de estación + miel o pasta de maní + jugo de naranja + soda o agua.</p>
+                  <span class="prod-cat"><i>🥞</i>Desayunos &amp; Meriendas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$10.500</span>
+                  <div class="control" data-control="157"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="158" data-txt="desayuno chicha candela infusión + 1 medialuna + cookie + porción de torta del día + fruta de estación + jugo de naranja + soda o agua. un desayuno muy dulce, en honor a nuestra chicha candela. desayunos &amp; meriendas">
+                <div class="prod-img">
+                  <img src="img/medialunas.webp" alt="Desayuno Chicha Candela" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Desayuno Chicha Candela</h3>
+                  <p class="prod-desc">Infusión + 1 medialuna + cookie + porción de torta del día + fruta de estación + jugo de naranja + soda o agua. Un desayuno muy dulce, en honor a nuestra Chicha Candela.</p>
+                  <span class="prod-cat"><i>🥞</i>Desayunos &amp; Meriendas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$9.900</span>
+                  <div class="control" data-control="158"></div>
+                </div>
+              </article>
+            
+          </div>
+        </section>
+      
+        <section class="categoria" data-cat="25">
+          <div class="cat-cab">
+            <h2>Cafetería</h2>
+            <button type="button" class="ver-todas" data-ver="25">Ver todas <span aria-hidden="true">→</span></button>
+          </div>
+          <div class="grilla">
+            
+              <article class="prod" data-id="159" data-txt="espresso  cafetería">
+                <div class="prod-img">
+                  <img src="img/cafe.webp" alt="Espresso" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Espresso</h3>
+                  
+                  <span class="prod-cat"><i>☕</i>Cafetería</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$2.000</span>
+                  <div class="control" data-control="159"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="160" data-txt="espresso mediano  cafetería">
+                <div class="prod-img">
+                  <img src="img/cafe.webp" alt="Espresso mediano" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Espresso mediano</h3>
+                  
+                  <span class="prod-cat"><i>☕</i>Cafetería</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$2.500</span>
+                  <div class="control" data-control="160"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="161" data-txt="americano  cafetería">
+                <div class="prod-img">
+                  <img src="img/cafe.webp" alt="Americano" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Americano</h3>
+                  
+                  <span class="prod-cat"><i>☕</i>Cafetería</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$3.000</span>
+                  <div class="control" data-control="161"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="162" data-txt="cortado  cafetería">
+                <div class="prod-img">
+                  <img src="img/cafe.webp" alt="Cortado" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Cortado</h3>
+                  
+                  <span class="prod-cat"><i>☕</i>Cafetería</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$2.500</span>
+                  <div class="control" data-control="162"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="163" data-txt="lágrima  cafetería">
+                <div class="prod-img">
+                  <img src="img/cafe.webp" alt="Lágrima" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Lágrima</h3>
+                  
+                  <span class="prod-cat"><i>☕</i>Cafetería</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$2.000</span>
+                  <div class="control" data-control="163"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="164" data-txt="lágrima mediana  cafetería">
+                <div class="prod-img">
+                  <img src="img/cafe.webp" alt="Lágrima mediana" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Lágrima mediana</h3>
+                  
+                  <span class="prod-cat"><i>☕</i>Cafetería</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$2.500</span>
+                  <div class="control" data-control="164"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="165" data-txt="capuchino  cafetería">
+                <div class="prod-img">
+                  <img src="img/cafe.webp" alt="Capuchino" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Capuchino</h3>
+                  
+                  <span class="prod-cat"><i>☕</i>Cafetería</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$3.500</span>
+                  <div class="control" data-control="165"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="166" data-txt="frappé  cafetería">
+                <div class="prod-img">
+                  <img src="img/cafe.webp" alt="Frappé" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Frappé</h3>
+                  
+                  <span class="prod-cat"><i>☕</i>Cafetería</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$7.000</span>
+                  <div class="control" data-control="166"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="167" data-txt="chocolatada  cafetería">
+                <div class="prod-img">
+                  <img src="img/cafe.webp" alt="Chocolatada" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Chocolatada</h3>
+                  
+                  <span class="prod-cat"><i>☕</i>Cafetería</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$4.000</span>
+                  <div class="control" data-control="167"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="168" data-txt="submarino  cafetería">
+                <div class="prod-img">
+                  <img src="img/cafe.webp" alt="Submarino" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Submarino</h3>
+                  
+                  <span class="prod-cat"><i>☕</i>Cafetería</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$4.500</span>
+                  <div class="control" data-control="168"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="169" data-txt="latte  cafetería">
+                <div class="prod-img">
+                  <img src="img/cafe.webp" alt="Latte" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Latte</h3>
+                  
+                  <span class="prod-cat"><i>☕</i>Cafetería</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$3.500</span>
+                  <div class="control" data-control="169"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="170" data-txt="latte de caramelo  cafetería">
+                <div class="prod-img">
+                  <img src="img/cafe.webp" alt="Latte de Caramelo" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Latte de Caramelo</h3>
+                  
+                  <span class="prod-cat"><i>☕</i>Cafetería</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$4.000</span>
+                  <div class="control" data-control="170"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="171" data-txt="latte de vainilla  cafetería">
+                <div class="prod-img">
+                  <img src="img/cafe.webp" alt="Latte de Vainilla" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Latte de Vainilla</h3>
+                  
+                  <span class="prod-cat"><i>☕</i>Cafetería</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$4.000</span>
+                  <div class="control" data-control="171"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="172" data-txt="latte de pistacho  cafetería">
+                <div class="prod-img">
+                  <img src="img/cafe.webp" alt="Latte de Pistacho" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Latte de Pistacho</h3>
+                  
+                  <span class="prod-cat"><i>☕</i>Cafetería</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$4.500</span>
+                  <div class="control" data-control="172"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="173" data-txt="latte de frambuesa  cafetería">
+                <div class="prod-img">
+                  <img src="img/cafe.webp" alt="Latte de Frambuesa" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Latte de Frambuesa</h3>
+                  
+                  <span class="prod-cat"><i>☕</i>Cafetería</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$4.500</span>
+                  <div class="control" data-control="173"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="174" data-txt="iced latte  cafetería">
+                <div class="prod-img">
+                  <img src="img/cafe.webp" alt="Iced Latte" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Iced Latte</h3>
+                  
+                  <span class="prod-cat"><i>☕</i>Cafetería</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$4.500</span>
+                  <div class="control" data-control="174"></div>
+                </div>
+              </article>
+            
+          </div>
+        </section>
+      
+        <section class="categoria" data-cat="26">
+          <div class="cat-cab">
+            <h2>Panadería</h2>
+            <button type="button" class="ver-todas" data-ver="26">Ver todas <span aria-hidden="true">→</span></button>
+          </div>
+          <div class="grilla">
+            
+              <article class="prod" data-id="175" data-txt="medialunas dulces  panadería">
+                <div class="prod-img">
+                  <img src="img/medialunas.webp" alt="Medialunas dulces" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Medialunas dulces</h3>
+                  
+                  <span class="prod-cat"><i>🥐</i>Panadería</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$800</span>
+                  <div class="control" data-control="175"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="176" data-txt="medialunas saladas  panadería">
+                <div class="prod-img">
+                  <img src="img/medialunas.webp" alt="Medialunas saladas" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Medialunas saladas</h3>
+                  
+                  <span class="prod-cat"><i>🥐</i>Panadería</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$800</span>
+                  <div class="control" data-control="176"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="177" data-txt="tortillitas  panadería">
+                <div class="prod-img">
+                  <img src="img/medialunas.webp" alt="Tortillitas" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Tortillitas</h3>
+                  
+                  <span class="prod-cat"><i>🥐</i>Panadería</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$600</span>
+                  <div class="control" data-control="177"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="178" data-txt="pan de campo  panadería">
+                <div class="prod-img">
+                  <img src="img/medialunas.webp" alt="Pan de campo" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Pan de campo</h3>
+                  
+                  <span class="prod-cat"><i>🥐</i>Panadería</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$750</span>
+                  <div class="control" data-control="178"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="179" data-txt="chipa  panadería">
+                <div class="prod-img">
+                  <img src="img/medialunas.webp" alt="Chipa" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Chipa</h3>
+                  
+                  <span class="prod-cat"><i>🥐</i>Panadería</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$3.400</span>
+                  <div class="control" data-control="179"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="180" data-txt="croissant  panadería">
+                <div class="prod-img">
+                  <img src="img/medialunas.webp" alt="Croissant" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Croissant</h3>
+                  
+                  <span class="prod-cat"><i>🥐</i>Panadería</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$3.000</span>
+                  <div class="control" data-control="180"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="181" data-txt="croissant rellenos disponibles del día. panadería">
+                <div class="prod-img">
+                  <img src="img/medialunas.webp" alt="Croissant rellenos" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Croissant rellenos</h3>
+                  <p class="prod-desc">Disponibles del día.</p>
+                  <span class="prod-cat"><i>🥐</i>Panadería</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$4.000</span>
+                  <div class="control" data-control="181"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="182" data-txt="muffins (chocolate o vainilla)  panadería">
+                <div class="prod-img">
+                  <img src="img/medialunas.webp" alt="Muffins (chocolate o vainilla)" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Muffins (chocolate o vainilla)</h3>
+                  
+                  <span class="prod-cat"><i>🥐</i>Panadería</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$3.500</span>
+                  <div class="control" data-control="182"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="183" data-txt="alfajores de chocolate  panadería">
+                <div class="prod-img">
+                  <img src="img/medialunas.webp" alt="Alfajores de chocolate" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Alfajores de chocolate</h3>
+                  
+                  <span class="prod-cat"><i>🥐</i>Panadería</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$3.000</span>
+                  <div class="control" data-control="183"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="184" data-txt="cookies de vainilla y chips de chocolate  panadería">
+                <div class="prod-img">
+                  <img src="img/medialunas.webp" alt="Cookies de vainilla y chips de chocolate" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Cookies de vainilla y chips de chocolate</h3>
+                  
+                  <span class="prod-cat"><i>🥐</i>Panadería</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$2.500</span>
+                  <div class="control" data-control="184"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="185" data-txt="cookie oreo  panadería">
+                <div class="prod-img">
+                  <img src="img/medialunas.webp" alt="Cookie Oreo" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Cookie Oreo</h3>
+                  
+                  <span class="prod-cat"><i>🥐</i>Panadería</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$2.500</span>
+                  <div class="control" data-control="185"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="186" data-txt="cookies red velvet  panadería">
+                <div class="prod-img">
+                  <img src="img/medialunas.webp" alt="Cookies Red Velvet" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Cookies Red Velvet</h3>
+                  
+                  <span class="prod-cat"><i>🥐</i>Panadería</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$2.500</span>
+                  <div class="control" data-control="186"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="187" data-txt="rolls de canela  panadería">
+                <div class="prod-img">
+                  <img src="img/medialunas.webp" alt="Rolls de canela" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Rolls de canela</h3>
+                  
+                  <span class="prod-cat"><i>🥐</i>Panadería</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$3.500</span>
+                  <div class="control" data-control="187"></div>
+                </div>
+              </article>
+            
+          </div>
+        </section>
+      
+        <section class="categoria" data-cat="27">
+          <div class="cat-cab">
+            <h2>Tortas &amp; Dulces del Día</h2>
+            <button type="button" class="ver-todas" data-ver="27">Ver todas <span aria-hidden="true">→</span></button>
+          </div>
+          <div class="grilla">
+            
+              <article class="prod" data-id="188" data-txt="brownie  tortas &amp; dulces del día">
+                <div class="prod-img sin-foto">
+                  <span>🍰</span>
+                </div>
+                <div class="prod-info">
+                  <h3>Brownie</h3>
+                  
+                  <span class="prod-cat"><i>🍰</i>Tortas &amp; Dulces del Día</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$3.500</span>
+                  <div class="control" data-control="188"></div>
+                </div>
+              </article>
+            
+          </div>
+        </section>
+      
+        <section class="categoria" data-cat="28">
+          <div class="cat-cab">
+            <h2>Bebidas</h2>
+            <button type="button" class="ver-todas" data-ver="28">Ver todas <span aria-hidden="true">→</span></button>
+          </div>
+          <div class="grilla">
+            
+              <article class="prod" data-id="194" data-txt="coca-cola lata (350 cc)  bebidas">
+                <div class="prod-img">
+                  <img src="img/bebida-coca-cola.webp" alt="Coca-Cola lata (350 cc)" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Coca-Cola lata (350 cc)</h3>
+                  
+                  <span class="prod-cat"><i>🥤</i>Bebidas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$2.500</span>
+                  <div class="control" data-control="194"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="195" data-txt="coca-cola / fanta / sprite (350 cc)  bebidas">
+                <div class="prod-img">
+                  <img src="img/bebida-coca-cola.webp" alt="Coca-Cola / Fanta / Sprite (350 cc)" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Coca-Cola / Fanta / Sprite (350 cc)</h3>
+                  
+                  <span class="prod-cat"><i>🥤</i>Bebidas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$3.000</span>
+                  <div class="control" data-control="195"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="196" data-txt="coca-cola zero (350 cc)  bebidas">
+                <div class="prod-img">
+                  <img src="img/bebida-coca-cola.webp" alt="Coca-Cola Zero (350 cc)" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Coca-Cola Zero (350 cc)</h3>
+                  
+                  <span class="prod-cat"><i>🥤</i>Bebidas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$3.000</span>
+                  <div class="control" data-control="196"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="197" data-txt="coca-cola / fanta / sprite (1 litro)  bebidas">
+                <div class="prod-img">
+                  <img src="img/bebida-coca-cola.webp" alt="Coca-Cola / Fanta / Sprite (1 litro)" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Coca-Cola / Fanta / Sprite (1 litro)</h3>
+                  
+                  <span class="prod-cat"><i>🥤</i>Bebidas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$5.000</span>
+                  <div class="control" data-control="197"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="198" data-txt="coca-cola zero (1 litro)  bebidas">
+                <div class="prod-img">
+                  <img src="img/bebida-coca-cola.webp" alt="Coca-Cola Zero (1 litro)" loading="lazy" width="96" height="96">
+                </div>
+                <div class="prod-info">
+                  <h3>Coca-Cola Zero (1 litro)</h3>
+                  
+                  <span class="prod-cat"><i>🥤</i>Bebidas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$5.000</span>
+                  <div class="control" data-control="198"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="199" data-txt="agua mineral (600 cc)  bebidas">
+                <div class="prod-img sin-foto">
+                  <span>🥤</span>
+                </div>
+                <div class="prod-info">
+                  <h3>Agua mineral (600 cc)</h3>
+                  
+                  <span class="prod-cat"><i>🥤</i>Bebidas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$3.000</span>
+                  <div class="control" data-control="199"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="200" data-txt="agua mineral c/ gas (600 cc)  bebidas">
+                <div class="prod-img sin-foto">
+                  <span>🥤</span>
+                </div>
+                <div class="prod-info">
+                  <h3>Agua mineral c/ gas (600 cc)</h3>
+                  
+                  <span class="prod-cat"><i>🥤</i>Bebidas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$3.000</span>
+                  <div class="control" data-control="200"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="201" data-txt="agua saborizada de pera (600 cc)  bebidas">
+                <div class="prod-img sin-foto">
+                  <span>🥤</span>
+                </div>
+                <div class="prod-info">
+                  <h3>Agua saborizada de pera (600 cc)</h3>
+                  
+                  <span class="prod-cat"><i>🥤</i>Bebidas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$3.000</span>
+                  <div class="control" data-control="201"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="202" data-txt="agua saborizada de pera (1,5 litro)  bebidas">
+                <div class="prod-img sin-foto">
+                  <span>🥤</span>
+                </div>
+                <div class="prod-info">
+                  <h3>Agua saborizada de pera (1,5 litro)</h3>
+                  
+                  <span class="prod-cat"><i>🥤</i>Bebidas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$5.500</span>
+                  <div class="control" data-control="202"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="203" data-txt="jugo cepita (300 cc)  bebidas">
+                <div class="prod-img sin-foto">
+                  <span>🥤</span>
+                </div>
+                <div class="prod-info">
+                  <h3>Jugo Cepita (300 cc)</h3>
+                  
+                  <span class="prod-cat"><i>🥤</i>Bebidas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$2.500</span>
+                  <div class="control" data-control="203"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="204" data-txt="cerveza lata estrella galicia lager  bebidas">
+                <div class="prod-img sin-foto">
+                  <span>🥤</span>
+                </div>
+                <div class="prod-info">
+                  <h3>Cerveza lata Estrella Galicia lager</h3>
+                  
+                  <span class="prod-cat"><i>🥤</i>Bebidas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$4.500</span>
+                  <div class="control" data-control="204"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="205" data-txt="cerveza lata pampa lager  bebidas">
+                <div class="prod-img sin-foto">
+                  <span>🥤</span>
+                </div>
+                <div class="prod-info">
+                  <h3>Cerveza lata Pampa Lager</h3>
+                  
+                  <span class="prod-cat"><i>🥤</i>Bebidas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$4.500</span>
+                  <div class="control" data-control="205"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="206" data-txt="cerveza lata pampa dorada  bebidas">
+                <div class="prod-img sin-foto">
+                  <span>🥤</span>
+                </div>
+                <div class="prod-info">
+                  <h3>Cerveza lata Pampa Dorada</h3>
+                  
+                  <span class="prod-cat"><i>🥤</i>Bebidas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$4.500</span>
+                  <div class="control" data-control="206"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="207" data-txt="limonada  bebidas">
+                <div class="prod-img sin-foto">
+                  <span>🥤</span>
+                </div>
+                <div class="prod-info">
+                  <h3>Limonada</h3>
+                  
+                  <span class="prod-cat"><i>🥤</i>Bebidas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$5.500</span>
+                  <div class="control" data-control="207"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="208" data-txt="jugo de naranja  bebidas">
+                <div class="prod-img sin-foto">
+                  <span>🥤</span>
+                </div>
+                <div class="prod-info">
+                  <h3>Jugo de naranja</h3>
+                  
+                  <span class="prod-cat"><i>🥤</i>Bebidas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$4.000</span>
+                  <div class="control" data-control="208"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="209" data-txt="jarra de limonada  bebidas">
+                <div class="prod-img sin-foto">
+                  <span>🥤</span>
+                </div>
+                <div class="prod-info">
+                  <h3>Jarra de limonada</h3>
+                  
+                  <span class="prod-cat"><i>🥤</i>Bebidas</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$9.500</span>
+                  <div class="control" data-control="209"></div>
+                </div>
+              </article>
+            
+          </div>
+        </section>
+      
+        <section class="categoria" data-cat="29">
+          <div class="cat-cab">
+            <h2>Licuados</h2>
+            <button type="button" class="ver-todas" data-ver="29">Ver todas <span aria-hidden="true">→</span></button>
+          </div>
+          <div class="grilla">
+            
+              <article class="prod" data-id="210" data-txt="licuado de banana  licuados">
+                <div class="prod-img sin-foto">
+                  <span>🍹</span>
+                </div>
+                <div class="prod-info">
+                  <h3>Licuado de banana</h3>
+                  
+                  <span class="prod-cat"><i>🍹</i>Licuados</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$4.000</span>
+                  <div class="control" data-control="210"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="211" data-txt="licuado de frutilla  licuados">
+                <div class="prod-img sin-foto">
+                  <span>🍹</span>
+                </div>
+                <div class="prod-info">
+                  <h3>Licuado de frutilla</h3>
+                  
+                  <span class="prod-cat"><i>🍹</i>Licuados</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$4.000</span>
+                  <div class="control" data-control="211"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="212" data-txt="licuado de ananá  licuados">
+                <div class="prod-img sin-foto">
+                  <span>🍹</span>
+                </div>
+                <div class="prod-info">
+                  <h3>Licuado de ananá</h3>
+                  
+                  <span class="prod-cat"><i>🍹</i>Licuados</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$5.000</span>
+                  <div class="control" data-control="212"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="213" data-txt="licuado de durazno  licuados">
+                <div class="prod-img sin-foto">
+                  <span>🍹</span>
+                </div>
+                <div class="prod-info">
+                  <h3>Licuado de durazno</h3>
+                  
+                  <span class="prod-cat"><i>🍹</i>Licuados</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$5.000</span>
+                  <div class="control" data-control="213"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="214" data-txt="licuado de tutti frutti  licuados">
+                <div class="prod-img sin-foto">
+                  <span>🍹</span>
+                </div>
+                <div class="prod-info">
+                  <h3>Licuado de tutti frutti</h3>
+                  
+                  <span class="prod-cat"><i>🍹</i>Licuados</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$4.000</span>
+                  <div class="control" data-control="214"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="215" data-txt="licuado de maracuyá  licuados">
+                <div class="prod-img sin-foto">
+                  <span>🍹</span>
+                </div>
+                <div class="prod-info">
+                  <h3>Licuado de maracuyá</h3>
+                  
+                  <span class="prod-cat"><i>🍹</i>Licuados</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$5.000</span>
+                  <div class="control" data-control="215"></div>
+                </div>
+              </article>
+            
+          </div>
+        </section>
+      
+        <section class="categoria" data-cat="30">
+          <div class="cat-cab">
+            <h2>Smoothies</h2>
+            <button type="button" class="ver-todas" data-ver="30">Ver todas <span aria-hidden="true">→</span></button>
+          </div>
+          <div class="grilla">
+            
+              <article class="prod" data-id="216" data-txt="smoothie rojo  smoothies">
+                <div class="prod-img sin-foto">
+                  <span>🫐</span>
+                </div>
+                <div class="prod-info">
+                  <h3>Smoothie Rojo</h3>
+                  
+                  <span class="prod-cat"><i>🫐</i>Smoothies</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$7.000</span>
+                  <div class="control" data-control="216"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="217" data-txt="smoothie amarillo  smoothies">
+                <div class="prod-img sin-foto">
+                  <span>🫐</span>
+                </div>
+                <div class="prod-info">
+                  <h3>Smoothie Amarillo</h3>
+                  
+                  <span class="prod-cat"><i>🫐</i>Smoothies</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$7.000</span>
+                  <div class="control" data-control="217"></div>
+                </div>
+              </article>
+            
+              <article class="prod" data-id="218" data-txt="smoothie violeta  smoothies">
+                <div class="prod-img sin-foto">
+                  <span>🫐</span>
+                </div>
+                <div class="prod-info">
+                  <h3>Smoothie Violeta</h3>
+                  
+                  <span class="prod-cat"><i>🫐</i>Smoothies</span>
+                </div>
+                <div class="prod-lado">
+                  <span class="precio">$7.500</span>
+                  <div class="control" data-control="218"></div>
+                </div>
+              </article>
+            
+          </div>
+        </section>
+      
+      <p class="vacio" id="sinResultados" hidden>No encontramos nada con esa búsqueda 🔍</p>
+    </div>
+
+    <footer class="pie">
+      <p class="script">Buena compañía siempre</p>
+    </footer>
+  </main>
+
+  <button class="barra-carrito" id="barraCarrito" type="button" hidden>
+    <span class="bc-cant" id="bcCant">0</span>
+    <span class="bc-txt">Ver mi pedido</span>
+    <span class="bc-total" id="bcTotal">$0</span>
+  </button>
+
+  <nav class="tabbar" aria-label="Navegación">
+    <button type="button" class="nav-item activa" id="tabInicio">
+      <svg viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v10h13V10"/><path d="M10 20v-5h4v5"/></svg><span>Inicio</span>
+    </button>
+    <button type="button" class="nav-item" id="tabPedidos">
+      <svg viewBox="0 0 24 24"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg><span>Pedidos</span>
+    </button>
+    <button type="button" class="nav-item" id="tabCuenta">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg><span>Cuenta</span>
+    </button>
+  </nav>
+
+  <!-- Mi pedido (carrito) -->
+  <dialog id="dlgCarrito" class="hoja">
+    <div class="dlg-cab"><h2>Tu pedido</h2><button class="cerrar" data-cerrar aria-label="Cerrar">✕</button></div>
+    <div class="para-mesa" id="paraMesa">Para la <strong id="carritoMesa">mesa</strong></div>
+    <div id="carritoLista" class="lista"></div>
+    <div id="datosDelivery" class="datos" hidden>
+      <h3>Tus datos para la entrega</h3>
+      <label class="campo"><span>Nombre</span><input id="dNombre" autocomplete="name" maxlength="60" placeholder="¿A nombre de quién?"></label>
+      <label class="campo"><span>WhatsApp</span><input id="dTel" type="tel" inputmode="tel" autocomplete="tel" maxlength="24" placeholder="Ej: 11 5555 1234"></label>
+      <label class="campo"><span>Dirección de entrega</span><input id="dDir" autocomplete="street-address" maxlength="150" placeholder="Calle, número y localidad"></label>
+      <label class="campo"><span>Referencias <small>(opcional)</small></span><input id="dRef" maxlength="200" placeholder="Piso, timbre, entre calles…"></label>
+      <div class="campo"><span>¿Cómo pagás?</span>
+        <div class="pagos" id="dPagos">
+          <button type="button" class="pago activa" data-pago="efectivo">💵 Efectivo</button>
+          <button type="button" class="pago" data-pago="transferencia">🏦 Transferencia</button>
+        </div></div>
+      <label class="campo" id="dPagoConBox"><span>¿Con cuánto abonás? <small>(opcional, para llevarte el vuelto)</small></span><input id="dPagoCon" type="number" inputmode="decimal" min="0" placeholder="Ej: 20000"></label>
+      <p class="nota-peq" id="dTransf" hidden></p>
+    </div>
+    <div class="desglose" id="carritoDesglose" hidden></div>
+    <div class="total-fila"><span id="totalEtq">Total de este pedido</span><strong id="carritoTotal">$0</strong></div>
+    <p class="nota-peq" id="notaCarrito">Si después querés algo más, pedilo de nuevo o avisale al mozo. Pagás al final, en la mesa.</p>
+    <p class="error" id="carritoError" role="alert" hidden></p>
+    <button class="btn-principal" id="btnEnviar" type="button">Enviar pedido</button>
+  </dialog>
+
+  <!-- Pedido enviado -->
+  <dialog id="dlgListo" class="hoja">
+    <div class="listo">
+      <div class="listo-ok">✓</div>
+      <h2>¡Pedido enviado!</h2>
+      <p id="listoTxt">Ya lo recibimos.</p>
+      <p class="info-transf" id="listoTransf" hidden></p>
+      <button class="btn-principal" data-cerrar type="button">Seguir mirando el menú</button>
+      <button class="btn-sec" id="listoCuenta" type="button">Ver mi cuenta</button>
+    </div>
+  </dialog>
+
+  <!-- Mi cuenta (lo pedido en la mesa) -->
+  <dialog id="dlgCuenta" class="hoja">
+    <div class="dlg-cab"><h2>Mi cuenta · <span id="cuentaMesa"></span></h2><button class="cerrar" data-cerrar aria-label="Cerrar">✕</button></div>
+    <div id="cuentaLista" class="lista"></div>
+    <div class="total-fila" id="cuentaTotalFila" hidden><span>Total hasta ahora</span><strong id="cuentaTotal">$0</strong></div>
+    <p class="error" id="cuentaMsg" hidden></p>
+    <div class="dos-botones" id="cuentaBotones" hidden>
+      <button class="btn-principal" id="btnPedirCuenta" type="button">🧾 Pedir la cuenta</button>
+      <button class="btn-sec" id="btnMozo" type="button">🙋 Llamar al mozo</button>
+    </div>
+  </dialog>
+
+  <!-- Cuenta / opciones -->
+  <dialog id="dlgOpciones" class="hoja">
+    <div class="dlg-cab"><h2>Tu cuenta</h2><button class="cerrar" data-cerrar aria-label="Cerrar">✕</button></div>
+    
+    <p class="op-tit">Tipo de pedido</p>
+    <div class="modos modos-dlg">
+      <button type="button" class="modo" data-modo="mesa">🍽️ En mesa</button>
+      <button type="button" class="modo" data-modo="delivery">🛵 Delivery</button>
+    </div>
+    
+    <p class="op-tit">Más</p>
+    <button type="button" class="op-fila" id="opHorarios"><span>🕒 Horarios del local</span><span aria-hidden="true">›</span></button>
+    <button type="button" class="op-fila" id="opBorrar" hidden><span>🗑️ Borrar mis datos guardados</span><span aria-hidden="true">›</span></button>
+  </dialog>
+
+  <!-- Horarios -->
+  <dialog id="dlgHorarios" class="hoja ancha">
+    <div class="dlg-cab"><h2>Horarios</h2><button class="cerrar" data-cerrar aria-label="Cerrar">✕</button></div>
+    
+    <div class="tabs">
+      <button class="tab activa" data-tab="cafe" type="button">☕ Cafetería</button>
+      <button class="tab" data-tab="noche" type="button">🌙 Noche</button>
+    </div>
+    <img id="imgHorario" src="img/horarios-cafeteria.webp" alt="Horarios" class="horario-img">
+  </dialog>
+
+  <div class="toast" id="toast" role="status" hidden></div>
+
+  <script type="application/json" id="datos">{"mesas":12,"mesaUrl":null,"tokenUrl":"","recibir":true,"delivery":true,"envio":0,"transferencia":"","tiempo":"30-45 min","productos":{"110":{"nombre":"La Clásica","precio":7000,"icono":"🍔"},"111":{"nombre":"Texana","precio":8000,"icono":"🍔"},"112":{"nombre":"Pizza Burger","precio":8500,"icono":"🍔"},"113":{"nombre":"Green Edition","precio":8500,"icono":"🍔"},"114":{"nombre":"Smash","precio":8500,"icono":"🍔"},"115":{"nombre":"Crocante","precio":7500,"icono":"🍔"},"116":{"nombre":"Sweet Burger","precio":8500,"icono":"🍔"},"117":{"nombre":"La Morita","precio":8500,"icono":"🍔"},"118":{"nombre":"La Criollita","precio":8500,"icono":"🍔"},"119":{"nombre":"La Bestia Street","precio":14000,"icono":"🍔"},"120":{"nombre":"Pancho clásico","precio":4500,"icono":"🌭"},"121":{"nombre":"Pancho texano","precio":5500,"icono":"🌭"},"122":{"nombre":"Pancho pizza","precio":6000,"icono":"🌭"},"123":{"nombre":"Pancho explosivo","precio":7500,"icono":"🌭"},"124":{"nombre":"Pizza casera","precio":10000,"icono":"🍕"},"125":{"nombre":"Pizza napolitana","precio":12000,"icono":"🍕"},"126":{"nombre":"Pizza fugazzeta","precio":12000,"icono":"🍕"},"127":{"nombre":"Pizza calabresa","precio":12000,"icono":"🍕"},"128":{"nombre":"Pizza rúcula","precio":14000,"icono":"🍕"},"129":{"nombre":"Pizza de la casa","precio":12000,"icono":"🍕"},"130":{"nombre":"Papas fritas clásicas (individual)","precio":5000,"icono":"🍟"},"131":{"nombre":"Papas fritas especiales (individual)","precio":7000,"icono":"🍟"},"132":{"nombre":"Papas fritas clásicas (para compartir)","precio":8000,"icono":"🍟"},"133":{"nombre":"Papas fritas especiales (para compartir)","precio":10000,"icono":"🍟"},"134":{"nombre":"Papas fritas clásicas (familiar)","precio":15000,"icono":"🍟"},"135":{"nombre":"Papas fritas especiales (familiar)","precio":18000,"icono":"🍟"},"136":{"nombre":"Salchipapa clásica","precio":8000,"icono":"🥘"},"137":{"nombre":"Salchipapa especial","precio":10000,"icono":"🥘"},"138":{"nombre":"Tostado clásico","precio":5000,"icono":"🥪"},"139":{"nombre":"Tostado especial","precio":6000,"icono":"🥪"},"140":{"nombre":"Tostado de ternera","precio":10000,"icono":"🥪"},"141":{"nombre":"Sándwich árabe","precio":10000,"icono":"🌯"},"142":{"nombre":"Sándwich árabe de ternera","precio":12000,"icono":"🌯"},"143":{"nombre":"Carlitos","precio":4000,"icono":"🥖"},"144":{"nombre":"Croissant (sándwich)","precio":5000,"icono":"🥖"},"145":{"nombre":"Medialunas rellenas","precio":3000,"icono":"🥖"},"146":{"nombre":"Croissant especial","precio":7000,"icono":"🥖"},"147":{"nombre":"El Tostón","precio":5500,"icono":"🥖"},"148":{"nombre":"French","precio":4000,"icono":"🥞"},"149":{"nombre":"French Croissant","precio":5500,"icono":"🥞"},"150":{"nombre":"Clásico Light","precio":6000,"icono":"🥞"},"151":{"nombre":"Campiña","precio":5500,"icono":"🥞"},"152":{"nombre":"Dulcero","precio":7500,"icono":"🥞"},"153":{"nombre":"Bowl de Yogur","precio":7000,"icono":"🥞"},"154":{"nombre":"Proteico","precio":9500,"icono":"🥞"},"155":{"nombre":"Avocado","precio":7000,"icono":"🥞"},"156":{"nombre":"Torre Mixta (para compartir)","precio":21000,"icono":"🥞"},"157":{"nombre":"Full Fit","precio":10500,"icono":"🥞"},"158":{"nombre":"Desayuno Chicha Candela","precio":9900,"icono":"🥞"},"159":{"nombre":"Espresso","precio":2000,"icono":"☕"},"160":{"nombre":"Espresso mediano","precio":2500,"icono":"☕"},"161":{"nombre":"Americano","precio":3000,"icono":"☕"},"162":{"nombre":"Cortado","precio":2500,"icono":"☕"},"163":{"nombre":"Lágrima","precio":2000,"icono":"☕"},"164":{"nombre":"Lágrima mediana","precio":2500,"icono":"☕"},"165":{"nombre":"Capuchino","precio":3500,"icono":"☕"},"166":{"nombre":"Frappé","precio":7000,"icono":"☕"},"167":{"nombre":"Chocolatada","precio":4000,"icono":"☕"},"168":{"nombre":"Submarino","precio":4500,"icono":"☕"},"169":{"nombre":"Latte","precio":3500,"icono":"☕"},"170":{"nombre":"Latte de Caramelo","precio":4000,"icono":"☕"},"171":{"nombre":"Latte de Vainilla","precio":4000,"icono":"☕"},"172":{"nombre":"Latte de Pistacho","precio":4500,"icono":"☕"},"173":{"nombre":"Latte de Frambuesa","precio":4500,"icono":"☕"},"174":{"nombre":"Iced Latte","precio":4500,"icono":"☕"},"175":{"nombre":"Medialunas dulces","precio":800,"icono":"🥐"},"176":{"nombre":"Medialunas saladas","precio":800,"icono":"🥐"},"177":{"nombre":"Tortillitas","precio":600,"icono":"🥐"},"178":{"nombre":"Pan de campo","precio":750,"icono":"🥐"},"179":{"nombre":"Chipa","precio":3400,"icono":"🥐"},"180":{"nombre":"Croissant","precio":3000,"icono":"🥐"},"181":{"nombre":"Croissant rellenos","precio":4000,"icono":"🥐"},"182":{"nombre":"Muffins (chocolate o vainilla)","precio":3500,"icono":"🥐"},"183":{"nombre":"Alfajores de chocolate","precio":3000,"icono":"🥐"},"184":{"nombre":"Cookies de vainilla y chips de chocolate","precio":2500,"icono":"🥐"},"185":{"nombre":"Cookie Oreo","precio":2500,"icono":"🥐"},"186":{"nombre":"Cookies Red Velvet","precio":2500,"icono":"🥐"},"187":{"nombre":"Rolls de canela","precio":3500,"icono":"🥐"},"188":{"nombre":"Brownie","precio":3500,"icono":"🍰"},"194":{"nombre":"Coca-Cola lata (350 cc)","precio":2500,"icono":"🥤"},"195":{"nombre":"Coca-Cola / Fanta / Sprite (350 cc)","precio":3000,"icono":"🥤"},"196":{"nombre":"Coca-Cola Zero (350 cc)","precio":3000,"icono":"🥤"},"197":{"nombre":"Coca-Cola / Fanta / Sprite (1 litro)","precio":5000,"icono":"🥤"},"198":{"nombre":"Coca-Cola Zero (1 litro)","precio":5000,"icono":"🥤"},"199":{"nombre":"Agua mineral (600 cc)","precio":3000,"icono":"🥤"},"200":{"nombre":"Agua mineral c/ gas (600 cc)","precio":3000,"icono":"🥤"},"201":{"nombre":"Agua saborizada de pera (600 cc)","precio":3000,"icono":"🥤"},"202":{"nombre":"Agua saborizada de pera (1,5 litro)","precio":5500,"icono":"🥤"},"203":{"nombre":"Jugo Cepita (300 cc)","precio":2500,"icono":"🥤"},"204":{"nombre":"Cerveza lata Estrella Galicia lager","precio":4500,"icono":"🥤"},"205":{"nombre":"Cerveza lata Pampa Lager","precio":4500,"icono":"🥤"},"206":{"nombre":"Cerveza lata Pampa Dorada","precio":4500,"icono":"🥤"},"207":{"nombre":"Limonada","precio":5500,"icono":"🥤"},"208":{"nombre":"Jugo de naranja","precio":4000,"icono":"🥤"},"209":{"nombre":"Jarra de limonada","precio":9500,"icono":"🥤"},"210":{"nombre":"Licuado de banana","precio":4000,"icono":"🍹"},"211":{"nombre":"Licuado de frutilla","precio":4000,"icono":"🍹"},"212":{"nombre":"Licuado de ananá","precio":5000,"icono":"🍹"},"213":{"nombre":"Licuado de durazno","precio":5000,"icono":"🍹"},"214":{"nombre":"Licuado de tutti frutti","precio":4000,"icono":"🍹"},"215":{"nombre":"Licuado de maracuyá","precio":5000,"icono":"🍹"},"216":{"nombre":"Smoothie Rojo","precio":7000,"icono":"🫐"},"217":{"nombre":"Smoothie Amarillo","precio":7000,"icono":"🫐"},"218":{"nombre":"Smoothie Violeta","precio":7500,"icono":"🫐"}}}</script>
+  <script src="js/cliente.js"></script>
+<script>(function(){var t;function toast(){var d=document.getElementById('__demo_toast');if(!d){d=document.createElement('div');d.id='__demo_toast';d.style.cssText='position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#0b1128;color:#fff;font:600 14px/1.4 system-ui,sans-serif;padding:12px 18px;border-radius:12px;border:1px solid #6366f1;box-shadow:0 10px 30px rgba(0,0,0,.4);z-index:2147483647;max-width:90vw;text-align:center;transition:opacity .3s';d.textContent='Vista de demostración: esta acción no está disponible acá';document.body.appendChild(d)}d.style.opacity=1;clearTimeout(t);t=setTimeout(function(){d.style.opacity=0},2200)}
+document.addEventListener('submit',function(e){e.preventDefault();e.stopImmediatePropagation();toast()},true);
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-demo-off]');if(a){e.preventDefault();toast()}},true);
+var f=window.fetch;window.fetch=function(u,i){var m=((i&&i.method)||(u&&u.method)||'GET').toUpperCase();if(m==='GET')return f.apply(this,arguments);toast();return Promise.reject(new Error('demo'))};
+var o=XMLHttpRequest.prototype.open;XMLHttpRequest.prototype.open=function(m,u){if(m&&m.toUpperCase()!=='GET'){toast()}return o.apply(this,arguments)}})();</script></body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contacto · JB Sushi</title>
+  <meta name="description" content="JB Sushi: sushi, buena compañía y el ambiente ideal. Mirá el menú y reservá tu mesa.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body class="pagina-interna">
+
+<header class="cabecera" id="cabecera">
+  <a href="index.html" class="logo" aria-label="JB Sushi, inicio">
+    <span class="logo__marca">JB</span>
+    <span class="logo__texto">Sushi</span>
+  </a>
+
+  <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navegacion">
+    <span></span><span></span><span></span>
+  </button>
+
+  <nav class="nav" id="navegacion">
+    <ul class="nav__lista">
+      
+        <li><a href="index.html" class="nav__link ">Inicio</a></li>
+      
+        <li><a href="menu.html" class="nav__link ">Menú</a></li>
+      
+        <li><a href="nosotros.html" class="nav__link ">Nosotros</a></li>
+      
+        <li><a href="contacto.html" class="nav__link activo">Contacto</a></li>
+      
+    </ul>
+    <a href="reservar.html" class="boton boton--redondo nav__reservar">Reservar</a>
+  </nav>
+</header>
+<main>
+
+
+
+<section class="encabezado">
+  <p class="etiqueta">Contacto</p>
+  <h1 class="titulo">Te esperamos</h1>
+</section>
+
+<section class="contacto">
+  <div class="contacto__bloque"><h2>Horarios</h2><p>Martes a domingo<br>20:00 a 00:00</p></div>
+  <div class="contacto__bloque"><h2>Dirección</h2><p>Completar dirección<br>Ciudad</p></div>
+  <div class="contacto__bloque"><h2>Teléfono</h2><p>Completar teléfono<br>WhatsApp</p></div>
+  <div class="contacto__bloque"><h2>Reservas</h2><p><a href="reservar.html" class="enlace">Reservá online</a></p></div>
+</section>
+
+</main>
+<footer class="pie">
+  <div class="pie__marca">
+    <span class="logo__marca">JB</span>
+    <span class="logo__texto">Sushi</span>
+  </div>
+  <p class="pie__texto">Cenas · Martes a domingo · 20:00 a 00:00</p>
+  <ul class="pie__enlaces">
+    <li><a href="menu.html">Menú</a></li>
+    <li><a href="reservar.html">Reservar</a></li>
+    <li><a href="contacto.html">Contacto</a></li>
+  </ul>
+  <p class="pie__copy">© 2026 JB Sushi</p>
+</footer>
+<script src="js/principal.js"></script>
+
+<script>(function(){var t;function toast(){var d=document.getElementById('__demo_toast');if(!d){d=document.createElement('div');d.id='__demo_toast';d.style.cssText='position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#0b1128;color:#fff;font:600 14px/1.4 system-ui,sans-serif;padding:12px 18px;border-radius:12px;border:1px solid #6366f1;box-shadow:0 10px 30px rgba(0,0,0,.4);z-index:2147483647;max-width:90vw;text-align:center;transition:opacity .3s';d.textContent='Vista de demostración: esta acción no está disponible acá';document.body.appendChild(d)}d.style.opacity=1;clearTimeout(t);t=setTimeout(function(){d.style.opacity=0},2200)}
+document.addEventListener('submit',function(e){e.preventDefault();e.stopImmediatePropagation();toast()},true);
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-demo-off]');if(a){e.preventDefault();toast()}},true);
+var f=window.fetch;window.fetch=function(u,i){var m=((i&&i.method)||(u&&u.method)||'GET').toUpperCase();if(m==='GET')return f.apply(this,arguments);toast();return Promise.reject(new Error('demo'))};
+var o=XMLHttpRequest.prototype.open;XMLHttpRequest.prototype.open=function(m,u){if(m&&m.toUpperCase()!=='GET'){toast()}return o.apply(this,arguments)}})();</script></body>
+</html>
+

@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moda y tendencias | Matilda Boutique</title>
+  <meta name="description" content="Matilda Boutique: moda femenina con detalles que se notan. Remeras, abrigos, jeans y más, con envíos a todo el país.">
+  <meta name="theme-color" content="#f8f4ee">
+  <link rel="icon" href="img/marca/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="img/marca/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400;1,6..96,500&family=Jost:wght@300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/base.css">
+  
+  
+  
+    <link rel="stylesheet" href="css/inicio.css">
+  
+</head>
+<body>
+
+<!-- ═════════════ BARRA DE ANUNCIOS ═════════════ -->
+<div class="anuncios" aria-label="Promociones">
+  <div class="anuncios__pista">
+    
+      <span>Envío gratis en compras desde $150.000</span>
+      <span class="anuncios__sep">✦</span>
+      <span>10% off pagando con transferencia</span>
+      <span class="anuncios__sep">✦</span>
+      <span>3 y 6 cuotas sin interés</span>
+      <span class="anuncios__sep">✦</span>
+      <span>Primer cambio sin costo</span>
+      <span class="anuncios__sep">✦</span>
+    
+      <span>Envío gratis en compras desde $150.000</span>
+      <span class="anuncios__sep">✦</span>
+      <span>10% off pagando con transferencia</span>
+      <span class="anuncios__sep">✦</span>
+      <span>3 y 6 cuotas sin interés</span>
+      <span class="anuncios__sep">✦</span>
+      <span>Primer cambio sin costo</span>
+      <span class="anuncios__sep">✦</span>
+    
+  </div>
+</div>
+
+<!-- ═════════════ HEADER ═════════════ -->
+<header class="header" id="header">
+  <div class="header__barra contenedor">
+    <button class="icono-btn header__menu-btn" id="btnMenu" aria-label="Abrir menú" aria-expanded="false">
+      <span class="hamburguesa"></span>
+    </button>
+
+    <form class="buscador" action="catalogo.html" method="GET" role="search" data-buscador>
+      <input type="search" name="q" value="" placeholder="Buscar prendas…" aria-label="Buscar productos"
+             autocomplete="off" maxlength="60" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="sugerencias">
+      <button type="submit" aria-label="Buscar">
+        <svg viewBox="0 0 24 24" width="18" height="18"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      <div class="sugerencias" id="sugerencias" role="listbox" aria-label="Sugerencias" hidden></div>
+    </form>
+
+    <a href="index.html" class="logo" aria-label="Matilda Boutique — Inicio">
+      <img class="logo__imagen" src="img/marca/logo-dorado.png" alt="Matilda boutique" width="689" height="229">
+    </a>
+
+    <div class="header__acciones">
+      <button class="icono-btn header__buscar-movil" id="btnBuscarMovil" aria-label="Buscar">
+        <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      
+      
+        
+        <a href="#" data-demo-off class="icono-btn" aria-label="Iniciar sesión">
+        <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </a>
+      
+      
+      <a href="favoritos.html" class="icono-btn carrito-btn favoritos-btn" aria-label="Favoritos">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <span class="carrito-btn__contador" id="contadorFavoritos" hidden>0</span>
+      </a>
+      <a href="carrito.html" class="icono-btn carrito-btn" aria-label="Carrito">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path d="M5 8h14l-1.2 12H6.2L5 8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 8V6a3 3 0 016 0v2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        <span class="carrito-btn__contador" id="contadorCarrito">0</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="buscador-movil contenedor " id="buscadorMovil">
+    <form class="buscador buscador--movil" action="catalogo.html" method="GET" role="search" data-buscador>
+      <input type="search" name="q" value="" placeholder="Buscar prendas…" aria-label="Buscar productos"
+             autocomplete="off" maxlength="60" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="sugerenciasMovil">
+      <button type="submit" aria-label="Buscar">
+        <svg viewBox="0 0 24 24" width="18" height="18"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      <div class="sugerencias" id="sugerenciasMovil" role="listbox" aria-label="Sugerencias" hidden></div>
+    </form>
+  </div>
+
+  <nav class="nav" id="nav" aria-label="Principal">
+    <ul class="nav__lista contenedor">
+      <li class="nav__item--activo"><a href="index.html">Inicio</a></li>
+      <li class=""><a href="catalogo.html">Catálogo</a></li>
+      <li><a href="#" data-demo-off>Remeras</a></li>
+      <li><a href="#" data-demo-off>Abrigos</a></li>
+      <li><a href="#" data-demo-off>Jeans</a></li>
+      <li><a href="#" data-demo-off>Vestidos</a></li>
+      <li><a href="#" data-demo-off>Accesorios</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+      <li class="nav__item--movil"><a href="favoritos.html">Favoritos</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="overlay" id="overlay"></div>
+
+
+
+
+<main class="inicio">
+
+  <!-- ═════════════ PORTADA ═════════════ -->
+  <section class="portada" data-seccion="portada">
+    <div class="contenedor portada__grilla">
+      <div class="portada__texto">
+        
+          <p class="portada__etiqueta"><span class="portada__linea"></span>Colección otoño · invierno</p>
+        
+        <h1 class="portada__titulo">
+          
+            <span class="portada__renglon"><span>Detalles que</span></span>
+          
+            <span class="portada__renglon"><span><em>se lucen</em>,</span></span>
+          
+            <span class="portada__renglon"><span>prendas que</span></span>
+          
+            <span class="portada__renglon"><span>se quedan.</span></span>
+          
+        </h1>
+        <p class="portada__bajada">Remeras con bordado de perlas, abrigos que abrazan y básicos pensados para combinar. Moda que acompaña tu día, de la mañana a la noche.</p>
+        <div class="portada__acciones">
+          
+            <a href="catalogo.html" class="btn btn--solido">Ver la colección</a>
+          
+          
+            <a href="index.html#esencia" class="portada__secundario">Conocé Matilda <span aria-hidden="true">↓</span></a>
+          
+        </div>
+      </div>
+
+      <div class="portada__visual" data-parallax>
+        <div class="portada__foto">
+          <img src="img/inicio/tapado-camel.webp" alt="Detalles que se lucen, prendas que se quedan." width="520" height="620" fetchpriority="high">
+        </div>
+
+        
+          <!-- Sello giratorio -->
+          <svg class="portada__sello" viewBox="0 0 200 200" aria-hidden="true">
+            <defs><path id="circuloSello" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/></defs>
+            <text><textPath href="#circuloSello" textLength="458" lengthAdjust="spacing">MATILDA ✦ BOUTIQUE ✦ NUEVA TEMPORADA ✦</textPath></text>
+            <circle cx="100" cy="100" r="34" fill="none" stroke="currentColor" stroke-width="1"/>
+            <text x="100" y="112" text-anchor="middle" class="portada__sello-centro">M</text>
+          </svg>
+        
+
+        <figure class="portada__mini">
+          <img src="img/inicio/remeras-paris.webp" alt="" width="400" height="500" loading="lazy">
+          <figcaption>Paris<br><em>en perlas</em></figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <a href="index.html#esencia" class="portada__bajar" aria-label="Seguir bajando"><span></span></a>
+  </section>
+  <span id="contenido"></span>
+
+  <!-- ═════════════ CINTA ═════════════ -->
+  
+    <div class="cinta" aria-hidden="true" data-seccion="cinta">
+      <div class="cinta__pista">
+        
+          <span>Nueva temporada</span><i>✦</i><span><em>Bordado de perlas</em></span><i>✦</i><span>Algodón premium</span><i>✦</i><span><em>Abrigos de paño</em></span><i>✦</i><span>Edición limitada</span><i>✦</i><span><em>Hecho para combinar</em></span><i>✦</i>
+        
+          <span>Nueva temporada</span><i>✦</i><span><em>Bordado de perlas</em></span><i>✦</i><span>Algodón premium</span><i>✦</i><span><em>Abrigos de paño</em></span><i>✦</i><span>Edición limitada</span><i>✦</i><span><em>Hecho para combinar</em></span><i>✦</i>
+        
+      </div>
+    </div>
+  
+
+  <!-- ═════════════ ESENCIA ═════════════ -->
+  
+    <section class="esencia" id="esencia" data-seccion="esencia">
+      <div class="contenedor">
+        <p class="seccion-etiqueta" data-revelar>Nuestra esencia</p>
+        <p class="esencia__texto" data-revelar>
+          Creemos que vestirse bien <span class="esencia__chip "><img src="img/inicio/remeras-paris.webp" alt="" loading="lazy"></span> no es seguir una moda: es elegir prendas que te hagan sentir <em>vos</em> <span class="esencia__chip esencia__chip--oscuro"><img src="img/inicio/tapado-camel.webp" alt="" loading="lazy"></span>. Por eso cuidamos cada tela, cada costura y cada perla, y te acompañamos desde la primera consulta.
+        </p>
+
+        
+          <div class="cifras cifras--4">
+            
+              <div class="cifra" data-revelar>
+                <strong><span data-contar="6">6</span></strong>
+                <span>años vistiéndote</span>
+              </div>
+            
+              <div class="cifra" data-revelar>
+                <strong><span data-contar="12">12</span>+</strong>
+                <span>colecciones</span>
+              </div>
+            
+              <div class="cifra" data-revelar>
+                <strong><span data-contar="24">24</span></strong>
+                <span>provincias con envío</span>
+              </div>
+            
+              <div class="cifra" data-revelar>
+                <strong><span data-contar="98">98</span>%</strong>
+                <span>clientas felices</span>
+              </div>
+            
+          </div>
+        
+      </div>
+    </section>
+  
+
+  <!-- ═════════════ CATEGORÍAS ═════════════ -->
+  
+    <section class="categorias" data-seccion="categorias">
+      <div class="contenedor">
+        <div class="seccion-cabecera">
+          <div>
+            <p class="seccion-etiqueta" data-revelar>Comprá por categoría</p>
+            <h2 class="seccion-titulo" data-revelar>Todo para <em>tu guardarropa</em></h2>
+          </div>
+          <div class="categorias__flechas" aria-hidden="true">
+            <button type="button" class="flecha" data-mover="-1" tabindex="-1">←</button>
+            <button type="button" class="flecha" data-mover="1" tabindex="-1">→</button>
+          </div>
+        </div>
+      </div>
+
+      <ul class="categorias__lista" id="categorias">
+        
+          <li class="categoria categoria--claro" data-revelar>
+            <a href="#" data-demo-off class="categoria__link">
+              <div class="categoria__imagen">
+                <img src="img/inicio/cat-remeras.webp" alt="Remeras" width="400" height="520" loading="lazy" style="--enfoque: 50% 30%">
+              </div>
+              <div class="categoria__info">
+                <span class="categoria__num">01</span>
+                <h3 class="categoria__nombre">Remeras</h3>
+                <p class="categoria__frase">Algodón suave y bordados de perlas. El básico que se lleva todo.</p>
+                <span class="categoria__ver">Explorar <span aria-hidden="true">→</span></span>
+              </div>
+            </a>
+          </li>
+        
+          <li class="categoria categoria--medio" data-revelar>
+            <a href="#" data-demo-off class="categoria__link">
+              <div class="categoria__imagen">
+                <img src="img/inicio/cat-abrigos.webp" alt="Abrigos" width="400" height="520" loading="lazy" style="--enfoque: 50% 45%">
+              </div>
+              <div class="categoria__info">
+                <span class="categoria__num">02</span>
+                <h3 class="categoria__nombre">Abrigos</h3>
+                <p class="categoria__frase">Paños y tejidos para llegar abrigada y con estilo.</p>
+                <span class="categoria__ver">Explorar <span aria-hidden="true">→</span></span>
+              </div>
+            </a>
+          </li>
+        
+          <li class="categoria categoria--claro" data-revelar>
+            <a href="#" data-demo-off class="categoria__link">
+              <div class="categoria__imagen">
+                <img src="img/inicio/cat-jeans.webp" alt="Jeans y pantalones" width="400" height="520" loading="lazy" style="--enfoque: 50% 70%">
+              </div>
+              <div class="categoria__info">
+                <span class="categoria__num">03</span>
+                <h3 class="categoria__nombre">Jeans y pantalones</h3>
+                <p class="categoria__frase">Tiro alto, cortes rectos y sastreros. Calzan de verdad.</p>
+                <span class="categoria__ver">Explorar <span aria-hidden="true">→</span></span>
+              </div>
+            </a>
+          </li>
+        
+          <li class="categoria categoria--oscuro" data-revelar>
+            <a href="#" data-demo-off class="categoria__link">
+              <div class="categoria__imagen">
+                <img src="img/inicio/cat-vestidos.webp" alt="Vestidos" width="400" height="520" loading="lazy" style="--enfoque: 50% 20%">
+              </div>
+              <div class="categoria__info">
+                <span class="categoria__num">04</span>
+                <h3 class="categoria__nombre">Vestidos</h3>
+                <p class="categoria__frase">Para el día, para la noche, para cualquier plan.</p>
+                <span class="categoria__ver">Explorar <span aria-hidden="true">→</span></span>
+              </div>
+            </a>
+          </li>
+        
+      </ul>
+    </section>
+  
+
+  <!-- ═════════════ NOVEDADES (productos reales del catálogo) ═════════════ -->
+  
+    <section class="novedades" data-seccion="novedades">
+      <div class="contenedor">
+        <div class="seccion-cabecera">
+          <div>
+            <p class="seccion-etiqueta" data-revelar>Recién llegado</p>
+            <h2 class="seccion-titulo" data-revelar>Lo <em>nuevo</em> de la semana</h2>
+          </div>
+          
+            <a href="catalogo.html" class="galeria__seguir" data-revelar>Ver todo el catálogo <span aria-hidden="true">→</span></a>
+          
+        </div>
+        <div class="novedades__grilla">
+          
+            <article class="tarjeta"
+         data-id="29"
+         data-nombre="Saco Camel con Top y Short Cuero"
+         data-categoria="Conjuntos"
+         data-color="camel"
+         data-talles="S,M,L"
+         data-precio="69900"
+         data-orden="0">
+  <div class="tarjeta__media">
+    <a href="producto/29.html" class="tarjeta__imagen">
+      
+      
+        <img class="tarjeta__foto" src="img/productos/abrigos/outfits1a.jpg" alt="Saco Camel con Top y Short Cuero" loading="lazy">
+      
+      
+    </a>
+    
+    <button class="tarjeta__fav " data-fav-id="29" aria-pressed="false" aria-label="Agregar a favoritos">
+      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+    </button>
+    
+      
+        <a class="tarjeta__agregar" href="producto/29.html">Elegir talle</a>
+      
+    
+  </div>
+
+  <div class="tarjeta__info">
+    <p class="tarjeta__categoria">Conjuntos <span class="tarjeta__talles">S · M · L</span></p>
+    <h3 class="tarjeta__nombre"><a href="producto/29.html">Saco Camel con Top y Short Cuero</a></h3>
+    <p class="tarjeta__precio">$69.900,00</p>
+    <p class="tarjeta__transferencia">
+      $62.910,00 <span>con transferencia</span>
+    </p>
+  </div>
+</article>
+
+          
+            <article class="tarjeta"
+         data-id="28"
+         data-nombre="Conjunto Chaleco y Pollera Larga"
+         data-categoria="Conjuntos"
+         data-color="crudo"
+         data-talles="S,M,L"
+         data-precio="62900"
+         data-orden="1">
+  <div class="tarjeta__media">
+    <a href="producto/28.html" class="tarjeta__imagen">
+      
+        <span class="tarjeta__etiqueta">Exclusivo</span>
+      
+      
+        <img class="tarjeta__foto" src="img/productos/outifits/outfit4.jpg" alt="Conjunto Chaleco y Pollera Larga" loading="lazy">
+      
+      
+    </a>
+    
+    <button class="tarjeta__fav " data-fav-id="28" aria-pressed="false" aria-label="Agregar a favoritos">
+      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+    </button>
+    
+      
+        <a class="tarjeta__agregar" href="producto/28.html">Elegir talle</a>
+      
+    
+  </div>
+
+  <div class="tarjeta__info">
+    <p class="tarjeta__categoria">Conjuntos <span class="tarjeta__talles">S · M · L</span></p>
+    <h3 class="tarjeta__nombre"><a href="producto/28.html">Conjunto Chaleco y Pollera Larga</a></h3>
+    <p class="tarjeta__precio">$62.900,00</p>
+    <p class="tarjeta__transferencia">
+      $56.610,00 <span>con transferencia</span>
+    </p>
+  </div>
+</article>
+
+          
+            <article class="tarjeta"
+         data-id="27"
+         data-nombre="Conjunto Top Amarillo y Short Arena"
+         data-categoria="Conjuntos"
+         data-color="amarillo"
+         data-talles="S,M,L"
+         data-precio="52900"
+         data-orden="2">
+  <div class="tarjeta__media">
+    <a href="producto/27.html" class="tarjeta__imagen">
+      
+      
+        <img class="tarjeta__foto" src="img/productos/outifits/outfit3.jpg" alt="Conjunto Top Amarillo y Short Arena" loading="lazy">
+      
+      
+    </a>
+    
+    <button class="tarjeta__fav " data-fav-id="27" aria-pressed="false" aria-label="Agregar a favoritos">
+      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+    </button>
+    
+      
+        <a class="tarjeta__agregar" href="producto/27.html">Elegir talle</a>
+      
+    
+  </div>
+
+  <div class="tarjeta__info">
+    <p class="tarjeta__categoria">Conjuntos <span class="tarjeta__talles">S · M · L</span></p>
+    <h3 class="tarjeta__nombre"><a href="producto/27.html">Conjunto Top Amarillo y Short Arena</a></h3>
+    <p class="tarjeta__precio">$52.900,00</p>
+    <p class="tarjeta__transferencia">
+      $47.610,00 <span>con transferencia</span>
+    </p>
+  </div>
+</article>
+
+          
+            <article class="tarjeta"
+         data-id="26"
+         data-nombre="Conjunto Camisa y Short Marrón"
+         data-categoria="Conjuntos"
+         data-color="marron"
+         data-talles="S,M,L"
+         data-precio="54900"
+         data-orden="3">
+  <div class="tarjeta__media">
+    <a href="producto/26.html" class="tarjeta__imagen">
+      
+      
+        <img class="tarjeta__foto" src="img/productos/outifits/outfit1.jpg" alt="Conjunto Camisa y Short Marrón" loading="lazy">
+      
+      
+    </a>
+    
+    <button class="tarjeta__fav " data-fav-id="26" aria-pressed="false" aria-label="Agregar a favoritos">
+      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+    </button>
+    
+      
+        <a class="tarjeta__agregar" href="producto/26.html">Elegir talle</a>
+      
+    
+  </div>
+
+  <div class="tarjeta__info">
+    <p class="tarjeta__categoria">Conjuntos <span class="tarjeta__talles">S · M · L</span></p>
+    <h3 class="tarjeta__nombre"><a href="producto/26.html">Conjunto Camisa y Short Marrón</a></h3>
+    <p class="tarjeta__precio">$54.900,00</p>
+    <p class="tarjeta__transferencia">
+      $49.410,00 <span>con transferencia</span>
+    </p>
+  </div>
+</article>
+
+          
+        </div>
+      </div>
+    </section>
+  
+
+  <!-- ═════════════ DETALLES ═════════════ -->
+  
+    <section class="detalles" data-seccion="detalles">
+      <div class="contenedor detalles__grilla">
+        <div class="detalles__visual">
+          <div class="detalles__marco">
+            
+              <img src="img/inicio/remeras-paris.webp" alt="" class="detalles__img activa" data-paso-img="0" loading="lazy">
+            
+              <img src="img/inicio/tapado-camel.webp" alt="" class="detalles__img " data-paso-img="1" loading="lazy">
+            
+              <img src="img/inicio/modelo-remera.webp" alt="" class="detalles__img " data-paso-img="2" loading="lazy">
+            
+              <img src="img/inicio/remeras-paris.webp" alt="" class="detalles__img " data-paso-img="3" loading="lazy">
+            
+            <span class="detalles__contador"><span id="pasoActual">01</span> / 04</span>
+          </div>
+        </div>
+
+        <div class="detalles__texto">
+          <p class="seccion-etiqueta" data-revelar>El detalle</p>
+          <h2 class="seccion-titulo" data-revelar>Hecho para <em>durar y lucirse</em></h2>
+          <ol class="pasos-detalle">
+            
+              <li class="paso-detalle activo" data-paso="0" data-revelar>
+                <span class="paso-detalle__num">01</span>
+                <div>
+                  <h3>Perlas aplicadas a mano</h3>
+                  <p>Cada letra de nuestras remeras PARIS lleva perlas cosidas una por una. Ninguna es exactamente igual a otra.</p>
+                </div>
+              </li>
+            
+              <li class="paso-detalle " data-paso="1" data-revelar>
+                <span class="paso-detalle__num">02</span>
+                <div>
+                  <h3>Tejidos que se sienten</h3>
+                  <p>Algodón peinado, paños suaves y géneros con caída. Elegimos telas que se ven bien y se sienten mejor.</p>
+                </div>
+              </li>
+            
+              <li class="paso-detalle " data-paso="2" data-revelar>
+                <span class="paso-detalle__num">03</span>
+                <div>
+                  <h3>Cortes que acompañan</h3>
+                  <p>Hombros marcados, largos pensados y siluetas relajadas: prendas que se adaptan a vos, no al revés.</p>
+                </div>
+              </li>
+            
+              <li class="paso-detalle " data-paso="3" data-revelar>
+                <span class="paso-detalle__num">04</span>
+                <div>
+                  <h3>Colores para combinar</h3>
+                  <p>Negro, blanco, crudo y camel. Una paleta atemporal para armar mil looks con pocas prendas.</p>
+                </div>
+              </li>
+            
+          </ol>
+        </div>
+      </div>
+    </section>
+  
+
+  <!-- ═════════════ GUÍA DE ESTILO ═════════════ -->
+  
+    <section class="estilo" data-seccion="estilo">
+      <div class="contenedor estilo__grilla">
+        <div class="estilo__cabecera">
+          <p class="seccion-etiqueta seccion-etiqueta--clara" data-revelar>Guía de estilo</p>
+          <h2 class="seccion-titulo" data-revelar>Cuatro ideas para <em>combinar</em></h2>
+          <p class="estilo__bajada" data-revelar>Con pocas prendas bien elegidas se arman muchos looks. Estas son nuestras fórmulas favoritas.</p>
+        </div>
+
+        <figure class="estilo__imagen" data-revelar>
+          <img src="img/inicio/modelo-remera.webp" alt="" width="520" height="640" loading="lazy">
+        </figure>
+
+        <ol class="consejos">
+          
+            <li class="consejo" data-revelar>
+              <span class="consejo__num">I</span>
+              <h3>Remera + jean de tiro alto</h3>
+              <p>La dupla de siempre. Sumá un cinto fino y zapatillas blancas.</p>
+            </li>
+          
+            <li class="consejo" data-revelar>
+              <span class="consejo__num">II</span>
+              <h3>Tapado camel sobre negro</h3>
+              <p>Un total black con un abrigo claro: elegante y sin esfuerzo.</p>
+            </li>
+          
+            <li class="consejo" data-revelar>
+              <span class="consejo__num">III</span>
+              <h3>Perlas como protagonistas</h3>
+              <p>Si la remera brilla, el resto va simple: pantalón liso y poco accesorio.</p>
+            </li>
+          
+            <li class="consejo" data-revelar>
+              <span class="consejo__num">IV</span>
+              <h3>Capas livianas</h3>
+              <p>Remera, cárdigan y abrigo. Te las sacás o te las ponés según el día.</p>
+            </li>
+          
+        </ol>
+      </div>
+    </section>
+  
+
+  <!-- ═════════════ GUÍA DE TALLES ═════════════ -->
+  
+    <section class="guia-talles" id="talles" data-seccion="talles">
+      <div class="contenedor guia-talles__grilla">
+        <div class="guia-talles__texto">
+          <p class="seccion-etiqueta" data-revelar>Guía de talles</p>
+          <h2 class="seccion-titulo" data-revelar>Encontrá <em>tu talle</em></h2>
+          <p class="guia-talles__bajada" data-revelar>Medidas del cuerpo en centímetros. Si estás entre dos talles, te recomendamos el más grande. ¿Dudas? Escribinos y te asesoramos.</p>
+          
+            <a href="index.html#" class="btn btn--solido" data-revelar>Consultar por WhatsApp</a>
+          
+        </div>
+
+        <div class="guia-talles__tabla" data-revelar>
+          <table>
+            <caption class="visualmente-oculto">Medidas por talle, en centímetros</caption>
+            <thead>
+              <tr><th scope="col">Talle</th><th scope="col">Busto</th><th scope="col">Cintura</th><th scope="col">Cadera</th></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <th scope="row">XS</th>
+                  <td>80–84</td>
+                  <td>60–64</td>
+                  <td>86–90</td>
+                </tr>
+              
+                <tr>
+                  <th scope="row">S</th>
+                  <td>85–89</td>
+                  <td>65–69</td>
+                  <td>91–95</td>
+                </tr>
+              
+                <tr>
+                  <th scope="row">M</th>
+                  <td>90–94</td>
+                  <td>70–74</td>
+                  <td>96–100</td>
+                </tr>
+              
+                <tr>
+                  <th scope="row">L</th>
+                  <td>95–99</td>
+                  <td>75–79</td>
+                  <td>101–105</td>
+                </tr>
+              
+                <tr>
+                  <th scope="row">XL</th>
+                  <td>100–106</td>
+                  <td>80–86</td>
+                  <td>106–112</td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  
+
+  <!-- ═════════════ LOOKS ═════════════ -->
+  
+    <section class="looks" data-seccion="looks">
+      <div class="contenedor">
+        <div class="seccion-cabecera">
+          <div>
+            <p class="seccion-etiqueta" data-revelar>#MatildaLooks</p>
+            <h2 class="seccion-titulo" data-revelar>Inspiración <em>real</em></h2>
+          </div>
+          
+            <a href="index.html#" class="galeria__seguir" data-revelar>Seguinos en Instagram <span aria-hidden="true">→</span></a>
+          
+        </div>
+
+        <div class="looks__grilla">
+          
+            <figure class="looks__item looks__item--alto looks__item--medio" data-revelar>
+              <img src="img/inicio/look-saco.webp" alt="Camel de domingo" loading="lazy" style="--enfoque: 50% 35%">
+              <figcaption>Camel de domingo</figcaption>
+            </figure>
+            
+          
+            <figure class="looks__item  looks__item--claro" data-revelar>
+              <img src="img/inicio/look-outfit1.webp" alt="Blanco y chocolate" loading="lazy" style="--enfoque: 50% 25%">
+              <figcaption>Blanco y chocolate</figcaption>
+            </figure>
+            
+              <figure class="looks__item looks__item--frase" data-revelar>
+                <blockquote>“La elegancia es <em>no pasar desapercibida</em>, sin hacer ruido.”</blockquote>
+              </figure>
+            
+          
+            <figure class="looks__item looks__item--ancho looks__item--claro" data-revelar>
+              <img src="img/inicio/look-outfit2.webp" alt="Volados y arena" loading="lazy" style="--enfoque: 50% 60%">
+              <figcaption>Volados y arena</figcaption>
+            </figure>
+            
+          
+            <figure class="looks__item  looks__item--claro" data-revelar>
+              <img src="img/inicio/look-outfit3.webp" alt="Pastel de primavera" loading="lazy" style="--enfoque: 50% 80%">
+              <figcaption>Pastel de primavera</figcaption>
+            </figure>
+            
+          
+            <figure class="looks__item looks__item--ultimo looks__item--claro" data-revelar>
+              <img src="img/inicio/look-outfit4.webp" alt="Chaleco y pollera" loading="lazy" style="--enfoque: 50% 55%">
+              <figcaption>Chaleco y pollera</figcaption>
+            </figure>
+            
+          
+        </div>
+      </div>
+    </section>
+  
+
+  <!-- ═════════════ TESTIMONIOS ═════════════ -->
+  
+    <section class="testimonios" data-seccion="testimonios" aria-roledescription="carrusel" aria-label="Lo que dicen nuestras clientas">
+      <div class="contenedor testimonios__caja">
+        <p class="seccion-etiqueta" data-revelar>Lo que dicen</p>
+        <div class="testimonios__pista" id="testimonios" aria-live="polite">
+          
+            <figure class="testimonio activo" data-testimonio="0" >
+              <blockquote>La remera con perlas es aún más linda en persona. Me llegó en 3 días y el talle me calzó perfecto.</blockquote>
+              <figcaption><strong>Lucía M.</strong> · Córdoba</figcaption>
+            </figure>
+          
+            <figure class="testimonio " data-testimonio="1" aria-hidden=true>
+              <blockquote>El tapado camel es una belleza: abriga, cae divino y combina con todo. Ya pienso en el segundo.</blockquote>
+              <figcaption><strong>Martina G.</strong> · Rosario</figcaption>
+            </figure>
+          
+            <figure class="testimonio " data-testimonio="2" aria-hidden=true>
+              <blockquote>Me asesoraron por WhatsApp con los talles y acertaron. Compra fácil, empaque hermoso.</blockquote>
+              <figcaption><strong>Carla R.</strong> · CABA</figcaption>
+            </figure>
+          
+        </div>
+        
+          <div class="testimonios__puntos" role="tablist">
+            
+              <button type="button" class="activo" data-ir="0" role="tab" aria-selected="true" aria-label="Opinión 1"></button>
+            
+              <button type="button" class="" data-ir="1" role="tab" aria-selected="false" aria-label="Opinión 2"></button>
+            
+              <button type="button" class="" data-ir="2" role="tab" aria-selected="false" aria-label="Opinión 3"></button>
+            
+          </div>
+        
+      </div>
+    </section>
+  
+
+  <!-- ═════════════ CIERRE ═════════════ -->
+  
+    <section class="cierre" data-seccion="cierre">
+      <div class="contenedor cierre__caja">
+        <span class="perlas cierre__perlas" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+        <p class="cierre__etiqueta script" data-revelar>Tu próximo favorito</p>
+        <h2 class="cierre__titulo" data-revelar>Encontrá la prenda que<br>te va a <em>acompañar</em></h2>
+        <div class="cierre__acciones" data-revelar>
+          <a href="catalogo.html" class="btn btn--claro">Ver el catálogo</a>
+          <a href="#" data-demo-off class="cierre__link">Ver abrigos →</a>
+        </div>
+      </div>
+    </section>
+  
+
+</main>
+
+<!-- ═════════════ BENEFICIOS ═════════════ -->
+<section class="beneficios">
+  <div class="contenedor beneficios__grilla">
+    <div class="beneficio">
+      <span class="beneficio__num">01</span>
+      <h3>Envíos a todo el país</h3>
+      <p>Gratis en compras desde $150.000.</p>
+    </div>
+    <div class="beneficio">
+      <span class="beneficio__num">02</span>
+      <h3>Cuotas sin interés</h3>
+      <p>3 y 6 cuotas con todas las tarjetas.</p>
+    </div>
+    <div class="beneficio">
+      <span class="beneficio__num">03</span>
+      <h3>Tu talle, tu cambio</h3>
+      <p>Primer cambio de talle sin costo.</p>
+    </div>
+    <div class="beneficio">
+      <span class="beneficio__num">04</span>
+      <h3>Compra segura</h3>
+      <p>Cambios y devoluciones sin vueltas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════ FOOTER ═════════════ -->
+<footer class="footer">
+  <div class="contenedor footer__grilla">
+    <div class="footer__marca">
+      <img class="logo__imagen logo__imagen--footer" src="img/marca/logo-claro.png" alt="Matilda boutique" width="689" height="229" loading="lazy">
+      <p>Moda femenina con detalles que se notan: perlas, buenos tejidos y cortes que acompañan cada día.</p>
+    </div>
+    <div>
+      <h4>Tienda</h4>
+      <ul>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="#" data-demo-off>Remeras</a></li>
+        <li><a href="#" data-demo-off>Abrigos</a></li>
+        <li><a href="#" data-demo-off>Accesorios</a></li>
+      </ul>
+    </div>
+    <div id="contacto">
+      <h4>Ayuda</h4>
+      <ul>
+        <li><a href="index.html#">Envíos</a></li>
+        <li><a href="index.html#">Medios de pago</a></li>
+        <li><a href="index.html#">Cambios y devoluciones</a></li>
+        <li><a href="index.html#">Contacto</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Newsletter</h4>
+      <p>Novedades y descuentos, sin spam.</p>
+      <form class="newsletter" onsubmit="return false;">
+        <input type="email" placeholder="Tu email" aria-label="Email">
+        <button type="submit">→</button>
+      </form>
+      <div class="footer__redes">
+        <a href="index.html#" aria-label="Instagram">Instagram</a>
+        <a href="index.html#" aria-label="Facebook">Facebook</a>
+        <a href="index.html#" aria-label="TikTok">TikTok</a>
+      </div>
+    </div>
+  </div>
+  <div class="contenedor footer__legal">
+    <span>© 2026 Matilda Boutique. Todos los derechos reservados.</span>
+    <span class="footer__pagos">Visa · Mastercard · Mercado Pago</span>
+  </div>
+</footer>
+
+<!-- Botón flotante de WhatsApp -->
+<a href="index.html#" class="whatsapp" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 3a9 9 0 00-7.8 13.5L3 21l4.6-1.2A9 9 0 1012 3z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.5-2-1-1 .8c-1-.4-2-1.4-2.3-2.3l.8-1-1-2L9.5 8z" fill="currentColor"/></svg>
+</a>
+
+<!-- Aviso al agregar al carrito -->
+<div class="toast" id="toast" role="status"></div>
+
+
+
+<script src="js/base.js"></script>
+
+
+<script src="js/inicio.js"></script>
+<script>(function(){var t;function toast(){var d=document.getElementById('__demo_toast');if(!d){d=document.createElement('div');d.id='__demo_toast';d.style.cssText='position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#0b1128;color:#fff;font:600 14px/1.4 system-ui,sans-serif;padding:12px 18px;border-radius:12px;border:1px solid #6366f1;box-shadow:0 10px 30px rgba(0,0,0,.4);z-index:2147483647;max-width:90vw;text-align:center;transition:opacity .3s';d.textContent='Vista de demostración: esta acción no está disponible acá';document.body.appendChild(d)}d.style.opacity=1;clearTimeout(t);t=setTimeout(function(){d.style.opacity=0},2200)}
+document.addEventListener('submit',function(e){e.preventDefault();e.stopImmediatePropagation();toast()},true);
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-demo-off]');if(a){e.preventDefault();toast()}},true);
+var f=window.fetch;window.fetch=function(u,i){var m=((i&&i.method)||(u&&u.method)||'GET').toUpperCase();if(m==='GET')return f.apply(this,arguments);toast();return Promise.reject(new Error('demo'))};
+var o=XMLHttpRequest.prototype.open;XMLHttpRequest.prototype.open=function(m,u){if(m&&m.toUpperCase()!=='GET'){toast()}return o.apply(this,arguments)}})();</script></body>
+</html>

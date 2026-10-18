@@ -31,6 +31,22 @@ const PROJECTS = [
   { t: "Landing · Médico", d: "Landing de consultorio con reserva de turnos por día y horario enviada por WhatsApp.", c: "Landings", img: "landing-medico.webp", s: ["HTML", "CSS", "JavaScript"], p: ["#0f766e", "#99f6e4"], n: 3 },
 ];
 
+// Copia navegable de cada proyecto (carpeta demos/)
+const DEMOS = {
+  "santiago-mates.webp": "demos/santiago-mates/index.html",
+  "matilda-boutique.webp": "demos/matilda-boutique/index.html",
+  "akualoe-chic.webp": "demos/akualoe-chic/index.html",
+  "huella-negra.webp": "demos/huella-negra/index.html",
+  "sistema-negocio.webp": "demos/sistema-negocio/index.html",
+  "jb-sushi.webp": "demos/jb-sushi/index.html",
+  "sora-sushi.webp": "demos/sora-sushi/index.html",
+  "street-burger.webp": "demos/street-burger/index.html",
+  "landing-dentista.webp": "demos/landings/dentista/index.html",
+  "landing-abogado.webp": "demos/landings/abogado/index.html",
+  "landing-veterinario.webp": "demos/landings/veterinario/index.html",
+  "landing-medico.webp": "demos/landings/medico/index.html",
+};
+
 const $ = (s) => document.querySelector(s);
 const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
@@ -44,7 +60,7 @@ $("#tech").innerHTML = TECH.map(([n, r, c]) => `
 // Proyectos
 $("#projects").innerHTML = PROJECTS.map((p) => `
   <article class="card proj reveal" data-cat="${p.c}">
-    <div class="shot" style="--p1:${p.p[0]};--p2:${p.p[1]}">
+    <div class="shot" style="--p1:${p.p[0]};--p2:${p.p[1]}" data-demo="${DEMOS[p.img]}" data-title="${esc(p.t)}" role="button" tabindex="0" aria-label="Ver demo de ${esc(p.t)}">
       <div class="mock" aria-hidden="true">
         <div class="mock__bar"><i></i><i></i><i></i></div>
         <div class="mock__body"><div class="mock__hero"></div><div class="mock__row" style="--n:${p.n}"><b></b><b></b><b></b><b></b></div><div class="mock__line"></div></div>
@@ -56,6 +72,7 @@ $("#projects").innerHTML = PROJECTS.map((p) => `
       <h3>${esc(p.t)}</h3>
       <p>${esc(p.d)}</p>
       <div class="tags">${p.s.map((x) => `<span>${esc(x)}</span>`).join("")}</div>
+      <button class="btn btn--primary demo-btn" data-demo="${DEMOS[p.img]}" data-title="${esc(p.t)}">Ver demo en vivo →</button>
     </div>
   </article>`).join("");
 
@@ -86,3 +103,56 @@ const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersec
 document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
 
 $("#year").textContent = new Date().getFullYear();
+
+// Visor de demos: navegás el proyecto dentro del portfolio
+const viewer = $("#viewer"), frame = $("#vframe"), stage = $("#vstage"), bar = $("#vurl");
+let lastFocus = null;
+const openDemo = (url, title) => {
+  lastFocus = document.activeElement;
+  $("#vtitle").textContent = title;
+  $("#vnew").href = url;
+  frame.src = url;
+  bar.textContent = url.replace(/^demos\//, "").replace(/index\.html$/, "");
+  setDevice("desktop");
+  viewer.hidden = false;
+  document.body.classList.add("noscroll");
+  $("#vclose").focus();
+};
+const closeDemo = () => {
+  viewer.hidden = true;
+  frame.src = "about:blank";
+  document.body.classList.remove("noscroll");
+  if (lastFocus) lastFocus.focus();
+};
+const setDevice = (d) => {
+  stage.dataset.device = d;
+  document.querySelectorAll("#vdevices button").forEach((b) => b.classList.toggle("on", b.dataset.d === d));
+};
+document.addEventListener("click", (e) => {
+  const t = e.target.closest("[data-demo]");
+  if (t) openDemo(t.dataset.demo, t.dataset.title);
+});
+document.addEventListener("keydown", (e) => {
+  if (viewer.hidden) return;
+  if (e.key === "Escape") closeDemo();
+  const t = e.target.closest && e.target.closest(".shot[data-demo]");
+  if (t && (e.key === "Enter" || e.key === " ")) e.preventDefault();
+});
+document.addEventListener("keydown", (e) => {
+  const t = e.target.closest && e.target.closest(".shot[data-demo]");
+  if (viewer.hidden && t && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); openDemo(t.dataset.demo, t.dataset.title); }
+});
+$("#vclose").addEventListener("click", closeDemo);
+viewer.addEventListener("click", (e) => { if (e.target === viewer) closeDemo(); });
+$("#vdevices").addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) setDevice(b.dataset.d); });
+const hist = (fn) => () => { try { frame.contentWindow.history[fn](); } catch (_) {} };
+$("#vback").addEventListener("click", hist("back"));
+$("#vfwd").addEventListener("click", hist("forward"));
+$("#vreload").addEventListener("click", () => { try { frame.contentWindow.location.reload(); } catch (_) { frame.src = frame.src; } });
+frame.addEventListener("load", () => {
+  try {
+    const p = frame.contentWindow.location.pathname;
+    if (p !== "/blank") bar.textContent = decodeURIComponent(p).replace(/^.*\/demos\//, "").replace(/index\.html$/, "");
+    $("#vnew").href = frame.contentWindow.location.href;
+  } catch (_) {}
+});

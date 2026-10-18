@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imperial Premium Argentina | Santiago Mates</title>
+  <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/base.css">
+  
+  
+  
+    <link rel="stylesheet" href="../css/producto.css">
+  
+</head>
+<body>
+
+<!-- ═════════════ BARRA DE ANUNCIOS ═════════════ -->
+<div class="anuncios" aria-label="Promociones">
+  <div class="anuncios__pista">
+    
+      <span>Envío gratis en compras desde $150.000</span>
+      <span class="anuncios__sep">✦</span>
+      <span>10% off pagando con transferencia</span>
+      <span class="anuncios__sep">✦</span>
+      <span>3 y 6 cuotas sin interés</span>
+      <span class="anuncios__sep">✦</span>
+      <span>Grabado personalizado en 48 hs</span>
+      <span class="anuncios__sep">✦</span>
+    
+      <span>Envío gratis en compras desde $150.000</span>
+      <span class="anuncios__sep">✦</span>
+      <span>10% off pagando con transferencia</span>
+      <span class="anuncios__sep">✦</span>
+      <span>3 y 6 cuotas sin interés</span>
+      <span class="anuncios__sep">✦</span>
+      <span>Grabado personalizado en 48 hs</span>
+      <span class="anuncios__sep">✦</span>
+    
+  </div>
+</div>
+
+<!-- ═════════════ HEADER ═════════════ -->
+<header class="header" id="header">
+  <div class="header__barra contenedor">
+    <button class="icono-btn header__menu-btn" id="btnMenu" aria-label="Abrir menú" aria-expanded="false">
+      <span class="hamburguesa"></span>
+    </button>
+
+    <form class="buscador" action="#" method="GET" role="search" data-buscador>
+      <input type="search" name="q" value="" placeholder="Buscar productos…" aria-label="Buscar productos"
+             autocomplete="off" maxlength="60" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="sugerencias">
+      <button type="submit" aria-label="Buscar">
+        <svg viewBox="0 0 24 24" width="18" height="18"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      <div class="sugerencias" id="sugerencias" role="listbox" aria-label="Sugerencias" hidden></div>
+    </form>
+
+    <a href="../index.html" class="logo" aria-label="Inicio">
+      
+
+<svg class="logo-svg logo-svg--horizontal " viewBox="0 0 300 70" role="img" aria-label="Santiago Mates · La gran casa matera">
+  <g transform="translate(2 2) scale(0.66)">
+    <path d="M24 40 Q22 33 30 31 L50 31 Q58 33 56 40 Q66 48 66 64 Q66 92 40 96 Q14 92 14 64 Q14 48 24 40 Z" fill="currentColor"/>
+    <path d="M24 40 L56 40" stroke="var(--logo-fondo, transparent)" stroke-width="2.5"/>
+    <path d="M44 34 L52 4 Q53 0 57 0 L64 1" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <text x="54" y="40" class="logo-svg__marca">Santiago<tspan class="logo-svg__marca--fuerte">Mates</tspan></text>
+  <text x="55" y="61" class="logo-svg__bajada">LA GRAN CASA MATERA</text>
+</svg>
+
+
+    </a>
+
+    <div class="header__acciones">
+      <button class="icono-btn header__buscar-movil" id="btnBuscarMovil" aria-label="Buscar">
+        <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      
+      
+        
+        <a href="#" data-demo-off class="icono-btn" aria-label="Iniciar sesión">
+        <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </a>
+      
+      
+      <a href="../favoritos.html" class="icono-btn carrito-btn favoritos-btn" aria-label="Favoritos">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <span class="carrito-btn__contador" id="contadorFavoritos" hidden>0</span>
+      </a>
+      <a href="../carrito.html" class="icono-btn carrito-btn" aria-label="Carrito">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path d="M5 8h14l-1.2 12H6.2L5 8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 8V6a3 3 0 016 0v2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        <span class="carrito-btn__contador" id="contadorCarrito">0</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="buscador-movil contenedor " id="buscadorMovil">
+    <form class="buscador buscador--movil" action="#" method="GET" role="search" data-buscador>
+      <input type="search" name="q" value="" placeholder="Buscar productos…" aria-label="Buscar productos"
+             autocomplete="off" maxlength="60" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="sugerenciasMovil">
+      <button type="submit" aria-label="Buscar">
+        <svg viewBox="0 0 24 24" width="18" height="18"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      <div class="sugerencias" id="sugerenciasMovil" role="listbox" aria-label="Sugerencias" hidden></div>
+    </form>
+  </div>
+
+  <nav class="nav" id="nav" aria-label="Principal">
+    <ul class="nav__lista contenedor">
+      <li class=""><a href="../index.html">Inicio</a></li>
+      
+        <li class="nav__item--activo"><a href="../categoria/mates.html">Mates</a></li>
+      
+        <li class=""><a href="../categoria/termos.html">Termos</a></li>
+      
+        <li class=""><a href="../categoria/bombillas.html">Bombillas</a></li>
+      
+        <li class=""><a href="../categoria/bolsos-materos.html">Bolsos materos</a></li>
+      
+        <li class=""><a href="../categoria/combos.html">Combos</a></li>
+      
+        <li class=""><a href="../categoria/yerbas.html">Yerbas</a></li>
+      
+      <li class="nav__item--movil"><a href="../favoritos.html">Favoritos</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="overlay" id="overlay"></div>
+
+
+
+
+  <!-- ═════════════ MIGAS DE PAN ═════════════ -->
+  <div class="contenedor">
+    <nav class="migas migas--producto" aria-label="Ruta">
+      <a href="../index.html">Inicio</a>
+      <span>/</span>
+      <a href="../categoria/mates.html">Mates</a>
+      <span>/</span>
+      
+        <a href="#" data-demo-off>Imperiales</a>
+        <span>/</span>
+      
+      <span aria-current="page">Imperial Premium Argentina</span>
+    </nav>
+  </div>
+
+  <!-- ═════════════ PRODUCTO ═════════════ -->
+  <main class="producto contenedor" data-id="3" data-precio="78000" data-nombre="Imperial Premium Argentina">
+
+    <!-- Galería: carrusel en celular/tablet, mosaico en PC -->
+    <section class="galeria" aria-label="Fotos del producto">
+      <div class="galeria__visor">
+        <div class="galeria__pista" id="galeriaPista">
+          
+            <button class="foto " data-indice="0" aria-label="Ampliar imagen 1">
+              
+                <img class="foto__img" src="../img/productos/imperial-premium-argentina-1.jpg" alt="Imperial Premium Argentina — foto 1" >
+              
+              <span class="foto__zoom" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16"><circle cx="11" cy="11" r="6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M20 20l-4.5-4.5M11 8.5v5M8.5 11h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </span>
+            </button>
+          
+            <button class="foto " data-indice="1" aria-label="Ampliar imagen 2">
+              
+                <img class="foto__img" src="../img/productos/imperial-premium-argentina-2.jpg" alt="Imperial Premium Argentina — foto 2" >
+              
+              <span class="foto__zoom" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16"><circle cx="11" cy="11" r="6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M20 20l-4.5-4.5M11 8.5v5M8.5 11h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </span>
+            </button>
+          
+        </div>
+
+        
+          <span class="galeria__etiqueta">Nuevo</span>
+        
+
+        <div class="galeria__contador" aria-hidden="true">
+          <span id="fotoActual">01</span> / 02
+        </div>
+        <div class="galeria__progreso" aria-hidden="true"><span id="galeriaProgreso"></span></div>
+      </div>
+
+      <div class="galeria__miniaturas" role="tablist" aria-label="Elegir imagen">
+        
+          <button class="miniatura activa  miniatura--foto" data-indice="0" aria-label="Imagen 1">
+            
+              <img src="../img/productos/imperial-premium-argentina-1.jpg" alt="" loading="lazy">
+            
+          </button>
+        
+          <button class="miniatura   miniatura--foto" data-indice="1" aria-label="Imagen 2">
+            
+              <img src="../img/productos/imperial-premium-argentina-2.jpg" alt="" loading="lazy">
+            
+          </button>
+        
+      </div>
+    </section>
+
+    <!-- Información y compra -->
+    <section class="info" aria-label="Información del producto">
+      <div class="info__interior">
+        <div class="info__cabecera">
+          <p class="info__categoria">Mates</p>
+          <p class="info__codigo">Cód. 0003</p>
+        </div>
+
+        <h1 class="info__titulo">Imperial Premium Argentina</h1>
+
+        <div class="precio">
+          <p class="precio__lista">$78.000,00</p>
+          <p class="precio__transferencia">
+            <strong>$70.200,00</strong>
+            con transferencia
+            <span class="precio__tag">-10%</span>
+          </p>
+          <p class="precio__cuotas">
+            6 cuotas sin interés de <strong>$13.000,00</strong>
+          </p>
+        </div>
+
+        <p class="info__resumen">El clásico imperial con virola y guarda de alpaca, forrado en cuero croco y el sol de bronce.</p>
+
+        <!-- Variantes de color: solo si se vende en más de un color (con uno solo, ese va al carrito) -->
+        
+        <div class="opcion">
+          <p class="opcion__titulo">
+            Color: <span id="colorElegido">Negro</span>
+            <small class="opcion__cuantos">2 colores disponibles</small>
+          </p>
+          <div class="opcion__colores">
+            
+              <label class="swatch" title="Negro">
+                <input type="radio" name="color" value="Negro" aria-label="Negro" checked>
+                <span class="swatch__muestra" style="--muestra: #1f1a17"></span>
+              </label>
+            
+              <label class="swatch" title="Plateado">
+                <input type="radio" name="color" value="Plateado" aria-label="Plateado" >
+                <span class="swatch__muestra" style="--muestra: #b9b9b4"></span>
+              </label>
+            
+          </div>
+        </div>
+        
+
+        <!-- Cantidad + agregar -->
+        <div class="compra" id="compra">
+          <div class="cantidad" aria-label="Cantidad">
+            <button type="button" class="cantidad__btn" data-cantidad="-1" aria-label="Restar">−</button>
+            <input type="number" id="cantidad" value="1" min="1" max="6" inputmode="numeric" aria-label="Cantidad">
+            <button type="button" class="cantidad__btn" data-cantidad="1" aria-label="Sumar">+</button>
+          </div>
+          <button class="btn btn--solido compra__agregar" id="btnAgregar" >Agregar al carrito</button>
+          
+          <button class="compra__fav tarjeta__fav " data-fav-id="3" aria-pressed="false" aria-label="Agregar a favoritos">
+            <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <button class="btn btn--linea compra__ahora" >Comprar ahora</button>
+
+        <div class="stock ">
+          <span class="stock__punto"></span>
+          
+            En stock · quedan <strong>6</strong> unidades
+          
+        </div>
+
+        <!-- Calculador de envío (demo) -->
+        <form class="envio" id="formEnvio" novalidate>
+          <label for="codigoPostal" class="envio__label">Calculá el envío</label>
+          <div class="envio__fila">
+            <input type="text" id="codigoPostal" placeholder="Código postal" inputmode="numeric" maxlength="4">
+            <button type="submit">Calcular</button>
+          </div>
+          <ul class="envio__resultados" id="envioResultados" hidden></ul>
+        </form>
+
+        <!-- Beneficios rápidos -->
+        <ul class="ventajas">
+          <li>
+            <svg viewBox="0 0 24 24" width="20" height="20"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="7" cy="17.5" r="1.7" fill="var(--blanco)" stroke="currentColor" stroke-width="1.5"/><circle cx="17" cy="17.5" r="1.7" fill="var(--blanco)" stroke="currentColor" stroke-width="1.5"/></svg>
+            <span><strong>Envío gratis</strong> desde $150.000</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 12a8 8 0 0114-5.3M20 12a8 8 0 01-14 5.3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M18 3v4h-4M6 21v-4h4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><strong>Cambios</strong> hasta 30 días</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6l7-3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><strong>Compra</strong> protegida</span>
+          </li>
+        </ul>
+
+        <!-- Información extra -->
+        <div class="info__acordeones">
+          <div class="acordeon">
+            <button class="acordeon__titulo" aria-expanded="false">Medios de pago <span class="acordeon__icono"></span></button>
+            <div class="acordeon__contenido">
+              <p>Tarjetas de crédito y débito, transferencia bancaria y billeteras virtuales.</p>
+              <p><strong>6 cuotas sin interés</strong> con todas las tarjetas bancarias.</p>
+              <p class="info__logos">Visa · Mastercard · Amex · Naranja · Mercado Pago</p>
+            </div>
+          </div>
+          <div class="acordeon">
+            <button class="acordeon__titulo" aria-expanded="false">Envíos <span class="acordeon__icono"></span></button>
+            <div class="acordeon__contenido">
+              <p>Enviamos a todo el país. Despachamos dentro de las 48 hs hábiles de acreditado el pago.</p>
+              <p>También podés retirar sin cargo por nuestro showroom.</p>
+            </div>
+          </div>
+          <div class="acordeon">
+            <button class="acordeon__titulo" aria-expanded="false">Cambios y devoluciones <span class="acordeon__icono"></span></button>
+            <div class="acordeon__contenido">
+              <p>Tenés 30 días desde que recibís tu compra para cambiarla o devolverla, sin uso y en su empaque original.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═════════════ DESCRIPCIÓN Y FICHA TÉCNICA ═════════════ -->
+  <section class="detalle">
+    <div class="contenedor detalle__grilla">
+      <div class="detalle__texto">
+        <p class="detalle__etiqueta">Sobre el producto</p>
+        <h2 class="detalle__titulo">Cada pieza es única</h2>
+        
+          <p>El imperial de siempre, llevado a su versión más premium. Virola y guarda de alpaca trabajadas a mano y forrado en cuero croco.</p>
+        
+          <p>El aplique de bronce con el sol completa una pieza elegante para regalar o para disfrutar todos los días.</p>
+        
+
+        <ol class="destacados">
+          
+            <li>
+              <span class="destacados__num">01</span>
+              <span>Virola y guarda de alpaca</span>
+            </li>
+          
+            <li>
+              <span class="destacados__num">02</span>
+              <span>Forrado en cuero croco</span>
+            </li>
+          
+            <li>
+              <span class="destacados__num">03</span>
+              <span>Aplique de bronce</span>
+            </li>
+          
+            <li>
+              <span class="destacados__num">04</span>
+              <span>Hecho 100% a mano</span>
+            </li>
+          
+        </ol>
+      </div>
+
+      <div class="ficha">
+        <p class="detalle__etiqueta">Ficha técnica</p>
+        <dl class="ficha__lista">
+          
+            <div class="ficha__fila">
+              <dt>Tipo</dt>
+              <dd>Imperial</dd>
+            </div>
+          
+            <div class="ficha__fila">
+              <dt>Material</dt>
+              <dd>Calabaza forrada en cuero croco</dd>
+            </div>
+          
+            <div class="ficha__fila">
+              <dt>Virola</dt>
+              <dd>Alpaca</dd>
+            </div>
+          
+            <div class="ficha__fila">
+              <dt>Aplique</dt>
+              <dd>Bronce</dd>
+            </div>
+          
+            <div class="ficha__fila">
+              <dt>Origen</dt>
+              <dd>Hecho a mano en Argentina</dd>
+            </div>
+          
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════ RELACIONADOS ═════════════ -->
+  <section class="relacionados contenedor">
+    <div class="relacionados__cabecera">
+      <h2 class="relacionados__titulo">También te puede gustar</h2>
+      <a href="../categoria/mates.html" class="relacionados__link">Ver más de Mates →</a>
+    </div>
+    <div class="relacionados__grilla">
+      
+        <article class="tarjeta"
+         data-id="1"
+         data-nombre="Torpedo Argentino"
+         data-categoria="Mates"
+         data-sub="torpedos"
+         data-colores="negro marron"
+         data-precio="68000"
+         data-orden="0">
+  <div class="tarjeta__media">
+    <a href="1.html" class="tarjeta__imagen">
+      
+        <span class="tarjeta__etiqueta">Más vendido</span>
+      
+      
+        <img class="tarjeta__foto" src="../img/productos/torpedo-argentino-1.jpg" alt="Torpedo Argentino" loading="lazy">
+      
+      
+      
+      
+        <img class="tarjeta__foto tarjeta__foto--alt" src="../img/productos/torpedo-argentino-2.jpg" alt="" aria-hidden="true" loading="lazy">
+      
+    </a>
+    
+    <button class="tarjeta__fav " data-fav-id="1" aria-pressed="false" aria-label="Agregar a favoritos">
+      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+    </button>
+    
+      <button class="tarjeta__agregar" data-agregar>Agregar al carrito</button>
+    
+  </div>
+
+  <div class="tarjeta__info">
+    <p class="tarjeta__categoria">Mates</p>
+    <h3 class="tarjeta__nombre"><a href="1.html">Torpedo Argentino</a></h3>
+    <p class="tarjeta__precio">$68.000,00</p>
+    <p class="tarjeta__transferencia">
+      $61.200,00 <span>con transferencia</span>
+    </p>
+  </div>
+</article>
+
+      
+        <article class="tarjeta"
+         data-id="2"
+         data-nombre="Torpedo Premium Argentina"
+         data-categoria="Mates"
+         data-sub="torpedos"
+         data-colores="negro"
+         data-precio="85000"
+         data-orden="1">
+  <div class="tarjeta__media">
+    <a href="2.html" class="tarjeta__imagen">
+      
+        <span class="tarjeta__etiqueta">Exclusivo</span>
+      
+      
+        <img class="tarjeta__foto" src="../img/productos/torpedo-premium-argentina-1.jpg" alt="Torpedo Premium Argentina" loading="lazy">
+      
+      
+      
+      
+        <img class="tarjeta__foto tarjeta__foto--alt" src="../img/productos/torpedo-premium-argentina-2.jpg" alt="" aria-hidden="true" loading="lazy">
+      
+    </a>
+    
+    <button class="tarjeta__fav " data-fav-id="2" aria-pressed="false" aria-label="Agregar a favoritos">
+      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+    </button>
+    
+      <button class="tarjeta__agregar" data-agregar>Agregar al carrito</button>
+    
+  </div>
+
+  <div class="tarjeta__info">
+    <p class="tarjeta__categoria">Mates</p>
+    <h3 class="tarjeta__nombre"><a href="2.html">Torpedo Premium Argentina</a></h3>
+    <p class="tarjeta__precio">$85.000,00</p>
+    <p class="tarjeta__transferencia">
+      $76.500,00 <span>con transferencia</span>
+    </p>
+  </div>
+</article>
+
+      
+        <article class="tarjeta"
+         data-id="4"
+         data-nombre="Torpedo Uruguayo"
+         data-categoria="Mates"
+         data-sub="torpedos"
+         data-colores="negro"
+         data-precio="62000"
+         data-orden="2">
+  <div class="tarjeta__media">
+    <a href="4.html" class="tarjeta__imagen">
+      
+      
+        <img class="tarjeta__foto" src="../img/productos/torpedo-uruguayo-1.jpg" alt="Torpedo Uruguayo" loading="lazy">
+      
+      
+      
+      
+        <img class="tarjeta__foto tarjeta__foto--alt" src="../img/productos/torpedo-uruguayo-2.jpg" alt="" aria-hidden="true" loading="lazy">
+      
+    </a>
+    
+    <button class="tarjeta__fav " data-fav-id="4" aria-pressed="false" aria-label="Agregar a favoritos">
+      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+    </button>
+    
+      <button class="tarjeta__agregar" data-agregar>Agregar al carrito</button>
+    
+  </div>
+
+  <div class="tarjeta__info">
+    <p class="tarjeta__categoria">Mates</p>
+    <h3 class="tarjeta__nombre"><a href="4.html">Torpedo Uruguayo</a></h3>
+    <p class="tarjeta__precio">$62.000,00</p>
+    <p class="tarjeta__transferencia">
+      $55.800,00 <span>con transferencia</span>
+    </p>
+  </div>
+</article>
+
+      
+        <article class="tarjeta"
+         data-id="5"
+         data-nombre="Torpedo Roma de Calabaza"
+         data-categoria="Mates"
+         data-sub="torpedos"
+         data-colores="rojo marron negro"
+         data-precio="74000"
+         data-orden="3">
+  <div class="tarjeta__media">
+    <a href="5.html" class="tarjeta__imagen">
+      
+        <span class="tarjeta__etiqueta">Últimas unidades</span>
+      
+      
+        <img class="tarjeta__foto" src="../img/productos/torpedo-roma-calabaza-1.jpg" alt="Torpedo Roma de Calabaza" loading="lazy">
+      
+      
+      
+      
+        <img class="tarjeta__foto tarjeta__foto--alt" src="../img/productos/torpedo-roma-calabaza-2.jpg" alt="" aria-hidden="true" loading="lazy">
+      
+    </a>
+    
+    <button class="tarjeta__fav " data-fav-id="5" aria-pressed="false" aria-label="Agregar a favoritos">
+      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+    </button>
+    
+      <button class="tarjeta__agregar" data-agregar>Agregar al carrito</button>
+    
+  </div>
+
+  <div class="tarjeta__info">
+    <p class="tarjeta__categoria">Mates</p>
+    <h3 class="tarjeta__nombre"><a href="5.html">Torpedo Roma de Calabaza</a></h3>
+    <p class="tarjeta__precio">$74.000,00</p>
+    <p class="tarjeta__transferencia">
+      $66.600,00 <span>con transferencia</span>
+    </p>
+  </div>
+</article>
+
+      
+    </div>
+  </section>
+
+  <!-- Barra de compra fija (celular / tablet) -->
+  <div class="barra-compra" id="barraCompra" aria-hidden="true">
+    <div class="barra-compra__info">
+      <p class="barra-compra__nombre">Imperial Premium Argentina</p>
+      <p class="barra-compra__precio">$78.000,00</p>
+    </div>
+    <button class="btn btn--solido" id="btnAgregarBarra" tabindex="-1" >Agregar</button>
+  </div>
+
+  <!-- Visor de fotos a pantalla completa -->
+  <div class="visor" id="visor" role="dialog" aria-modal="true" aria-label="Fotos del producto" hidden>
+    <button class="visor__cerrar" id="visorCerrar" aria-label="Cerrar">
+      <svg viewBox="0 0 24 24" width="22" height="22"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+    <button class="visor__flecha visor__flecha--prev" id="visorPrev" aria-label="Anterior">←</button>
+    <div class="visor__foto" id="visorFoto"><span class="foto__texto">(IMAGEN 1)</span></div>
+    <button class="visor__flecha visor__flecha--sig" id="visorSig" aria-label="Siguiente">→</button>
+    <p class="visor__contador" id="visorContador">01 / 02</p>
+  </div>
+
+  <!-- ═════════════ BENEFICIOS ═════════════ -->
+<section class="beneficios">
+  <div class="contenedor beneficios__grilla">
+    <div class="beneficio">
+      <span class="beneficio__num">01</span>
+      <h3>Envíos a todo el país</h3>
+      <p>Gratis en compras desde $150.000.</p>
+    </div>
+    <div class="beneficio">
+      <span class="beneficio__num">02</span>
+      <h3>Cuotas sin interés</h3>
+      <p>3 y 6 cuotas con todas las tarjetas.</p>
+    </div>
+    <div class="beneficio">
+      <span class="beneficio__num">03</span>
+      <h3>Personalizá tu pieza</h3>
+      <p>Grabado a láser con tu diseño.</p>
+    </div>
+    <div class="beneficio">
+      <span class="beneficio__num">04</span>
+      <h3>Compra segura</h3>
+      <p>Cambios y devoluciones sin vueltas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════ FOOTER ═════════════ -->
+
+<footer class="footer">
+  <div class="contenedor footer__grilla">
+    <div class="footer__marca">
+      
+
+<svg class="logo-svg logo-svg--apilado logo-svg--footer" viewBox="0 0 260 190" role="img" aria-label="Santiago Mates · La gran casa matera">
+  <!-- Mate con bombilla -->
+  <g transform="translate(104 6)">
+    <path d="M24 40 Q22 33 30 31 L50 31 Q58 33 56 40 Q66 48 66 64 Q66 92 40 96 Q14 92 14 64 Q14 48 24 40 Z" fill="currentColor"/>
+    <path d="M24 40 L56 40" stroke="var(--logo-fondo, transparent)" stroke-width="2.5"/>
+    <path d="M44 34 L52 4 Q53 0 57 0 L64 1" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <text x="130" y="148" text-anchor="middle" class="logo-svg__marca">Santiago<tspan class="logo-svg__marca--fuerte">Mates</tspan></text>
+  <text x="130" y="176" text-anchor="middle" class="logo-svg__bajada">LA GRAN CASA MATERA</text>
+</svg>
+
+
+      <p>Mates, bombillas y todo para la ronda, hechos a mano con materiales nobles. Enviamos a todo el país.</p>
+      
+    </div>
+    <div>
+      <h4>Tienda</h4>
+      <ul>
+        
+          <li><a href="../categoria/mates.html">Mates</a></li>
+        
+          <li><a href="../categoria/termos.html">Termos</a></li>
+        
+          <li><a href="../categoria/bombillas.html">Bombillas</a></li>
+        
+          <li><a href="../categoria/bolsos-materos.html">Bolsos materos</a></li>
+        
+          <li><a href="../categoria/combos.html">Combos</a></li>
+        
+          <li><a href="../categoria/yerbas.html">Yerbas</a></li>
+        
+      </ul>
+    </div>
+    <div>
+      <h4>Ayuda</h4>
+      <ul>
+        <li><a href="../terminos.html#envios">Envíos</a></li>
+        <li><a href="../terminos.html#pagos">Medios de pago</a></li>
+        <li><a href="../cambios-y-devoluciones.html">Cambios y devoluciones</a></li>
+        
+      </ul>
+    </div>
+    <div>
+      <h4>Legales</h4>
+      <ul>
+        <li><a href="../terminos.html">Términos y condiciones</a></li>
+        <li><a href="../privacidad.html">Política de privacidad</a></li>
+        <li><a href="../cookies.html">Política de cookies</a></li>
+        <li><a href="../arrepentimiento.html" class="footer__arrepentimiento">Botón de arrepentimiento</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="contenedor footer__legal">
+    <span>
+      © 2026 Santiago Mates.
+      
+      Todos los derechos reservados.
+    </span>
+    <span class="footer__oficiales">
+      <a href="https://www.argentina.gob.ar/produccion/defensadelconsumidor/formulario" target="_blank" rel="noopener">Defensa de las y los consumidores. Para reclamos ingrese aquí</a>
+      
+    </span>
+    <span class="footer__pagos">Visa · Mastercard · Amex · Naranja · Mercado Pago · Transferencia</span>
+  </div>
+</footer>
+
+
+
+<!-- Aviso de cookies (solo usamos las necesarias: se muestra una vez) -->
+<div class="aviso-cookies" id="avisoCookies" role="region" aria-label="Aviso de cookies" hidden>
+  <p>
+    Usamos solo las cookies necesarias para que la tienda funcione (tu sesión y tu carrito). No usamos cookies de publicidad.
+    <a href="../cookies.html">Más información</a>
+  </p>
+  <button type="button" class="btn btn--solido btn--chico" id="aceptarCookies">Entendido</button>
+</div>
+
+<!-- Aviso al agregar al carrito -->
+<div class="toast" id="toast" role="status"></div>
+
+
+
+<script src="../js/base.js"></script>
+
+
+  <script src="../js/producto.js"></script>
+<script>(function(){var t;function toast(){var d=document.getElementById('__demo_toast');if(!d){d=document.createElement('div');d.id='__demo_toast';d.style.cssText='position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#0b1128;color:#fff;font:600 14px/1.4 system-ui,sans-serif;padding:12px 18px;border-radius:12px;border:1px solid #6366f1;box-shadow:0 10px 30px rgba(0,0,0,.4);z-index:2147483647;max-width:90vw;text-align:center;transition:opacity .3s';d.textContent='Vista de demostración: esta acción no está disponible acá';document.body.appendChild(d)}d.style.opacity=1;clearTimeout(t);t=setTimeout(function(){d.style.opacity=0},2200)}
+document.addEventListener('submit',function(e){e.preventDefault();e.stopImmediatePropagation();toast()},true);
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-demo-off]');if(a){e.preventDefault();toast()}},true);
+var f=window.fetch;window.fetch=function(u,i){var m=((i&&i.method)||(u&&u.method)||'GET').toUpperCase();if(m==='GET')return f.apply(this,arguments);toast();return Promise.reject(new Error('demo'))};
+var o=XMLHttpRequest.prototype.open;XMLHttpRequest.prototype.open=function(m,u){if(m&&m.toUpperCase()!=='GET'){toast()}return o.apply(this,arguments)}})();</script></body>
+</html>

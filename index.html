@@ -89,7 +89,7 @@
     <section class="section" id="proyectos">
       <div class="container">
         <h2>Proyectos</h2>
-        <p class="sub">Una muestra de lo que construimos</p>
+        <p class="sub">Tocá un proyecto para navegarlo como si fuera el sitio real</p>
         <div class="filters" id="filters" role="tablist" aria-label="Filtrar proyectos"></div>
         <div class="grid grid--3" id="projects"></div>
       </div>
@@ -124,6 +124,30 @@
       <span>@velta.web · <a href="mailto:hola@veltaweb.com">hola@veltaweb.com</a></span>
     </div>
   </footer>
+
+  <div class="viewer" id="viewer" hidden role="dialog" aria-modal="true" aria-labelledby="vtitle">
+    <div class="viewer__win">
+      <div class="viewer__top">
+        <div class="viewer__nav">
+          <button id="vback" aria-label="Atrás">←</button>
+          <button id="vfwd" aria-label="Adelante">→</button>
+          <button id="vreload" aria-label="Recargar">↻</button>
+        </div>
+        <div class="viewer__addr"><span id="vtitle">Demo</span><code id="vurl"></code></div>
+        <div class="viewer__devices" id="vdevices">
+          <button data-d="desktop" class="on" aria-label="Escritorio" title="Escritorio">🖥</button>
+          <button data-d="tablet" aria-label="Tablet" title="Tablet">▭</button>
+          <button data-d="mobile" aria-label="Celular" title="Celular">📱</button>
+        </div>
+        <a id="vnew" class="viewer__ext" href="#" target="_blank" rel="noopener" aria-label="Abrir en pestaña nueva" title="Abrir en pestaña nueva">↗</a>
+        <button id="vclose" class="viewer__x" aria-label="Cerrar demo">✕</button>
+      </div>
+      <div class="viewer__stage" id="vstage" data-device="desktop">
+        <iframe id="vframe" title="Demostración del proyecto" sandbox="allow-scripts allow-same-origin allow-forms allow-popups" src="about:blank"></iframe>
+      </div>
+      <p class="viewer__hint">Copia de demostración: navegá libremente. Carrito, pagos y formularios están desactivados.</p>
+    </div>
+  </div>
 
   <script src="js/main.js"></script>
 </body>

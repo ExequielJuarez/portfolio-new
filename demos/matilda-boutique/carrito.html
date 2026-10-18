@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tu carrito | Matilda Boutique</title>
+  <meta name="description" content="Matilda Boutique: moda femenina con detalles que se notan. Remeras, abrigos, jeans y más, con envíos a todo el país.">
+  <meta name="theme-color" content="#f8f4ee">
+  <link rel="icon" href="img/marca/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="img/marca/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400;1,6..96,500&family=Jost:wght@300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/base.css">
+  
+  
+  
+    <link rel="stylesheet" href="css/carrito.css">
+  
+</head>
+<body>
+
+<!-- ═════════════ BARRA DE ANUNCIOS ═════════════ -->
+<div class="anuncios" aria-label="Promociones">
+  <div class="anuncios__pista">
+    
+      <span>Envío gratis en compras desde $150.000</span>
+      <span class="anuncios__sep">✦</span>
+      <span>10% off pagando con transferencia</span>
+      <span class="anuncios__sep">✦</span>
+      <span>3 y 6 cuotas sin interés</span>
+      <span class="anuncios__sep">✦</span>
+      <span>Primer cambio sin costo</span>
+      <span class="anuncios__sep">✦</span>
+    
+      <span>Envío gratis en compras desde $150.000</span>
+      <span class="anuncios__sep">✦</span>
+      <span>10% off pagando con transferencia</span>
+      <span class="anuncios__sep">✦</span>
+      <span>3 y 6 cuotas sin interés</span>
+      <span class="anuncios__sep">✦</span>
+      <span>Primer cambio sin costo</span>
+      <span class="anuncios__sep">✦</span>
+    
+  </div>
+</div>
+
+<!-- ═════════════ HEADER ═════════════ -->
+<header class="header" id="header">
+  <div class="header__barra contenedor">
+    <button class="icono-btn header__menu-btn" id="btnMenu" aria-label="Abrir menú" aria-expanded="false">
+      <span class="hamburguesa"></span>
+    </button>
+
+    <form class="buscador" action="catalogo.html" method="GET" role="search" data-buscador>
+      <input type="search" name="q" value="" placeholder="Buscar prendas…" aria-label="Buscar productos"
+             autocomplete="off" maxlength="60" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="sugerencias">
+      <button type="submit" aria-label="Buscar">
+        <svg viewBox="0 0 24 24" width="18" height="18"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      <div class="sugerencias" id="sugerencias" role="listbox" aria-label="Sugerencias" hidden></div>
+    </form>
+
+    <a href="index.html" class="logo" aria-label="Matilda Boutique — Inicio">
+      <img class="logo__imagen" src="img/marca/logo-dorado.png" alt="Matilda boutique" width="689" height="229">
+    </a>
+
+    <div class="header__acciones">
+      <button class="icono-btn header__buscar-movil" id="btnBuscarMovil" aria-label="Buscar">
+        <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      
+      
+        
+        <a href="#" data-demo-off class="icono-btn" aria-label="Iniciar sesión">
+        <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </a>
+      
+      
+      <a href="favoritos.html" class="icono-btn carrito-btn favoritos-btn" aria-label="Favoritos">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <span class="carrito-btn__contador" id="contadorFavoritos" hidden>0</span>
+      </a>
+      <a href="carrito.html" class="icono-btn carrito-btn" aria-label="Carrito">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path d="M5 8h14l-1.2 12H6.2L5 8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 8V6a3 3 0 016 0v2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        <span class="carrito-btn__contador" id="contadorCarrito">0</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="buscador-movil contenedor " id="buscadorMovil">
+    <form class="buscador buscador--movil" action="catalogo.html" method="GET" role="search" data-buscador>
+      <input type="search" name="q" value="" placeholder="Buscar prendas…" aria-label="Buscar productos"
+             autocomplete="off" maxlength="60" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="sugerenciasMovil">
+      <button type="submit" aria-label="Buscar">
+        <svg viewBox="0 0 24 24" width="18" height="18"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      <div class="sugerencias" id="sugerenciasMovil" role="listbox" aria-label="Sugerencias" hidden></div>
+    </form>
+  </div>
+
+  <nav class="nav" id="nav" aria-label="Principal">
+    <ul class="nav__lista contenedor">
+      <li class=""><a href="index.html">Inicio</a></li>
+      <li class=""><a href="catalogo.html">Catálogo</a></li>
+      <li><a href="#" data-demo-off>Remeras</a></li>
+      <li><a href="#" data-demo-off>Abrigos</a></li>
+      <li><a href="#" data-demo-off>Jeans</a></li>
+      <li><a href="#" data-demo-off>Vestidos</a></li>
+      <li><a href="#" data-demo-off>Accesorios</a></li>
+      <li><a href="carrito.html#contacto">Contacto</a></li>
+      <li class="nav__item--movil"><a href="favoritos.html">Favoritos</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="overlay" id="overlay"></div>
+
+
+
+
+  <!-- ═════════════ ENCABEZADO ═════════════ -->
+  <section class="carrito-hero contenedor">
+    <nav class="migas" aria-label="Ruta">
+      <a href="index.html">Inicio</a>
+      <span>/</span>
+      <span aria-current="page">Carrito</span>
+    </nav>
+
+    <div class="carrito-hero__fila">
+      <h1 class="carrito-hero__titulo">
+        Tu carrito
+        <sup class="carrito-hero__cantidad" id="cantidadTitulo">0</sup>
+      </h1>
+
+      
+<ol class="pasos" aria-label="Pasos de la compra">
+  
+    <li class="pasos__item activo" aria-current="step">
+      
+        <span>01</span> Carrito
+      
+    </li>
+  
+    <li class="pasos__item " >
+      
+        <span>02</span> Datos
+      
+    </li>
+  
+    <li class="pasos__item " >
+      
+        <span>03</span> Pago
+      
+    </li>
+  
+</ol>
+
+    </div>
+  </section>
+
+  <!-- ═════════════ CARRITO ═════════════ -->
+  <main class="carrito contenedor carrito--vacio" id="carrito">
+
+    <!-- Estado vacío -->
+    <div class="carrito-vacio">
+      <span class="carrito-vacio__icono" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="40" height="40"><path d="M5 8h14l-1.2 12H6.2L5 8z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/><path d="M9 8V6a3 3 0 016 0v2" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+      </span>
+      <h2 class="carrito-vacio__titulo">Tu carrito está vacío</h2>
+      <p>Todavía no agregaste productos. Date una vuelta por el catálogo.</p>
+      <a href="catalogo.html" class="btn btn--solido">Ir al catálogo</a>
+    </div>
+
+    <!-- Lista de productos -->
+    <section class="lista" aria-label="Productos en el carrito">
+
+      <div class="envio-gratis " id="envioGratis">
+        <p class="envio-gratis__texto" id="envioGratisTexto">
+          
+            Te faltan <strong>$150.000,00</strong> para el envío gratis
+          
+        </p>
+        <div class="envio-gratis__barra"><span id="envioGratisBarra" style="width: 0%"></span></div>
+      </div>
+
+      <div class="lista__cabecera" aria-hidden="true">
+        <span>Producto</span>
+        <span>Precio</span>
+        <span>Cantidad</span>
+        <span>Total</span>
+      </div>
+
+      <div class="lista__items" id="listaItems">
+        
+      </div>
+
+      <div class="lista__acciones">
+        <a href="catalogo.html" class="lista__link">← Seguir comprando</a>
+        <button class="lista__link lista__link--vaciar" id="btnVaciar">Vaciar carrito</button>
+      </div>
+    </section>
+
+    <!-- Resumen del pedido -->
+    <aside class="resumen" aria-label="Resumen de compra">
+      <div class="resumen__interior">
+        <h2 class="resumen__titulo">Resumen</h2>
+
+        <!-- Medio de pago -->
+        <fieldset class="pago">
+          <legend class="resumen__label">Medio de pago</legend>
+          <label class="pago__opcion">
+            <input type="radio" name="medioPago" value="tarjeta" checked>
+            <span class="pago__caja">
+              <span class="pago__nombre">Tarjeta</span>
+              <span class="pago__detalle">6 cuotas sin interés</span>
+            </span>
+          </label>
+          <label class="pago__opcion">
+            <input type="radio" name="medioPago" value="transferencia" >
+            <span class="pago__caja">
+              <span class="pago__nombre">Transferencia</span>
+              <span class="pago__detalle">-10% de descuento</span>
+            </span>
+          </label>
+        </fieldset>
+
+        <!-- Envío -->
+        <form class="mini-form" id="formEnvio" novalidate>
+          <label for="codigoPostal" class="resumen__label">Envío</label>
+          <div class="mini-form__fila">
+            <input type="text" id="codigoPostal" placeholder="Código postal" inputmode="numeric" maxlength="4" value="">
+            <button type="submit">Calcular</button>
+          </div>
+        </form>
+
+        <!-- Cupón -->
+        <form class="mini-form" id="formCupon" novalidate>
+          <label for="codigoCupon" class="resumen__label">Cupón de descuento</label>
+          <div class="mini-form__fila" id="cuponFila" >
+            <input type="text" id="codigoCupon" placeholder="Ej: BIENVENIDA" autocomplete="off">
+            <button type="submit">Aplicar</button>
+          </div>
+          <div class="cupon-activo" id="cuponActivo" hidden>
+            <span><strong id="cuponCodigo"></strong> <small id="cuponDescripcion"></small></span>
+            <button type="button" id="btnQuitarCupon" aria-label="Quitar cupón">Quitar</button>
+          </div>
+        </form>
+
+        <!-- Totales -->
+        <dl class="totales">
+          <div class="totales__fila">
+            <dt>Subtotal</dt>
+            <dd data-valor="subtotal">$0,00</dd>
+          </div>
+          <div class="totales__fila" data-fila="descuentoCupon" hidden>
+            <dt>Cupón</dt>
+            <dd data-valor="descuentoCupon">-$0,00</dd>
+          </div>
+          <div class="totales__fila" data-fila="descuentoPago" hidden>
+            <dt>Descuento transferencia</dt>
+            <dd data-valor="descuentoPago">-$0,00</dd>
+          </div>
+          <div class="totales__fila">
+            <dt>Envío</dt>
+            <dd data-valor="envio">
+              
+                <span class="totales__pendiente">A calcular</span>
+              
+            </dd>
+          </div>
+          <div class="totales__fila totales__fila--total">
+            <dt>Total</dt>
+            <dd data-valor="total">$0,00</dd>
+          </div>
+        </dl>
+        <p class="totales__cuotas" id="totalCuotas" >
+          o 6 cuotas sin interés de <strong data-valor="cuota">$0,00</strong>
+        </p>
+
+        <a href="#" data-demo-off class="btn btn--solido resumen__finalizar" id="btnFinalizar">Finalizar compra</a>
+
+        <p class="resumen__seguro">
+          <svg viewBox="0 0 24 24" width="16" height="16"><rect x="5" y="10" width="14" height="10" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 10V7a4 4 0 018 0v3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          Compra 100% segura
+        </p>
+        <p class="resumen__logos">(VISA) (MASTER) (AMEX) (MP)</p>
+      </div>
+    </aside>
+  </main>
+
+  <!-- ═════════════ RECOMENDADOS ═════════════ -->
+  
+    <section class="relacionados contenedor">
+      <div class="relacionados__cabecera">
+        <h2 class="relacionados__titulo">Completá tu compra</h2>
+        <a href="catalogo.html" class="relacionados__link">Ver todo →</a>
+      </div>
+      <div class="relacionados__grilla">
+        
+          <article class="tarjeta"
+         data-id="1"
+         data-nombre="Remera Wanderlust Crema"
+         data-categoria="Remeras"
+         data-color="crudo"
+         data-talles="S,M,L,XL"
+         data-precio="19500"
+         data-orden="0">
+  <div class="tarjeta__media">
+    <a href="producto/1.html" class="tarjeta__imagen">
+      
+        <span class="tarjeta__etiqueta">Nuevo</span>
+      
+      
+        <img class="tarjeta__foto" src="img/productos/remeras/remera1a.jpg" alt="Remera Wanderlust Crema" loading="lazy">
+      
+      
+        <img class="tarjeta__foto tarjeta__foto--alt" src="img/productos/remeras/remera1b.jpg" alt="" loading="lazy">
+      
+    </a>
+    
+    <button class="tarjeta__fav " data-fav-id="1" aria-pressed="false" aria-label="Agregar a favoritos">
+      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+    </button>
+    
+      
+        <a class="tarjeta__agregar" href="producto/1.html">Elegir talle</a>
+      
+    
+  </div>
+
+  <div class="tarjeta__info">
+    <p class="tarjeta__categoria">Remeras <span class="tarjeta__talles">S · M · L · XL</span></p>
+    <h3 class="tarjeta__nombre"><a href="producto/1.html">Remera Wanderlust Crema</a></h3>
+    <p class="tarjeta__precio">$19.500,00</p>
+    <p class="tarjeta__transferencia">
+      $17.550,00 <span>con transferencia</span>
+    </p>
+  </div>
+</article>
+
+        
+          <article class="tarjeta"
+         data-id="2"
+         data-nombre="Remera The Beach Club Blanca"
+         data-categoria="Remeras"
+         data-color="blanco"
+         data-talles="S,M,L,XL"
+         data-precio="19500"
+         data-orden="1">
+  <div class="tarjeta__media">
+    <a href="producto/2.html" class="tarjeta__imagen">
+      
+      
+        <img class="tarjeta__foto" src="img/productos/remeras/remera2a.jpg" alt="Remera The Beach Club Blanca" loading="lazy">
+      
+      
+        <img class="tarjeta__foto tarjeta__foto--alt" src="img/productos/remeras/remera2b.jpg" alt="" loading="lazy">
+      
+    </a>
+    
+    <button class="tarjeta__fav " data-fav-id="2" aria-pressed="false" aria-label="Agregar a favoritos">
+      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+    </button>
+    
+      
+        <a class="tarjeta__agregar" href="producto/2.html">Elegir talle</a>
+      
+    
+  </div>
+
+  <div class="tarjeta__info">
+    <p class="tarjeta__categoria">Remeras <span class="tarjeta__talles">S · M · L · XL</span></p>
+    <h3 class="tarjeta__nombre"><a href="producto/2.html">Remera The Beach Club Blanca</a></h3>
+    <p class="tarjeta__precio">$19.500,00</p>
+    <p class="tarjeta__transferencia">
+      $17.550,00 <span>con transferencia</span>
+    </p>
+  </div>
+</article>
+
+        
+          <article class="tarjeta"
+         data-id="3"
+         data-nombre="Chaleco Rayado con Botones"
+         data-categoria="Remeras"
+         data-color="rayado"
+         data-talles="S,M,L"
+         data-precio="24900"
+         data-orden="2">
+  <div class="tarjeta__media">
+    <a href="producto/3.html" class="tarjeta__imagen">
+      
+        <span class="tarjeta__etiqueta">Más vendido</span>
+      
+      
+        <img class="tarjeta__foto" src="img/productos/remeras/remera3a.jpg" alt="Chaleco Rayado con Botones" loading="lazy">
+      
+      
+        <img class="tarjeta__foto tarjeta__foto--alt" src="img/productos/remeras/remera3b.jpg" alt="" loading="lazy">
+      
+    </a>
+    
+    <button class="tarjeta__fav " data-fav-id="3" aria-pressed="false" aria-label="Agregar a favoritos">
+      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+    </button>
+    
+      
+        <a class="tarjeta__agregar" href="producto/3.html">Elegir talle</a>
+      
+    
+  </div>
+
+  <div class="tarjeta__info">
+    <p class="tarjeta__categoria">Remeras <span class="tarjeta__talles">S · M · L</span></p>
+    <h3 class="tarjeta__nombre"><a href="producto/3.html">Chaleco Rayado con Botones</a></h3>
+    <p class="tarjeta__precio">$24.900,00</p>
+    <p class="tarjeta__transferencia">
+      $22.410,00 <span>con transferencia</span>
+    </p>
+  </div>
+</article>
+
+        
+          <article class="tarjeta"
+         data-id="4"
+         data-nombre="Remera Roma Blanca"
+         data-categoria="Remeras"
+         data-color="blanco"
+         data-talles="S,M,L,XL"
+         data-precio="19500"
+         data-orden="3">
+  <div class="tarjeta__media">
+    <a href="producto/4.html" class="tarjeta__imagen">
+      
+      
+        <img class="tarjeta__foto" src="img/productos/remeras/remera4.jpg" alt="Remera Roma Blanca" loading="lazy">
+      
+      
+    </a>
+    
+    <button class="tarjeta__fav " data-fav-id="4" aria-pressed="false" aria-label="Agregar a favoritos">
+      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+    </button>
+    
+      
+        <a class="tarjeta__agregar" href="producto/4.html">Elegir talle</a>
+      
+    
+  </div>
+
+  <div class="tarjeta__info">
+    <p class="tarjeta__categoria">Remeras <span class="tarjeta__talles">S · M · L · XL</span></p>
+    <h3 class="tarjeta__nombre"><a href="producto/4.html">Remera Roma Blanca</a></h3>
+    <p class="tarjeta__precio">$19.500,00</p>
+    <p class="tarjeta__transferencia">
+      $17.550,00 <span>con transferencia</span>
+    </p>
+  </div>
+</article>
+
+        
+      </div>
+    </section>
+  
+
+  <!-- Barra fija con el total (celular / tablet) -->
+  <div class="barra-total" id="barraTotal">
+    <div>
+      <p class="barra-total__label">Total</p>
+      <p class="barra-total__precio" data-valor="total">$0,00</p>
+    </div>
+    <a href="#" data-demo-off class="btn btn--solido" data-finalizar>Finalizar compra</a>
+  </div>
+
+  <!-- ═════════════ BENEFICIOS ═════════════ -->
+<section class="beneficios">
+  <div class="contenedor beneficios__grilla">
+    <div class="beneficio">
+      <span class="beneficio__num">01</span>
+      <h3>Envíos a todo el país</h3>
+      <p>Gratis en compras desde $150.000.</p>
+    </div>
+    <div class="beneficio">
+      <span class="beneficio__num">02</span>
+      <h3>Cuotas sin interés</h3>
+      <p>3 y 6 cuotas con todas las tarjetas.</p>
+    </div>
+    <div class="beneficio">
+      <span class="beneficio__num">03</span>
+      <h3>Tu talle, tu cambio</h3>
+      <p>Primer cambio de talle sin costo.</p>
+    </div>
+    <div class="beneficio">
+      <span class="beneficio__num">04</span>
+      <h3>Compra segura</h3>
+      <p>Cambios y devoluciones sin vueltas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════ FOOTER ═════════════ -->
+<footer class="footer">
+  <div class="contenedor footer__grilla">
+    <div class="footer__marca">
+      <img class="logo__imagen logo__imagen--footer" src="img/marca/logo-claro.png" alt="Matilda boutique" width="689" height="229" loading="lazy">
+      <p>Moda femenina con detalles que se notan: perlas, buenos tejidos y cortes que acompañan cada día.</p>
+    </div>
+    <div>
+      <h4>Tienda</h4>
+      <ul>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="#" data-demo-off>Remeras</a></li>
+        <li><a href="#" data-demo-off>Abrigos</a></li>
+        <li><a href="#" data-demo-off>Accesorios</a></li>
+      </ul>
+    </div>
+    <div id="contacto">
+      <h4>Ayuda</h4>
+      <ul>
+        <li><a href="carrito.html#">Envíos</a></li>
+        <li><a href="carrito.html#">Medios de pago</a></li>
+        <li><a href="carrito.html#">Cambios y devoluciones</a></li>
+        <li><a href="carrito.html#">Contacto</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Newsletter</h4>
+      <p>Novedades y descuentos, sin spam.</p>
+      <form class="newsletter" onsubmit="return false;">
+        <input type="email" placeholder="Tu email" aria-label="Email">
+        <button type="submit">→</button>
+      </form>
+      <div class="footer__redes">
+        <a href="carrito.html#" aria-label="Instagram">Instagram</a>
+        <a href="carrito.html#" aria-label="Facebook">Facebook</a>
+        <a href="carrito.html#" aria-label="TikTok">TikTok</a>
+      </div>
+    </div>
+  </div>
+  <div class="contenedor footer__legal">
+    <span>© 2026 Matilda Boutique. Todos los derechos reservados.</span>
+    <span class="footer__pagos">Visa · Mastercard · Mercado Pago</span>
+  </div>
+</footer>
+
+<!-- Botón flotante de WhatsApp -->
+<a href="carrito.html#" class="whatsapp" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 3a9 9 0 00-7.8 13.5L3 21l4.6-1.2A9 9 0 1012 3z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.5-2-1-1 .8c-1-.4-2-1.4-2.3-2.3l.8-1-1-2L9.5 8z" fill="currentColor"/></svg>
+</a>
+
+<!-- Aviso al agregar al carrito -->
+<div class="toast" id="toast" role="status"></div>
+
+
+
+<script src="js/base.js"></script>
+
+
+  <script src="js/carrito.js"></script>
+<script>(function(){var t;function toast(){var d=document.getElementById('__demo_toast');if(!d){d=document.createElement('div');d.id='__demo_toast';d.style.cssText='position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#0b1128;color:#fff;font:600 14px/1.4 system-ui,sans-serif;padding:12px 18px;border-radius:12px;border:1px solid #6366f1;box-shadow:0 10px 30px rgba(0,0,0,.4);z-index:2147483647;max-width:90vw;text-align:center;transition:opacity .3s';d.textContent='Vista de demostración: esta acción no está disponible acá';document.body.appendChild(d)}d.style.opacity=1;clearTimeout(t);t=setTimeout(function(){d.style.opacity=0},2200)}
+document.addEventListener('submit',function(e){e.preventDefault();e.stopImmediatePropagation();toast()},true);
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-demo-off]');if(a){e.preventDefault();toast()}},true);
+var f=window.fetch;window.fetch=function(u,i){var m=((i&&i.method)||(u&&u.method)||'GET').toUpperCase();if(m==='GET')return f.apply(this,arguments);toast();return Promise.reject(new Error('demo'))};
+var o=XMLHttpRequest.prototype.open;XMLHttpRequest.prototype.open=function(m,u){if(m&&m.toUpperCase()!=='GET'){toast()}return o.apply(this,arguments)}})();</script></body>
+</html>

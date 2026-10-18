@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mates artesanales | Santiago Mates</title>
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/base.css">
+  
+  
+  
+    <link rel="stylesheet" href="css/inicio.css">
+  
+</head>
+<body>
+
+<!-- ═════════════ BARRA DE ANUNCIOS ═════════════ -->
+<div class="anuncios" aria-label="Promociones">
+  <div class="anuncios__pista">
+    
+      <span>Envío gratis en compras desde $150.000</span>
+      <span class="anuncios__sep">✦</span>
+      <span>10% off pagando con transferencia</span>
+      <span class="anuncios__sep">✦</span>
+      <span>3 y 6 cuotas sin interés</span>
+      <span class="anuncios__sep">✦</span>
+      <span>Grabado personalizado en 48 hs</span>
+      <span class="anuncios__sep">✦</span>
+    
+      <span>Envío gratis en compras desde $150.000</span>
+      <span class="anuncios__sep">✦</span>
+      <span>10% off pagando con transferencia</span>
+      <span class="anuncios__sep">✦</span>
+      <span>3 y 6 cuotas sin interés</span>
+      <span class="anuncios__sep">✦</span>
+      <span>Grabado personalizado en 48 hs</span>
+      <span class="anuncios__sep">✦</span>
+    
+  </div>
+</div>
+
+<!-- ═════════════ HEADER ═════════════ -->
+<header class="header" id="header">
+  <div class="header__barra contenedor">
+    <button class="icono-btn header__menu-btn" id="btnMenu" aria-label="Abrir menú" aria-expanded="false">
+      <span class="hamburguesa"></span>
+    </button>
+
+    <form class="buscador" action="#" method="GET" role="search" data-buscador>
+      <input type="search" name="q" value="" placeholder="Buscar productos…" aria-label="Buscar productos"
+             autocomplete="off" maxlength="60" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="sugerencias">
+      <button type="submit" aria-label="Buscar">
+        <svg viewBox="0 0 24 24" width="18" height="18"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      <div class="sugerencias" id="sugerencias" role="listbox" aria-label="Sugerencias" hidden></div>
+    </form>
+
+    <a href="index.html" class="logo" aria-label="Inicio">
+      
+
+<svg class="logo-svg logo-svg--horizontal " viewBox="0 0 300 70" role="img" aria-label="Santiago Mates · La gran casa matera">
+  <g transform="translate(2 2) scale(0.66)">
+    <path d="M24 40 Q22 33 30 31 L50 31 Q58 33 56 40 Q66 48 66 64 Q66 92 40 96 Q14 92 14 64 Q14 48 24 40 Z" fill="currentColor"/>
+    <path d="M24 40 L56 40" stroke="var(--logo-fondo, transparent)" stroke-width="2.5"/>
+    <path d="M44 34 L52 4 Q53 0 57 0 L64 1" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <text x="54" y="40" class="logo-svg__marca">Santiago<tspan class="logo-svg__marca--fuerte">Mates</tspan></text>
+  <text x="55" y="61" class="logo-svg__bajada">LA GRAN CASA MATERA</text>
+</svg>
+
+
+    </a>
+
+    <div class="header__acciones">
+      <button class="icono-btn header__buscar-movil" id="btnBuscarMovil" aria-label="Buscar">
+        <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      
+      
+        
+        <a href="#" data-demo-off class="icono-btn" aria-label="Iniciar sesión">
+        <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </a>
+      
+      
+      <a href="favoritos.html" class="icono-btn carrito-btn favoritos-btn" aria-label="Favoritos">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <span class="carrito-btn__contador" id="contadorFavoritos" hidden>0</span>
+      </a>
+      <a href="carrito.html" class="icono-btn carrito-btn" aria-label="Carrito">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path d="M5 8h14l-1.2 12H6.2L5 8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 8V6a3 3 0 016 0v2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        <span class="carrito-btn__contador" id="contadorCarrito">0</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="buscador-movil contenedor " id="buscadorMovil">
+    <form class="buscador buscador--movil" action="#" method="GET" role="search" data-buscador>
+      <input type="search" name="q" value="" placeholder="Buscar productos…" aria-label="Buscar productos"
+             autocomplete="off" maxlength="60" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="sugerenciasMovil">
+      <button type="submit" aria-label="Buscar">
+        <svg viewBox="0 0 24 24" width="18" height="18"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      <div class="sugerencias" id="sugerenciasMovil" role="listbox" aria-label="Sugerencias" hidden></div>
+    </form>
+  </div>
+
+  <nav class="nav" id="nav" aria-label="Principal">
+    <ul class="nav__lista contenedor">
+      <li class="nav__item--activo"><a href="index.html">Inicio</a></li>
+      
+        <li class=""><a href="categoria/mates.html">Mates</a></li>
+      
+        <li class=""><a href="categoria/termos.html">Termos</a></li>
+      
+        <li class=""><a href="categoria/bombillas.html">Bombillas</a></li>
+      
+        <li class=""><a href="categoria/bolsos-materos.html">Bolsos materos</a></li>
+      
+        <li class=""><a href="categoria/combos.html">Combos</a></li>
+      
+        <li class=""><a href="categoria/yerbas.html">Yerbas</a></li>
+      
+      <li class="nav__item--movil"><a href="favoritos.html">Favoritos</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="overlay" id="overlay"></div>
+
+
+
+
+<main class="inicio">
+
+  <!-- ═════════════ PORTADA ═════════════ -->
+  <section class="portada" data-seccion="portada">
+    <div class="contenedor portada__grilla">
+      <div class="portada__texto">
+        
+          <p class="portada__etiqueta"><span class="portada__linea"></span>Santiago Mates · La gran casa matera</p>
+        
+        <h1 class="portada__titulo">
+          
+            <span class="portada__renglon"><span>El ritual</span></span>
+          
+            <span class="portada__renglon"><span>de <em>compartir</em>,</span></span>
+          
+            <span class="portada__renglon"><span>hecho a mano.</span></span>
+          
+        </h1>
+        <p class="portada__bajada">Mates de calabaza, madera y cuero hechos uno por uno en nuestro taller. Piezas con historia, pensadas para pasar de mano en mano.</p>
+        <div class="portada__acciones">
+          
+            <a href="categoria/mates.html" class="btn btn--solido">Descubrir la colección</a>
+          
+          
+            <a href="index.html#nuestras-colecciones" class="portada__secundario">Ver colecciones <span aria-hidden="true">↓</span></a>
+          
+        </div>
+      </div>
+
+      <div class="portada__visual" data-parallax>
+        <div class="portada__arco">
+          <img src="img/productos/torpedo-roma-calabaza-2.jpg" class="foto" alt="El ritual de compartir, hecho a mano." width="480" height="540" fetchpriority="high">
+        </div>
+
+        
+          <!-- Sello giratorio -->
+          <svg class="portada__sello" viewBox="0 0 200 200" aria-hidden="true">
+            <defs><path id="circuloSello" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/></defs>
+            <text><textPath href="#circuloSello" textLength="458" lengthAdjust="spacing">SANTIAGO MATES ✦ LA GRAN CASA MATERA ✦</textPath></text>
+            <circle cx="100" cy="100" r="34" fill="none" stroke="currentColor" stroke-width="1"/>
+            <image href="img/favicon.svg" x="76" y="76" width="48" height="48"/>
+          </svg>
+        
+
+        <figure class="portada__mini">
+          <img src="img/productos/torpedo-uruguayo-2.jpg" class="foto" alt="" width="400" height="500" loading="lazy">
+          <figcaption>Grabado<br>a tu gusto</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <a href="index.html#contenido" class="portada__bajar" aria-label="Seguir bajando"><span></span></a>
+  </section>
+  <span id="contenido"></span>
+
+  <!-- ═════════════ CINTA ═════════════ -->
+  
+    <div class="cinta" aria-hidden="true" data-seccion="cinta">
+      <div class="cinta__pista">
+        
+          <span>Calabaza</span><i>✦</i><span><em>Algarrobo</em></span><i>✦</i><span>Cuero cosido</span><i>✦</i><span><em>Alpaca cincelada</em></span><i>✦</i><span>Grabado a mano</span><i>✦</i><span><em>Acero</em></span><i>✦</i>
+        
+          <span>Calabaza</span><i>✦</i><span><em>Algarrobo</em></span><i>✦</i><span>Cuero cosido</span><i>✦</i><span><em>Alpaca cincelada</em></span><i>✦</i><span>Grabado a mano</span><i>✦</i><span><em>Acero</em></span><i>✦</i>
+        
+      </div>
+    </div>
+  
+
+  <!-- ═════════════ COLECCIONES ═════════════ -->
+  
+    <section class="colecciones" id="nuestras-colecciones" data-seccion="colecciones">
+      <div class="contenedor">
+        <div class="seccion-cabecera">
+          <div>
+            <p class="seccion-etiqueta" data-revelar>Colecciones</p>
+            <h2 class="seccion-titulo" data-revelar>Un mate para <em>cada ronda</em></h2>
+          </div>
+          <div class="colecciones__flechas" aria-hidden="true">
+            <button type="button" class="flecha" data-mover="-1" tabindex="-1">←</button>
+            <button type="button" class="flecha" data-mover="1" tabindex="-1">→</button>
+          </div>
+        </div>
+      </div>
+
+      <ul class="colecciones__lista" id="colecciones">
+        
+          <li class="coleccion coleccion--oscuro" data-revelar>
+            <a href="categoria/mates.html" class="coleccion__link">
+              <div class="coleccion__imagen">
+                <img src="img/productos/torpedo-argentino-1.jpg" class="foto" alt="Mates" width="400" height="500" loading="lazy">
+              </div>
+              <div class="coleccion__info">
+                <span class="coleccion__num">01</span>
+                <h3 class="coleccion__nombre">Mates</h3>
+                <p class="coleccion__frase">Torpedos, imperiales y criollos forrados en cuero, con virola de alpaca.</p>
+                <span class="coleccion__ver">Explorar <span aria-hidden="true">→</span></span>
+              </div>
+            </a>
+          </li>
+        
+          <li class="coleccion coleccion--oscuro" data-revelar>
+            <a href="categoria/bombillas.html" class="coleccion__link">
+              <div class="coleccion__imagen">
+                <img src="img/productos/bombillon-joyero.jpg" class="foto" alt="Bombillas" width="400" height="500" loading="lazy">
+              </div>
+              <div class="coleccion__info">
+                <span class="coleccion__num">02</span>
+                <h3 class="coleccion__nombre">Bombillas</h3>
+                <p class="coleccion__frase">Bombillones de alpaca cincelados a mano, con pico de bronce.</p>
+                <span class="coleccion__ver">Explorar <span aria-hidden="true">→</span></span>
+              </div>
+            </a>
+          </li>
+        
+          <li class="coleccion coleccion--oscuro" data-revelar>
+            <a href="categoria/combos.html" class="coleccion__link">
+              <div class="coleccion__imagen">
+                <img src="img/productos/combo-del-10-1.jpg" class="foto" alt="Combos" width="400" height="500" loading="lazy">
+              </div>
+              <div class="coleccion__info">
+                <span class="coleccion__num">03</span>
+                <h3 class="coleccion__nombre">Combos</h3>
+                <p class="coleccion__frase">El equipo matero completo, listo para regalar o para salir.</p>
+                <span class="coleccion__ver">Explorar <span aria-hidden="true">→</span></span>
+              </div>
+            </a>
+          </li>
+        
+          <li class="coleccion coleccion--medio" data-revelar>
+            <a href="categoria/bolsos-materos.html" class="coleccion__link">
+              <div class="coleccion__imagen">
+                <img src="img/productos/combo-linea-hudson-2.jpg" class="foto" alt="Bolsos materos" width="400" height="500" loading="lazy">
+              </div>
+              <div class="coleccion__info">
+                <span class="coleccion__num">04</span>
+                <h3 class="coleccion__nombre">Bolsos materos</h3>
+                <p class="coleccion__frase">Bolsos y canastas para llevar el mate a todos lados.</p>
+                <span class="coleccion__ver">Explorar <span aria-hidden="true">→</span></span>
+              </div>
+            </a>
+          </li>
+        
+      </ul>
+    </section>
+  
+
+  <!-- ═════════════ PROCESO ═════════════ -->
+  
+    <section class="proceso" data-seccion="proceso">
+      <div class="contenedor proceso__grilla">
+        <div class="proceso__visual">
+          <div class="proceso__marco">
+            
+              <img src="img/productos/torpedo-roma-calabaza-3.jpg" alt="" class="proceso__img foto activa" data-paso-img="0" loading="lazy">
+            
+              <img src="img/productos/imperial-premium-argentina-2.jpg" alt="" class="proceso__img foto " data-paso-img="1" loading="lazy">
+            
+              <img src="img/productos/mate-exclusivo-criollo-2.jpg" alt="" class="proceso__img foto " data-paso-img="2" loading="lazy">
+            
+              <img src="img/productos/torpedo-roma-calabaza-4.jpg" alt="" class="proceso__img foto " data-paso-img="3" loading="lazy">
+            
+            <span class="proceso__contador"><span id="pasoActual">01</span> / 04</span>
+          </div>
+        </div>
+
+        <div class="proceso__texto">
+          <p class="seccion-etiqueta" data-revelar>El proceso</p>
+          <h2 class="seccion-titulo" data-revelar>Del taller <em>a tu ronda</em></h2>
+          <ol class="pasos-taller">
+            
+              <li class="paso-taller activo" data-paso="0" data-revelar>
+                <span class="paso-taller__num">01</span>
+                <div>
+                  <h3>Selección</h3>
+                  <p>Elegimos una por una cada calabaza y cada pieza de madera. Solo pasan las que tienen buen grosor y ninguna fisura.</p>
+                </div>
+              </li>
+            
+              <li class="paso-taller " data-paso="1" data-revelar>
+                <span class="paso-taller__num">02</span>
+                <div>
+                  <h3>Tallado y forrado</h3>
+                  <p>Se tornea, se lija y se forra a mano. En los imperiales, el cuero se cose con puntada visible, como se hizo siempre.</p>
+                </div>
+              </li>
+            
+              <li class="paso-taller " data-paso="2" data-revelar>
+                <span class="paso-taller__num">03</span>
+                <div>
+                  <h3>Virola y cincelado</h3>
+                  <p>La virola de alpaca se ajusta a cada boca y se cincela a mano. Por eso no hay dos iguales.</p>
+                </div>
+              </li>
+            
+              <li class="paso-taller " data-paso="3" data-revelar>
+                <span class="paso-taller__num">04</span>
+                <div>
+                  <h3>Terminación</h3>
+                  <p>Revisamos cada detalle, lo protegemos por dentro y lo embalamos listo para regalar (o para estrenar esa misma tarde).</p>
+                </div>
+              </li>
+            
+          </ol>
+        </div>
+      </div>
+    </section>
+  
+
+  <!-- ═════════════ EL RITUAL ═════════════ -->
+  
+    <section class="ritual" data-seccion="ritual">
+      <div class="contenedor ritual__grilla">
+        <div class="ritual__cabecera">
+          <p class="seccion-etiqueta seccion-etiqueta--clara" data-revelar>El ritual</p>
+          <h2 class="seccion-titulo" data-revelar>Cebá como <em>se debe</em></h2>
+          <p class="ritual__bajada" data-revelar>Cuatro reglas simples que en cualquier ronda se respetan. Cada mate sale del taller con su guía para curarlo.</p>
+        </div>
+
+        <figure class="ritual__imagen" data-revelar>
+          <img src="img/inicio/ronda.svg" class="" alt="" width="640" height="520" loading="lazy">
+        </figure>
+
+        <ol class="consejos">
+          
+            <li class="consejo" data-revelar>
+              <span class="consejo__num">I</span>
+              <h3>Agua a 75°, nunca hervida</h3>
+              <p>Si el agua hierve, la yerba se quema y el mate se lava enseguida.</p>
+            </li>
+          
+            <li class="consejo" data-revelar>
+              <span class="consejo__num">II</span>
+              <h3>Yerba hasta tres cuartos</h3>
+              <p>Tapá la boca con la mano, sacudí, y dejá la montañita de costado.</p>
+            </li>
+          
+            <li class="consejo" data-revelar>
+              <span class="consejo__num">III</span>
+              <h3>Primero agua tibia</h3>
+              <p>Humedecé la yerba y esperá un minuto antes de clavar la bombilla.</p>
+            </li>
+          
+            <li class="consejo" data-revelar>
+              <span class="consejo__num">IV</span>
+              <h3>La bombilla no se mueve</h3>
+              <p>Es la regla de oro de la ronda. El que ceba es el que manda.</p>
+            </li>
+          
+        </ol>
+      </div>
+    </section>
+  
+
+  <!-- ═════════════ PERSONALIZADOS ═════════════ -->
+  
+    <section class="personaliza" data-seccion="personaliza">
+      <div class="contenedor personaliza__grilla">
+        <div class="personaliza__visual" data-revelar>
+          <svg viewBox="0 0 400 500" class="personaliza__mate" role="img" aria-label="Vista previa del grabado">
+            <image href="img/inicio/mate-grabado.svg" width="400" height="500" preserveAspectRatio="xMidYMax meet"/>
+            <defs><path id="curvaGrabado" d="M122,322 Q200,338 278,322"/></defs>
+            <text class="grabado grabado--clasica" id="grabadoTexto" text-anchor="middle">
+              <textPath href="#curvaGrabado" startOffset="50%">Juan</textPath>
+            </text>
+            <text class="grabado grabado--fecha" x="200" y="366" text-anchor="middle" id="grabadoDetalle">✦ ✦ ✦</text>
+          </svg>
+        </div>
+
+        <div class="personaliza__texto">
+          <p class="seccion-etiqueta" data-revelar>Personalizados</p>
+          <h2 class="seccion-titulo" data-revelar>Hacelo <em>tuyo</em></h2>
+          <p class="personaliza__bajada" data-revelar>Grabamos nombres, fechas o iniciales en cada pieza. Probá cómo quedaría el tuyo:</p>
+
+          <form class="grabador" id="grabador" data-revelar>
+            <label class="grabador__campo">
+              <span>Texto a grabar</span>
+              <input type="text" id="grabadoInput" maxlength="14" placeholder="Juan" data-ejemplo="Juan" autocomplete="off">
+              <small><span id="grabadoCuenta">0</span>/14</small>
+            </label>
+
+            <fieldset class="grabador__estilos">
+              <legend>Tipografía</legend>
+              <label><input type="radio" name="tipografia" value="clasica" checked><span class="tipo tipo--clasica">Clásica</span></label>
+              <label><input type="radio" name="tipografia" value="moderna"><span class="tipo tipo--moderna">Moderna</span></label>
+              <label><input type="radio" name="tipografia" value="iniciales"><span class="tipo tipo--iniciales">Iniciales</span></label>
+            </fieldset>
+
+            <div class="grabador__acciones">
+              <a href="categoria/mates.html" class="btn btn--solido">Ver el catálogo</a>
+              <a href="index.html#" class="btn btn--linea">Escribinos</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  
+
+  <!-- ═════════════ GALERÍA ═════════════ -->
+  
+    <section class="galeria" data-seccion="galeria">
+      <div class="contenedor">
+        <div class="seccion-cabecera">
+          <div>
+            <p class="seccion-etiqueta" data-revelar>#MateEnRonda</p>
+            <h2 class="seccion-titulo" data-revelar>Momentos <em>compartidos</em></h2>
+          </div>
+          
+            <a href="index.html#" class="galeria__seguir" data-revelar>(IG) Seguinos <span aria-hidden="true">→</span></a>
+          
+        </div>
+
+        <div class="galeria__grilla">
+          
+            <figure class="galeria__item galeria__item--alto galeria__item--oscuro" data-revelar>
+              <img src="img/productos/torpedo-argentino-1.jpg" class="foto" alt="Nuestro titular" loading="lazy">
+              <figcaption>Nuestro titular</figcaption>
+            </figure>
+            
+          
+            <figure class="galeria__item  galeria__item--oscuro" data-revelar>
+              <img src="img/productos/combo-del-10-2.jpg" class="foto" alt="Para la previa" loading="lazy">
+              <figcaption>Para la previa</figcaption>
+            </figure>
+            
+              <figure class="galeria__item galeria__item--frase" data-revelar>
+                <blockquote>“El mate no es una bebida. Es una forma de <em>estar</em>.”</blockquote>
+              </figure>
+            
+          
+            <figure class="galeria__item galeria__item--ancho galeria__item--medio" data-revelar>
+              <img src="img/productos/combo-linea-hudson-4.jpg" class="foto" alt="Para llevar" loading="lazy">
+              <figcaption>Para llevar</figcaption>
+            </figure>
+            
+          
+            <figure class="galeria__item  galeria__item--oscuro" data-revelar>
+              <img src="img/productos/mate-exclusivo-criollo-3.jpg" class="foto" alt="Cuero crudo" loading="lazy">
+              <figcaption>Cuero crudo</figcaption>
+            </figure>
+            
+          
+            <figure class="galeria__item galeria__item--ultimo galeria__item--oscuro" data-revelar>
+              <img src="img/productos/torpedo-roma-calabaza-1.jpg" class="foto" alt="Con color" loading="lazy">
+              <figcaption>Con color</figcaption>
+            </figure>
+            
+          
+        </div>
+      </div>
+    </section>
+  
+
+  <!-- ═════════════ TESTIMONIOS ═════════════ -->
+  
+    <section class="testimonios" data-seccion="testimonios" aria-roledescription="carrusel" aria-label="Lo que dicen nuestros clientes">
+      <div class="contenedor testimonios__caja">
+        <p class="seccion-etiqueta" data-revelar>Lo que dicen</p>
+        <div class="testimonios__pista" id="testimonios" aria-live="polite">
+          
+            <figure class="testimonio activo" data-testimonio="0" >
+              <blockquote>Lo regalé para el cumpleaños de mi viejo y no lo suelta más. Se nota que está hecho a mano, cada detalle.</blockquote>
+              <figcaption><strong>Lucía M.</strong> · Córdoba</figcaption>
+            </figure>
+          
+            <figure class="testimonio " data-testimonio="1" aria-hidden=true>
+              <blockquote>Llegó impecable, con una tarjeta escrita a mano y las instrucciones para curarlo. Ceba de diez.</blockquote>
+              <figcaption><strong>Martín G.</strong> · Rosario</figcaption>
+            </figure>
+          
+            <figure class="testimonio " data-testimonio="2" aria-hidden=true>
+              <blockquote>Encargué seis con el nombre de cada uno para la oficina. Ahora la ronda tiene otro nivel.</blockquote>
+              <figcaption><strong>Carla R.</strong> · CABA</figcaption>
+            </figure>
+          
+        </div>
+        
+          <div class="testimonios__puntos" role="tablist">
+            
+              <button type="button" class="activo" data-ir="0" role="tab" aria-selected="true" aria-label="Opinión 1"></button>
+            
+              <button type="button" class="" data-ir="1" role="tab" aria-selected="false" aria-label="Opinión 2"></button>
+            
+              <button type="button" class="" data-ir="2" role="tab" aria-selected="false" aria-label="Opinión 3"></button>
+            
+          </div>
+        
+      </div>
+    </section>
+  
+
+  <!-- ═════════════ CIERRE ═════════════ -->
+  
+    <section class="cierre" data-seccion="cierre">
+      <img src="img/inicio/rama.svg" alt="" class="cierre__rama cierre__rama--izq" loading="lazy">
+      <img src="img/inicio/rama.svg" alt="" class="cierre__rama cierre__rama--der" loading="lazy">
+      <div class="contenedor cierre__caja">
+        <p class="seccion-etiqueta seccion-etiqueta--clara" data-revelar>Tu próximo compañero</p>
+        <h2 class="cierre__titulo" data-revelar>Encontrá el mate que<br>te va a <em>acompañar</em></h2>
+        <div class="cierre__acciones" data-revelar>
+          <a href="categoria/mates.html" class="btn btn--claro">Ver el catálogo</a>
+          <a href="categoria/combos.html" class="cierre__link">Combos para regalar →</a>
+        </div>
+      </div>
+    </section>
+  
+
+</main>
+
+<!-- ═════════════ BENEFICIOS ═════════════ -->
+<section class="beneficios">
+  <div class="contenedor beneficios__grilla">
+    <div class="beneficio">
+      <span class="beneficio__num">01</span>
+      <h3>Envíos a todo el país</h3>
+      <p>Gratis en compras desde $150.000.</p>
+    </div>
+    <div class="beneficio">
+      <span class="beneficio__num">02</span>
+      <h3>Cuotas sin interés</h3>
+      <p>3 y 6 cuotas con todas las tarjetas.</p>
+    </div>
+    <div class="beneficio">
+      <span class="beneficio__num">03</span>
+      <h3>Personalizá tu pieza</h3>
+      <p>Grabado a láser con tu diseño.</p>
+    </div>
+    <div class="beneficio">
+      <span class="beneficio__num">04</span>
+      <h3>Compra segura</h3>
+      <p>Cambios y devoluciones sin vueltas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════ FOOTER ═════════════ -->
+
+<footer class="footer">
+  <div class="contenedor footer__grilla">
+    <div class="footer__marca">
+      
+
+<svg class="logo-svg logo-svg--apilado logo-svg--footer" viewBox="0 0 260 190" role="img" aria-label="Santiago Mates · La gran casa matera">
+  <!-- Mate con bombilla -->
+  <g transform="translate(104 6)">
+    <path d="M24 40 Q22 33 30 31 L50 31 Q58 33 56 40 Q66 48 66 64 Q66 92 40 96 Q14 92 14 64 Q14 48 24 40 Z" fill="currentColor"/>
+    <path d="M24 40 L56 40" stroke="var(--logo-fondo, transparent)" stroke-width="2.5"/>
+    <path d="M44 34 L52 4 Q53 0 57 0 L64 1" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <text x="130" y="148" text-anchor="middle" class="logo-svg__marca">Santiago<tspan class="logo-svg__marca--fuerte">Mates</tspan></text>
+  <text x="130" y="176" text-anchor="middle" class="logo-svg__bajada">LA GRAN CASA MATERA</text>
+</svg>
+
+
+      <p>Mates, bombillas y todo para la ronda, hechos a mano con materiales nobles. Enviamos a todo el país.</p>
+      
+    </div>
+    <div>
+      <h4>Tienda</h4>
+      <ul>
+        
+          <li><a href="categoria/mates.html">Mates</a></li>
+        
+          <li><a href="categoria/termos.html">Termos</a></li>
+        
+          <li><a href="categoria/bombillas.html">Bombillas</a></li>
+        
+          <li><a href="categoria/bolsos-materos.html">Bolsos materos</a></li>
+        
+          <li><a href="categoria/combos.html">Combos</a></li>
+        
+          <li><a href="categoria/yerbas.html">Yerbas</a></li>
+        
+      </ul>
+    </div>
+    <div>
+      <h4>Ayuda</h4>
+      <ul>
+        <li><a href="terminos.html#envios">Envíos</a></li>
+        <li><a href="terminos.html#pagos">Medios de pago</a></li>
+        <li><a href="cambios-y-devoluciones.html">Cambios y devoluciones</a></li>
+        
+      </ul>
+    </div>
+    <div>
+      <h4>Legales</h4>
+      <ul>
+        <li><a href="terminos.html">Términos y condiciones</a></li>
+        <li><a href="privacidad.html">Política de privacidad</a></li>
+        <li><a href="cookies.html">Política de cookies</a></li>
+        <li><a href="arrepentimiento.html" class="footer__arrepentimiento">Botón de arrepentimiento</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="contenedor footer__legal">
+    <span>
+      © 2026 Santiago Mates.
+      
+      Todos los derechos reservados.
+    </span>
+    <span class="footer__oficiales">
+      <a href="https://www.argentina.gob.ar/produccion/defensadelconsumidor/formulario" target="_blank" rel="noopener">Defensa de las y los consumidores. Para reclamos ingrese aquí</a>
+      
+    </span>
+    <span class="footer__pagos">Visa · Mastercard · Amex · Naranja · Mercado Pago · Transferencia</span>
+  </div>
+</footer>
+
+
+
+<!-- Aviso de cookies (solo usamos las necesarias: se muestra una vez) -->
+<div class="aviso-cookies" id="avisoCookies" role="region" aria-label="Aviso de cookies" hidden>
+  <p>
+    Usamos solo las cookies necesarias para que la tienda funcione (tu sesión y tu carrito). No usamos cookies de publicidad.
+    <a href="cookies.html">Más información</a>
+  </p>
+  <button type="button" class="btn btn--solido btn--chico" id="aceptarCookies">Entendido</button>
+</div>
+
+<!-- Aviso al agregar al carrito -->
+<div class="toast" id="toast" role="status"></div>
+
+
+
+<script src="js/base.js"></script>
+
+
+<script src="js/inicio.js"></script>
+<script>(function(){var t;function toast(){var d=document.getElementById('__demo_toast');if(!d){d=document.createElement('div');d.id='__demo_toast';d.style.cssText='position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#0b1128;color:#fff;font:600 14px/1.4 system-ui,sans-serif;padding:12px 18px;border-radius:12px;border:1px solid #6366f1;box-shadow:0 10px 30px rgba(0,0,0,.4);z-index:2147483647;max-width:90vw;text-align:center;transition:opacity .3s';d.textContent='Vista de demostración: esta acción no está disponible acá';document.body.appendChild(d)}d.style.opacity=1;clearTimeout(t);t=setTimeout(function(){d.style.opacity=0},2200)}
+document.addEventListener('submit',function(e){e.preventDefault();e.stopImmediatePropagation();toast()},true);
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-demo-off]');if(a){e.preventDefault();toast()}},true);
+var f=window.fetch;window.fetch=function(u,i){var m=((i&&i.method)||(u&&u.method)||'GET').toUpperCase();if(m==='GET')return f.apply(this,arguments);toast();return Promise.reject(new Error('demo'))};
+var o=XMLHttpRequest.prototype.open;XMLHttpRequest.prototype.open=function(m,u){if(m&&m.toUpperCase()!=='GET'){toast()}return o.apply(this,arguments)}})();</script></body>
+</html>

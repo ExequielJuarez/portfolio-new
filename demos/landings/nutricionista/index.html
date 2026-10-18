@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Camila Roldán · Nutricionista en Córdoba</title>
+<meta name="description" content="Nutricionista en Córdoba: planes de alimentación personalizados, nutrición deportiva y control de peso, presencial y online.">
+<meta name="theme-color" content="#f2f9ea">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--g:#3f8a3a;--gd:#1f3320;--lime:#d7ec8a;--o:#f08a24;--r:#ee5d4a;--y:#f6c744;--cr:#fffdf5;--ink:#1f3320;--mut:#5b715c}
+*,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;font:400 1rem/1.65 Poppins,sans-serif;color:var(--ink);background:var(--cr);overflow-x:hidden}
+a{color:inherit}h1,h2,h3,p{margin:0}.wrap{width:min(1180px,100% - 2.5rem);margin-inline:auto}
+/* Nav lateral compacta: logo + menú a la derecha en texto grande tipo revista */
+.nav{position:fixed;inset:0 0 auto;z-index:50;padding:1rem 0;transition:.3s}.nav.scrolled{background:var(--cr);box-shadow:0 2px 0 var(--gd)}
+.nav .wrap{display:flex;justify-content:space-between;align-items:center}
+.brand{font-weight:800;font-size:1.3rem;text-decoration:none;letter-spacing:-.02em}.brand span{color:var(--o)}
+.menu{display:flex;gap:1.8rem;list-style:none;margin:0;padding:0;font-weight:600;font-size:.92rem}.menu a{text-decoration:none}.menu a:hover{color:var(--g)}
+.btn{display:inline-block;background:var(--gd);color:#fff;border:0;border-radius:99px;padding:.8rem 1.6rem;font:600 .95rem Poppins;text-decoration:none;cursor:pointer}.btn.o{background:var(--o)}.btn.l{background:transparent;color:var(--gd);box-shadow:inset 0 0 0 2px var(--gd)}
+.burger{display:none;background:0;border:0;width:44px;height:44px}.burger span{display:block;width:26px;height:2.5px;background:var(--gd);margin:5px auto}
+/* Hero con el plato */
+.hero{padding:8rem 0 5rem;background:linear-gradient(180deg,#eef7e0,var(--cr))}
+.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.hero h1{font-size:clamp(2.6rem,6.4vw,5rem);line-height:.98;font-weight:800;letter-spacing:-.04em}.hero h1 em{font-style:normal;color:var(--o)}
+.hero p{margin:1.4rem 0 2rem;color:var(--mut);font-size:1.12rem;max-width:42ch}
+.plate{position:relative;width:min(100%,460px);margin-inline:auto}
+.plate svg{width:100%;filter:drop-shadow(0 25px 30px rgba(31,51,32,.2));animation:spin 40s linear infinite}
+.plate:hover svg{animation-play-state:paused}@keyframes spin{to{transform:rotate(360deg)}}
+.tag{position:absolute;background:#fff;border-radius:14px;padding:.45rem .9rem;font-weight:700;font-size:.85rem;box-shadow:0 8px 20px rgba(0,0,0,.12)}
+/* Método: leyenda del plato */
+.sec{padding:5.5rem 0}
+.h{font-size:clamp(2rem,4.8vw,3.6rem);font-weight:800;line-height:1;letter-spacing:-.035em}.sub{color:var(--mut);margin-top:.8rem;max-width:50ch}
+.met{background:var(--gd);color:#fff}.met .sub{color:#b8cdb9}
+.met .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3rem;margin-top:3rem}
+.met .pc{font-size:clamp(4rem,10vw,7.5rem);font-weight:800;line-height:.9;letter-spacing:-.05em}.met h3{font-size:1.3rem;margin:.6rem 0 .3rem}.met p{color:#c3d6c3;font-size:.95rem}
+.met .a .pc{color:var(--lime)}.met .b .pc{color:var(--y)}.met .c .pc{color:#ff9d8f}
+.met hr{border:0;border-top:3px solid currentColor;width:60px;margin:.8rem 0}
+/* Semana de ejemplo: scroll horizontal */
+.week{display:flex;gap:1rem;overflow-x:auto;padding:2rem 0 1.5rem;scroll-snap-type:x mandatory;margin-top:1rem}
+.day{flex:0 0 min(260px,78%);scroll-snap-align:start;border-radius:26px;padding:1.4rem;border:2px solid var(--gd);background:#fff}
+.day:nth-child(1){background:#eaf5d5}.day:nth-child(2){background:#fff1d1}.day:nth-child(3){background:#ffe2dc}.day:nth-child(4){background:#e0f1ef}.day:nth-child(5){background:#f1e6f6}
+.day h3{font-size:1.2rem;font-weight:800;margin-bottom:.6rem}.day dl{margin:0;display:grid;gap:.6rem;font-size:.9rem}.day dt{font-weight:700;color:var(--g);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em}.day dd{margin:0}
+.hint{font-size:.85rem;color:var(--mut)}
+/* Servicios: lista tipografica con colores */
+.svc{display:grid;grid-template-columns:1fr 1fr;gap:0 4rem;margin-top:2.5rem}
+.svc div{border-top:2px solid var(--gd);padding:1.3rem 0;display:flex;justify-content:space-between;gap:1rem;align-items:baseline}.svc h3{font-size:1.35rem;font-weight:700}.svc p{color:var(--mut);font-size:.88rem;text-align:right;max-width:24ch}
+/* Planes con interruptor */
+.plans{background:#eef7e0}.sw{display:inline-flex;background:#fff;border-radius:99px;padding:.3rem;margin:1.5rem 0 2rem;box-shadow:inset 0 0 0 2px var(--gd)}.sw input{position:absolute;opacity:0}.sw label{padding:.55rem 1.5rem;border-radius:99px;cursor:pointer;font-weight:700;font-size:.9rem}.sw input:checked+label{background:var(--gd);color:#fff}.sw input:focus-visible+label{outline:3px solid #3f8a3a66}
+.pl{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2.5rem}
+.pn{background:#fff;border-radius:28px;padding:2rem;border:2px solid var(--gd);display:flex;flex-direction:column}.pn.f{background:var(--o);color:#fff;border-color:var(--o);transform:translateY(-12px)}
+.pn h3{font-size:1.2rem}.pn .pr{font-size:2.4rem;font-weight:800;letter-spacing:-.04em;margin:.4rem 0}.pn .pr small{font-size:.8rem;font-weight:500;letter-spacing:0}.pn ul{list-style:none;padding:0;margin:.6rem 0 1.5rem;display:grid;gap:.4rem;font-size:.92rem;flex:1}.pn li::before{content:"●  ";color:var(--g);font-size:.6rem;vertical-align:middle}.pn.f li::before{color:#fff}
+.pn .btn{text-align:center}.pn.f .btn{background:#fff;color:var(--o)}
+.pv{display:none}#m1:checked~.pl .pm{display:none}#m1:checked~.pl .pv{display:inline}
+/* Contacto como chat */
+.chat{display:grid;grid-template-columns:.9fr 1.1fr;gap:3rem;align-items:start}
+.chat .info{display:grid;gap:1rem;margin-top:2rem}.chat .info b{display:block;font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:var(--g)}
+.phone{background:#e8ddd0;border-radius:36px;padding:1.2rem;border:8px solid var(--gd);max-width:520px;width:100%}
+.phone header{display:flex;gap:.7rem;align-items:center;background:#1f6b3a;color:#fff;margin:-1.2rem -1.2rem 1rem;padding:.8rem 1.2rem;border-radius:20px 20px 0 0}.phone header i{width:36px;height:36px;border-radius:50%;background:var(--lime);display:grid;place-items:center;font-style:normal;color:var(--gd);font-weight:800}.phone header small{display:block;opacity:.8;font-size:.72rem}
+.msg{background:#fff;border-radius:16px 16px 16px 4px;padding:.7rem 1rem;max-width:88%;font-size:.92rem;margin-bottom:.8rem;box-shadow:0 1px 2px rgba(0,0,0,.1)}
+.ans{background:#dcf8c6;border-radius:16px 16px 4px 16px;padding:.9rem;margin-left:auto;max-width:94%;display:grid;gap:.6rem}
+.ans .ch{display:flex;flex-wrap:wrap;gap:.4rem}.ans .ch input{position:absolute;opacity:0}.ans .ch label{background:#fff;border-radius:99px;padding:.35rem .9rem;font-size:.82rem;font-weight:600;cursor:pointer}.ans .ch input:checked+label{background:var(--g);color:#fff}.ans .ch input:focus-visible+label{outline:3px solid #3f8a3a66}
+.ans input.t{font:inherit;font-size:.92rem;padding:.6rem .8rem;border:0;border-radius:10px;width:100%}.ans input.t:focus{outline:2px solid var(--g)}
+.ans button{background:#1f6b3a;color:#fff;border:0;border-radius:10px;padding:.8rem;font:600 .92rem Poppins;cursor:pointer}
+.form-ok{display:none;background:#fff;border-radius:10px;padding:.6rem .8rem;font-size:.85rem;font-weight:600;color:#14602b}.form-ok.show{display:block}
+footer{background:var(--gd);color:#b8cdb9;padding:1.4rem 0;font-size:.88rem}footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.wa{position:fixed;right:18px;bottom:18px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.3)}.wa svg{width:32px;fill:#fff}
+.reveal{opacity:0;transform:translateY(22px);transition:.7s}.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.plate svg{animation:none}}
+@media(max-width:900px){.hero .wrap,.chat,.svc{grid-template-columns:1fr}.plate{max-width:340px}.met .grid{grid-template-columns:1fr;gap:2rem}.pl{grid-template-columns:1fr}.pn.f{transform:none}.svc{gap:0}.svc p{max-width:none}.phone{margin-inline:auto}}
+@media(max-width:820px){.burger{display:block}.nav .btn{display:none}.menu{position:fixed;inset:60px 0 auto;flex-direction:column;gap:0;background:var(--cr);padding:.5rem 1.5rem 1.2rem;box-shadow:0 20px 30px rgba(0,0,0,.12);transform:translateY(-130%);transition:.3s;z-index:-1}.menu.open{transform:none}.menu a{display:block;padding:1rem 0;border-bottom:1px solid #d9e6c8}.hero{padding-top:6rem}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+ <a class="brand" href="#inicio">camila<span>.</span>nutri</a>
+ <nav><ul class="menu"><li><a href="#metodo">Mi método</a></li><li><a href="#semana">Menú de ejemplo</a></li><li><a href="#planes">Planes</a></li><li><a href="#contacto">Contacto</a></li></ul></nav>
+ <a class="btn o" href="#contacto">Quiero mi plan</a>
+ <button class="burger" aria-label="Menú" aria-expanded="false"><span></span><span></span><span></span></button>
+</div></header>
+<main>
+<section class="hero" id="inicio"><div class="wrap">
+ <div><h1>Comer bien <em>sin dietas</em> imposibles.</h1><p>Soy Camila, licenciada en nutrición. Armo planes flexibles, con tus comidas y tus horarios, para bajar de peso, ganar músculo o simplemente sentirte mejor.</p><a class="btn o" href="#contacto">Quiero mi plan</a> <a class="btn l" href="#semana" style="margin-left:.4rem">Ver un menú</a></div>
+ <div class="plate"><svg viewBox="-110 -110 220 220" aria-label="Plato dividido: mitad vegetales, un cuarto proteínas, un cuarto cereales"><circle r="106" fill="#fff"/><circle r="100" fill="#f4f4ee"/>
+  <path d="M0 0L0-90A90 90 0 0 1 0 90z" fill="#7bc65f"/><path d="M0 0L0 90A90 90 0 0 1-90 0z" fill="#f6c744"/><path d="M0 0L-90 0A90 90 0 0 1 0-90z" fill="#ee5d4a"/>
+  <g fill="#fff" opacity=".35"><circle cx="40" cy="-30" r="8"/><circle cx="55" cy="10" r="12"/><circle cx="30" cy="40" r="7"/><circle cx="-45" cy="-45" r="9"/><circle cx="-55" cy="-15" r="6"/><circle cx="-30" cy="45" r="10"/><circle cx="-60" cy="30" r="6"/></g><circle r="14" fill="#fff"/></svg>
+  <span class="tag" style="right:-2%;top:42%">½ Vegetales</span><span class="tag" style="left:-2%;top:12%">¼ Proteínas</span><span class="tag" style="left:-2%;bottom:14%">¼ Cereales</span></div>
+</div></section>
+
+<section class="sec met" id="metodo"><div class="wrap">
+ <h2 class="h reveal">Mi método cabe<br>en un plato.</h2><p class="sub reveal">Nada de contar cada caloría. Aprendemos a armar platos equilibrados y a adaptarlos a tu vida real.</p>
+ <div class="grid reveal"><div class="a"><div class="pc">50%</div><hr><h3>Vegetales y frutas</h3><p>Volumen, fibra y saciedad. Variados y de estación.</p></div><div class="c"><div class="pc">25%</div><hr><h3>Proteínas</h3><p>Carnes, huevos, legumbres o lácteos según tu objetivo.</p></div><div class="b"><div class="pc">25%</div><hr><h3>Cereales y tubérculos</h3><p>Energía de calidad, ajustada a tu actividad.</p></div></div>
+</div></section>
+
+<section class="sec" id="semana"><div class="wrap">
+ <h2 class="h reveal">Así se ve una semana</h2><p class="sub reveal">Ejemplo de menú flexible. El tuyo se arma a medida.</p>
+ <div class="week reveal" tabindex="0" aria-label="Menú de ejemplo semanal">
+  <div class="day"><h3>Lunes</h3><dl><dt>Desayuno</dt><dd>Yogur, avena y frutos rojos</dd><dt>Almuerzo</dt><dd>Pollo, arroz integral y ensalada</dd><dt>Cena</dt><dd>Tortilla de verduras</dd></dl></div>
+  <div class="day"><h3>Martes</h3><dl><dt>Desayuno</dt><dd>Tostadas con palta y huevo</dd><dt>Almuerzo</dt><dd>Lentejas con vegetales</dd><dt>Cena</dt><dd>Pescado al horno y zapallo</dd></dl></div>
+  <div class="day"><h3>Miércoles</h3><dl><dt>Desayuno</dt><dd>Licuado de banana y avena</dd><dt>Almuerzo</dt><dd>Carne magra, puré y ensalada</dd><dt>Cena</dt><dd>Sopa crema y queso fresco</dd></dl></div>
+  <div class="day"><h3>Jueves</h3><dl><dt>Desayuno</dt><dd>Café con leche y tostada</dd><dt>Almuerzo</dt><dd>Fideos integrales con atún</dd><dt>Cena</dt><dd>Wok de verduras y pollo</dd></dl></div>
+  <div class="day"><h3>Viernes</h3><dl><dt>Desayuno</dt><dd>Panqueques de avena</dd><dt>Almuerzo</dt><dd>Hamburguesa casera y ensalada</dd><dt>Cena</dt><dd>¡Libre! También se disfruta</dd></dl></div>
+ </div><p class="hint">← deslizá →</p>
+</div></section>
+
+<section class="sec" style="padding-top:0"><div class="wrap">
+ <h2 class="h reveal">En qué puedo ayudarte</h2>
+ <div class="svc reveal"><div><h3>Bajar de peso</h3><p>Sin pasar hambre</p></div><div><h3>Ganar masa muscular</h3><p>Plan + entrenamiento</p></div><div><h3>Nutrición deportiva</h3><p>Para rendir mejor</p></div><div><h3>Diabetes y colesterol</h3><p>Control con alimentación</p></div><div><h3>Embarazo y lactancia</h3><p>Cuidarte y cuidar</p></div><div><h3>Intolerancias y celiaquía</h3><p>Comer rico y seguro</p></div></div>
+</div></section>
+
+<section class="sec plans" id="planes"><div class="wrap">
+ <h2 class="h reveal">Elegí cómo empezar</h2>
+ <div class="pl reveal">
+  <div class="pn"><h3>Consulta única</h3><div class="pr">$25.000</div><ul><li>Evaluación y medidas</li><li>Plan de alimentación</li><li>Recomendaciones</li></ul><a class="btn l" href="#contacto">Elegir</a></div>
+  <div class="pn f"><h3>Plan mensual</h3><div class="pr">$60.000</div><ul><li>Consulta inicial + 3 controles</li><li>Ajustes por WhatsApp</li><li>Lista de compras y recetas</li></ul><a class="btn" href="#contacto">Elegir</a></div>
+  <div class="pn"><h3>Plan trimestral</h3><div class="pr">$150.000</div><ul><li>Seguimiento completo</li><li>Controles quincenales</li><li>Plan de mantenimiento</li></ul><a class="btn l" href="#contacto">Elegir</a></div>
+ </div><p class="hint" style="margin-top:1rem">Precios de ejemplo. Los planes se pueden hacer presencial u online.</p>
+</div></section>
+
+<section class="sec" id="contacto"><div class="wrap chat">
+ <div class="reveal"><h2 class="h">Hablemos<br>de tu plan.</h2><p class="sub">Respondé este chat y te escribo yo, personalmente, en el día.</p><div class="info"><div><b>Consultorio</b>Av. General Paz 321, Córdoba</div><div><b>Horarios</b>Lun a Sáb de 9 a 19 hs</div><div><b>Email</b>hola@camilaroldan.com.ar</div></div></div>
+ <form class="phone reveal" data-wa="5493510000000"><header><i>C</i><div><b>Camila Roldán</b><small>Nutricionista · en línea</small></div></header>
+  <div class="msg">¡Hola! 👋 Contame, ¿cuál es tu objetivo?</div>
+  <div class="ans"><div class="ch"><input type="radio" name="Objetivo" id="o1" value="Bajar de peso" checked><label for="o1">Bajar de peso</label><input type="radio" name="Objetivo" id="o2" value="Ganar músculo"><label for="o2">Ganar músculo</label><input type="radio" name="Objetivo" id="o3" value="Mejorar mi salud"><label for="o3">Mejorar mi salud</label><input type="radio" name="Objetivo" id="o4" value="Rendir en el deporte"><label for="o4">Deporte</label></div></div>
+  <div class="msg" style="margin-top:.8rem">Genial. ¿Cómo preferís la consulta?</div>
+  <div class="ans"><div class="ch"><input type="radio" name="Modalidad" id="v1" value="Presencial" checked><label for="v1">Presencial</label><input type="radio" name="Modalidad" id="v2" value="Online"><label for="v2">Online</label></div></div>
+  <div class="msg" style="margin-top:.8rem">¿Cómo te llamo y a qué número te escribo?</div>
+  <div class="ans"><input class="t" name="Nombre" placeholder="Tu nombre" required><input class="t" name="Teléfono" type="tel" placeholder="Tu WhatsApp" required><button>Enviar ➤</button><div class="form-ok">¡Listo! Se abrió WhatsApp con tus datos.</div></div>
+ </form>
+</div></section>
+</main>
+<footer><div class="wrap"><span>© <span id="year">2026</span> Camila Roldán · Lic. en Nutrición MP 0000</span><a href="../index.html">Más landings</a></div></footer>
+<a class="wa" href="https://wa.me/5493510000000" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 16c0 2.3.6 4.5 1.7 6.4L3 29l6.8-1.8A13 13 0 0 0 16 29c7.2 0 13-5.8 13-13S23.2 3 16 3zm0 23.7c-2 0-3.9-.6-5.5-1.6l-.4-.2-4 1 1.1-3.9-.3-.4A10.7 10.7 0 1 1 16 26.700zm5.900-8c-.3-.2-1.900-.9-2.200-1-.3-.1-.5-.2-.7.2-.2.300-.8 1-1 1.200-.2.200-.4.200-.7.100-.3-.2-1.400-.5-2.600-1.600-1-.9-1.600-1.900-1.800-2.200-.2-.3 0-.5.100-.7l.5-.6c.2-.2.200-.3.300-.5.100-.2.100-.4 0-.6l-1-2.300c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.100-.9.400-.3.300-1.200 1.100-1.200 2.800s1.200 3.300 1.400 3.500c.2.200 2.400 3.700 5.800 5.100 3.400 1.400 3.400.9 4 .9.600-.1 1.900-.8 2.200-1.500.3-.8.300-1.400.2-1.500-.1-.1-.3-.2-.6-.4z"/></svg></a><script src="../assets/main.js"></script>
+</body></html>

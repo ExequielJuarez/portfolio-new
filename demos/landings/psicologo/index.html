@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Martín Ocampo · Psicólogo en Córdoba</title>
+<meta name="description" content="Psicólogo en Córdoba. Terapia individual, de pareja y online. Agendá una primera sesión.">
+<meta name="theme-color" content="#f4ece0">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4ece0;--ink:#2a332e;--g:#5f8170;--gd:#3e5a4b;--clay:#c98a5e;--sand:#e9dcc8;--mut:#6c776f}
+*,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;font:400 1.08rem/1.75 "DM Sans",sans-serif;color:var(--ink);background:var(--bg);overflow-x:hidden}
+a{color:inherit}h1,h2,h3,p{margin:0}.f{font-family:Fraunces,serif}
+.col{width:min(720px,100% - 2.5rem);margin-inline:auto}.wide{width:min(1100px,100% - 2.5rem);margin-inline:auto}
+/* Nav mínima: nombre a la izquierda y un solo enlace */
+.nav{position:fixed;inset:0 0 auto;z-index:50;padding:1.1rem 0;transition:.3s}.nav.scrolled{background:rgba(244,236,224,.94);backdrop-filter:blur(8px);box-shadow:0 1px 0 rgba(0,0,0,.08)}
+.nav .wide{display:flex;justify-content:space-between;align-items:center}
+.brand{font:400 1.25rem Fraunces,serif;text-decoration:none}.brand i{color:var(--g)}
+.burger{background:0;border:0;display:flex;align-items:center;gap:.7rem;font:500 .95rem "DM Sans";cursor:pointer;color:var(--ink)}.burger span{display:block;width:26px;height:1.5px;background:var(--ink);box-shadow:0 7px 0 var(--ink);margin-bottom:7px}
+.menu{position:fixed;inset:0;background:var(--gd);color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:.4rem;list-style:none;margin:0;padding:0;font:300 clamp(2rem,6vw,3.6rem) Fraunces,serif;opacity:0;pointer-events:none;transition:.35s;z-index:-1}.menu.open{opacity:1;pointer-events:auto}.menu a{text-decoration:none}.menu a:hover{font-style:italic;color:var(--sand)}
+.nav:has(.menu.open){color:#fff}.nav:has(.menu.open) .burger,.nav:has(.menu.open) .brand{color:#fff}
+/* Hero: un título gigante, la persona a un lado, mucho aire */
+.hero{min-height:100svh;display:flex;align-items:center;padding:7rem 0 4rem;position:relative}
+.hero .wide{display:grid;grid-template-columns:1.25fr .75fr;gap:3rem;align-items:center}
+.hero h1{font:300 clamp(2.8rem,7.2vw,6rem)/1.02 Fraunces,serif;letter-spacing:-.02em}.hero h1 i{color:var(--g);font-weight:400}
+.hero p{margin-top:1.8rem;max-width:42ch;color:var(--mut);font-size:1.15rem}
+.ln{display:inline-flex;gap:.7rem;align-items:center;margin-top:2rem;font:500 1rem "DM Sans";text-decoration:none;border-bottom:1.5px solid var(--ink);padding-bottom:.25rem}.ln:hover{color:var(--g);border-color:var(--g)}
+.blob{aspect-ratio:3/4;border-radius:50% 50% 46% 54%/62% 60% 40% 38%;background:linear-gradient(160deg,var(--g),var(--gd));position:relative;display:grid;place-items:end center;overflow:hidden}
+.blob::before{content:"";position:absolute;width:62%;aspect-ratio:1;border-radius:50%;background:var(--sand);top:18%;opacity:.9}
+.blob::after{content:"";position:absolute;width:120%;aspect-ratio:1.3;border-radius:50% 50% 0 0;background:var(--clay);bottom:-35%}
+.cap{font:italic 300 .95rem Fraunces,serif;color:var(--mut);margin-top:1rem;text-align:center}
+/* ¿Te suena? — frases desalineadas */
+.sound{padding:6rem 0}.sound h2{font:300 clamp(2rem,5vw,3.6rem)/1.1 Fraunces,serif;margin-bottom:3rem}
+.sound p{font:300 clamp(1.4rem,3.2vw,2.3rem)/1.3 Fraunces,serif;margin:0 0 1.4rem;padding-left:var(--o,0)}.sound p:nth-of-type(1){--o:0}.sound p:nth-of-type(2){--o:8%}.sound p:nth-of-type(3){--o:2%}.sound p:nth-of-type(4){--o:12%}.sound p:nth-of-type(5){--o:5%}
+.sound p::before{content:"— ";color:var(--clay)}
+.sound .end{font:400 1.1rem "DM Sans";color:var(--mut);margin-top:2.5rem;padding:0}.sound .end::before{content:""}
+/* Cómo trabajo: prosa con rótulos laterales */
+.how{background:var(--sand);padding:6rem 0}
+.how .item{display:grid;grid-template-columns:200px 1fr;gap:2rem;padding:2rem 0;border-top:1px solid rgba(0,0,0,.15)}.how .item:last-child{border-bottom:1px solid rgba(0,0,0,.15)}
+.how h3{font:italic 400 1.5rem Fraunces,serif;color:var(--gd)}.how p{max-width:56ch}
+.how h2{font:300 clamp(2rem,5vw,3.4rem)/1.1 Fraunces,serif;margin-bottom:2.5rem;max-width:16ch}
+/* Modalidades: tres círculos */
+.mod{padding:6rem 0;text-align:center}.mod h2{font:300 clamp(2rem,4.5vw,3.2rem) Fraunces,serif;margin-bottom:3rem}
+.cir{display:flex;justify-content:center;flex-wrap:wrap}.cir div{width:260px;height:260px;border-radius:50%;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:2rem;margin:0 -14px;mix-blend-mode:multiply}
+.cir div:nth-child(1){background:#c4d6c9}.cir div:nth-child(2){background:#ecc9a9}.cir div:nth-child(3){background:#dfd2bc}
+.cir h3{font:400 1.5rem Fraunces,serif}.cir p{font-size:.92rem;color:#3d453f;line-height:1.4;margin-top:.3rem}
+/* Cita única */
+.q{padding:3rem 0 6rem}.q blockquote{margin:0;font:italic 300 clamp(1.7rem,3.8vw,2.8rem)/1.25 Fraunces,serif}.q cite{display:block;margin-top:1.2rem;font:500 .9rem "DM Sans";font-style:normal;color:var(--mut)}
+/* Contacto en forma de carta */
+.letter{background:#fffaf2;border-radius:6px;padding:clamp(2rem,5vw,4rem);box-shadow:0 30px 60px rgba(60,40,10,.12),0 1px 0 rgba(0,0,0,.05);transform:rotate(-.6deg);margin-bottom:4rem;position:relative}
+.letter::before{content:"";position:absolute;inset:10px;border:1px dashed rgba(0,0,0,.12);pointer-events:none}
+.letter h2{font:300 clamp(2rem,4.5vw,3rem)/1.1 Fraunces,serif;margin-bottom:1.5rem}
+.letter p.s{font:300 clamp(1.2rem,2.4vw,1.55rem)/2.3 Fraunces,serif}
+.letter input,.letter select{font:italic 400 inherit;font-family:Fraunces,serif;font-size:inherit;color:var(--g);background:transparent;border:0;border-bottom:1.5px solid var(--ink);padding:0 .3rem;width:auto;min-width:9ch;max-width:100%;border-radius:0}
+.letter input:focus,.letter select:focus{outline:0;border-color:var(--g);background:#eef3ef}
+.letter textarea{display:block;width:100%;margin-top:1rem;font:400 1rem "DM Sans";padding:.8rem 1rem;border:1.5px solid rgba(0,0,0,.18);border-radius:10px;background:#fff;min-height:90px;resize:vertical}
+.letter button{margin-top:1.5rem;background:var(--gd);color:#fff;border:0;border-radius:99px;padding:1rem 2.2rem;font:500 1rem "DM Sans";cursor:pointer}.letter button:hover{background:var(--g)}
+.form-ok{display:none;margin-top:1rem;color:var(--gd);font-weight:500}.form-ok.show{display:block}
+.sig{margin-top:2rem;font:italic 300 1.3rem Fraunces,serif}
+.dir{display:flex;flex-wrap:wrap;gap:.5rem 2.5rem;color:var(--mut);padding-bottom:3rem;font-size:.95rem}
+footer{border-top:1px solid rgba(0,0,0,.12);padding:1.3rem 0;color:var(--mut);font-size:.88rem}footer .wide{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.wa{position:fixed;right:18px;bottom:18px;z-index:60;width:56px;height:56px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.25)}.wa svg{width:30px;fill:#fff}
+.reveal{opacity:0;transform:translateY(20px);transition:.9s}.reveal.in{opacity:1;transform:none}
+@media(max-width:820px){.hero .wide{grid-template-columns:1fr}.blob{max-width:280px;order:-1;margin-inline:auto}.how .item{grid-template-columns:1fr;gap:.4rem}.cir div{margin:-10px 0}.sound p{padding-left:0!important}.hero{padding-top:6rem}.cir{flex-direction:column;align-items:center}}
+@media(prefers-reduced-motion:reduce){.letter{transform:none}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wide">
+ <a class="brand" href="#inicio">Martín <i>Ocampo</i></a>
+ <button class="burger" aria-label="Menú" aria-expanded="false"><span></span>Menú</button>
+ <ul class="menu"><li><a href="#inicio">Inicio</a></li><li><a href="#suena">¿Te suena?</a></li><li><a href="#trabajo">Cómo trabajo</a></li><li><a href="#modalidades">Modalidades</a></li><li><a href="#contacto">Escribime</a></li></ul>
+</div></header>
+<main>
+<section class="hero" id="inicio"><div class="wide">
+ <div><h1>A veces solo hace falta <i>alguien que escuche</i> sin apuro.</h1><p>Soy psicólogo. Acompaño a personas y parejas en Córdoba, y online, a entender lo que sienten y a encontrar su propio ritmo.</p><a class="ln" href="#contacto">Escribime para una primera sesión →</a></div>
+ <div><div class="blob" aria-hidden="true"></div><p class="cap">Consultorio en Nueva Córdoba y sesiones online</p></div>
+</div></section>
+
+<section class="sound" id="suena"><div class="col">
+ <h2 class="reveal">¿Te suena alguna de estas frases?</h2>
+ <p class="reveal">“Estoy cansado y no sé bien de qué.”</p>
+ <p class="reveal">“Pienso todo el tiempo en lo mismo y no puedo parar.”</p>
+ <p class="reveal">“Con mi pareja siempre terminamos discutiendo por lo mismo.”</p>
+ <p class="reveal">“Perdí a alguien y sigo haciendo como si nada.”</p>
+ <p class="reveal">“Quiero cambiar algo, pero no sé por dónde empezar.”</p>
+ <p class="end reveal">Si te reconociste en alguna, no tenés que resolverlo solo. Para eso estoy.</p>
+</div></section>
+
+<section class="how" id="trabajo"><div class="wide">
+ <h2 class="reveal">Cómo trabajo</h2>
+ <div class="item reveal"><h3>La primera sesión</h3><p>Nos conocemos. Me contás qué te trae y qué esperás. No hay que llegar con las cosas claras: eso lo vamos armando juntos.</p></div>
+ <div class="item reveal"><h3>El enfoque</h3><p>Terapia cognitivo-conductual con herramientas de mindfulness. Concreta y práctica: trabajamos lo que te pasa en el día a día.</p></div>
+ <div class="item reveal"><h3>El ritmo</h3><p>Sesiones de 50 minutos, generalmente una por semana. Podemos ajustarlo según cómo vayas.</p></div>
+ <div class="item reveal"><h3>La confianza</h3><p>Todo lo que hablemos queda entre nosotros, amparado por el secreto profesional.</p></div>
+</div></section>
+
+<section class="mod" id="modalidades"><div class="wide">
+ <h2 class="reveal">Tres formas de encontrarnos</h2>
+ <div class="cir reveal"><div><h3>Presencial</h3><p>En el consultorio, un espacio tranquilo y privado.</p></div><div><h3>Online</h3><p>Por videollamada, desde donde estés.</p></div><div><h3>En pareja</h3><p>Sesiones vinculares para mejorar la comunicación.</p></div></div>
+</div></section>
+
+<section class="q"><div class="col"><blockquote class="reveal">“Me sentí escuchada desde el primer minuto. Hoy sé qué hacer cuando la ansiedad aparece.”</blockquote><cite class="reveal">— Natalia, paciente</cite></div></section>
+
+<section id="contacto"><div class="col" style="width:min(860px,100% - 2rem)">
+ <form class="letter reveal" data-wa="5493510000000">
+  <h2>Escribime</h2>
+  <p class="s">Hola Martín, me llamo <input name="Nombre" required placeholder="tu nombre" size="12"> y me gustaría <select name="Busco"><option>empezar una terapia</option><option>hacer terapia de pareja</option><option>consultar por sesiones online</option><option>hacer una primera consulta</option></select>. Podés llamarme al <input name="Teléfono" type="tel" required placeholder="tu teléfono" size="14"> preferentemente por la <select name="Horario"><option>mañana</option><option>tarde</option><option>noche</option></select>.</p>
+  <textarea name="Mensaje" placeholder="Si querés, contame algo más (opcional)"></textarea>
+  <p class="sig">Gracias.</p>
+  <button>Enviar por WhatsApp</button><div class="form-ok">Gracias por escribirme. Se abrió WhatsApp con tu mensaje; te respondo a la brevedad.</div>
+ </form>
+ <div class="dir"><span>📍 Bv. San Juan 789, Córdoba</span><span>🕙 Lun a Vie de 10 a 20 hs</span><span>✉️ hola@martinocampo.com.ar</span></div>
+</div></section>
+</main>
+<footer><div class="wide"><span>© <span id="year">2026</span> Lic. Martín Ocampo · MP 0000</span><a href="../index.html">Más landings</a></div></footer>
+<a class="wa" href="https://wa.me/5493510000000" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 16c0 2.3.6 4.5 1.7 6.4L3 29l6.8-1.8A13 13 0 0 0 16 29c7.2 0 13-5.8 13-13S23.2 3 16 3zm0 23.7c-2 0-3.9-.6-5.5-1.6l-.4-.2-4 1 1.1-3.9-.3-.4A10.7 10.7 0 1 1 16 26.700zm5.900-8c-.3-.2-1.900-.9-2.200-1-.3-.1-.5-.2-.7.2-.2.300-.8 1-1 1.200-.2.200-.4.200-.7.100-.3-.2-1.400-.5-2.600-1.600-1-.9-1.600-1.900-1.800-2.200-.2-.3 0-.5.100-.7l.5-.6c.2-.2.200-.3.300-.5.100-.2.100-.4 0-.6l-1-2.300c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.100-.9.400-.3.300-1.200 1.100-1.200 2.800s1.200 3.300 1.400 3.500c.2.200 2.400 3.700 5.800 5.100 3.400 1.400 3.400.9 4 .9.600-.1 1.900-.8 2.200-1.500.3-.8.300-1.400.2-1.500-.1-.1-.3-.2-.6-.4z"/></svg></a><script src="../assets/main.js"></script>
+</body></html>

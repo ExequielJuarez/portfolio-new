@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ferrari & Asociados · Abogados laboralistas en Córdoba</title>
+<meta name="description" content="Estudio jurídico especializado en derecho laboral y previsional en Córdoba. Primera consulta sin cargo.">
+<meta name="theme-color" content="#0f1a30">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0f1a30;--navy2:#16254a;--gold:#c2a15f;--paper:#f6f2ea;--ink:#101a2e;--mut:#5b6377;--nav-h:76px}
+*,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;font:400 1rem/1.7 Montserrat,sans-serif;color:var(--ink);background:var(--paper);overflow-x:hidden}
+a{color:inherit}h1,h2,h3,p{margin:0}.serif{font-family:"Cormorant Garamond",serif}
+.wrap{width:min(1200px,100% - 2.5rem);margin-inline:auto}
+.nav{position:fixed;inset:0 0 auto;height:var(--nav-h);z-index:50;color:#fff;display:flex;align-items:center;transition:.3s}
+.nav.scrolled{background:rgba(15,26,48,.96);box-shadow:0 2px 20px rgba(0,0,0,.25)}
+.nav .wrap{display:flex;justify-content:space-between;align-items:center}
+.brand{font:500 1.5rem "Cormorant Garamond",serif;text-decoration:none;letter-spacing:.02em}.brand b{color:var(--gold);font-weight:600}
+.menu{display:flex;gap:2.2rem;list-style:none;margin:0;padding:0;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase}.menu a{text-decoration:none}.menu a:hover{color:var(--gold)}
+.burger{display:none;background:0;border:0;color:#fff;width:44px;height:44px}.burger span{display:block;width:24px;height:1.5px;background:#fff;margin:6px auto}
+/* Hero a pantalla completa, texto alineado a la izquierda abajo */
+.hero{min-height:100svh;background:radial-gradient(ellipse at 75% 20%,#2a4478 0,var(--navy) 55%,#080e1c);color:#fff;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;right:-8%;top:8%;width:min(55vw,640px);aspect-ratio:1;border:1px solid rgba(194,161,95,.35);border-radius:50%;box-shadow:inset 0 0 0 40px rgba(194,161,95,.04),0 0 0 60px rgba(194,161,95,.04)}
+.hero svg{position:absolute;right:max(4vw,1rem);top:18%;width:min(34vw,380px);color:var(--gold);opacity:.9}
+.hero .wrap{position:relative;padding:8rem 0 4rem}
+.hero small{letter-spacing:.4em;font-size:.78rem;color:var(--gold);text-transform:uppercase}
+.hero h1{font:500 clamp(2.6rem,7.5vw,6.2rem)/1 "Cormorant Garamond",serif;max-width:12ch;margin:1.2rem 0 1.6rem}.hero h1 i{color:var(--gold)}
+.hero p{max-width:46ch;color:#cfd5e5;font-weight:300}
+.cta{display:inline-block;margin-top:2rem;border:1px solid var(--gold);color:#fff;padding:1rem 2.2rem;text-decoration:none;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;transition:.25s}.cta:hover{background:var(--gold);color:var(--navy)}
+.bar{border-top:1px solid rgba(255,255,255,.15);position:relative;background:rgba(0,0,0,.2)}.bar .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem 2rem;padding:1.1rem 0;font-size:.85rem;color:#cfd5e5}
+/* Áreas: filas numeradas */
+.areas{padding:7rem 0}
+.hd{display:flex;justify-content:space-between;align-items:end;gap:2rem;flex-wrap:wrap;margin-bottom:3rem}
+.hd h2{font:500 clamp(2.2rem,5vw,4rem)/1.05 "Cormorant Garamond",serif;max-width:14ch}.hd p{max-width:38ch;color:var(--mut)}
+.row{display:grid;grid-template-columns:90px 1fr 1.2fr 40px;gap:1.5rem;align-items:center;padding:1.8rem 0;border-top:1px solid #d7cfbd;text-decoration:none;transition:.3s}
+.row:last-child{border-bottom:1px solid #d7cfbd}
+.row:hover{padding-left:1.2rem;background:#fff}
+.row .n{font:italic 400 2rem "Cormorant Garamond",serif;color:var(--gold)}.row h3{font:500 clamp(1.5rem,2.6vw,2.2rem) "Cormorant Garamond",serif;line-height:1.1}.row p{color:var(--mut);font-size:.95rem}.row .a{font-size:1.4rem;color:var(--gold)}
+/* El estudio: monograma + texto + firma */
+.estudio{background:var(--navy);color:#fff;padding:7rem 0}
+.estudio .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:5rem;align-items:center}
+.mono{aspect-ratio:4/5;border:1px solid var(--gold);display:grid;place-items:center;font:italic 500 clamp(6rem,14vw,11rem) "Cormorant Garamond",serif;color:var(--gold);position:relative;background:linear-gradient(160deg,#1c2f5b,#0b1428)}
+.mono::after{content:"";position:absolute;inset:14px;border:1px solid rgba(194,161,95,.35)}
+.estudio h2{font:500 clamp(2rem,4.5vw,3.4rem)/1.1 "Cormorant Garamond",serif;margin-bottom:1.5rem}.estudio p{color:#cfd5e5;font-weight:300;margin-bottom:1rem}
+.vals{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem 2.5rem;margin-top:2rem}.vals b{display:block;color:var(--gold);font:600 .78rem Montserrat;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.3rem}.vals span{font-size:.93rem;color:#cfd5e5}
+/* Proceso: línea de tiempo vertical */
+.proc{padding:7rem 0}
+.tl{position:relative;margin-top:3rem;max-width:780px;margin-left:auto}
+.tl::before{content:"";position:absolute;left:14px;top:6px;bottom:6px;width:1px;background:var(--gold)}
+.tl div{position:relative;padding:0 0 2.8rem 3.5rem}.tl div::before{content:"";position:absolute;left:6px;top:8px;width:17px;height:17px;background:var(--paper);border:1px solid var(--gold);transform:rotate(45deg)}
+.tl h3{font:500 1.7rem "Cormorant Garamond",serif}.tl p{color:var(--mut)}
+.proc .hd{margin-bottom:0}
+/* Frase y preguntas */
+.quote{padding:6rem 0;border-top:1px solid #d7cfbd}
+.quote blockquote{margin:0;font:italic 400 clamp(1.7rem,3.6vw,3rem)/1.25 "Cormorant Garamond",serif;max-width:26ch}.quote cite{display:block;margin-top:1.5rem;font:500 .8rem Montserrat;letter-spacing:.2em;text-transform:uppercase;color:var(--mut);font-style:normal}
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem 4rem;margin-top:4rem}.faq h3{font:600 1.35rem "Cormorant Garamond",serif;margin-bottom:.4rem}.faq p{color:var(--mut);font-size:.95rem}
+/* Contacto: enorme, líneas directas + formulario subrayado */
+.contact{background:var(--navy);color:#fff;padding:7rem 0 5rem}
+.contact h2{font:500 clamp(3rem,10vw,8rem)/.95 "Cormorant Garamond",serif}.contact h2 i{color:var(--gold)}
+.contact .g{display:grid;grid-template-columns:1fr 1.1fr;gap:4rem;margin-top:3.5rem}
+.lines a,.lines div{display:block;text-decoration:none;padding:1.2rem 0;border-top:1px solid rgba(255,255,255,.18)}.lines small{display:block;color:var(--gold);letter-spacing:.2em;text-transform:uppercase;font-size:.72rem}.lines span{font:500 clamp(1.3rem,2.4vw,1.9rem) "Cormorant Garamond",serif}
+.lines a:hover span{color:var(--gold)}
+form{display:grid;gap:1.4rem}
+form .r{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+form label{display:grid;gap:.2rem;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+input,select,textarea{font:400 1rem Montserrat;color:#fff;background:transparent;border:0;border-bottom:1px solid rgba(255,255,255,.35);padding:.7rem 0;width:100%;border-radius:0}
+select option{color:#000}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--gold)}
+textarea{min-height:90px;resize:vertical}
+button{justify-self:start;background:var(--gold);color:var(--navy);border:0;padding:1.1rem 2.6rem;font:600 .8rem Montserrat;letter-spacing:.2em;text-transform:uppercase;cursor:pointer}
+.form-ok{display:none;color:var(--gold)}.form-ok.show{display:block}
+footer{background:#080e1c;color:#8f98b0;font-size:.82rem;padding:1.5rem 0}footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.wa{position:fixed;right:18px;bottom:18px;z-index:60;width:56px;height:56px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.35)}.wa svg{width:30px;fill:#fff;position:static;opacity:1}
+.reveal{opacity:0;transform:translateY(24px);transition:.8s}.reveal.in{opacity:1;transform:none}
+@media(max-width:900px){
+ .burger{display:block}.menu{position:fixed;inset:var(--nav-h) 0 auto;flex-direction:column;gap:0;background:var(--navy);padding:.5rem 1.5rem 1.5rem;transform:translateY(-130%);transition:.3s}.menu.open{transform:none}.menu a{display:block;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,.12)}
+ .hero svg{display:none}
+ .row{grid-template-columns:50px 1fr 24px}.row p{grid-column:2/3;grid-row:2}.row .a{grid-row:1;grid-column:3}
+ .estudio .wrap,.contact .g,.faq{grid-template-columns:1fr}.mono{max-width:300px}
+ .tl{margin-left:0}
+}
+@media(max-width:560px){form .r,.vals{grid-template-columns:1fr}button{width:100%;justify-self:stretch}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+ <a class="brand" href="#inicio">Ferrari <b>&</b> Asociados</a>
+ <nav><ul class="menu"><li><a href="#areas">Áreas</a></li><li><a href="#estudio">El estudio</a></li><li><a href="#proceso">Proceso</a></li><li><a href="#faq">Consultas</a></li><li><a href="#contacto">Contacto</a></li></ul></nav>
+ <button class="burger" aria-label="Menú" aria-expanded="false"><span></span><span></span><span></span></button>
+</div></header>
+<main>
+<section class="hero" id="inicio">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width=".35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M5 21h14M3 7h18M6 7l-3 8a3 3 0 0 0 6 0zM18 7l-3 8a3 3 0 0 0 6 0z"/></svg>
+ <div class="wrap"><small>Estudio jurídico · Córdoba</small><h1>Tus derechos <i>laborales</i>, bien defendidos.</h1><p>Especialistas en derecho laboral y previsional. Despidos, accidentes de trabajo, jubilaciones y pensiones. Primera consulta sin cargo.</p><a class="cta" href="#contacto">Contactame</a></div>
+ <div class="bar"><div class="wrap"><span>Obispo Trejo 123, Córdoba</span><span>Lun a Vie · 9 a 18 hs</span><span>+54 351 000-0000</span></div></div>
+</section>
+
+<section class="areas" id="areas"><div class="wrap">
+ <div class="hd reveal"><h2>Áreas de práctica</h2><p>Nos dedicamos a una sola cosa: la relación entre las personas y su trabajo.</p></div>
+ <a class="row reveal" href="#contacto"><span class="n">01</span><h3>Despidos e indemnizaciones</h3><p>Despido sin causa, con causa, falta de registración y liquidación final.</p><span class="a">→</span></a>
+ <a class="row reveal" href="#contacto"><span class="n">02</span><h3>Accidentes y ART</h3><p>Reclamos ante la aseguradora, comisiones médicas e incapacidades.</p><span class="a">→</span></a>
+ <a class="row reveal" href="#contacto"><span class="n">03</span><h3>Jubilaciones y pensiones</h3><p>Trámites ante ANSES, reajustes de haberes, moratorias y pensiones.</p><span class="a">→</span></a>
+ <a class="row reveal" href="#contacto"><span class="n">04</span><h3>Acoso y discriminación laboral</h3><p>Asesoramiento y acciones legales ante el maltrato en el trabajo.</p><span class="a">→</span></a>
+ <a class="row reveal" href="#contacto"><span class="n">05</span><h3>Empresas y empleadores</h3><p>Prevención de conflictos, regularización y defensa en juicio.</p><span class="a">→</span></a>
+</div></section>
+
+<section class="estudio" id="estudio"><div class="wrap">
+ <div class="mono reveal" aria-hidden="true">F</div>
+ <div class="reveal"><h2>Dieciocho años sentados del mismo lado de la mesa: el tuyo.</h2><p>Somos un estudio chico a propósito. Cada caso lo lleva un abogado que te conoce por tu nombre, te explica sin tecnicismos qué es posible y qué no, y te avisa de cada movimiento del expediente.</p><p>No prometemos resultados que no podemos garantizar. Sí prometemos dedicación, claridad y honorarios acordados por escrito desde el primer día.</p>
+ <div class="vals"><div><b>Sin cargo</b><span>La primera consulta no tiene costo.</span></div><div><b>Por escrito</b><span>Honorarios claros antes de empezar.</span></div><div><b>Directo</b><span>Hablás con el abogado a cargo.</span></div><div><b>Online</b><span>Videollamada o presencial.</span></div></div></div>
+</div></section>
+
+<section class="proc" id="proceso"><div class="wrap">
+ <div class="hd reveal"><h2>Cómo es trabajar con nosotros</h2></div>
+ <div class="tl">
+  <div class="reveal"><h3>Me contás tu caso</h3><p>Por WhatsApp, teléfono o en el estudio. Sin compromiso y de forma confidencial.</p></div>
+  <div class="reveal"><h3>Analizamos la documentación</h3><p>Recibos, telegramas, contratos. Te digo con franqueza qué chances hay.</p></div>
+  <div class="reveal"><h3>Intimamos y negociamos</h3><p>Siempre que es posible, buscamos un acuerdo justo antes de litigar.</p></div>
+  <div class="reveal"><h3>Si hace falta, juicio</h3><p>Representación completa ante los tribunales, con informes periódicos.</p></div>
+ </div>
+</div></section>
+
+<section class="quote" id="faq"><div class="wrap">
+ <blockquote class="reveal">“Me despidieron un viernes. El lunes ya tenía un plan claro y alguien que me atendía el teléfono.”</blockquote><cite class="reveal">Roberto D. · Cliente, caso de despido</cite>
+ <div class="faq">
+  <div class="reveal"><h3>¿Cuánto tarda un juicio laboral?</h3><p>Depende del caso y del tribunal. En la primera reunión te damos un estimativo realista.</p></div>
+  <div class="reveal"><h3>¿Cómo cobran?</h3><p>Se acuerda por escrito al inicio. En muchos casos, un porcentaje a resultado.</p></div>
+  <div class="reveal"><h3>¿Tengo plazo para reclamar?</h3><p>Sí, y es corto. Cuanto antes consultes, más opciones tenés.</p></div>
+  <div class="reveal"><h3>¿Atienden fuera de Córdoba?</h3><p>Sí, por videollamada y con documentación digital.</p></div>
+ </div>
+</div></section>
+
+<section class="contact" id="contacto"><div class="wrap">
+ <h2 class="reveal">Contactame<i>.</i></h2>
+ <div class="g">
+  <div class="lines reveal"><a href="tel:+543510000000"><small>Teléfono</small><span>+54 351 000-0000</span></a><a href="mailto:contacto@ferrariasociados.com.ar"><small>Email</small><span>contacto@ferrariasociados.com.ar</span></a><div><small>Estudio</small><span>Obispo Trejo 123, piso 4 · Córdoba</span></div></div>
+  <form class="reveal" data-wa="5493510000000">
+   <div class="r"><label>Nombre<input name="Nombre" required></label><label>Teléfono<input name="Teléfono" type="tel" required></label></div>
+   <label>Tema<select name="Tema"><option>Despido</option><option>Accidente laboral</option><option>Jubilación / pensión</option><option>Acoso laboral</option><option>Soy empresa</option><option>Otro</option></select></label>
+   <label>Contame tu caso<textarea name="Caso"></textarea></label>
+   <button>Enviar consulta</button><div class="form-ok">Se abrió WhatsApp con tu mensaje. Respondo dentro de las 24 hs.</div>
+  </form>
+ </div>
+</div></section>
+</main>
+<footer><div class="wrap"><span>© <span id="year">2026</span> Ferrari & Asociados</span><a href="../index.html">Más landings</a></div></footer>
+<a class="wa" href="https://wa.me/5493510000000" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 16c0 2.3.6 4.5 1.7 6.4L3 29l6.8-1.8A13 13 0 0 0 16 29c7.2 0 13-5.8 13-13S23.2 3 16 3zm0 23.7c-2 0-3.9-.6-5.5-1.6l-.4-.2-4 1 1.1-3.9-.3-.4A10.7 10.7 0 1 1 16 26.700zm5.900-8c-.3-.2-1.900-.9-2.200-1-.3-.1-.5-.2-.7.2-.2.300-.8 1-1 1.200-.2.200-.4.200-.7.100-.3-.2-1.400-.5-2.600-1.600-1-.9-1.600-1.900-1.800-2.200-.2-.3 0-.5.100-.7l.5-.6c.2-.2.200-.3.300-.5.100-.2.100-.4 0-.6l-1-2.300c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.100-.9.400-.3.300-1.200 1.100-1.200 2.800s1.200 3.300 1.400 3.500c.2.200 2.400 3.700 5.800 5.100 3.400 1.400 3.400.9 4 .9.600-.1 1.900-.8 2.200-1.500.3-.8.300-1.400.2-1.500-.1-.1-.3-.2-.6-.4z"/></svg></a><script src="../assets/main.js"></script>
+</body></html>

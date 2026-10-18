@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campera Jean Vintage | Matilda Boutique</title>
+  <meta name="description" content="Matilda Boutique: moda femenina con detalles que se notan. Remeras, abrigos, jeans y más, con envíos a todo el país.">
+  <meta name="theme-color" content="#f8f4ee">
+  <link rel="icon" href="../img/marca/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="../img/marca/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400;1,6..96,500&family=Jost:wght@300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/base.css">
+  
+  
+  
+    <link rel="stylesheet" href="../css/producto.css">
+  
+</head>
+<body>
+
+<!-- ═════════════ BARRA DE ANUNCIOS ═════════════ -->
+<div class="anuncios" aria-label="Promociones">
+  <div class="anuncios__pista">
+    
+      <span>Envío gratis en compras desde $150.000</span>
+      <span class="anuncios__sep">✦</span>
+      <span>10% off pagando con transferencia</span>
+      <span class="anuncios__sep">✦</span>
+      <span>3 y 6 cuotas sin interés</span>
+      <span class="anuncios__sep">✦</span>
+      <span>Primer cambio sin costo</span>
+      <span class="anuncios__sep">✦</span>
+    
+      <span>Envío gratis en compras desde $150.000</span>
+      <span class="anuncios__sep">✦</span>
+      <span>10% off pagando con transferencia</span>
+      <span class="anuncios__sep">✦</span>
+      <span>3 y 6 cuotas sin interés</span>
+      <span class="anuncios__sep">✦</span>
+      <span>Primer cambio sin costo</span>
+      <span class="anuncios__sep">✦</span>
+    
+  </div>
+</div>
+
+<!-- ═════════════ HEADER ═════════════ -->
+<header class="header" id="header">
+  <div class="header__barra contenedor">
+    <button class="icono-btn header__menu-btn" id="btnMenu" aria-label="Abrir menú" aria-expanded="false">
+      <span class="hamburguesa"></span>
+    </button>
+
+    <form class="buscador" action="../catalogo.html" method="GET" role="search" data-buscador>
+      <input type="search" name="q" value="" placeholder="Buscar prendas…" aria-label="Buscar productos"
+             autocomplete="off" maxlength="60" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="sugerencias">
+      <button type="submit" aria-label="Buscar">
+        <svg viewBox="0 0 24 24" width="18" height="18"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      <div class="sugerencias" id="sugerencias" role="listbox" aria-label="Sugerencias" hidden></div>
+    </form>
+
+    <a href="../index.html" class="logo" aria-label="Matilda Boutique — Inicio">
+      <img class="logo__imagen" src="../img/marca/logo-dorado.png" alt="Matilda boutique" width="689" height="229">
+    </a>
+
+    <div class="header__acciones">
+      <button class="icono-btn header__buscar-movil" id="btnBuscarMovil" aria-label="Buscar">
+        <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      
+      
+        
+        <a href="#" data-demo-off class="icono-btn" aria-label="Iniciar sesión">
+        <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </a>
+      
+      
+      <a href="../favoritos.html" class="icono-btn carrito-btn favoritos-btn" aria-label="Favoritos">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <span class="carrito-btn__contador" id="contadorFavoritos" hidden>0</span>
+      </a>
+      <a href="../carrito.html" class="icono-btn carrito-btn" aria-label="Carrito">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path d="M5 8h14l-1.2 12H6.2L5 8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 8V6a3 3 0 016 0v2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        <span class="carrito-btn__contador" id="contadorCarrito">0</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="buscador-movil contenedor " id="buscadorMovil">
+    <form class="buscador buscador--movil" action="../catalogo.html" method="GET" role="search" data-buscador>
+      <input type="search" name="q" value="" placeholder="Buscar prendas…" aria-label="Buscar productos"
+             autocomplete="off" maxlength="60" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="sugerenciasMovil">
+      <button type="submit" aria-label="Buscar">
+        <svg viewBox="0 0 24 24" width="18" height="18"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      <div class="sugerencias" id="sugerenciasMovil" role="listbox" aria-label="Sugerencias" hidden></div>
+    </form>
+  </div>
+
+  <nav class="nav" id="nav" aria-label="Principal">
+    <ul class="nav__lista contenedor">
+      <li class=""><a href="../index.html">Inicio</a></li>
+      <li class="nav__item--activo"><a href="../catalogo.html">Catálogo</a></li>
+      <li><a href="#" data-demo-off>Remeras</a></li>
+      <li><a href="#" data-demo-off>Abrigos</a></li>
+      <li><a href="#" data-demo-off>Jeans</a></li>
+      <li><a href="#" data-demo-off>Vestidos</a></li>
+      <li><a href="#" data-demo-off>Accesorios</a></li>
+      <li><a href="11.html#contacto">Contacto</a></li>
+      <li class="nav__item--movil"><a href="../favoritos.html">Favoritos</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="overlay" id="overlay"></div>
+
+
+
+
+  <!-- ═════════════ MIGAS DE PAN ═════════════ -->
+  <div class="contenedor">
+    <nav class="migas migas--producto" aria-label="Ruta">
+      <a href="../index.html">Inicio</a>
+      <span>/</span>
+      <a href="../catalogo.html">Catálogo</a>
+      <span>/</span>
+      <a href="../catalogo.html">Abrigos</a>
+      <span>/</span>
+      <span aria-current="page">Campera Jean Vintage</span>
+    </nav>
+  </div>
+
+  <!-- ═════════════ PRODUCTO ═════════════ -->
+  <main class="producto contenedor" data-id="11" data-precio="54000" data-nombre="Campera Jean Vintage">
+
+    <!-- Galería: carrusel en celular/tablet, mosaico en PC -->
+    <section class="galeria" aria-label="Fotos del producto">
+      <div class="galeria__visor">
+        <div class="galeria__pista" id="galeriaPista">
+          
+            <button class="foto " data-indice="0" aria-label="Ampliar imagen 1">
+              
+                <img class="foto__img" src="../img/productos/abrigos/abrigo4a.jpg" alt="Campera Jean Vintage — foto 1" >
+              
+              <span class="foto__zoom" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16"><circle cx="11" cy="11" r="6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M20 20l-4.5-4.5M11 8.5v5M8.5 11h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </span>
+            </button>
+          
+        </div>
+
+        
+
+        <div class="galeria__contador" aria-hidden="true">
+          <span id="fotoActual">01</span> / 01
+        </div>
+        <div class="galeria__progreso" aria-hidden="true"><span id="galeriaProgreso"></span></div>
+      </div>
+
+      <div class="galeria__miniaturas" role="tablist" aria-label="Elegir imagen">
+        
+          <button class="miniatura activa  miniatura--foto" data-indice="0" aria-label="Imagen 1">
+            
+              <img src="../img/productos/abrigos/abrigo4a.jpg" alt="" loading="lazy">
+            
+          </button>
+        
+      </div>
+    </section>
+
+    <!-- Información y compra -->
+    <section class="info" aria-label="Información del producto">
+      <div class="info__interior">
+        <div class="info__cabecera">
+          <p class="info__categoria">Abrigos</p>
+          <p class="info__codigo">Cód. 0011</p>
+        </div>
+
+        <h1 class="info__titulo">Campera Jean Vintage</h1>
+
+        <div class="precio">
+          <p class="precio__lista">$54.000,00</p>
+          <p class="precio__transferencia">
+            <strong>$48.600,00</strong>
+            con transferencia
+            <span class="precio__tag">-10%</span>
+          </p>
+          <p class="precio__cuotas">
+            6 cuotas sin interés de <strong>$9.000,00</strong>
+          </p>
+        </div>
+
+        <p class="info__resumen">Campera de jean con lavado vintage, calce oversize y bolsillos con botón.</p>
+
+        <!-- Variantes de color -->
+        <div class="opcion">
+          <p class="opcion__titulo">Color: <span id="colorElegido">Jean</span></p>
+          <div class="opcion__colores">
+            
+              <label class="swatch" title="Negro">
+                <input type="radio" name="color" value="Negro" >
+                <span class="swatch__muestra" style="--muestra: #1b1714"></span>
+              </label>
+            
+              <label class="swatch" title="Blanco">
+                <input type="radio" name="color" value="Blanco" >
+                <span class="swatch__muestra" style="--muestra: #ffffff"></span>
+              </label>
+            
+              <label class="swatch" title="Gris">
+                <input type="radio" name="color" value="Gris" >
+                <span class="swatch__muestra" style="--muestra: #8d8a86"></span>
+              </label>
+            
+              <label class="swatch" title="Camel">
+                <input type="radio" name="color" value="Camel" >
+                <span class="swatch__muestra" style="--muestra: #c9a483"></span>
+              </label>
+            
+              <label class="swatch" title="Crudo">
+                <input type="radio" name="color" value="Crudo" >
+                <span class="swatch__muestra" style="--muestra: #e8dcc8"></span>
+              </label>
+            
+              <label class="swatch" title="Jean">
+                <input type="radio" name="color" value="Jean" checked>
+                <span class="swatch__muestra" style="--muestra: #7d9bbd"></span>
+              </label>
+            
+              <label class="swatch" title="Marrón">
+                <input type="radio" name="color" value="Marrón" >
+                <span class="swatch__muestra" style="--muestra: #6b4a3a"></span>
+              </label>
+            
+              <label class="swatch" title="Bordó">
+                <input type="radio" name="color" value="Bordó" >
+                <span class="swatch__muestra" style="--muestra: #4a1f24"></span>
+              </label>
+            
+              <label class="swatch" title="Celeste">
+                <input type="radio" name="color" value="Celeste" >
+                <span class="swatch__muestra" style="--muestra: #a9c4de"></span>
+              </label>
+            
+              <label class="swatch" title="Azul">
+                <input type="radio" name="color" value="Azul" >
+                <span class="swatch__muestra" style="--muestra: #27466e"></span>
+              </label>
+            
+              <label class="swatch" title="Terracota">
+                <input type="radio" name="color" value="Terracota" >
+                <span class="swatch__muestra" style="--muestra: #b5714f"></span>
+              </label>
+            
+              <label class="swatch" title="Plata">
+                <input type="radio" name="color" value="Plata" >
+                <span class="swatch__muestra" style="--muestra: #c4c4c4"></span>
+              </label>
+            
+              <label class="swatch" title="Arena">
+                <input type="radio" name="color" value="Arena" >
+                <span class="swatch__muestra" style="--muestra: #d9c3a5"></span>
+              </label>
+            
+              <label class="swatch" title="Amarillo">
+                <input type="radio" name="color" value="Amarillo" >
+                <span class="swatch__muestra" style="--muestra: #f1e3a1"></span>
+              </label>
+            
+              <label class="swatch" title="Rayado">
+                <input type="radio" name="color" value="Rayado" >
+                <span class="swatch__muestra" style="--muestra: #bdbdbd"></span>
+              </label>
+            
+          </div>
+        </div>
+
+        <!-- Talle -->
+        
+          <div class="opcion" id="opcionTalle">
+            <p class="opcion__titulo">Talle: <span id="talleElegido">Elegí el tuyo</span></p>
+            <div class="opcion__talles" role="radiogroup" aria-label="Talle">
+              
+                <label class="talle">
+                  <input type="radio" name="talle" value="S">
+                  <span>S</span>
+                </label>
+              
+                <label class="talle">
+                  <input type="radio" name="talle" value="M">
+                  <span>M</span>
+                </label>
+              
+                <label class="talle">
+                  <input type="radio" name="talle" value="L">
+                  <span>L</span>
+                </label>
+              
+                <label class="talle">
+                  <input type="radio" name="talle" value="XL">
+                  <span>XL</span>
+                </label>
+              
+            </div>
+            <p class="opcion__ayuda" id="talleAyuda" hidden>Elegí un talle para continuar</p>
+          </div>
+        
+
+        <!-- Cantidad + agregar -->
+        <div class="compra" id="compra">
+          <div class="cantidad" aria-label="Cantidad">
+            <button type="button" class="cantidad__btn" data-cantidad="-1" aria-label="Restar">−</button>
+            <input type="number" id="cantidad" value="1" min="1" max="13" inputmode="numeric" aria-label="Cantidad">
+            <button type="button" class="cantidad__btn" data-cantidad="1" aria-label="Sumar">+</button>
+          </div>
+          <button class="btn btn--solido compra__agregar" id="btnAgregar" >Agregar al carrito</button>
+          
+          <button class="compra__fav tarjeta__fav " data-fav-id="11" aria-pressed="false" aria-label="Agregar a favoritos">
+            <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <button class="btn btn--linea compra__ahora" >Comprar ahora</button>
+
+        <div class="stock ">
+          <span class="stock__punto"></span>
+          
+            En stock · quedan <strong>13</strong> unidades
+          
+        </div>
+
+        <!-- Calculador de envío (demo) -->
+        <form class="envio" id="formEnvio" novalidate>
+          <label for="codigoPostal" class="envio__label">Calculá el envío</label>
+          <div class="envio__fila">
+            <input type="text" id="codigoPostal" placeholder="Código postal" inputmode="numeric" maxlength="4">
+            <button type="submit">Calcular</button>
+          </div>
+          <ul class="envio__resultados" id="envioResultados" hidden></ul>
+        </form>
+
+        <!-- Beneficios rápidos -->
+        <ul class="ventajas">
+          <li>
+            <svg viewBox="0 0 24 24" width="20" height="20"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="7" cy="17.5" r="1.7" fill="var(--blanco)" stroke="currentColor" stroke-width="1.5"/><circle cx="17" cy="17.5" r="1.7" fill="var(--blanco)" stroke="currentColor" stroke-width="1.5"/></svg>
+            <span><strong>Envío gratis</strong> desde $150.000</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 12a8 8 0 0114-5.3M20 12a8 8 0 01-14 5.3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M18 3v4h-4M6 21v-4h4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><strong>Cambios</strong> hasta 30 días</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6l7-3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><strong>Compra</strong> protegida</span>
+          </li>
+        </ul>
+
+        <!-- Información extra -->
+        <div class="info__acordeones">
+          <div class="acordeon">
+            <button class="acordeon__titulo" aria-expanded="false">Medios de pago <span class="acordeon__icono"></span></button>
+            <div class="acordeon__contenido">
+              <p>Tarjetas de crédito y débito, transferencia bancaria y billeteras virtuales.</p>
+              <p><strong>6 cuotas sin interés</strong> con todas las tarjetas bancarias.</p>
+              <p class="info__logos">(VISA) (MASTER) (AMEX) (MP)</p>
+            </div>
+          </div>
+          <div class="acordeon">
+            <button class="acordeon__titulo" aria-expanded="false">Envíos <span class="acordeon__icono"></span></button>
+            <div class="acordeon__contenido">
+              <p>Enviamos a todo el país. Despachamos dentro de las 48 hs hábiles de acreditado el pago.</p>
+              <p>También podés retirar sin cargo por nuestro showroom.</p>
+            </div>
+          </div>
+          <div class="acordeon">
+            <button class="acordeon__titulo" aria-expanded="false">Cambios y devoluciones <span class="acordeon__icono"></span></button>
+            <div class="acordeon__contenido">
+              <p>Tenés 30 días desde que recibís tu compra para cambiarla o devolverla, sin uso y en su empaque original.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═════════════ DESCRIPCIÓN Y FICHA TÉCNICA ═════════════ -->
+  <section class="detalle">
+    <div class="contenedor detalle__grilla">
+      <div class="detalle__texto">
+        <p class="detalle__etiqueta">Sobre el producto</p>
+        <h2 class="detalle__titulo">Detalles que hacen la diferencia</h2>
+        
+          <p>Denim con lavado desgastado de estilo vintage, bolsillos en el pecho y calce oversize.</p>
+        
+          <p>Un básico que no pasa de moda.</p>
+        
+
+        <ol class="destacados">
+          
+            <li>
+              <span class="destacados__num">01</span>
+              <span>Lavado vintage</span>
+            </li>
+          
+            <li>
+              <span class="destacados__num">02</span>
+              <span>Calce oversize</span>
+            </li>
+          
+            <li>
+              <span class="destacados__num">03</span>
+              <span>Bolsillos con botón</span>
+            </li>
+          
+        </ol>
+      </div>
+
+      <div class="ficha">
+        <p class="detalle__etiqueta">Ficha técnica</p>
+        <dl class="ficha__lista">
+          
+            <div class="ficha__fila">
+              <dt>Composición</dt>
+              <dd>100% algodón</dd>
+            </div>
+          
+            <div class="ficha__fila">
+              <dt>Calce</dt>
+              <dd>Oversize</dd>
+            </div>
+          
+            <div class="ficha__fila">
+              <dt>Cuidado</dt>
+              <dd>Lavar del revés, agua fría</dd>
+            </div>
+          
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════ RELACIONADOS ═════════════ -->
+  <section class="relacionados contenedor">
+    <div class="relacionados__cabecera">
+      <h2 class="relacionados__titulo">También te puede gustar</h2>
+      <a href="../catalogo.html" class="relacionados__link">Ver todo →</a>
+    </div>
+    <div class="relacionados__grilla">
+      
+        <article class="tarjeta"
+         data-id="8"
+         data-nombre="Campera Cuero Eco Bordó"
+         data-categoria="Abrigos"
+         data-color="bordo"
+         data-talles="S,M,L,XL"
+         data-precio="89000"
+         data-orden="0">
+  <div class="tarjeta__media">
+    <a href="8.html" class="tarjeta__imagen">
+      
+        <span class="tarjeta__etiqueta">Nuevo</span>
+      
+      
+        <img class="tarjeta__foto" src="../img/productos/abrigos/abrigo1a.jpg" alt="Campera Cuero Eco Bordó" loading="lazy">
+      
+      
+        <img class="tarjeta__foto tarjeta__foto--alt" src="../img/productos/abrigos/abrigo1b.jpg" alt="" loading="lazy">
+      
+    </a>
+    
+    <button class="tarjeta__fav " data-fav-id="8" aria-pressed="false" aria-label="Agregar a favoritos">
+      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+    </button>
+    
+      
+        <a class="tarjeta__agregar" href="8.html">Elegir talle</a>
+      
+    
+  </div>
+
+  <div class="tarjeta__info">
+    <p class="tarjeta__categoria">Abrigos <span class="tarjeta__talles">S · M · L · XL</span></p>
+    <h3 class="tarjeta__nombre"><a href="8.html">Campera Cuero Eco Bordó</a></h3>
+    <p class="tarjeta__precio">$89.000,00</p>
+    <p class="tarjeta__transferencia">
+      $80.100,00 <span>con transferencia</span>
+    </p>
+  </div>
+</article>
+
+      
+        <article class="tarjeta"
+         data-id="9"
+         data-nombre="Campera Gamuzada Marrón"
+         data-categoria="Abrigos"
+         data-color="marron"
+         data-talles="S,M,L,XL"
+         data-precio="78000"
+         data-orden="1">
+  <div class="tarjeta__media">
+    <a href="9.html" class="tarjeta__imagen">
+      
+      
+        <img class="tarjeta__foto" src="../img/productos/abrigos/abrigo2a.jpg" alt="Campera Gamuzada Marrón" loading="lazy">
+      
+      
+        <img class="tarjeta__foto tarjeta__foto--alt" src="../img/productos/abrigos/abrigo2b.jpg" alt="" loading="lazy">
+      
+    </a>
+    
+    <button class="tarjeta__fav " data-fav-id="9" aria-pressed="false" aria-label="Agregar a favoritos">
+      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+    </button>
+    
+      
+        <a class="tarjeta__agregar" href="9.html">Elegir talle</a>
+      
+    
+  </div>
+
+  <div class="tarjeta__info">
+    <p class="tarjeta__categoria">Abrigos <span class="tarjeta__talles">S · M · L · XL</span></p>
+    <h3 class="tarjeta__nombre"><a href="9.html">Campera Gamuzada Marrón</a></h3>
+    <p class="tarjeta__precio">$78.000,00</p>
+    <p class="tarjeta__transferencia">
+      $70.200,00 <span>con transferencia</span>
+    </p>
+  </div>
+</article>
+
+      
+        <article class="tarjeta"
+         data-id="10"
+         data-nombre="Campera Biker Chocolate"
+         data-categoria="Abrigos"
+         data-color="marron"
+         data-talles="S,M,L,XL"
+         data-precio="92000"
+         data-orden="2">
+  <div class="tarjeta__media">
+    <a href="10.html" class="tarjeta__imagen">
+      
+        <span class="tarjeta__etiqueta">Últimas unidades</span>
+      
+      
+        <img class="tarjeta__foto" src="../img/productos/abrigos/abrigo3a.jpg" alt="Campera Biker Chocolate" loading="lazy">
+      
+      
+        <img class="tarjeta__foto tarjeta__foto--alt" src="../img/productos/abrigos/abrigo3b.jpg" alt="" loading="lazy">
+      
+    </a>
+    
+    <button class="tarjeta__fav " data-fav-id="10" aria-pressed="false" aria-label="Agregar a favoritos">
+      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+    </button>
+    
+      
+        <a class="tarjeta__agregar" href="10.html">Elegir talle</a>
+      
+    
+  </div>
+
+  <div class="tarjeta__info">
+    <p class="tarjeta__categoria">Abrigos <span class="tarjeta__talles">S · M · L · XL</span></p>
+    <h3 class="tarjeta__nombre"><a href="10.html">Campera Biker Chocolate</a></h3>
+    <p class="tarjeta__precio">$92.000,00</p>
+    <p class="tarjeta__transferencia">
+      $82.800,00 <span>con transferencia</span>
+    </p>
+  </div>
+</article>
+
+      
+        <article class="tarjeta"
+         data-id="12"
+         data-nombre="Campera Jean Celeste"
+         data-categoria="Abrigos"
+         data-color="celeste"
+         data-talles="S,M,L,XL"
+         data-precio="54000"
+         data-orden="3">
+  <div class="tarjeta__media">
+    <a href="12.html" class="tarjeta__imagen">
+      
+      
+        <img class="tarjeta__foto" src="../img/productos/abrigos/abrigo4b.jpg" alt="Campera Jean Celeste" loading="lazy">
+      
+      
+    </a>
+    
+    <button class="tarjeta__fav " data-fav-id="12" aria-pressed="false" aria-label="Agregar a favoritos">
+      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+    </button>
+    
+      
+        <a class="tarjeta__agregar" href="12.html">Elegir talle</a>
+      
+    
+  </div>
+
+  <div class="tarjeta__info">
+    <p class="tarjeta__categoria">Abrigos <span class="tarjeta__talles">S · M · L · XL</span></p>
+    <h3 class="tarjeta__nombre"><a href="12.html">Campera Jean Celeste</a></h3>
+    <p class="tarjeta__precio">$54.000,00</p>
+    <p class="tarjeta__transferencia">
+      $48.600,00 <span>con transferencia</span>
+    </p>
+  </div>
+</article>
+
+      
+    </div>
+  </section>
+
+  <!-- Barra de compra fija (celular / tablet) -->
+  <div class="barra-compra" id="barraCompra" aria-hidden="true">
+    <div class="barra-compra__info">
+      <p class="barra-compra__nombre">Campera Jean Vintage</p>
+      <p class="barra-compra__precio">$54.000,00</p>
+    </div>
+    <button class="btn btn--solido" id="btnAgregarBarra" tabindex="-1" >Agregar</button>
+  </div>
+
+  <!-- Visor de fotos a pantalla completa -->
+  <div class="visor" id="visor" role="dialog" aria-modal="true" aria-label="Fotos del producto" hidden>
+    <button class="visor__cerrar" id="visorCerrar" aria-label="Cerrar">
+      <svg viewBox="0 0 24 24" width="22" height="22"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+    <button class="visor__flecha visor__flecha--prev" id="visorPrev" aria-label="Anterior">←</button>
+    <div class="visor__foto" id="visorFoto"><span class="foto__texto">(IMAGEN 1)</span></div>
+    <button class="visor__flecha visor__flecha--sig" id="visorSig" aria-label="Siguiente">→</button>
+    <p class="visor__contador" id="visorContador">01 / 01</p>
+  </div>
+
+  <!-- ═════════════ BENEFICIOS ═════════════ -->
+<section class="beneficios">
+  <div class="contenedor beneficios__grilla">
+    <div class="beneficio">
+      <span class="beneficio__num">01</span>
+      <h3>Envíos a todo el país</h3>
+      <p>Gratis en compras desde $150.000.</p>
+    </div>
+    <div class="beneficio">
+      <span class="beneficio__num">02</span>
+      <h3>Cuotas sin interés</h3>
+      <p>3 y 6 cuotas con todas las tarjetas.</p>
+    </div>
+    <div class="beneficio">
+      <span class="beneficio__num">03</span>
+      <h3>Tu talle, tu cambio</h3>
+      <p>Primer cambio de talle sin costo.</p>
+    </div>
+    <div class="beneficio">
+      <span class="beneficio__num">04</span>
+      <h3>Compra segura</h3>
+      <p>Cambios y devoluciones sin vueltas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════ FOOTER ═════════════ -->
+<footer class="footer">
+  <div class="contenedor footer__grilla">
+    <div class="footer__marca">
+      <img class="logo__imagen logo__imagen--footer" src="../img/marca/logo-claro.png" alt="Matilda boutique" width="689" height="229" loading="lazy">
+      <p>Moda femenina con detalles que se notan: perlas, buenos tejidos y cortes que acompañan cada día.</p>
+    </div>
+    <div>
+      <h4>Tienda</h4>
+      <ul>
+        <li><a href="../catalogo.html">Catálogo</a></li>
+        <li><a href="#" data-demo-off>Remeras</a></li>
+        <li><a href="#" data-demo-off>Abrigos</a></li>
+        <li><a href="#" data-demo-off>Accesorios</a></li>
+      </ul>
+    </div>
+    <div id="contacto">
+      <h4>Ayuda</h4>
+      <ul>
+        <li><a href="11.html#">Envíos</a></li>
+        <li><a href="11.html#">Medios de pago</a></li>
+        <li><a href="11.html#">Cambios y devoluciones</a></li>
+        <li><a href="11.html#">Contacto</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Newsletter</h4>
+      <p>Novedades y descuentos, sin spam.</p>
+      <form class="newsletter" onsubmit="return false;">
+        <input type="email" placeholder="Tu email" aria-label="Email">
+        <button type="submit">→</button>
+      </form>
+      <div class="footer__redes">
+        <a href="11.html#" aria-label="Instagram">Instagram</a>
+        <a href="11.html#" aria-label="Facebook">Facebook</a>
+        <a href="11.html#" aria-label="TikTok">TikTok</a>
+      </div>
+    </div>
+  </div>
+  <div class="contenedor footer__legal">
+    <span>© 2026 Matilda Boutique. Todos los derechos reservados.</span>
+    <span class="footer__pagos">Visa · Mastercard · Mercado Pago</span>
+  </div>
+</footer>
+
+<!-- Botón flotante de WhatsApp -->
+<a href="11.html#" class="whatsapp" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 3a9 9 0 00-7.8 13.5L3 21l4.6-1.2A9 9 0 1012 3z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.5-2-1-1 .8c-1-.4-2-1.4-2.3-2.3l.8-1-1-2L9.5 8z" fill="currentColor"/></svg>
+</a>
+
+<!-- Aviso al agregar al carrito -->
+<div class="toast" id="toast" role="status"></div>
+
+
+
+<script src="../js/base.js"></script>
+
+
+  <script src="../js/producto.js"></script>
+<script>(function(){var t;function toast(){var d=document.getElementById('__demo_toast');if(!d){d=document.createElement('div');d.id='__demo_toast';d.style.cssText='position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#0b1128;color:#fff;font:600 14px/1.4 system-ui,sans-serif;padding:12px 18px;border-radius:12px;border:1px solid #6366f1;box-shadow:0 10px 30px rgba(0,0,0,.4);z-index:2147483647;max-width:90vw;text-align:center;transition:opacity .3s';d.textContent='Vista de demostración: esta acción no está disponible acá';document.body.appendChild(d)}d.style.opacity=1;clearTimeout(t);t=setTimeout(function(){d.style.opacity=0},2200)}
+document.addEventListener('submit',function(e){e.preventDefault();e.stopImmediatePropagation();toast()},true);
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-demo-off]');if(a){e.preventDefault();toast()}},true);
+var f=window.fetch;window.fetch=function(u,i){var m=((i&&i.method)||(u&&u.method)||'GET').toUpperCase();if(m==='GET')return f.apply(this,arguments);toast();return Promise.reject(new Error('demo'))};
+var o=XMLHttpRequest.prototype.open;XMLHttpRequest.prototype.open=function(m,u){if(m&&m.toUpperCase()!=='GET'){toast()}return o.apply(this,arguments)}})();</script></body>
+</html>

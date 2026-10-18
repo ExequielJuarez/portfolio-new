@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cambios y devoluciones | Santiago Mates</title>
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/base.css">
+  
+  
+  
+    <link rel="stylesheet" href="css/legal.css">
+  
+</head>
+<body>
+
+<!-- ═════════════ BARRA DE ANUNCIOS ═════════════ -->
+<div class="anuncios" aria-label="Promociones">
+  <div class="anuncios__pista">
+    
+      <span>Envío gratis en compras desde $150.000</span>
+      <span class="anuncios__sep">✦</span>
+      <span>10% off pagando con transferencia</span>
+      <span class="anuncios__sep">✦</span>
+      <span>3 y 6 cuotas sin interés</span>
+      <span class="anuncios__sep">✦</span>
+      <span>Grabado personalizado en 48 hs</span>
+      <span class="anuncios__sep">✦</span>
+    
+      <span>Envío gratis en compras desde $150.000</span>
+      <span class="anuncios__sep">✦</span>
+      <span>10% off pagando con transferencia</span>
+      <span class="anuncios__sep">✦</span>
+      <span>3 y 6 cuotas sin interés</span>
+      <span class="anuncios__sep">✦</span>
+      <span>Grabado personalizado en 48 hs</span>
+      <span class="anuncios__sep">✦</span>
+    
+  </div>
+</div>
+
+<!-- ═════════════ HEADER ═════════════ -->
+<header class="header" id="header">
+  <div class="header__barra contenedor">
+    <button class="icono-btn header__menu-btn" id="btnMenu" aria-label="Abrir menú" aria-expanded="false">
+      <span class="hamburguesa"></span>
+    </button>
+
+    <form class="buscador" action="#" method="GET" role="search" data-buscador>
+      <input type="search" name="q" value="" placeholder="Buscar productos…" aria-label="Buscar productos"
+             autocomplete="off" maxlength="60" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="sugerencias">
+      <button type="submit" aria-label="Buscar">
+        <svg viewBox="0 0 24 24" width="18" height="18"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      <div class="sugerencias" id="sugerencias" role="listbox" aria-label="Sugerencias" hidden></div>
+    </form>
+
+    <a href="index.html" class="logo" aria-label="Inicio">
+      
+
+<svg class="logo-svg logo-svg--horizontal " viewBox="0 0 300 70" role="img" aria-label="Santiago Mates · La gran casa matera">
+  <g transform="translate(2 2) scale(0.66)">
+    <path d="M24 40 Q22 33 30 31 L50 31 Q58 33 56 40 Q66 48 66 64 Q66 92 40 96 Q14 92 14 64 Q14 48 24 40 Z" fill="currentColor"/>
+    <path d="M24 40 L56 40" stroke="var(--logo-fondo, transparent)" stroke-width="2.5"/>
+    <path d="M44 34 L52 4 Q53 0 57 0 L64 1" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <text x="54" y="40" class="logo-svg__marca">Santiago<tspan class="logo-svg__marca--fuerte">Mates</tspan></text>
+  <text x="55" y="61" class="logo-svg__bajada">LA GRAN CASA MATERA</text>
+</svg>
+
+
+    </a>
+
+    <div class="header__acciones">
+      <button class="icono-btn header__buscar-movil" id="btnBuscarMovil" aria-label="Buscar">
+        <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      
+      
+        
+        <a href="#" data-demo-off class="icono-btn" aria-label="Iniciar sesión">
+        <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </a>
+      
+      
+      <a href="favoritos.html" class="icono-btn carrito-btn favoritos-btn" aria-label="Favoritos">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <span class="carrito-btn__contador" id="contadorFavoritos" hidden>0</span>
+      </a>
+      <a href="carrito.html" class="icono-btn carrito-btn" aria-label="Carrito">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path d="M5 8h14l-1.2 12H6.2L5 8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 8V6a3 3 0 016 0v2" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        <span class="carrito-btn__contador" id="contadorCarrito">0</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="buscador-movil contenedor " id="buscadorMovil">
+    <form class="buscador buscador--movil" action="#" method="GET" role="search" data-buscador>
+      <input type="search" name="q" value="" placeholder="Buscar productos…" aria-label="Buscar productos"
+             autocomplete="off" maxlength="60" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="sugerenciasMovil">
+      <button type="submit" aria-label="Buscar">
+        <svg viewBox="0 0 24 24" width="18" height="18"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      <div class="sugerencias" id="sugerenciasMovil" role="listbox" aria-label="Sugerencias" hidden></div>
+    </form>
+  </div>
+
+  <nav class="nav" id="nav" aria-label="Principal">
+    <ul class="nav__lista contenedor">
+      <li class=""><a href="index.html">Inicio</a></li>
+      
+        <li class=""><a href="categoria/mates.html">Mates</a></li>
+      
+        <li class=""><a href="categoria/termos.html">Termos</a></li>
+      
+        <li class=""><a href="categoria/bombillas.html">Bombillas</a></li>
+      
+        <li class=""><a href="categoria/bolsos-materos.html">Bolsos materos</a></li>
+      
+        <li class=""><a href="categoria/combos.html">Combos</a></li>
+      
+        <li class=""><a href="categoria/yerbas.html">Yerbas</a></li>
+      
+      <li class="nav__item--movil"><a href="favoritos.html">Favoritos</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="overlay" id="overlay"></div>
+
+
+
+
+  <div class="contenedor">
+    <nav class="migas migas--legal" aria-label="Ruta">
+      <a href="index.html">Inicio</a>
+      <span>/</span>
+      <span aria-current="page">Cambios y devoluciones</span>
+    </nav>
+  </div>
+
+  <main class="legal contenedor">
+    <!-- Índice de páginas legales -->
+    <aside class="legal__lateral" aria-label="Información legal">
+      <p class="legal__lateral-titulo">Información legal</p>
+      <ul class="legal__paginas">
+        
+          <li><a href="terminos.html" class="" >Términos y condiciones</a></li>
+        
+          <li><a href="privacidad.html" class="" >Política de privacidad</a></li>
+        
+          <li><a href="cookies.html" class="" >Política de cookies</a></li>
+        
+          <li><a href="cambios-y-devoluciones.html" class="activo" aria-current="page">Cambios y devoluciones</a></li>
+        
+        <li><a href="arrepentimiento.html" class="legal__arrepentimiento">Botón de arrepentimiento</a></li>
+      </ul>
+    </aside>
+
+    <article class="legal__texto" id="textoLegal">
+      <p class="legal__etiqueta">Información legal</p>
+      <h1 class="legal__titulo">Cambios y devoluciones</h1>
+      <p class="legal__fecha">Última actualización: 13 de octubre de 2026</p>
+
+      <!-- Índice de la página (lo arma legal.js con los títulos) -->
+      <nav class="legal__indice" id="indiceLegal" aria-label="En esta página" hidden>
+        <p>En esta página</p>
+        <ul></ul>
+      </nav>
+
+      <p>
+  Queremos que estés conforme con tu compra. Acá te explicamos cómo arrepentirte de una compra, cómo hacer un cambio y
+  qué pasa si un producto tiene un defecto.
+</p>
+
+<div class="legal__destacado">
+  <strong>¿Te arrepentiste de una compra?</strong> Tenés 10 días corridos desde que la recibiste para cancelarla sin costo.
+  <p><a href="arrepentimiento.html" class="btn btn--solido legal__boton">Botón de arrepentimiento</a></p>
+</div>
+
+<h2 id="arrepentimiento">1. Arrepentimiento (cancelar la compra)</h2>
+<ul>
+  <li><strong>Plazo:</strong> 10 días corridos desde que recibiste el producto o desde la compra, lo último que ocurra (artículo 34 de la Ley 24.240 y artículos 1110 y siguientes del Código Civil y Comercial).</li>
+  <li><strong>Cómo:</strong> completá el formulario del <a href="arrepentimiento.html">Botón de arrepentimiento</a>. No hace falta que expliques el motivo. Te damos un código de seguimiento en el momento y te contactamos para coordinar la devolución.</li>
+  <li><strong>Costo:</strong> ninguno. Los gastos de envío de la devolución corren por nuestra cuenta.</li>
+  <li><strong>Condición:</strong> el producto tiene que estar sin uso, con su empaque y accesorios.</li>
+  <li><strong>Reintegro:</strong> te devolvemos el total pagado por el mismo medio de pago. Si pagaste con tarjeta, el tiempo de acreditación depende de tu banco o de Mercado Pago.</li>
+</ul>
+
+<h2 id="excepciones">2. Productos que no se pueden devolver por arrepentimiento</h2>
+<p>Según el artículo 1116 del Código Civil y Comercial:</p>
+<ul>
+  <li>Productos <strong>personalizados</strong> (por ejemplo, con grabado de nombres, fechas o diseños a pedido).</li>
+  <li><strong>Yerba</strong> y otros productos que, por su naturaleza, no pueden devolverse o se deterioran una vez abiertos.</li>
+</ul>
+<p>Estos productos sí tienen garantía si llegan con un defecto (ver punto 4).</p>
+
+<h2 id="cambios">3. Cambios</h2>
+<ul>
+  <li>Si querés cambiar un producto por otro (otro color, otro modelo), escribinos dentro de los <strong>30 días</strong> de recibido.</li>
+  <li>El producto tiene que estar sin uso y en su empaque original.</li>
+  <li>Si el nuevo producto tiene otro precio, se ajusta la diferencia.</li>
+  <li>En los cambios por gusto, el costo del envío lo paga el cliente. Si el cambio es por un error nuestro, lo pagamos nosotros.</li>
+</ul>
+
+<h2 id="garantia">4. Productos con defectos (garantía)</h2>
+<ul>
+  <li>Los productos nuevos tienen <strong>garantía legal de 6 meses</strong> por defectos de fabricación (artículo 11 de la Ley 24.240).</li>
+  <li>Si tu producto llega dañado o con un defecto, avisanos con fotos. Te ofrecemos repararlo, cambiarlo por uno igual o devolverte el dinero.</li>
+  <li>Por ser piezas <strong>artesanales</strong>, las pequeñas diferencias de tono, veta o forma no son defectos.</li>
+  <li>La garantía no cubre el desgaste natural, golpes, caídas, ni el mal uso o mal cuidado.</li>
+</ul>
+
+<h2 id="contacto">5. Contacto</h2>
+<ul>
+  <li><strong>Email:</strong> <span class="legal__falta" title="Completar TIENDA_EMAIL en el .env">[completar TIENDA_EMAIL]</span></li>
+  
+  
+  <li>Indicá tu número de pedido. Lo encontrás en <a href="#" data-demo-off>Mis pedidos</a>.</li>
+</ul>
+<p>
+  Si no quedás conforme con nuestra respuesta, podés hacer tu reclamo en
+  <a href="https://www.argentina.gob.ar/produccion/defensadelconsumidor/formulario" target="_blank" rel="noopener">Defensa de las y los consumidores</a>.
+</p>
+
+    </article>
+  </main>
+
+  <!-- ═════════════ BENEFICIOS ═════════════ -->
+<section class="beneficios">
+  <div class="contenedor beneficios__grilla">
+    <div class="beneficio">
+      <span class="beneficio__num">01</span>
+      <h3>Envíos a todo el país</h3>
+      <p>Gratis en compras desde $150.000.</p>
+    </div>
+    <div class="beneficio">
+      <span class="beneficio__num">02</span>
+      <h3>Cuotas sin interés</h3>
+      <p>3 y 6 cuotas con todas las tarjetas.</p>
+    </div>
+    <div class="beneficio">
+      <span class="beneficio__num">03</span>
+      <h3>Personalizá tu pieza</h3>
+      <p>Grabado a láser con tu diseño.</p>
+    </div>
+    <div class="beneficio">
+      <span class="beneficio__num">04</span>
+      <h3>Compra segura</h3>
+      <p>Cambios y devoluciones sin vueltas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════ FOOTER ═════════════ -->
+
+<footer class="footer">
+  <div class="contenedor footer__grilla">
+    <div class="footer__marca">
+      
+
+<svg class="logo-svg logo-svg--apilado logo-svg--footer" viewBox="0 0 260 190" role="img" aria-label="Santiago Mates · La gran casa matera">
+  <!-- Mate con bombilla -->
+  <g transform="translate(104 6)">
+    <path d="M24 40 Q22 33 30 31 L50 31 Q58 33 56 40 Q66 48 66 64 Q66 92 40 96 Q14 92 14 64 Q14 48 24 40 Z" fill="currentColor"/>
+    <path d="M24 40 L56 40" stroke="var(--logo-fondo, transparent)" stroke-width="2.5"/>
+    <path d="M44 34 L52 4 Q53 0 57 0 L64 1" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <text x="130" y="148" text-anchor="middle" class="logo-svg__marca">Santiago<tspan class="logo-svg__marca--fuerte">Mates</tspan></text>
+  <text x="130" y="176" text-anchor="middle" class="logo-svg__bajada">LA GRAN CASA MATERA</text>
+</svg>
+
+
+      <p>Mates, bombillas y todo para la ronda, hechos a mano con materiales nobles. Enviamos a todo el país.</p>
+      
+    </div>
+    <div>
+      <h4>Tienda</h4>
+      <ul>
+        
+          <li><a href="categoria/mates.html">Mates</a></li>
+        
+          <li><a href="categoria/termos.html">Termos</a></li>
+        
+          <li><a href="categoria/bombillas.html">Bombillas</a></li>
+        
+          <li><a href="categoria/bolsos-materos.html">Bolsos materos</a></li>
+        
+          <li><a href="categoria/combos.html">Combos</a></li>
+        
+          <li><a href="categoria/yerbas.html">Yerbas</a></li>
+        
+      </ul>
+    </div>
+    <div>
+      <h4>Ayuda</h4>
+      <ul>
+        <li><a href="terminos.html#envios">Envíos</a></li>
+        <li><a href="terminos.html#pagos">Medios de pago</a></li>
+        <li><a href="cambios-y-devoluciones.html">Cambios y devoluciones</a></li>
+        
+      </ul>
+    </div>
+    <div>
+      <h4>Legales</h4>
+      <ul>
+        <li><a href="terminos.html">Términos y condiciones</a></li>
+        <li><a href="privacidad.html">Política de privacidad</a></li>
+        <li><a href="cookies.html">Política de cookies</a></li>
+        <li><a href="arrepentimiento.html" class="footer__arrepentimiento">Botón de arrepentimiento</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="contenedor footer__legal">
+    <span>
+      © 2026 Santiago Mates.
+      
+      Todos los derechos reservados.
+    </span>
+    <span class="footer__oficiales">
+      <a href="https://www.argentina.gob.ar/produccion/defensadelconsumidor/formulario" target="_blank" rel="noopener">Defensa de las y los consumidores. Para reclamos ingrese aquí</a>
+      
+    </span>
+    <span class="footer__pagos">Visa · Mastercard · Amex · Naranja · Mercado Pago · Transferencia</span>
+  </div>
+</footer>
+
+
+
+<!-- Aviso de cookies (solo usamos las necesarias: se muestra una vez) -->
+<div class="aviso-cookies" id="avisoCookies" role="region" aria-label="Aviso de cookies" hidden>
+  <p>
+    Usamos solo las cookies necesarias para que la tienda funcione (tu sesión y tu carrito). No usamos cookies de publicidad.
+    <a href="cookies.html">Más información</a>
+  </p>
+  <button type="button" class="btn btn--solido btn--chico" id="aceptarCookies">Entendido</button>
+</div>
+
+<!-- Aviso al agregar al carrito -->
+<div class="toast" id="toast" role="status"></div>
+
+
+
+<script src="js/base.js"></script>
+
+
+  <script src="js/legal.js"></script>
+<script>(function(){var t;function toast(){var d=document.getElementById('__demo_toast');if(!d){d=document.createElement('div');d.id='__demo_toast';d.style.cssText='position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#0b1128;color:#fff;font:600 14px/1.4 system-ui,sans-serif;padding:12px 18px;border-radius:12px;border:1px solid #6366f1;box-shadow:0 10px 30px rgba(0,0,0,.4);z-index:2147483647;max-width:90vw;text-align:center;transition:opacity .3s';d.textContent='Vista de demostración: esta acción no está disponible acá';document.body.appendChild(d)}d.style.opacity=1;clearTimeout(t);t=setTimeout(function(){d.style.opacity=0},2200)}
+document.addEventListener('submit',function(e){e.preventDefault();e.stopImmediatePropagation();toast()},true);
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-demo-off]');if(a){e.preventDefault();toast()}},true);
+var f=window.fetch;window.fetch=function(u,i){var m=((i&&i.method)||(u&&u.method)||'GET').toUpperCase();if(m==='GET')return f.apply(this,arguments);toast();return Promise.reject(new Error('demo'))};
+var o=XMLHttpRequest.prototype.open;XMLHttpRequest.prototype.open=function(m,u){if(m&&m.toUpperCase()!=='GET'){toast()}return o.apply(this,arguments)}})();</script></body>
+</html>
