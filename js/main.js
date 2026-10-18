@@ -14,17 +14,21 @@ const TECH = [
   ["Git & GitHub", "Versionado", "#f05133"],
 ];
 
-// Proyectos. Para usar una captura real: guardala en assets/projects/<img> (ver README).
+// Proyectos (capturas reales en assets/projects/)
+const NODE = ["Node", "Express", "Sequelize", "MySQL"];
 const PROJECTS = [
-  { t: "Tienda de ropa", d: "E-commerce de indumentaria con catálogo, carrito, favoritos y panel de administración.", c: "E-commerce", img: "tienda-ropa.webp", s: ["Node", "Express", "MySQL", "EJS"], p: ["#6366f1", "#a855f7"], n: 4 },
-  { t: "Tienda de ropa hombre", d: "Tienda online enfocada en moda masculina con filtros por talle, categoría y precio.", c: "E-commerce", img: "tienda-hombre.webp", s: ["Node", "Express", "Sequelize"], p: ["#0ea5e9", "#6366f1"], n: 4 },
-  { t: "Tienda de ropa 2", d: "Segunda versión de tienda con nuevo diseño, pagos integrados y checkout simplificado.", c: "E-commerce", img: "tienda-2.webp", s: ["Node", "MySQL", "Mercado Pago"], p: ["#ec4899", "#8b5cf6"], n: 3 },
-  { t: "Sistema de kioscos", d: "Sistema de gestión para negocios: ventas, stock, clientes y reportes.", c: "Sistemas", img: "kioscos.webp", s: ["Node", "Express", "MySQL"], p: ["#10b981", "#0ea5e9"], n: 3 },
-  { t: "Prototipo web de ventas", d: "Prototipo funcional de sitio de ventas para validar la idea antes de escalar.", c: "Webs", img: "ventas.webp", s: ["JavaScript", "Express", "Sequelize"], p: ["#f59e0b", "#ef4444"], n: 3 },
-  { t: "Restaurante", d: "Sitio institucional con carta, reservas y datos de contacto optimizado para móvil.", c: "Webs", img: "restaurante.webp", s: ["HTML", "CSS", "Node"], p: ["#f97316", "#dc2626"], n: 3 },
-  { t: "La Buguería", d: "Web de hamburguesería con menú visual, promos y pedido directo por WhatsApp.", c: "Landings", img: "bugueria.webp", s: ["HTML", "CSS", "JavaScript"], p: ["#eab308", "#f97316"], n: 2 },
-  { t: "Menú sushi", d: "Carta digital de sushi pensada para escanear con QR y pedir desde el celular.", c: "Landings", img: "sushi.webp", s: ["HTML", "CSS", "JavaScript"], p: ["#14b8a6", "#6366f1"], n: 2 },
-  { t: "Landing pages", d: "Colección de landings para distintos rubros, rápidas y orientadas a conversión.", c: "Landings", img: "landings.webp", s: ["HTML", "CSS", "JavaScript"], p: ["#22d3ee", "#6366f1"], n: 3 },
+  { t: "Santiago Mates", d: "Tienda online de mates y accesorios con catálogo, carrito, favoritos, cuentas de cliente y panel de administración.", c: "E-commerce", img: "santiago-mates.webp", s: [...NODE, "EJS"], p: ["#7c2d12", "#b45309"], n: 4 },
+  { t: "Matilda Boutique", d: "E-commerce de moda femenina con colecciones por temporada, favoritos, cuotas y atención por WhatsApp.", c: "E-commerce", img: "matilda-boutique.webp", s: [...NODE, "EJS"], p: ["#b8893b", "#111827"], n: 4 },
+  { t: "Akualoe Chic", d: "Tienda de ropa con menú por categorías, buscador, carrito y checkout con envíos a todo el país.", c: "E-commerce", img: "akualoe-chic.webp", s: [...NODE, "EJS"], p: ["#be185d", "#7c3aed"], n: 3 },
+  { t: "Huella Negra", d: "Tienda de indumentaria masculina con productos destacados, favoritos y compra en pocos pasos.", c: "E-commerce", img: "huella-negra.webp", s: [...NODE, "EJS"], p: ["#111827", "#6b7280"], n: 4 },
+  { t: "Sistema de gestión", d: "Punto de venta, caja, stock, compras, clientes, facturas y reportes para kioscos y comercios.", c: "Sistemas", img: "sistema-negocio.webp", s: [...NODE, "EJS"], p: ["#0f766e", "#0f172a"], n: 3 },
+  { t: "JB Sushi", d: "Sitio de restaurante con carta, reservas y galería, con diseño inmersivo y adaptativo.", c: "Gastronomía", img: "jb-sushi.webp", s: [...NODE, "EJS"], p: ["#92400e", "#0f172a"], n: 3 },
+  { t: "Sora Sushi Lounge", d: "Landing, carta y reservas con animaciones de scroll suave, parallax y carrito de pedido.", c: "Gastronomía", img: "sora-sushi.webp", s: ["Node", "Express", "MySQL", "GSAP"], p: ["#14532d", "#0a0f0d"], n: 3 },
+  { t: "Street Burger", d: "Carta digital para pedir en mesa o por delivery, con categorías, carrito y seguimiento de pedidos.", c: "Gastronomía", img: "street-burger.webp", s: [...NODE, "EJS"], p: ["#f59e0b", "#ef4444"], n: 3 },
+  { t: "Landing · Dentista", d: "Landing de clínica odontológica con tratamientos, cuotas y reserva de turnos.", c: "Landings", img: "landing-dentista.webp", s: ["HTML", "CSS", "JavaScript"], p: ["#38bdf8", "#f9a8d4"], n: 3 },
+  { t: "Landing · Estudio jurídico", d: "Página institucional elegante para estudio de abogados con áreas de práctica y consultas.", c: "Landings", img: "landing-abogado.webp", s: ["HTML", "CSS", "JavaScript"], p: ["#1e3a8a", "#b8893b"], n: 3 },
+  { t: "Landing · Veterinaria", d: "Hospital veterinario con guardia 24 hs, plan de salud y botón de emergencias.", c: "Landings", img: "landing-veterinario.webp", s: ["HTML", "CSS", "JavaScript"], p: ["#a64d85", "#f472b6"], n: 3 },
+  { t: "Landing · Médico", d: "Landing de consultorio con reserva de turnos por día y horario enviada por WhatsApp.", c: "Landings", img: "landing-medico.webp", s: ["HTML", "CSS", "JavaScript"], p: ["#0f766e", "#99f6e4"], n: 3 },
 ];
 
 const $ = (s) => document.querySelector(s);
