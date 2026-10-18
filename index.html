@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Velta Web | Desarrollo web, landings y e-commerce</title>
+  <meta name="description" content="Velta Web: creamos sitios, landings, tiendas online y sistemas a medida con JavaScript moderno.">
+  <meta name="theme-color" content="#080d1f">
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#inicio" class="brand" aria-label="Velta Web"><img src="assets/logo.png" alt="" width="36" height="36"> VELTA <span>WEB</span></a>
+      <nav class="nav__links" id="menu" aria-label="Principal">
+        <a href="#servicios">Servicios</a>
+        <a href="#tecnologias">Tecnologías</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#planes">Planes</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#contacto" class="btn btn--primary nav__cta">Cotizar proyecto</a>
+      </nav>
+      <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="glow glow--a"></div><div class="glow glow--b"></div>
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <span class="pill"><i></i> Agencia de desarrollo web</span>
+          <h1>Creamos sitios y sistemas que <span class="grad">hacen crecer tu negocio</span></h1>
+          <p class="lead">Webs, landings, tiendas online y sistemas a medida con JavaScript moderno: rápido, seguro y pensado para convertir visitas en clientes.</p>
+          <div class="actions">
+            <a href="#contacto" class="btn btn--primary">Empezar ahora →</a>
+            <a href="#proyectos" class="btn btn--ghost">Ver proyectos</a>
+          </div>
+        </div>
+        <div class="code" aria-hidden="true">
+          <div class="code__bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><span>velta.js</span></div>
+<pre><code><span class="c">// lo que hacemos</span>
+<span class="k">const</span> velta = {
+  servicios: [<span class="s">"Webs"</span>, <span class="s">"Landings"</span>, <span class="s">"E-commerce"</span>, <span class="s">"Sistemas"</span>],
+  stack: [<span class="s">"Node"</span>, <span class="s">"Express"</span>, <span class="s">"MySQL"</span>, <span class="s">"React"</span>],
+  diseño: <span class="s">"adaptativo"</span>
+};
+
+<span class="k">async function</span> <span class="f">crearProyecto</span>(cliente) {
+  <span class="k">await</span> <span class="f">disenar</span>(cliente);
+  <span class="k">await</span> <span class="f">desarrollar</span>(cliente);
+  <span class="k">return</span> <span class="s">"🚀 Online"</span><span class="cur"></span>;
+}</code></pre>
+        </div>
+      </div>
+      <div class="container stats">
+        <div><b data-count="9">9</b><span>Proyectos publicados</span></div>
+        <div><b>100%</b><span>Diseño responsive</span></div>
+        <div><b>4</b><span>Tipos de solución</span></div>
+        <div><b>A medida</b><span>Sin plantillas</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="servicios">
+      <div class="container">
+        <h2>Nuestros servicios</h2>
+        <p class="sub">Todo lo que tu empresa necesita para brillar online</p>
+        <div class="grid grid--4">
+          <article class="card"><div class="ico">&lt;/&gt;</div><h3>Páginas web</h3><p>Sitios institucionales rápidos, responsive y optimizados para SEO.</p></article>
+          <article class="card"><div class="ico">⚡</div><h3>Landing pages</h3><p>Páginas de conversión claras y veloces para campañas y lanzamientos.</p></article>
+          <article class="card"><div class="ico">🛒</div><h3>E-commerce</h3><p>Tiendas online con carrito, favoritos, pagos integrados y panel de administración.</p></article>
+          <article class="card"><div class="ico">⚙</div><h3>Sistemas a medida</h3><p>Paneles, gestión de clientes, turnos, stock y automatizaciones para tu negocio.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="tecnologias">
+      <div class="container">
+        <h2>Tecnologías que usamos</h2>
+        <p class="sub">Un stack moderno, mantenible y listo para escalar</p>
+        <div class="tech" id="tech"></div>
+      </div>
+    </section>
+
+    <section class="section" id="proyectos">
+      <div class="container">
+        <h2>Proyectos</h2>
+        <p class="sub">Una muestra de lo que construimos</p>
+        <div class="filters" id="filters" role="tablist" aria-label="Filtrar proyectos"></div>
+        <div class="grid grid--3" id="projects"></div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="planes">
+      <div class="container">
+        <h2>Planes</h2>
+        <p class="sub">Elegí el punto de partida; después lo ajustamos a tu negocio</p>
+        <div class="grid grid--3">
+          <article class="card plan"><h3>Landing</h3><p>Una página enfocada en convertir.</p><ul><li>Diseño adaptativo</li><li>Formulario / WhatsApp</li><li>SEO básico</li></ul><a href="#contacto" class="btn btn--ghost">Consultar</a></article>
+          <article class="card plan plan--hot"><span class="tag">Más elegido</span><h3>Web completa</h3><p>Sitio institucional con varias secciones.</p><ul><li>Hasta 8 secciones</li><li>Panel para editar contenido</li><li>SEO y analítica</li></ul><a href="#contacto" class="btn btn--primary">Cotizar</a></article>
+          <article class="card plan"><h3>E-commerce / Sistema</h3><p>Tienda o sistema a medida.</p><ul><li>Carrito y pagos</li><li>Panel de administración</li><li>Base de datos y soporte</li></ul><a href="#contacto" class="btn btn--ghost">Consultar</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contacto">
+      <div class="container">
+        <div class="cta">
+          <h2>¿Listo para llevar tu negocio al siguiente nivel?</h2>
+          <p>Contanos tu idea y te armamos una propuesta sin cargo.</p>
+          <a class="btn btn--white" href="mailto:hola@veltaweb.com?subject=Quiero%20cotizar%20un%20proyecto">Hablar con Velta Web</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© <span id="year">2026</span> Velta Web</span>
+      <span>@velta.web · <a href="mailto:hola@veltaweb.com">hola@veltaweb.com</a></span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
