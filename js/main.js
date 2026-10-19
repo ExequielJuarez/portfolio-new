@@ -63,7 +63,7 @@ $("#projects").innerHTML = PROJECTS.map((p) => `
         <div class="mock__bar"><i></i><i></i><i></i></div>
         <div class="mock__body"><div class="mock__hero"></div><div class="mock__row" style="--n:${p.n}"><b></b><b></b><b></b><b></b></div><div class="mock__line"></div></div>
       </div>
-      <img src="assets/projects/${p.img}" alt="Captura del proyecto ${esc(p.t)}" loading="lazy" onerror="this.remove()">
+      <img src="assets/projects/${p.img}" alt="Captura del proyecto ${esc(p.t)}" loading="lazy">
     </div>
     <div class="proj__body">
       <span class="badge">${p.c}</span>
@@ -152,3 +152,6 @@ frame.addEventListener("load", () => {
     if (p !== "/blank") bar.textContent = decodeURIComponent(p).replace(/^.*\/demos\//, "").replace(/index\.html$/, "");
   } catch (_) {}
 });
+
+// Si una captura no existe, se queda la maqueta de color (sin handlers inline por la CSP)
+document.querySelectorAll(".shot img").forEach((img) => img.addEventListener("error", () => img.remove()));
