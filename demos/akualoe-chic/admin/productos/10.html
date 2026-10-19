@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><script>(function(){var t;function toast(){var d=document.getElementById('__demo_toast');if(!d){d=document.createElement('div');d.id='__demo_toast';d.style.cssText='position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#0b1128;color:#fff;font:600 14px/1.4 system-ui,sans-serif;padding:12px 18px;border-radius:12px;border:1px solid #6366f1;box-shadow:0 10px 30px rgba(0,0,0,.4);z-index:2147483647;max-width:90vw;text-align:center;transition:opacity .3s';d.textContent='Vista de demostración: esta acción no está disponible acá';document.body.appendChild(d)}d.style.opacity=1;clearTimeout(t);t=setTimeout(function(){d.style.opacity=0},2200)}
+document.addEventListener('submit',function(e){e.preventDefault();e.stopImmediatePropagation();toast()},true);
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-demo-off]');if(a){e.preventDefault();toast()}},true);
+window.EventSource=function(){return {close:function(){},addEventListener:function(){},onmessage:null,onerror:null}};var f=window.fetch;window.fetch=function(u,i){var m=((i&&i.method)||(u&&u.method)||'GET').toUpperCase();if(m==='GET')return f.apply(this,arguments);toast();return Promise.reject(new Error('demo'))};
+var o=XMLHttpRequest.prototype.open;XMLHttpRequest.prototype.open=function(m,u){if(m&&m.toUpperCase()!=='GET'){toast()}return o.apply(this,arguments)}})();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Musculosa con Tachas | Akualoe Chic</title>
+  <link rel="icon" href="../../img/favicon.svg" type="image/svg+xml">
+
+  <link rel="preload" href="../../fonts/playfair-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../../fonts/jost-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../css/fuentes.css">
+  <link rel="stylesheet" href="../../css/base.css">
+  
+  
+    <link rel="stylesheet" href="../../css/notificaciones.css">
+  
+  
+    <link rel="stylesheet" href="../../css/admin.css">
+  
+    <link rel="stylesheet" href="../../css/admin-producto.css">
+  
+</head>
+<body>
+
+
+
+
+<div class="admin">
+  <!-- ═════════════ MENÚ LATERAL ═════════════ -->
+  <aside class="admin-lateral" id="adminLateral" aria-label="Menú del panel">
+    <div class="admin-lateral__marca">
+      
+<svg class="logo-svg logo-svg--horizontal admin-lateral__logo" viewBox="0 0 270 78" role="img" aria-label="Akualoe Chic">
+  <text x="135" y="46" text-anchor="middle" font-size="52" textLength="262" lengthAdjust="spacing" class="logo-svg__marca">AKUALOE</text>
+  <text x="140" y="70" text-anchor="middle" font-size="12" class="logo-svg__bajada">CHIC</text>
+</svg>
+
+      <span class="admin-lateral__etiqueta">Admin</span>
+    </div>
+
+    <nav class="admin-nav">
+      
+        <a href="../../admin.html" class="admin-nav__link " >
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 13h6V4H4zM14 20h6v-9h-6zM4 20h6v-4H4zM14 7h6V4h-6z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          <span>Panel</span>
+          
+        </a>
+      
+        <a href="../productos.html" class="admin-nav__link activo" aria-current="page">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 8l8-4 8 4-8 4-8-4zM4 8v8l8 4 8-4V8M12 12v8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          <span>Productos</span>
+          
+            <span class="admin-nav__badge " data-badge="productos">18</span>
+          
+        </a>
+      
+        <a href="../categorias.html" class="admin-nav__link " >
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 6h7v5H4zM13 6h7v5h-7zM4 13h7v5H4zM15.5 13v5M13 15.5h5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/></svg>
+          <span>Categorías</span>
+          
+        </a>
+      
+        <a href="../pedidos.html" class="admin-nav__link " >
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2zM9 8h6M9 12h6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/></svg>
+          <span>Pedidos</span>
+          
+            <span class="admin-nav__badge admin-nav__badge--fuerte" data-badge="pedidos">5</span>
+          
+        </a>
+      
+        <a href="../arrepentimientos.html" class="admin-nav__link " >
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 14L4 9l5-5M4 9h10.5a5.5 5.5 0 010 11H11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/></svg>
+          <span>Arrepentimientos</span>
+          
+        </a>
+      
+      <a href="../../index.html" class="admin-nav__link admin-nav__link--tienda">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 10l1.5-5h13L20 10M4 10v10h16V10M4 10h16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        <span>Ver tienda</span>
+        <span aria-hidden="true">↗</span>
+      </a>
+    </nav>
+
+    <div class="admin-usuario">
+      <span class="admin-usuario__inicial">A</span>
+      <span class="admin-usuario__datos">
+        <strong>Admin Tienda</strong>
+        <small>admin@tienda.com</small>
+      </span>
+      <form action="#" method="POST">
+        <button type="submit" class="admin-usuario__salir" aria-label="Cerrar sesión" title="Cerrar sesión">
+          <svg viewBox="0 0 24 24" width="18" height="18"><path d="M14 4h5v16h-5M10 8l-4 4 4 4M6 12h10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </form>
+    </div>
+  </aside>
+
+  <div class="admin-overlay" id="adminOverlay"></div>
+
+  <div class="admin-cuerpo">
+    <!-- Barra superior (celular / tablet) -->
+    <header class="admin-barra">
+      <button class="admin-barra__menu" id="adminMenuBtn" aria-label="Abrir menú" aria-controls="adminLateral" aria-expanded="false">
+        <span></span>
+      </button>
+      
+<svg class="logo-svg logo-svg--horizontal admin-lateral__logo" viewBox="0 0 270 78" role="img" aria-label="Akualoe Chic">
+  <text x="135" y="46" text-anchor="middle" font-size="52" textLength="262" lengthAdjust="spacing" class="logo-svg__marca">AKUALOE</text>
+  <text x="140" y="70" text-anchor="middle" font-size="12" class="logo-svg__bajada">CHIC</text>
+</svg>
+
+      <div class="admin-barra__acciones">
+        
+<div class="notif" id="notif">
+  <button type="button" class="icono-btn notif__btn" id="notifBtn" aria-label="Notificaciones" aria-expanded="false" aria-controls="notifPanel">
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 16V11a6 6 0 0112 0v5l1.5 2h-15L6 16z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M10 20.5a2 2 0 004 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <span class="notif__contador" id="notifContador" hidden>0</span>
+  </button>
+
+  <div class="notif__panel" id="notifPanel" role="dialog" aria-label="Notificaciones" hidden>
+    <div class="notif__cabecera">
+      <p class="notif__titulo">Notificaciones</p>
+      <button type="button" class="notif__leer" id="notifLeerTodas">Marcar todas como leídas</button>
+    </div>
+    <ul class="notif__lista" id="notifLista">
+      <li class="notif__vacio">Cargando…</li>
+    </ul>
+    <div class="notif__pie">
+      <a href="../pedidos.html" class="notif__link">Ver pedidos →</a>
+      <button type="button" class="notif__opcion" id="notifSonido" aria-pressed="true">Sonido: sí</button>
+      <button type="button" class="notif__opcion" id="notifNavegador" hidden>Avisos del navegador</button>
+    </div>
+  </div>
+</div>
+
+        <span class="admin-usuario__inicial">A</span>
+      </div>
+    </header>
+
+    <main class="admin-main">
+
+
+
+
+      <div class="admin-cabecera">
+        <div>
+          <p class="admin-cabecera__migas"><a href="../../admin.html">Panel</a> / <a href="../productos.html">Productos</a> / #0010</p>
+          <h1 class="admin-cabecera__titulo">Musculosa con Tachas</h1>
+          <p class="admin-cabecera__bajada">Tops y musculosas · <span class="stock-tag stock-tag--ok">Stock OK</span></p>
+        </div>
+        <div class="admin-cabecera__acciones">
+          <a href="../../producto/10.html" class="btn btn--linea btn--chico btn--blanco" target="_blank" rel="noopener">Ver en la tienda ↗</a>
+          <a href="#" data-demo-off class="btn btn--solido btn--chico">Editar</a>
+        </div>
+      </div>
+
+      <div class="ficha-admin">
+        <div class="ficha-admin__fotos">
+          <div class="ficha-admin__imagen">
+            
+              <img src="../../img/productos/musculosa-tachas-1.webp" alt="Musculosa con Tachas">
+            
+            <span class="ficha-admin__etiqueta">Nuevo</span>
+          </div>
+          
+          <p class="ficha-admin__cantidad">1 foto · <a href="#" data-demo-off>Gestionar fotos</a></p>
+        </div>
+
+        <div class="ficha-admin__datos">
+          <section class="ficha-kpis" aria-label="Ventas del producto">
+            <div class="kpi">
+              <span class="kpi__label">Unidades vendidas</span>
+              <span class="kpi__valor">11</span>
+              <span class="kpi__detalle">Historial completo</span>
+            </div>
+            <div class="kpi">
+              <span class="kpi__label">Ingresos</span>
+              <span class="kpi__valor">$296 mil</span>
+              <span class="kpi__detalle">Antes de descuentos</span>
+            </div>
+            <div class="kpi kpi--oscuro">
+              <span class="kpi__label">Ganancia generada</span>
+              <span class="kpi__valor">$153 mil</span>
+              <span class="kpi__detalle">Precio − costo × unidades</span>
+            </div>
+            <div class="kpi">
+              <span class="kpi__label">En stock</span>
+              <span class="kpi__valor">12</span>
+              <span class="kpi__detalle">Valor al costo $156 mil</span>
+            </div>
+          </section>
+
+          <section class="panel">
+            <h2 class="panel__titulo">Datos del producto</h2>
+            <dl class="ficha-lista">
+              <div><dt>Precio de venta</dt><dd>$ 26.900</dd></div>
+              <div><dt>Con transferencia</dt><dd>$ 24.210</dd></div>
+              <div><dt>Costo</dt><dd>$ 13.000</dd></div>
+              <div><dt>Ganancia por unidad</dt><dd><strong>$ 13.900</strong> (51,7%)</dd></div>
+              <div><dt>Categoría</dt><dd>Tops y musculosas</dd></div>
+              <div><dt>Subcategoría</dt><dd>—</dd></div>
+              <div><dt>Clasificación</dt><dd>Fit Slim · Primavera / Verano · Casual · Fiesta y Noche</dd></div>
+              <div><dt>Talles</dt><dd>XS · S · M · L · XL</dd></div>
+              <div><dt>Colores (3)</dt><dd class="lista-colores">
+                <span><span class="punto-color" style="--muestra: #6b1f2f"></span>Bordó</span><span><span class="punto-color" style="--muestra: #3f6258"></span>Verde</span><span><span class="punto-color" style="--muestra: #cdb9a0"></span>Beige</span>
+              </dd></div>
+              <div><dt>Etiqueta</dt><dd>Nuevo</dd></div>
+            </dl>
+          </section>
+
+          <section class="panel">
+            <div class="panel__cabecera">
+              <h2 class="panel__titulo">Últimas ventas</h2>
+            </div>
+            
+              <table class="tabla">
+                <thead><tr><th>Pedido</th><th>Fecha</th><th class="num">Cant.</th><th class="num">Ganancia</th></tr></thead>
+                <tbody>
+                  
+                    <tr>
+                      <td>#1076</td>
+                      <td>17-oct</td>
+                      <td class="num">1</td>
+                      <td class="num">$ 13.900</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>#1071</td>
+                      <td>15-oct</td>
+                      <td class="num">1</td>
+                      <td class="num">$ 13.900</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>#1043</td>
+                      <td>04-oct</td>
+                      <td class="num">1</td>
+                      <td class="num">$ 13.900</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>#1037</td>
+                      <td>01-oct</td>
+                      <td class="num">1</td>
+                      <td class="num">$ 13.900</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>#1033</td>
+                      <td>30-sept</td>
+                      <td class="num">2</td>
+                      <td class="num">$ 27.800</td>
+                    </tr>
+                  
+                    <tr>
+                      <td>#1025</td>
+                      <td>27-sept</td>
+                      <td class="num">2</td>
+                      <td class="num">$ 27.800</td>
+                    </tr>
+                  
+                </tbody>
+              </table>
+            
+          </section>
+        </div>
+      </div>
+
+      <form action="#" method="POST" class="zona-peligro"
+            data-confirmar="Se va a borrar “Musculosa con Tachas” del catálogo. Esta acción no se puede deshacer."
+            data-confirmar-titulo="¿Eliminar producto?">
+        <div>
+          <strong>Eliminar producto</strong>
+          <p>Deja de mostrarse en la tienda. Los pedidos ya hechos no se modifican.</p>
+        </div>
+        <button type="submit" class="btn btn--linea btn--chico btn--blanco">Eliminar</button>
+      </form>
+
+    </main>
+  </div>
+</div>
+
+<!-- Modal de confirmación (lo usa admin.js con data-confirmar) -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitulo" hidden>
+  <div class="modal__caja">
+    <p class="modal__titulo" id="modalTitulo">¿Confirmás?</p>
+    <p class="modal__texto" id="modalTexto"></p>
+    <div class="modal__acciones">
+      <button type="button" class="btn btn--linea" id="modalCancelar">Cancelar</button>
+      <button type="button" class="btn btn--solido" id="modalAceptar">Eliminar</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+
+
+
+<script src="../../js/admin.js"></script>
+
+<div class="notif-avisos" id="notifAvisos" aria-live="polite" aria-atomic="false"></div>
+<script src="../../js/notificaciones.js"></script>
+
+
+</body>
+</html>

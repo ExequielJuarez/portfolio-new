@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><script>(function(){var t;function toast(){var d=document.getElementById('__demo_toast');if(!d){d=document.createElement('div');d.id='__demo_toast';d.style.cssText='position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#0b1128;color:#fff;font:600 14px/1.4 system-ui,sans-serif;padding:12px 18px;border-radius:12px;border:1px solid #6366f1;box-shadow:0 10px 30px rgba(0,0,0,.4);z-index:2147483647;max-width:90vw;text-align:center;transition:opacity .3s';d.textContent='Vista de demostración: esta acción no está disponible acá';document.body.appendChild(d)}d.style.opacity=1;clearTimeout(t);t=setTimeout(function(){d.style.opacity=0},2200)}
+document.addEventListener('submit',function(e){e.preventDefault();e.stopImmediatePropagation();toast()},true);
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-demo-off]');if(a){e.preventDefault();toast()}},true);
+window.EventSource=function(){return {close:function(){},addEventListener:function(){},onmessage:null,onerror:null}};var f=window.fetch;window.fetch=function(u,i){var m=((i&&i.method)||(u&&u.method)||'GET').toUpperCase();if(m==='GET')return f.apply(this,arguments);toast();return Promise.reject(new Error('demo'))};
+var o=XMLHttpRequest.prototype.open;XMLHttpRequest.prototype.open=function(m,u){if(m&&m.toUpperCase()!=='GET'){toast()}return o.apply(this,arguments)}})();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de inicio | Huella Negra</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/base.css">
+  
+  
+    <link rel="stylesheet" href="../css/notificaciones.css">
+  
+  
+    <link rel="stylesheet" href="../css/admin.css">
+  
+    <link rel="stylesheet" href="../css/admin-inicio.css">
+  
+  <link rel="stylesheet" href="../css/tema.css">
+</head>
+<body>
+
+
+
+
+<div class="admin">
+  <!-- ═════════════ MENÚ LATERAL ═════════════ -->
+  <aside class="admin-lateral" id="adminLateral" aria-label="Menú del panel">
+    <div class="admin-lateral__marca">
+      <span class="admin-lateral__logo">(LOGO)</span>
+      <span class="admin-lateral__etiqueta">Admin</span>
+    </div>
+
+    <nav class="admin-nav">
+      
+        <a href="../admin.html" class="admin-nav__link " >
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 13h6V4H4zM14 20h6v-9h-6zM4 20h6v-4H4zM14 7h6V4h-6z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          <span>Panel</span>
+          
+        </a>
+      
+        <a href="productos.html" class="admin-nav__link " >
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 8l8-4 8 4-8 4-8-4zM4 8v8l8 4 8-4V8M12 12v8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          <span>Productos</span>
+          
+            <span class="admin-nav__badge " data-badge="productos">6</span>
+          
+        </a>
+      
+        <a href="pedidos.html" class="admin-nav__link " >
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2zM9 8h6M9 12h6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/></svg>
+          <span>Pedidos</span>
+          
+            <span class="admin-nav__badge admin-nav__badge--fuerte" data-badge="pedidos">11</span>
+          
+        </a>
+      
+        <a href="inicio.html" class="admin-nav__link activo" aria-current="page">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 5h16v14H4zM4 15l4-4 4 4 3-3 5 5M15 9.5a1.5 1.5 0 100-.01" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/></svg>
+          <span>Página de inicio</span>
+          
+        </a>
+      
+      <a href="../index.html" class="admin-nav__link admin-nav__link--tienda">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 10l1.5-5h13L20 10M4 10v10h16V10M4 10h16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        <span>Ver tienda</span>
+        <span aria-hidden="true">↗</span>
+      </a>
+    </nav>
+
+    <div class="admin-usuario">
+      <span class="admin-usuario__inicial">A</span>
+      <span class="admin-usuario__datos">
+        <strong>Admin Tienda</strong>
+        <small>admin@tienda.com</small>
+      </span>
+      <form action="#" method="POST">
+        <button type="submit" class="admin-usuario__salir" aria-label="Cerrar sesión" title="Cerrar sesión">
+          <svg viewBox="0 0 24 24" width="18" height="18"><path d="M14 4h5v16h-5M10 8l-4 4 4 4M6 12h10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </form>
+    </div>
+  </aside>
+
+  <div class="admin-overlay" id="adminOverlay"></div>
+
+  <div class="admin-cuerpo">
+    <!-- Barra superior (celular / tablet) -->
+    <header class="admin-barra">
+      <button class="admin-barra__menu" id="adminMenuBtn" aria-label="Abrir menú" aria-controls="adminLateral" aria-expanded="false">
+        <span></span>
+      </button>
+      <span class="admin-lateral__logo">(LOGO)</span>
+      <div class="admin-barra__acciones">
+        
+<div class="notif" id="notif">
+  <button type="button" class="icono-btn notif__btn" id="notifBtn" aria-label="Notificaciones" aria-expanded="false" aria-controls="notifPanel">
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 16V11a6 6 0 0112 0v5l1.5 2h-15L6 16z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M10 20.5a2 2 0 004 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <span class="notif__contador" id="notifContador" hidden>0</span>
+  </button>
+
+  <div class="notif__panel" id="notifPanel" role="dialog" aria-label="Notificaciones" hidden>
+    <div class="notif__cabecera">
+      <p class="notif__titulo">Notificaciones</p>
+      <button type="button" class="notif__leer" id="notifLeerTodas">Marcar todas como leídas</button>
+    </div>
+    <ul class="notif__lista" id="notifLista">
+      <li class="notif__vacio">Cargando…</li>
+    </ul>
+    <div class="notif__pie">
+      <a href="pedidos.html" class="notif__link">Ver pedidos →</a>
+      <button type="button" class="notif__opcion" id="notifSonido" aria-pressed="true">Sonido: sí</button>
+      <button type="button" class="notif__opcion" id="notifNavegador" hidden>Avisos del navegador</button>
+    </div>
+  </div>
+</div>
+
+        <span class="admin-usuario__inicial">A</span>
+      </div>
+    </header>
+
+    <main class="admin-main">
+
+
+
+
+      <div class="admin-cabecera">
+        <div>
+          <p class="admin-cabecera__migas"><a href="../admin.html">Panel</a> / Página de inicio</p>
+          <h1 class="admin-cabecera__titulo">Página de inicio</h1>
+          <p class="admin-cabecera__bajada">
+            Cambiá textos, fotos y qué secciones se muestran. Lo ves al instante en la vista previa y se publica al guardar.
+            
+          </p>
+        </div>
+        <div class="admin-cabecera__acciones">
+          <a href="../index.html" target="_blank" rel="noopener" class="btn btn--linea btn--chico btn--blanco">Ver inicio ↗</a>
+        </div>
+      </div>
+
+      
+
+      <div class="editor">
+        <form action="#" method="POST" enctype="multipart/form-data" id="formInicio" class="editor__form" data-prefijo-previa="/img/inicio/__previa__/" novalidate>
+
+          <p class="editor__consejo">
+            <strong>Tip:</strong> escribí <code>*así*</code> para que una palabra salga en <em>cursiva</em>.
+            Las fotos pueden ser JPG, PNG o WEBP de hasta 3 MB.
+          </p>
+
+          
+            
+            <details class="editor-seccion " data-seccion="portada" >
+              <summary class="editor-seccion__cabeza">
+                <span class="editor-seccion__num">01</span>
+                <span class="editor-seccion__textos">
+                  <strong>Portada</strong>
+                  <small>Lo primero que se ve al entrar: título, botones y la foto grande.</small>
+                </span>
+                <span class="editor-seccion__estado" data-estado></span>
+                <span class="editor-seccion__flecha" aria-hidden="true"></span>
+              </summary>
+
+              <div class="editor-seccion__cuerpo">
+                
+
+                <div class="ce-grilla">
+                  
+                    
+
+  
+  <div class="ce  " data-texto>
+    <div class="ce__cabeza">
+      <label class="campo__label" for="ce-portada-etiqueta">Texto chico de arriba (opcional)</label>
+      
+        <span class="ce__cuenta" data-cuenta>0/70</span>
+      
+    </div>
+    
+      <input class="campo__control" id="ce-portada-etiqueta" name="portada[etiqueta]" value=""
+             type="text"
+             maxlength="70"
+             
+             placeholder=""
+             data-original=""
+             >
+    
+    <div class="ce__pie">
+      
+      
+        <button type="button" class="ce__link" data-restaurar hidden>Restaurar original</button>
+      
+    </div>
+    
+  </div>
+
+
+                  
+                    
+
+  
+  <div class="ce  " data-texto>
+    <div class="ce__cabeza">
+      <label class="campo__label" for="ce-portada-titulo">Título grande</label>
+      
+        <span class="ce__cuenta" data-cuenta>20/90</span>
+      
+    </div>
+    
+      <textarea class="campo__control" id="ce-portada-titulo" name="portada[titulo]" rows="3" maxlength="90"
+                data-original="Vestite a tu
+manera."
+                >Vestite a tu
+manera.</textarea>
+    
+    <div class="ce__pie">
+      <p class="ce__ayuda">Un renglón por línea.</p>
+      
+        <button type="button" class="ce__link" data-restaurar hidden>Restaurar original</button>
+      
+    </div>
+    
+  </div>
+
+
+                  
+                    
+
+  
+  <div class="ce  " data-texto>
+    <div class="ce__cabeza">
+      <label class="campo__label" for="ce-portada-bajada">Texto debajo del título</label>
+      
+        <span class="ce__cuenta" data-cuenta>61/260</span>
+      
+    </div>
+    
+      <textarea class="campo__control" id="ce-portada-bajada" name="portada[bajada]" rows="3" maxlength="260"
+                data-original="Básicos con carácter. Elegancia relajada para todos los días."
+                >Básicos con carácter. Elegancia relajada para todos los días.</textarea>
+    
+    <div class="ce__pie">
+      
+      
+        <button type="button" class="ce__link" data-restaurar hidden>Restaurar original</button>
+      
+    </div>
+    
+  </div>
+
+
+                  
+                    
+
+  
+  <div class="ce ce--medio " data-texto>
+    <div class="ce__cabeza">
+      <label class="campo__label" for="ce-portada-botonTexto">Botón principal</label>
+      
+        <span class="ce__cuenta" data-cuenta>13/30</span>
+      
+    </div>
+    
+      <input class="campo__control" id="ce-portada-botonTexto" name="portada[botonTexto]" value="Ver colección"
+             type="text"
+             maxlength="30"
+             
+             placeholder=""
+             data-original="Ver colección"
+             >
+    
+    <div class="ce__pie">
+      
+      
+        <button type="button" class="ce__link" data-restaurar hidden>Restaurar original</button>
+      
+    </div>
+    
+  </div>
+
+
+                  
+                    
+
+  
+  <div class="ce ce--medio " data-texto>
+    <div class="ce__cabeza">
+      <label class="campo__label" for="ce-portada-botonLink">Link del botón principal</label>
+      
+    </div>
+    
+      <input class="campo__control" id="ce-portada-botonLink" name="portada[botonLink]" value="/catalogo"
+             type="text"
+             maxlength="255"
+             inputmode="url" spellcheck="false" autocapitalize="off"
+             placeholder="/catalogo o https://…"
+             data-original="/catalogo"
+             >
+    
+    <div class="ce__pie">
+      
+      
+        <button type="button" class="ce__link" data-restaurar hidden>Restaurar original</button>
+      
+    </div>
+    
+  </div>
+
+
+                  
+                    
+
+  <div class="ce ce--imagen " data-foto>
+    <span class="campo__label">Foto principal</span>
+    <div class="ce-foto ">
+      <img src="../img/inicio/portada.png" alt="" class="ce-foto__img" data-foto-img>
+      <span class="ce-foto__nueva" data-foto-nueva hidden>Nueva</span>
+    </div>
+    <div class="ce-foto__acciones">
+      <label class="btn btn--chico btn--linea ce-foto__cambiar">
+        Cambiar foto
+        <input type="file" name="archivo:portada.imagen" accept="image/jpeg,image/png,image/webp" data-foto-archivo>
+      </label>
+      <button type="button" class="ce__link" data-foto-deshacer hidden>Deshacer</button>
+      
+    </div>
+    <input type="hidden" name="portada[imagen]" value="/img/inicio/portada.png" data-foto-ruta data-original="/img/inicio/portada.png">
+    <p class="ce__ayuda">Foto horizontal. Queda mejor con la persona hacia la derecha y espacio libre a la izquierda para el texto.</p>
+  </div>
+
+
+
+                  
+                </div>
+              </div>
+            </details>
+          
+            
+            <details class="editor-seccion " data-seccion="banner" >
+              <summary class="editor-seccion__cabeza">
+                <span class="editor-seccion__num">02</span>
+                <span class="editor-seccion__textos">
+                  <strong>Banner de colección</strong>
+                  <small>El bloque con foto a la izquierda y texto a la derecha, debajo de los productos.</small>
+                </span>
+                <span class="editor-seccion__estado" data-estado></span>
+                <span class="editor-seccion__flecha" aria-hidden="true"></span>
+              </summary>
+
+              <div class="editor-seccion__cuerpo">
+                
+                  <label class="interruptor">
+                    <input type="hidden" name="banner[visible]" value="0">
+                    <input type="checkbox" name="banner[visible]" value="1" checked data-visible>
+                    <span class="interruptor__pista" aria-hidden="true"></span>
+                    <span>Mostrar esta sección en el inicio</span>
+                  </label>
+                
+
+                <div class="ce-grilla">
+                  
+                    
+
+  
+  <div class="ce  " data-texto>
+    <div class="ce__cabeza">
+      <label class="campo__label" for="ce-banner-etiqueta">Texto chico de arriba</label>
+      
+        <span class="ce__cuenta" data-cuenta>15/40</span>
+      
+    </div>
+    
+      <input class="campo__control" id="ce-banner-etiqueta" name="banner[etiqueta]" value="Nueva colección"
+             type="text"
+             maxlength="40"
+             
+             placeholder=""
+             data-original="Nueva colección"
+             >
+    
+    <div class="ce__pie">
+      
+      
+        <button type="button" class="ce__link" data-restaurar hidden>Restaurar original</button>
+      
+    </div>
+    
+  </div>
+
+
+                  
+                    
+
+  
+  <div class="ce  " data-texto>
+    <div class="ce__cabeza">
+      <label class="campo__label" for="ce-banner-titulo">Título</label>
+      
+        <span class="ce__cuenta" data-cuenta>24/60</span>
+      
+    </div>
+    
+      <textarea class="campo__control" id="ce-banner-titulo" name="banner[titulo]" rows="3" maxlength="60"
+                data-original="Menos ruido.
+Más estilo."
+                >Menos ruido.
+Más estilo.</textarea>
+    
+    <div class="ce__pie">
+      
+      
+        <button type="button" class="ce__link" data-restaurar hidden>Restaurar original</button>
+      
+    </div>
+    
+  </div>
+
+
+                  
+                    
+
+  
+  <div class="ce ce--medio " data-texto>
+    <div class="ce__cabeza">
+      <label class="campo__label" for="ce-banner-botonTexto">Texto del botón</label>
+      
+        <span class="ce__cuenta" data-cuenta>22/30</span>
+      
+    </div>
+    
+      <input class="campo__control" id="ce-banner-botonTexto" name="banner[botonTexto]" value="Descubrir Huella Negra"
+             type="text"
+             maxlength="30"
+             
+             placeholder=""
+             data-original="Descubrir Huella Negra"
+             >
+    
+    <div class="ce__pie">
+      
+      
+        <button type="button" class="ce__link" data-restaurar hidden>Restaurar original</button>
+      
+    </div>
+    
+  </div>
+
+
+                  
+                    
+
+  
+  <div class="ce ce--medio " data-texto>
+    <div class="ce__cabeza">
+      <label class="campo__label" for="ce-banner-botonLink">A dónde lleva</label>
+      
+    </div>
+    
+      <input class="campo__control" id="ce-banner-botonLink" name="banner[botonLink]" value="/catalogo"
+             type="text"
+             maxlength="255"
+             inputmode="url" spellcheck="false" autocapitalize="off"
+             placeholder="/catalogo o https://…"
+             data-original="/catalogo"
+             >
+    
+    <div class="ce__pie">
+      
+      
+        <button type="button" class="ce__link" data-restaurar hidden>Restaurar original</button>
+      
+    </div>
+    
+  </div>
+
+
+                  
+                    
+
+  <div class="ce ce--imagen " data-foto>
+    <span class="campo__label">Foto</span>
+    <div class="ce-foto ">
+      <img src="../img/inicio/banner.jpg" alt="" class="ce-foto__img" data-foto-img>
+      <span class="ce-foto__nueva" data-foto-nueva hidden>Nueva</span>
+    </div>
+    <div class="ce-foto__acciones">
+      <label class="btn btn--chico btn--linea ce-foto__cambiar">
+        Cambiar foto
+        <input type="file" name="archivo:banner.imagen" accept="image/jpeg,image/png,image/webp" data-foto-archivo>
+      </label>
+      <button type="button" class="ce__link" data-foto-deshacer hidden>Deshacer</button>
+      
+    </div>
+    <input type="hidden" name="banner[imagen]" value="/img/inicio/banner.jpg" data-foto-ruta data-original="/img/inicio/banner.jpg">
+    <p class="ce__ayuda">Mejor una foto horizontal.</p>
+  </div>
+
+
+
+                  
+                </div>
+              </div>
+            </details>
+          
+
+          <!-- Barra para guardar (queda fija abajo) -->
+          <div class="editor-guardar" id="barraGuardar">
+            <p class="editor-guardar__estado" id="estadoCambios" aria-live="polite">Sin cambios</p>
+            <div class="editor-guardar__acciones">
+              <a href="inicio.html" class="btn btn--linea btn--chico btn--blanco" id="btnDescartar" hidden>Descartar</a>
+              <button type="button" class="btn btn--linea btn--chico btn--blanco editor-guardar__previa" id="btnAbrirPrevia">Vista previa</button>
+              <button type="submit" class="btn btn--solido btn--chico" id="btnGuardar">Guardar cambios</button>
+            </div>
+          </div>
+        </form>
+
+        <!-- Vista previa en vivo -->
+        <aside class="previa" id="previa" aria-label="Vista previa del inicio">
+          <div class="previa__barra">
+            <div class="previa__dispositivos" role="group" aria-label="Tamaño de la vista previa">
+              <button type="button" class="activo" data-ancho="1280" aria-pressed="true">PC</button>
+              <button type="button" data-ancho="820" aria-pressed="false">Tablet</button>
+              <button type="button" data-ancho="390" aria-pressed="false">Celular</button>
+            </div>
+            <span class="previa__estado" id="estadoPrevia">Vista previa</span>
+            <button type="button" class="previa__cerrar" id="btnCerrarPrevia" aria-label="Cerrar vista previa">×</button>
+          </div>
+          <div class="previa__marco" id="previaMarco">
+            <iframe id="previaFrame" title="Vista previa del inicio" tabindex="-1"></iframe>
+          </div>
+          <p class="previa__nota">Así se va a ver. Todavía no está publicado hasta que guardes.</p>
+        </aside>
+      </div>
+
+      <form action="#" method="POST" class="zona-peligro"
+            data-confirmar="Todos los textos y fotos del inicio vuelven a como estaban originalmente. Las fotos que subiste se borran."
+            data-confirmar-titulo="¿Restablecer el inicio?" data-confirmar-boton="Restablecer">
+        <div>
+          <strong>Volver al inicio original</strong>
+          <p>Deshace todos los cambios hechos desde este panel.</p>
+        </div>
+        <button type="submit" class="btn btn--linea btn--chico btn--blanco">Restablecer</button>
+      </form>
+
+    </main>
+  </div>
+</div>
+
+<!-- Modal de confirmación (lo usa admin.js con data-confirmar) -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitulo" hidden>
+  <div class="modal__caja">
+    <p class="modal__titulo" id="modalTitulo">¿Confirmás?</p>
+    <p class="modal__texto" id="modalTexto"></p>
+    <div class="modal__acciones">
+      <button type="button" class="btn btn--linea" id="modalCancelar">Cancelar</button>
+      <button type="button" class="btn btn--solido" id="modalAceptar">Eliminar</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+
+
+
+<script src="../js/admin.js"></script>
+
+<div class="notif-avisos" id="notifAvisos" aria-live="polite" aria-atomic="false"></div>
+<script src="../js/notificaciones.js"></script>
+
+
+<script src="../js/admin-inicio.js"></script>
+</body>
+</html>

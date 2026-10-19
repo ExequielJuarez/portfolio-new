@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><script>(function(){var t;function toast(){var d=document.getElementById('__demo_toast');if(!d){d=document.createElement('div');d.id='__demo_toast';d.style.cssText='position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#0b1128;color:#fff;font:600 14px/1.4 system-ui,sans-serif;padding:12px 18px;border-radius:12px;border:1px solid #6366f1;box-shadow:0 10px 30px rgba(0,0,0,.4);z-index:2147483647;max-width:90vw;text-align:center;transition:opacity .3s';d.textContent='Vista de demostración: esta acción no está disponible acá';document.body.appendChild(d)}d.style.opacity=1;clearTimeout(t);t=setTimeout(function(){d.style.opacity=0},2200)}
+document.addEventListener('submit',function(e){e.preventDefault();e.stopImmediatePropagation();toast()},true);
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-demo-off]');if(a){e.preventDefault();toast()}},true);
+window.EventSource=function(){return {close:function(){},addEventListener:function(){},onmessage:null,onerror:null}};var f=window.fetch;window.fetch=function(u,i){var m=((i&&i.method)||(u&&u.method)||'GET').toUpperCase();if(m==='GET')return f.apply(this,arguments);toast();return Promise.reject(new Error('demo'))};
+var o=XMLHttpRequest.prototype.open;XMLHttpRequest.prototype.open=function(m,u){if(m&&m.toUpperCase()!=='GET'){toast()}return o.apply(this,arguments)}})();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos | Santiago Mates</title>
+  <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/base.css">
+  
+  
+    <link rel="stylesheet" href="../css/notificaciones.css">
+  
+  
+    <link rel="stylesheet" href="../css/admin.css">
+  
+    <link rel="stylesheet" href="../css/admin-productos.css">
+  
+</head>
+<body>
+
+
+
+
+<div class="admin">
+  <!-- ═════════════ MENÚ LATERAL ═════════════ -->
+  <aside class="admin-lateral" id="adminLateral" aria-label="Menú del panel">
+    <div class="admin-lateral__marca">
+      
+
+<svg class="logo-svg logo-svg--horizontal admin-lateral__logo" viewBox="0 0 300 70" role="img" aria-label="Santiago Mates · La gran casa matera">
+  <g transform="translate(2 2) scale(0.66)">
+    <path d="M24 40 Q22 33 30 31 L50 31 Q58 33 56 40 Q66 48 66 64 Q66 92 40 96 Q14 92 14 64 Q14 48 24 40 Z" fill="currentColor"/>
+    <path d="M24 40 L56 40" stroke="var(--logo-fondo, transparent)" stroke-width="2.5"/>
+    <path d="M44 34 L52 4 Q53 0 57 0 L64 1" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <text x="54" y="40" class="logo-svg__marca">Santiago<tspan class="logo-svg__marca--fuerte">Mates</tspan></text>
+  <text x="55" y="61" class="logo-svg__bajada">LA GRAN CASA MATERA</text>
+</svg>
+
+
+      <span class="admin-lateral__etiqueta">Admin</span>
+    </div>
+
+    <nav class="admin-nav">
+      
+        <a href="../admin.html" class="admin-nav__link " >
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 13h6V4H4zM14 20h6v-9h-6zM4 20h6v-4H4zM14 7h6V4h-6z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          <span>Panel</span>
+          
+        </a>
+      
+        <a href="productos.html" class="admin-nav__link activo" aria-current="page">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 8l8-4 8 4-8 4-8-4zM4 8v8l8 4 8-4V8M12 12v8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          <span>Productos</span>
+          
+            <span class="admin-nav__badge " data-badge="productos">25</span>
+          
+        </a>
+      
+        <a href="categorias.html" class="admin-nav__link " >
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 6h7v5H4zM13 6h7v5h-7zM4 13h7v5H4zM15.5 13v5M13 15.5h5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/></svg>
+          <span>Categorías</span>
+          
+        </a>
+      
+        <a href="pedidos.html" class="admin-nav__link " >
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2zM9 8h6M9 12h6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/></svg>
+          <span>Pedidos</span>
+          
+            <span class="admin-nav__badge admin-nav__badge--fuerte" data-badge="pedidos">10</span>
+          
+        </a>
+      
+        <a href="arrepentimientos.html" class="admin-nav__link " >
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 14L4 9l5-5M4 9h10.5a5.5 5.5 0 010 11H11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/></svg>
+          <span>Arrepentimientos</span>
+          
+        </a>
+      
+      <a href="../index.html" class="admin-nav__link admin-nav__link--tienda">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 10l1.5-5h13L20 10M4 10v10h16V10M4 10h16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        <span>Ver tienda</span>
+        <span aria-hidden="true">↗</span>
+      </a>
+    </nav>
+
+    <div class="admin-usuario">
+      <span class="admin-usuario__inicial">A</span>
+      <span class="admin-usuario__datos">
+        <strong>Admin Tienda</strong>
+        <small>admin@tienda.com</small>
+      </span>
+      <form action="#" method="POST">
+        <button type="submit" class="admin-usuario__salir" aria-label="Cerrar sesión" title="Cerrar sesión">
+          <svg viewBox="0 0 24 24" width="18" height="18"><path d="M14 4h5v16h-5M10 8l-4 4 4 4M6 12h10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </form>
+    </div>
+  </aside>
+
+  <div class="admin-overlay" id="adminOverlay"></div>
+
+  <div class="admin-cuerpo">
+    <!-- Barra superior (celular / tablet) -->
+    <header class="admin-barra">
+      <button class="admin-barra__menu" id="adminMenuBtn" aria-label="Abrir menú" aria-controls="adminLateral" aria-expanded="false">
+        <span></span>
+      </button>
+      
+
+<svg class="logo-svg logo-svg--horizontal admin-lateral__logo" viewBox="0 0 300 70" role="img" aria-label="Santiago Mates · La gran casa matera">
+  <g transform="translate(2 2) scale(0.66)">
+    <path d="M24 40 Q22 33 30 31 L50 31 Q58 33 56 40 Q66 48 66 64 Q66 92 40 96 Q14 92 14 64 Q14 48 24 40 Z" fill="currentColor"/>
+    <path d="M24 40 L56 40" stroke="var(--logo-fondo, transparent)" stroke-width="2.5"/>
+    <path d="M44 34 L52 4 Q53 0 57 0 L64 1" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <text x="54" y="40" class="logo-svg__marca">Santiago<tspan class="logo-svg__marca--fuerte">Mates</tspan></text>
+  <text x="55" y="61" class="logo-svg__bajada">LA GRAN CASA MATERA</text>
+</svg>
+
+
+      <div class="admin-barra__acciones">
+        
+<div class="notif" id="notif">
+  <button type="button" class="icono-btn notif__btn" id="notifBtn" aria-label="Notificaciones" aria-expanded="false" aria-controls="notifPanel">
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 16V11a6 6 0 0112 0v5l1.5 2h-15L6 16z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M10 20.5a2 2 0 004 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <span class="notif__contador" id="notifContador" hidden>0</span>
+  </button>
+
+  <div class="notif__panel" id="notifPanel" role="dialog" aria-label="Notificaciones" hidden>
+    <div class="notif__cabecera">
+      <p class="notif__titulo">Notificaciones</p>
+      <button type="button" class="notif__leer" id="notifLeerTodas">Marcar todas como leídas</button>
+    </div>
+    <ul class="notif__lista" id="notifLista">
+      <li class="notif__vacio">Cargando…</li>
+    </ul>
+    <div class="notif__pie">
+      <a href="pedidos.html" class="notif__link">Ver pedidos →</a>
+      <button type="button" class="notif__opcion" id="notifSonido" aria-pressed="true">Sonido: sí</button>
+      <button type="button" class="notif__opcion" id="notifNavegador" hidden>Avisos del navegador</button>
+    </div>
+  </div>
+</div>
+
+        <span class="admin-usuario__inicial">A</span>
+      </div>
+    </header>
+
+    <main class="admin-main">
+
+
+
+
+      <div class="admin-cabecera">
+        <div>
+          <p class="admin-cabecera__migas"><a href="../admin.html">Panel</a> / Productos</p>
+          <h1 class="admin-cabecera__titulo">Productos</h1>
+          <p class="admin-cabecera__bajada">
+            25 en catálogo · <strong id="unidadesTotales">231</strong> unidades en stock ·
+            valor al costo <strong id="valorStock">$7 M</strong>
+          </p>
+        </div>
+        <div class="admin-cabecera__acciones">
+          <a href="productos/nuevo.html" class="btn btn--solido btn--chico">+ Nuevo producto</a>
+        </div>
+      </div>
+
+      <!-- Filtros (funcionan sin JS: es un formulario GET) -->
+      <form class="filtros-admin" id="filtrosProductos" action="productos.html" method="GET" role="search">
+        <label class="filtros-admin__buscar">
+          <span class="sr-only">Buscar producto</span>
+          <svg viewBox="0 0 24 24" width="16" height="16"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <input class="campo__control" type="search" name="q" value="" placeholder="Buscar por nombre o código">
+        </label>
+        <select class="campo__control" name="categoria" aria-label="Categoría">
+          <option value="">Todas las categorías</option>
+          
+            <option value="Mates" >Mates</option>
+          
+            <option value="Termos" >Termos</option>
+          
+            <option value="Bombillas" >Bombillas</option>
+          
+            <option value="Bolsos materos" >Bolsos materos</option>
+          
+            <option value="Combos" >Combos</option>
+          
+            <option value="Yerbas" >Yerbas</option>
+          
+        </select>
+        <select class="campo__control" name="stock" aria-label="Stock">
+          <option value="">Todo el stock</option>
+          <option value="bajo" >Stock bajo (≤ 5)</option>
+          <option value="sin" >Sin stock</option>
+        </select>
+        <select class="campo__control" name="orden" aria-label="Ordenar">
+          <option value="nombre" selected>Nombre A–Z</option>
+          <option value="precio-desc" >Mayor precio</option>
+          <option value="stock-asc" >Menos stock</option>
+        </select>
+        <noscript><button class="btn btn--solido btn--chico" type="submit">Filtrar</button></noscript>
+      </form>
+
+      
+
+      
+        <div class="panel panel--tabla">
+          <table class="tabla tabla--productos">
+            <thead>
+              <tr>
+                <th>Producto</th>
+                <th class="num">Precio</th>
+                <th class="num">Costo</th>
+                <th>Stock</th>
+                <th><span class="sr-only">Acciones</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr data-id="15">
+                  <td data-label="Producto">
+                    <a href="productos/15.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/bolso-matero-blanco-1.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Bolso Matero Blanco</strong>
+                        <small>#0015 · Bolsos materos › Cuero sintético</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$65.000,00</td>
+                  <td class="num" data-label="Costo">$38.000,00</td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="15">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="4" min="0" inputmode="numeric" aria-label="Stock de Bolso Matero Blanco">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--bajo" data-stock-tag>Bajo</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/15.html" class="accion" title="Ver" aria-label="Ver Bolso Matero Blanco">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Bolso Matero Blanco">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Bolso Matero Blanco” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Bolso Matero Blanco">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="9">
+                  <td data-label="Producto">
+                    <a href="productos/9.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/bombillon-hoja.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Bombillón de Alpaca Hoja</strong>
+                        <small>#0009 · Bombillas › Bombillones de alpaca</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$48.000,00</td>
+                  <td class="num" data-label="Costo">$23.000,00</td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="9">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="10" min="0" inputmode="numeric" aria-label="Stock de Bombillón de Alpaca Hoja">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--ok" data-stock-tag>OK</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/9.html" class="accion" title="Ver" aria-label="Ver Bombillón de Alpaca Hoja">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Bombillón de Alpaca Hoja">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Bombillón de Alpaca Hoja” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Bombillón de Alpaca Hoja">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="8">
+                  <td data-label="Producto">
+                    <a href="productos/8.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/bombillon-joyero.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Bombillón de Alpaca Joyero</strong>
+                        <small>#0008 · Bombillas › Bombillones de alpaca</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$52.000,00</td>
+                  <td class="num" data-label="Costo">$25.000,00</td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="8">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="8" min="0" inputmode="numeric" aria-label="Stock de Bombillón de Alpaca Joyero">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--ok" data-stock-tag>OK</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/8.html" class="accion" title="Ver" aria-label="Ver Bombillón de Alpaca Joyero">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Bombillón de Alpaca Joyero">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Bombillón de Alpaca Joyero” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Bombillón de Alpaca Joyero">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="7">
+                  <td data-label="Producto">
+                    <a href="productos/7.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/bombillon-tatuado.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Bombillón de Alpaca Tatuado</strong>
+                        <small>#0007 · Bombillas › Bombillones de alpaca</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$45.000,00</td>
+                  <td class="num" data-label="Costo">$22.000,00</td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="7">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="12" min="0" inputmode="numeric" aria-label="Stock de Bombillón de Alpaca Tatuado">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--ok" data-stock-tag>OK</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/7.html" class="accion" title="Ver" aria-label="Ver Bombillón de Alpaca Tatuado">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Bombillón de Alpaca Tatuado">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Bombillón de Alpaca Tatuado” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Bombillón de Alpaca Tatuado">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="16">
+                  <td data-label="Producto">
+                    <a href="productos/16.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/bolso-canasta-hudson-1.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Canasta Matera Hudson</strong>
+                        <small>#0016 · Bolsos materos › Canastas</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$75.000,00</td>
+                  <td class="num" data-label="Costo">$45.000,00</td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="16">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="5" min="0" inputmode="numeric" aria-label="Stock de Canasta Matera Hudson">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--bajo" data-stock-tag>Bajo</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/16.html" class="accion" title="Ver" aria-label="Ver Canasta Matera Hudson">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Canasta Matera Hudson">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Canasta Matera Hudson” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Canasta Matera Hudson">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="18">
+                  <td data-label="Producto">
+                    <a href="productos/18.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/combo-campestre.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Combo Campestre</strong>
+                        <small>#0018 · Combos › Sin termo</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$160.000,00</td>
+                  <td class="num" data-label="Costo">$95.000,00</td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="18">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="4" min="0" inputmode="numeric" aria-label="Stock de Combo Campestre">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--bajo" data-stock-tag>Bajo</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/18.html" class="accion" title="Ver" aria-label="Ver Combo Campestre">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Combo Campestre">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Combo Campestre” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Combo Campestre">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="11">
+                  <td data-label="Producto">
+                    <a href="productos/11.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/combo-del-10-1.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Combo del 10</strong>
+                        <small>#0011 · Combos › Con termo</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$165.000,00</td>
+                  <td class="num" data-label="Costo">$90.000,00</td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="11">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="5" min="0" inputmode="numeric" aria-label="Stock de Combo del 10">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--bajo" data-stock-tag>Bajo</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/11.html" class="accion" title="Ver" aria-label="Ver Combo del 10">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Combo del 10">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Combo del 10” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Combo del 10">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="10">
+                  <td data-label="Producto">
+                    <a href="productos/10.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/combo-linea-hudson-1.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Combo Línea Hudson</strong>
+                        <small>#0010 · Combos › Con termo</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$189.000,00</td>
+                  <td class="num" data-label="Costo">$105.000,00</td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="10">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="4" min="0" inputmode="numeric" aria-label="Stock de Combo Línea Hudson">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--bajo" data-stock-tag>Bajo</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/10.html" class="accion" title="Ver" aria-label="Ver Combo Línea Hudson">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Combo Línea Hudson">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Combo Línea Hudson” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Combo Línea Hudson">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="19">
+                  <td data-label="Producto">
+                    <a href="productos/19.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/combo-pasion-futbolera.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Combo Pasión Futbolera</strong>
+                        <small>#0019 · Combos › Con termo</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$210.000,00</td>
+                  <td class="num" data-label="Costo">$125.000,00</td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="19">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="3" min="0" inputmode="numeric" aria-label="Stock de Combo Pasión Futbolera">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--bajo" data-stock-tag>Bajo</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/19.html" class="accion" title="Ver" aria-label="Ver Combo Pasión Futbolera">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Combo Pasión Futbolera">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Combo Pasión Futbolera” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Combo Pasión Futbolera">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="20">
+                  <td data-label="Producto">
+                    <a href="productos/20.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/combo-total-black.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Combo Total Black</strong>
+                        <small>#0020 · Combos › Con termo</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$230.000,00</td>
+                  <td class="num" data-label="Costo">$140.000,00</td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="20">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="3" min="0" inputmode="numeric" aria-label="Stock de Combo Total Black">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--bajo" data-stock-tag>Bajo</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/20.html" class="accion" title="Ver" aria-label="Ver Combo Total Black">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Combo Total Black">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Combo Total Black” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Combo Total Black">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="17">
+                  <td data-label="Producto">
+                    <a href="productos/17.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/combo-tradicional.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Combo Tradicional</strong>
+                        <small>#0017 · Combos › Sin termo</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$145.000,00</td>
+                  <td class="num" data-label="Costo">$85.000,00</td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="17">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="4" min="0" inputmode="numeric" aria-label="Stock de Combo Tradicional">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--bajo" data-stock-tag>Bajo</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/17.html" class="accion" title="Ver" aria-label="Ver Combo Tradicional">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Combo Tradicional">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Combo Tradicional” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Combo Tradicional">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="3">
+                  <td data-label="Producto">
+                    <a href="productos/3.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/imperial-premium-argentina-1.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Imperial Premium Argentina</strong>
+                        <small>#0003 · Mates › Imperiales</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$78.000,00</td>
+                  <td class="num" data-label="Costo">$39.000,00</td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="3">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="6" min="0" inputmode="numeric" aria-label="Stock de Imperial Premium Argentina">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--ok" data-stock-tag>OK</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/3.html" class="accion" title="Ver" aria-label="Ver Imperial Premium Argentina">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Imperial Premium Argentina">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Imperial Premium Argentina” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Imperial Premium Argentina">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="6">
+                  <td data-label="Producto">
+                    <a href="productos/6.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/mate-exclusivo-criollo-1.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Mate Exclusivo Criollo</strong>
+                        <small>#0006 · Mates › Criollos</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$58.000,00</td>
+                  <td class="num" data-label="Costo">$28.000,00</td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="6">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="7" min="0" inputmode="numeric" aria-label="Stock de Mate Exclusivo Criollo">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--ok" data-stock-tag>OK</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/6.html" class="accion" title="Ver" aria-label="Ver Mate Exclusivo Criollo">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Mate Exclusivo Criollo">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Mate Exclusivo Criollo” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Mate Exclusivo Criollo">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="14">
+                  <td data-label="Producto">
+                    <a href="productos/14.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/termo-mate-terere-1.webp" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Termo Mate-Tereré</strong>
+                        <small>#0014 · Termos › Compactos</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$58.000,00</td>
+                  <td class="num" data-label="Costo">$38.000,00</td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="14">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="8" min="0" inputmode="numeric" aria-label="Stock de Termo Mate-Tereré">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--ok" data-stock-tag>OK</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/14.html" class="accion" title="Ver" aria-label="Ver Termo Mate-Tereré">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Termo Mate-Tereré">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Termo Mate-Tereré” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Termo Mate-Tereré">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="12">
+                  <td data-label="Producto">
+                    <a href="productos/12.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/termo-mate-system-1.webp" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Termo Stanley Mate System</strong>
+                        <small>#0012 · Termos › Clásicos</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$135.000,00</td>
+                  <td class="num" data-label="Costo">$95.000,00</td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="12">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="5" min="0" inputmode="numeric" aria-label="Stock de Termo Stanley Mate System">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--bajo" data-stock-tag>Bajo</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/12.html" class="accion" title="Ver" aria-label="Ver Termo Stanley Mate System">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Termo Stanley Mate System">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Termo Stanley Mate System” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Termo Stanley Mate System">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="13">
+                  <td data-label="Producto">
+                    <a href="productos/13.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/termo-termolar-r-evolution-1.webp" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Termo Termolar R-Evolution</strong>
+                        <small>#0013 · Termos › Garrafas</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$72.000,00</td>
+                  <td class="num" data-label="Costo">$48.000,00</td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="13">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="6" min="0" inputmode="numeric" aria-label="Stock de Termo Termolar R-Evolution">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--ok" data-stock-tag>OK</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/13.html" class="accion" title="Ver" aria-label="Ver Termo Termolar R-Evolution">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Termo Termolar R-Evolution">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Termo Termolar R-Evolution” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Termo Termolar R-Evolution">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="1">
+                  <td data-label="Producto">
+                    <a href="productos/1.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/torpedo-argentino-1.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Torpedo Argentino</strong>
+                        <small>#0001 · Mates › Torpedos</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$68.000,00</td>
+                  <td class="num" data-label="Costo">$34.000,00</td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="1">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="8" min="0" inputmode="numeric" aria-label="Stock de Torpedo Argentino">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--ok" data-stock-tag>OK</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/1.html" class="accion" title="Ver" aria-label="Ver Torpedo Argentino">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="productos/1/editar.html" class="accion" title="Editar" aria-label="Editar Torpedo Argentino">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Torpedo Argentino” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Torpedo Argentino">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="2">
+                  <td data-label="Producto">
+                    <a href="productos/2.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/torpedo-premium-argentina-1.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Torpedo Premium Argentina</strong>
+                        <small>#0002 · Mates › Torpedos</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$85.000,00</td>
+                  <td class="num" data-label="Costo">$42.000,00</td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="2">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="5" min="0" inputmode="numeric" aria-label="Stock de Torpedo Premium Argentina">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--bajo" data-stock-tag>Bajo</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/2.html" class="accion" title="Ver" aria-label="Ver Torpedo Premium Argentina">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="productos/2/editar.html" class="accion" title="Editar" aria-label="Editar Torpedo Premium Argentina">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Torpedo Premium Argentina” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Torpedo Premium Argentina">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="5">
+                  <td data-label="Producto">
+                    <a href="productos/5.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/torpedo-roma-calabaza-1.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Torpedo Roma de Calabaza</strong>
+                        <small>#0005 · Mates › Torpedos</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$74.000,00</td>
+                  <td class="num" data-label="Costo">$36.000,00</td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="5">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="4" min="0" inputmode="numeric" aria-label="Stock de Torpedo Roma de Calabaza">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--bajo" data-stock-tag>Bajo</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/5.html" class="accion" title="Ver" aria-label="Ver Torpedo Roma de Calabaza">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Torpedo Roma de Calabaza">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Torpedo Roma de Calabaza” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Torpedo Roma de Calabaza">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="4">
+                  <td data-label="Producto">
+                    <a href="productos/4.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/torpedo-uruguayo-1.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Torpedo Uruguayo</strong>
+                        <small>#0004 · Mates › Torpedos</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$62.000,00</td>
+                  <td class="num" data-label="Costo">$30.000,00</td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="4">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="10" min="0" inputmode="numeric" aria-label="Stock de Torpedo Uruguayo">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--ok" data-stock-tag>OK</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/4.html" class="accion" title="Ver" aria-label="Ver Torpedo Uruguayo">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Torpedo Uruguayo">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Torpedo Uruguayo” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Torpedo Uruguayo">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="24">
+                  <td data-label="Producto">
+                    <a href="productos/24.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/yerba-baldo-1.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Yerba Baldo 5 kg</strong>
+                        <small>#0024 · Yerbas › Uruguayas</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$52.000,00</td>
+                  <td class="num" data-label="Costo">$40.000,00</td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="24">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="10" min="0" inputmode="numeric" aria-label="Stock de Yerba Baldo 5 kg">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--ok" data-stock-tag>OK</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/24.html" class="accion" title="Ver" aria-label="Ver Yerba Baldo 5 kg">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Yerba Baldo 5 kg">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Yerba Baldo 5 kg” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Yerba Baldo 5 kg">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="25">
+                  <td data-label="Producto">
+                    <a href="productos/25.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/yerba-canarias-1.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Yerba Canarias 1 kg</strong>
+                        <small>#0025 · Yerbas › Uruguayas</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$14.500,00</td>
+                  <td class="num" data-label="Costo">$10.500,00</td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="25">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="20" min="0" inputmode="numeric" aria-label="Stock de Yerba Canarias 1 kg">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--ok" data-stock-tag>OK</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/25.html" class="accion" title="Ver" aria-label="Ver Yerba Canarias 1 kg">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Yerba Canarias 1 kg">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Yerba Canarias 1 kg” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Yerba Canarias 1 kg">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="21">
+                  <td data-label="Producto">
+                    <a href="productos/21.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/yerba-mate-rojo-10.webp" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Yerba Mate Rojo “10” 500 g</strong>
+                        <small>#0021 · Yerbas › Argentinas</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$7.500,00</td>
+                  <td class="num" data-label="Costo">$5.000,00</td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="21">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="30" min="0" inputmode="numeric" aria-label="Stock de Yerba Mate Rojo “10” 500 g">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--ok" data-stock-tag>OK</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/21.html" class="accion" title="Ver" aria-label="Ver Yerba Mate Rojo “10” 500 g">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Yerba Mate Rojo “10” 500 g">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Yerba Mate Rojo “10” 500 g” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Yerba Mate Rojo “10” 500 g">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="23">
+                  <td data-label="Producto">
+                    <a href="productos/23.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/yerba-rei-verde-export.webp" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Yerba Rei Verde Export 500 g</strong>
+                        <small>#0023 · Yerbas › Brasileras</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$9.500,00</td>
+                  <td class="num" data-label="Costo">$6.800,00</td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="23">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="25" min="0" inputmode="numeric" aria-label="Stock de Yerba Rei Verde Export 500 g">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--ok" data-stock-tag>OK</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/23.html" class="accion" title="Ver" aria-label="Ver Yerba Rei Verde Export 500 g">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Yerba Rei Verde Export 500 g">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Yerba Rei Verde Export 500 g” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Yerba Rei Verde Export 500 g">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="22">
+                  <td data-label="Producto">
+                    <a href="productos/22.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/yerba-verdecita.webp" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Yerba Verdecita Selección Especial</strong>
+                        <small>#0022 · Yerbas › Uruguayas</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$8.500,00</td>
+                  <td class="num" data-label="Costo">$6.000,00</td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="22">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="25" min="0" inputmode="numeric" aria-label="Stock de Yerba Verdecita Selección Especial">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--ok" data-stock-tag>OK</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/22.html" class="accion" title="Ver" aria-label="Ver Yerba Verdecita Selección Especial">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Yerba Verdecita Selección Especial">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Yerba Verdecita Selección Especial” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Yerba Verdecita Selección Especial">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      
+
+    </main>
+  </div>
+</div>
+
+<!-- Modal de confirmación (lo usa admin.js con data-confirmar) -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitulo" hidden>
+  <div class="modal__caja">
+    <p class="modal__titulo" id="modalTitulo">¿Confirmás?</p>
+    <p class="modal__texto" id="modalTexto"></p>
+    <div class="modal__acciones">
+      <button type="button" class="btn btn--linea" id="modalCancelar">Cancelar</button>
+      <button type="button" class="btn btn--solido" id="modalAceptar">Eliminar</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+
+
+
+<script src="../js/admin.js"></script>
+
+<div class="notif-avisos" id="notifAvisos" aria-live="polite" aria-atomic="false"></div>
+<script src="../js/notificaciones.js"></script>
+
+
+<script src="../js/admin-productos.js"></script>
+</body>
+</html>

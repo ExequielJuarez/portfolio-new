@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><script>(function(){var t;function toast(){var d=document.getElementById('__demo_toast');if(!d){d=document.createElement('div');d.id='__demo_toast';d.style.cssText='position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#0b1128;color:#fff;font:600 14px/1.4 system-ui,sans-serif;padding:12px 18px;border-radius:12px;border:1px solid #6366f1;box-shadow:0 10px 30px rgba(0,0,0,.4);z-index:2147483647;max-width:90vw;text-align:center;transition:opacity .3s';d.textContent='Vista de demostración: esta acción no está disponible acá';document.body.appendChild(d)}d.style.opacity=1;clearTimeout(t);t=setTimeout(function(){d.style.opacity=0},2200)}
+document.addEventListener('submit',function(e){e.preventDefault();e.stopImmediatePropagation();toast()},true);
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-demo-off]');if(a){e.preventDefault();toast()}},true);
+window.EventSource=function(){return {close:function(){},addEventListener:function(){},onmessage:null,onerror:null}};var f=window.fetch;window.fetch=function(u,i){var m=((i&&i.method)||(u&&u.method)||'GET').toUpperCase();if(m==='GET')return f.apply(this,arguments);toast();return Promise.reject(new Error('demo'))};
+var o=XMLHttpRequest.prototype.open;XMLHttpRequest.prototype.open=function(m,u){if(m&&m.toUpperCase()!=='GET'){toast()}return o.apply(this,arguments)}})();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel | Matilda Boutique</title>
+  <meta name="description" content="Matilda Boutique: moda femenina con detalles que se notan. Remeras, abrigos, jeans y más, con envíos a todo el país.">
+  <meta name="theme-color" content="#f8f4ee">
+  <link rel="icon" href="img/marca/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="img/marca/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400;1,6..96,500&family=Jost:wght@300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/base.css">
+  
+  
+    <link rel="stylesheet" href="css/notificaciones.css">
+  
+  
+    <link rel="stylesheet" href="css/admin.css">
+  
+    <link rel="stylesheet" href="css/admin-dashboard.css">
+  
+</head>
+<body>
+
+
+
+
+<div class="admin">
+  <!-- ═════════════ MENÚ LATERAL ═════════════ -->
+  <aside class="admin-lateral" id="adminLateral" aria-label="Menú del panel">
+    <div class="admin-lateral__marca">
+      <img class="admin-lateral__logo" src="img/marca/logo-claro.png" alt="Matilda boutique">
+      <span class="admin-lateral__etiqueta">Admin</span>
+    </div>
+
+    <nav class="admin-nav">
+      
+        <a href="admin.html" class="admin-nav__link activo" aria-current="page">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 13h6V4H4zM14 20h6v-9h-6zM4 20h6v-4H4zM14 7h6V4h-6z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          <span>Panel</span>
+          
+        </a>
+      
+        <a href="admin/productos.html" class="admin-nav__link " >
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 8l8-4 8 4-8 4-8-4zM4 8v8l8 4 8-4V8M12 12v8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          <span>Productos</span>
+          
+            <span class="admin-nav__badge " data-badge="productos">29</span>
+          
+        </a>
+      
+        <a href="admin/pedidos.html" class="admin-nav__link " >
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2zM9 8h6M9 12h6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/></svg>
+          <span>Pedidos</span>
+          
+            <span class="admin-nav__badge admin-nav__badge--fuerte" data-badge="pedidos">4</span>
+          
+        </a>
+      
+      <a href="index.html" class="admin-nav__link admin-nav__link--tienda">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 10l1.5-5h13L20 10M4 10v10h16V10M4 10h16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        <span>Ver tienda</span>
+        <span aria-hidden="true">↗</span>
+      </a>
+    </nav>
+
+    <div class="admin-usuario">
+      <span class="admin-usuario__inicial">A</span>
+      <span class="admin-usuario__datos">
+        <strong>Admin Tienda</strong>
+        <small>admin@tienda.com</small>
+      </span>
+      <form action="#" method="POST">
+        <button type="submit" class="admin-usuario__salir" aria-label="Cerrar sesión" title="Cerrar sesión">
+          <svg viewBox="0 0 24 24" width="18" height="18"><path d="M14 4h5v16h-5M10 8l-4 4 4 4M6 12h10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </form>
+    </div>
+  </aside>
+
+  <div class="admin-overlay" id="adminOverlay"></div>
+
+  <div class="admin-cuerpo">
+    <!-- Barra superior (celular / tablet) -->
+    <header class="admin-barra">
+      <button class="admin-barra__menu" id="adminMenuBtn" aria-label="Abrir menú" aria-controls="adminLateral" aria-expanded="false">
+        <span></span>
+      </button>
+      <img class="admin-lateral__logo" src="img/marca/logo-claro.png" alt="Matilda boutique">
+      <div class="admin-barra__acciones">
+        
+<div class="notif" id="notif">
+  <button type="button" class="icono-btn notif__btn" id="notifBtn" aria-label="Notificaciones" aria-expanded="false" aria-controls="notifPanel">
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 16V11a6 6 0 0112 0v5l1.5 2h-15L6 16z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M10 20.5a2 2 0 004 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <span class="notif__contador" id="notifContador" hidden>0</span>
+  </button>
+
+  <div class="notif__panel" id="notifPanel" role="dialog" aria-label="Notificaciones" hidden>
+    <div class="notif__cabecera">
+      <p class="notif__titulo">Notificaciones</p>
+      <button type="button" class="notif__leer" id="notifLeerTodas">Marcar todas como leídas</button>
+    </div>
+    <ul class="notif__lista" id="notifLista">
+      <li class="notif__vacio">Cargando…</li>
+    </ul>
+    <div class="notif__pie">
+      <a href="admin/pedidos.html" class="notif__link">Ver pedidos →</a>
+      <button type="button" class="notif__opcion" id="notifSonido" aria-pressed="true">Sonido: sí</button>
+      <button type="button" class="notif__opcion" id="notifNavegador" hidden>Avisos del navegador</button>
+    </div>
+  </div>
+</div>
+
+        <span class="admin-usuario__inicial">A</span>
+      </div>
+    </header>
+
+    <main class="admin-main">
+
+
+
+
+      <div class="admin-cabecera">
+        <div>
+          <p class="admin-cabecera__migas">Panel de administración</p>
+          <h1 class="admin-cabecera__titulo">Hola, Admin</h1>
+          <p class="admin-cabecera__bajada">Así vienen las ventas de los últimos 14 días.</p>
+        </div>
+
+        <nav class="segmentado" aria-label="Período">
+          
+            <a href="admin.html" class="" >7 días</a>
+          
+            <a href="admin.html" class="activo" aria-current="true">14 días</a>
+          
+            <a href="admin.html" class="" >30 días</a>
+          
+        </nav>
+      </div>
+
+      <!-- ═════════════ INDICADORES ═════════════ -->
+      <section class="kpis" aria-label="Indicadores principales">
+        <div class="kpi kpi--principal">
+          <span class="kpi__label">Ganancia</span>
+          <span class="kpi__valor">$1.000.480,00</span>
+          <span class="kpi__detalle">
+            
+              <span class="kpi__delta">▼ 26,7%</span>
+              menos que los 14 días anteriores
+            
+          </span>
+        </div>
+        <div class="kpi">
+          <span class="kpi__label">Ingresos</span>
+          <span class="kpi__valor">$2,1 M</span>
+          <span class="kpi__detalle">Costo de mercadería $1,1 M</span>
+        </div>
+        <div class="kpi">
+          <span class="kpi__label">Margen</span>
+          <span class="kpi__valor">47,9%</span>
+          <span class="kpi__detalle">De cada $100 vendidos</span>
+        </div>
+        <div class="kpi">
+          <span class="kpi__label">Pedidos</span>
+          <span class="kpi__valor">24</span>
+          <span class="kpi__detalle">42 unidades vendidas</span>
+        </div>
+        <div class="kpi">
+          <span class="kpi__label">Ticket promedio</span>
+          <span class="kpi__valor">$87 mil</span>
+          <span class="kpi__detalle">Por pedido</span>
+        </div>
+      </section>
+
+      <!-- ═════════════ GRÁFICO DIARIO ═════════════ -->
+      <section class="panel grafico" aria-labelledby="tituloGrafico">
+        <div class="panel__cabecera">
+          <div>
+            <h2 class="panel__titulo" id="tituloGrafico">Ingresos por día</h2>
+            <p class="panel__bajada">Cada barra es lo vendido en el día: la parte negra es ganancia, la gris el costo.</p>
+          </div>
+          <div class="grafico__controles">
+            <ul class="leyenda" aria-label="Referencias">
+              <li><span class="leyenda__muestra leyenda__muestra--ganancia"></span> Ganancia</li>
+              <li><span class="leyenda__muestra leyenda__muestra--costo"></span> Costo</li>
+            </ul>
+            <button type="button" class="panel__link grafico__vista" id="verTabla" aria-pressed="false">Ver tabla</button>
+          </div>
+        </div>
+
+        <div class="grafico__lienzo" id="grafico" role="img" aria-label="Gráfico de ingresos, costo y ganancia por día. La tabla con los mismos datos está disponible con el botón Ver tabla.">
+          <p class="grafico__cargando">Cargando gráfico…</p>
+        </div>
+        <div class="grafico__tooltip" id="tooltip" hidden></div>
+
+        <div class="grafico__tabla" id="tablaGrafico" hidden>
+          <table class="tabla">
+            <thead>
+              <tr><th>Día</th><th class="num">Pedidos</th><th class="num">Ingresos</th><th class="num">Costo</th><th class="num">Ganancia</th></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>19-oct</td>
+                  <td class="num">0</td>
+                  <td class="num">$0,00</td>
+                  <td class="num">$0,00</td>
+                  <td class="num"><strong>$0,00</strong></td>
+                </tr>
+              
+                <tr>
+                  <td>18-oct</td>
+                  <td class="num">1</td>
+                  <td class="num">$37.900,00</td>
+                  <td class="num">$18.000,00</td>
+                  <td class="num"><strong>$19.900,00</strong></td>
+                </tr>
+              
+                <tr>
+                  <td>17-oct</td>
+                  <td class="num">2</td>
+                  <td class="num">$82.620,00</td>
+                  <td class="num">$45.000,00</td>
+                  <td class="num"><strong>$37.620,00</strong></td>
+                </tr>
+              
+                <tr>
+                  <td>16-oct</td>
+                  <td class="num">2</td>
+                  <td class="num">$143.700,00</td>
+                  <td class="num">$70.000,00</td>
+                  <td class="num"><strong>$73.700,00</strong></td>
+                </tr>
+              
+                <tr>
+                  <td>15-oct</td>
+                  <td class="num">2</td>
+                  <td class="num">$139.410,00</td>
+                  <td class="num">$77.000,00</td>
+                  <td class="num"><strong>$62.410,00</strong></td>
+                </tr>
+              
+                <tr>
+                  <td>14-oct</td>
+                  <td class="num">2</td>
+                  <td class="num">$168.410,00</td>
+                  <td class="num">$89.500,00</td>
+                  <td class="num"><strong>$78.910,00</strong></td>
+                </tr>
+              
+                <tr>
+                  <td>13-oct</td>
+                  <td class="num">1</td>
+                  <td class="num">$45.000,00</td>
+                  <td class="num">$25.000,00</td>
+                  <td class="num"><strong>$20.000,00</strong></td>
+                </tr>
+              
+                <tr>
+                  <td>12-oct</td>
+                  <td class="num">2</td>
+                  <td class="num">$178.800,00</td>
+                  <td class="num">$86.000,00</td>
+                  <td class="num"><strong>$92.800,00</strong></td>
+                </tr>
+              
+                <tr>
+                  <td>11-oct</td>
+                  <td class="num">2</td>
+                  <td class="num">$299.500,00</td>
+                  <td class="num">$158.000,00</td>
+                  <td class="num"><strong>$141.500,00</strong></td>
+                </tr>
+              
+                <tr>
+                  <td>10-oct</td>
+                  <td class="num">2</td>
+                  <td class="num">$170.010,00</td>
+                  <td class="num">$96.000,00</td>
+                  <td class="num"><strong>$74.010,00</strong></td>
+                </tr>
+              
+                <tr>
+                  <td>09-oct</td>
+                  <td class="num">3</td>
+                  <td class="num">$333.700,00</td>
+                  <td class="num">$172.000,00</td>
+                  <td class="num"><strong>$161.700,00</strong></td>
+                </tr>
+              
+                <tr>
+                  <td>08-oct</td>
+                  <td class="num">1</td>
+                  <td class="num">$245.700,00</td>
+                  <td class="num">$125.500,00</td>
+                  <td class="num"><strong>$120.200,00</strong></td>
+                </tr>
+              
+                <tr>
+                  <td>07-oct</td>
+                  <td class="num">2</td>
+                  <td class="num">$152.030,00</td>
+                  <td class="num">$73.500,00</td>
+                  <td class="num"><strong>$78.530,00</strong></td>
+                </tr>
+              
+                <tr>
+                  <td>06-oct</td>
+                  <td class="num">2</td>
+                  <td class="num">$92.700,00</td>
+                  <td class="num">$53.500,00</td>
+                  <td class="num"><strong>$39.200,00</strong></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </div>
+
+        <script type="application/json" id="datosGrafico">[{"fecha":"2026-10-06T00:00:00.000Z","ingresos":92700,"costo":53500,"ganancia":39200,"pedidos":2},{"fecha":"2026-10-07T00:00:00.000Z","ingresos":152030,"costo":73500,"ganancia":78530,"pedidos":2},{"fecha":"2026-10-08T00:00:00.000Z","ingresos":245700,"costo":125500,"ganancia":120200,"pedidos":1},{"fecha":"2026-10-09T00:00:00.000Z","ingresos":333700,"costo":172000,"ganancia":161700,"pedidos":3},{"fecha":"2026-10-10T00:00:00.000Z","ingresos":170010,"costo":96000,"ganancia":74010,"pedidos":2},{"fecha":"2026-10-11T00:00:00.000Z","ingresos":299500,"costo":158000,"ganancia":141500,"pedidos":2},{"fecha":"2026-10-12T00:00:00.000Z","ingresos":178800,"costo":86000,"ganancia":92800,"pedidos":2},{"fecha":"2026-10-13T00:00:00.000Z","ingresos":45000,"costo":25000,"ganancia":20000,"pedidos":1},{"fecha":"2026-10-14T00:00:00.000Z","ingresos":168410,"costo":89500,"ganancia":78910,"pedidos":2},{"fecha":"2026-10-15T00:00:00.000Z","ingresos":139410,"costo":77000,"ganancia":62410,"pedidos":2},{"fecha":"2026-10-16T00:00:00.000Z","ingresos":143700,"costo":70000,"ganancia":73700,"pedidos":2},{"fecha":"2026-10-17T00:00:00.000Z","ingresos":82620,"costo":45000,"ganancia":37620,"pedidos":2},{"fecha":"2026-10-18T00:00:00.000Z","ingresos":37900,"costo":18000,"ganancia":19900,"pedidos":1},{"fecha":"2026-10-19T00:00:00.000Z","ingresos":0,"costo":0,"ganancia":0,"pedidos":0}]</script>
+      </section>
+
+      <div class="dashboard__fila">
+        <!-- ═════════════ MÁS RENTABLES ═════════════ -->
+        <section class="panel" aria-labelledby="tituloTop">
+          <div class="panel__cabecera">
+            <div>
+              <h2 class="panel__titulo" id="tituloTop">Los que más ganancia dejan</h2>
+              <p class="panel__bajada">Últimos 14 días</p>
+            </div>
+            <a href="admin/productos.html" class="panel__link">Ver productos</a>
+          </div>
+
+          
+            <ol class="ranking">
+              
+                <li class="ranking__item">
+                  <div class="ranking__texto">
+                    <span class="ranking__pos">1</span>
+                    <a href="admin/productos/13.html" class="ranking__nombre">Tapado Largo Camel</a>
+                    <span class="ranking__unidades">3 u.</span>
+                  </div>
+                  <div class="ranking__barra">
+                    <span style="width: 100%"></span>
+                    <strong>$171 mil</strong>
+                  </div>
+                </li>
+              
+                <li class="ranking__item">
+                  <div class="ranking__texto">
+                    <span class="ranking__pos">2</span>
+                    <a href="admin/productos/18.html" class="ranking__nombre">Vestido Largo Terracota Estampado</a>
+                    <span class="ranking__unidades">5 u.</span>
+                  </div>
+                  <div class="ranking__barra">
+                    <span style="width: 80.11695906432749%"></span>
+                    <strong>$137 mil</strong>
+                  </div>
+                </li>
+              
+                <li class="ranking__item">
+                  <div class="ranking__texto">
+                    <span class="ranking__pos">3</span>
+                    <a href="admin/productos/9.html" class="ranking__nombre">Campera Gamuzada MarrÃ³n</a>
+                    <span class="ranking__unidades">3 u.</span>
+                  </div>
+                  <div class="ranking__barra">
+                    <span style="width: 64.91228070175438%"></span>
+                    <strong>$111 mil</strong>
+                  </div>
+                </li>
+              
+                <li class="ranking__item">
+                  <div class="ranking__texto">
+                    <span class="ranking__pos">4</span>
+                    <a href="admin/productos/29.html" class="ranking__nombre">Saco Camel con Top y Short Cuero</a>
+                    <span class="ranking__unidades">3 u.</span>
+                  </div>
+                  <div class="ranking__barra">
+                    <span style="width: 62.98245614035088%"></span>
+                    <strong>$108 mil</strong>
+                  </div>
+                </li>
+              
+                <li class="ranking__item">
+                  <div class="ranking__texto">
+                    <span class="ranking__pos">5</span>
+                    <a href="admin/productos/10.html" class="ranking__nombre">Campera Biker Chocolate</a>
+                    <span class="ranking__unidades">2 u.</span>
+                  </div>
+                  <div class="ranking__barra">
+                    <span style="width: 49.122807017543856%"></span>
+                    <strong>$84 mil</strong>
+                  </div>
+                </li>
+              
+            </ol>
+          
+        </section>
+
+        <!-- ═════════════ STOCK ═════════════ -->
+        <section class="panel" aria-labelledby="tituloStock">
+          <div class="panel__cabecera">
+            <div>
+              <h2 class="panel__titulo" id="tituloStock">Stock</h2>
+              <p class="panel__bajada">410 unidades en depósito</p>
+            </div>
+            <a href="admin/productos.html" class="panel__link">Gestionar</a>
+          </div>
+
+          <dl class="stock-resumen">
+            <div><dt>Valor al costo</dt><dd>$8,6 M</dd></div>
+            <div><dt>Valor de venta</dt><dd>$17,3 M</dd></div>
+            <div><dt>Sin stock</dt><dd>1</dd></div>
+            <div><dt>Stock bajo</dt><dd>1</dd></div>
+          </dl>
+
+          
+          
+            <p class="stock-alertas__titulo">Para reponer</p>
+            <ul class="stock-alertas">
+              
+                <li>
+                  <a href="admin/productos/24.html">Pulseras Rígidas Plata y Rosé</a>
+                  <span class="medidor" title="0 de 10">
+                    <span style="width: 0%"></span>
+                  </span>
+                  <span class="stock-tag stock-tag--sin">
+                    Sin stock
+                  </span>
+                </li>
+              
+                <li>
+                  <a href="admin/productos/18.html">Vestido Largo Terracota Estampado</a>
+                  <span class="medidor" title="5 de 10">
+                    <span style="width: 50%"></span>
+                  </span>
+                  <span class="stock-tag stock-tag--bajo">
+                    5 u.
+                  </span>
+                </li>
+              
+            </ul>
+          
+        </section>
+      </div>
+
+      <!-- ═════════════ ÚLTIMOS PEDIDOS ═════════════ -->
+      <section class="panel" aria-labelledby="tituloPedidos">
+        <div class="panel__cabecera">
+          <div>
+            <h2 class="panel__titulo" id="tituloPedidos">Últimos pedidos</h2>
+            <p class="panel__bajada">4 esperando preparación o envío</p>
+          </div>
+          <a href="admin/pedidos.html" class="panel__link">Ver todos</a>
+        </div>
+
+        <div class="tabla-scroll">
+          <table class="tabla tabla--pedidos">
+            <thead>
+              <tr><th>Pedido</th><th>Cliente</th><th>Fecha</th><th>Estado</th><th class="num">Total</th><th class="num">Ganancia</th></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td><strong>#1060</strong></td>
+                  <td>LucÃ­a FernÃ¡ndez</td>
+                  <td>18-oct, 01:16 p. m.</td>
+                  <td><span class="estado estado--pagado">pagado</span></td>
+                  <td class="num">$37.900,00</td>
+                  <td class="num">$19.900,00</td>
+                </tr>
+              
+                <tr>
+                  <td><strong>#1058</strong></td>
+                  <td>LucÃ­a FernÃ¡ndez</td>
+                  <td>17-oct, 06:16 p. m.</td>
+                  <td><span class="estado estado--pagado">pagado</span></td>
+                  <td class="num">$49.410,00</td>
+                  <td class="num">$21.910,00</td>
+                </tr>
+              
+                <tr>
+                  <td><strong>#1059</strong></td>
+                  <td>Julieta Molina</td>
+                  <td>17-oct, 03:30 p. m.</td>
+                  <td><span class="estado estado--pagado">pagado</span></td>
+                  <td class="num">$39.710,00</td>
+                  <td class="num">$15.710,00</td>
+                </tr>
+              
+                <tr>
+                  <td><strong>#1056</strong></td>
+                  <td>Mateo SÃ¡nchez</td>
+                  <td>16-oct, 02:33 p. m.</td>
+                  <td><span class="estado estado--enviado">enviado</span></td>
+                  <td class="num">$54.900,00</td>
+                  <td class="num">$27.400,00</td>
+                </tr>
+              
+                <tr>
+                  <td><strong>#1057</strong></td>
+                  <td>Agustina Torres</td>
+                  <td>16-oct, 12:41 p. m.</td>
+                  <td><span class="estado estado--entregado">entregado</span></td>
+                  <td class="num">$88.800,00</td>
+                  <td class="num">$46.300,00</td>
+                </tr>
+              
+                <tr>
+                  <td><strong>#1054</strong></td>
+                  <td>Julieta Molina</td>
+                  <td>15-oct, 02:43 p. m.</td>
+                  <td><span class="estado estado--pagado">pagado</span></td>
+                  <td class="num">$76.700,00</td>
+                  <td class="num">$29.200,00</td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<!-- Modal de confirmación (lo usa admin.js con data-confirmar) -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitulo" hidden>
+  <div class="modal__caja">
+    <p class="modal__titulo" id="modalTitulo">¿Confirmás?</p>
+    <p class="modal__texto" id="modalTexto"></p>
+    <div class="modal__acciones">
+      <button type="button" class="btn btn--linea" id="modalCancelar">Cancelar</button>
+      <button type="button" class="btn btn--solido" id="modalAceptar">Eliminar</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+
+
+
+<script src="js/admin.js"></script>
+
+<div class="notif-avisos" id="notifAvisos" aria-live="polite" aria-atomic="false"></div>
+<script src="js/notificaciones.js"></script>
+
+
+<script src="js/admin-dashboard.js"></script>
+</body>
+</html>

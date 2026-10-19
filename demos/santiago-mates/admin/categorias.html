@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><script>(function(){var t;function toast(){var d=document.getElementById('__demo_toast');if(!d){d=document.createElement('div');d.id='__demo_toast';d.style.cssText='position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#0b1128;color:#fff;font:600 14px/1.4 system-ui,sans-serif;padding:12px 18px;border-radius:12px;border:1px solid #6366f1;box-shadow:0 10px 30px rgba(0,0,0,.4);z-index:2147483647;max-width:90vw;text-align:center;transition:opacity .3s';d.textContent='Vista de demostración: esta acción no está disponible acá';document.body.appendChild(d)}d.style.opacity=1;clearTimeout(t);t=setTimeout(function(){d.style.opacity=0},2200)}
+document.addEventListener('submit',function(e){e.preventDefault();e.stopImmediatePropagation();toast()},true);
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-demo-off]');if(a){e.preventDefault();toast()}},true);
+window.EventSource=function(){return {close:function(){},addEventListener:function(){},onmessage:null,onerror:null}};var f=window.fetch;window.fetch=function(u,i){var m=((i&&i.method)||(u&&u.method)||'GET').toUpperCase();if(m==='GET')return f.apply(this,arguments);toast();return Promise.reject(new Error('demo'))};
+var o=XMLHttpRequest.prototype.open;XMLHttpRequest.prototype.open=function(m,u){if(m&&m.toUpperCase()!=='GET'){toast()}return o.apply(this,arguments)}})();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categorías | Santiago Mates</title>
+  <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/base.css">
+  
+  
+    <link rel="stylesheet" href="../css/notificaciones.css">
+  
+  
+    <link rel="stylesheet" href="../css/admin.css">
+  
+    <link rel="stylesheet" href="../css/admin-categorias.css">
+  
+</head>
+<body>
+
+
+
+
+<div class="admin">
+  <!-- ═════════════ MENÚ LATERAL ═════════════ -->
+  <aside class="admin-lateral" id="adminLateral" aria-label="Menú del panel">
+    <div class="admin-lateral__marca">
+      
+
+<svg class="logo-svg logo-svg--horizontal admin-lateral__logo" viewBox="0 0 300 70" role="img" aria-label="Santiago Mates · La gran casa matera">
+  <g transform="translate(2 2) scale(0.66)">
+    <path d="M24 40 Q22 33 30 31 L50 31 Q58 33 56 40 Q66 48 66 64 Q66 92 40 96 Q14 92 14 64 Q14 48 24 40 Z" fill="currentColor"/>
+    <path d="M24 40 L56 40" stroke="var(--logo-fondo, transparent)" stroke-width="2.5"/>
+    <path d="M44 34 L52 4 Q53 0 57 0 L64 1" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <text x="54" y="40" class="logo-svg__marca">Santiago<tspan class="logo-svg__marca--fuerte">Mates</tspan></text>
+  <text x="55" y="61" class="logo-svg__bajada">LA GRAN CASA MATERA</text>
+</svg>
+
+
+      <span class="admin-lateral__etiqueta">Admin</span>
+    </div>
+
+    <nav class="admin-nav">
+      
+        <a href="../admin.html" class="admin-nav__link " >
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 13h6V4H4zM14 20h6v-9h-6zM4 20h6v-4H4zM14 7h6V4h-6z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          <span>Panel</span>
+          
+        </a>
+      
+        <a href="productos.html" class="admin-nav__link " >
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 8l8-4 8 4-8 4-8-4zM4 8v8l8 4 8-4V8M12 12v8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          <span>Productos</span>
+          
+            <span class="admin-nav__badge " data-badge="productos">25</span>
+          
+        </a>
+      
+        <a href="categorias.html" class="admin-nav__link activo" aria-current="page">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 6h7v5H4zM13 6h7v5h-7zM4 13h7v5H4zM15.5 13v5M13 15.5h5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/></svg>
+          <span>Categorías</span>
+          
+        </a>
+      
+        <a href="pedidos.html" class="admin-nav__link " >
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2zM9 8h6M9 12h6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/></svg>
+          <span>Pedidos</span>
+          
+            <span class="admin-nav__badge admin-nav__badge--fuerte" data-badge="pedidos">10</span>
+          
+        </a>
+      
+        <a href="arrepentimientos.html" class="admin-nav__link " >
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 14L4 9l5-5M4 9h10.5a5.5 5.5 0 010 11H11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/></svg>
+          <span>Arrepentimientos</span>
+          
+        </a>
+      
+      <a href="../index.html" class="admin-nav__link admin-nav__link--tienda">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 10l1.5-5h13L20 10M4 10v10h16V10M4 10h16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        <span>Ver tienda</span>
+        <span aria-hidden="true">↗</span>
+      </a>
+    </nav>
+
+    <div class="admin-usuario">
+      <span class="admin-usuario__inicial">A</span>
+      <span class="admin-usuario__datos">
+        <strong>Admin Tienda</strong>
+        <small>admin@tienda.com</small>
+      </span>
+      <form action="#" method="POST">
+        <button type="submit" class="admin-usuario__salir" aria-label="Cerrar sesión" title="Cerrar sesión">
+          <svg viewBox="0 0 24 24" width="18" height="18"><path d="M14 4h5v16h-5M10 8l-4 4 4 4M6 12h10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </form>
+    </div>
+  </aside>
+
+  <div class="admin-overlay" id="adminOverlay"></div>
+
+  <div class="admin-cuerpo">
+    <!-- Barra superior (celular / tablet) -->
+    <header class="admin-barra">
+      <button class="admin-barra__menu" id="adminMenuBtn" aria-label="Abrir menú" aria-controls="adminLateral" aria-expanded="false">
+        <span></span>
+      </button>
+      
+
+<svg class="logo-svg logo-svg--horizontal admin-lateral__logo" viewBox="0 0 300 70" role="img" aria-label="Santiago Mates · La gran casa matera">
+  <g transform="translate(2 2) scale(0.66)">
+    <path d="M24 40 Q22 33 30 31 L50 31 Q58 33 56 40 Q66 48 66 64 Q66 92 40 96 Q14 92 14 64 Q14 48 24 40 Z" fill="currentColor"/>
+    <path d="M24 40 L56 40" stroke="var(--logo-fondo, transparent)" stroke-width="2.5"/>
+    <path d="M44 34 L52 4 Q53 0 57 0 L64 1" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <text x="54" y="40" class="logo-svg__marca">Santiago<tspan class="logo-svg__marca--fuerte">Mates</tspan></text>
+  <text x="55" y="61" class="logo-svg__bajada">LA GRAN CASA MATERA</text>
+</svg>
+
+
+      <div class="admin-barra__acciones">
+        
+<div class="notif" id="notif">
+  <button type="button" class="icono-btn notif__btn" id="notifBtn" aria-label="Notificaciones" aria-expanded="false" aria-controls="notifPanel">
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 16V11a6 6 0 0112 0v5l1.5 2h-15L6 16z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M10 20.5a2 2 0 004 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <span class="notif__contador" id="notifContador" hidden>0</span>
+  </button>
+
+  <div class="notif__panel" id="notifPanel" role="dialog" aria-label="Notificaciones" hidden>
+    <div class="notif__cabecera">
+      <p class="notif__titulo">Notificaciones</p>
+      <button type="button" class="notif__leer" id="notifLeerTodas">Marcar todas como leídas</button>
+    </div>
+    <ul class="notif__lista" id="notifLista">
+      <li class="notif__vacio">Cargando…</li>
+    </ul>
+    <div class="notif__pie">
+      <a href="pedidos.html" class="notif__link">Ver pedidos →</a>
+      <button type="button" class="notif__opcion" id="notifSonido" aria-pressed="true">Sonido: sí</button>
+      <button type="button" class="notif__opcion" id="notifNavegador" hidden>Avisos del navegador</button>
+    </div>
+  </div>
+</div>
+
+        <span class="admin-usuario__inicial">A</span>
+      </div>
+    </header>
+
+    <main class="admin-main">
+
+
+      <div class="admin-cabecera">
+        <div>
+          <p class="admin-cabecera__migas"><a href="../admin.html">Panel</a> / Categorías</p>
+          <h1 class="admin-cabecera__titulo">Categorías</h1>
+          <p class="admin-cabecera__bajada">
+            Las categorías son las pestañas del menú de la tienda. Cada una tiene sus
+            <strong>subcategorías</strong>, que son los filtros de esa sección (por ejemplo, Mates → Torpedos, Imperiales).
+          </p>
+        </div>
+      </div>
+
+      <!-- Nueva categoría -->
+      <section class="panel cat-nueva" aria-labelledby="tituloNuevaCategoria">
+        <h2 class="panel__titulo" id="tituloNuevaCategoria">Nueva categoría</h2>
+        <form action="categorias.html" method="POST" class="cat-form" data-validar-nombre data-max="60">
+          <label class="sr-only" for="nuevaCategoria">Nombre de la categoría</label>
+          <input class="campo__control" type="text" id="nuevaCategoria" name="nombre" maxlength="60" required
+                 placeholder="Ej: Accesorios" autocomplete="off">
+          <button type="submit" class="btn btn--solido btn--chico">Agregar categoría</button>
+          <p class="cat-form__error" role="alert"></p>
+        </form>
+      </section>
+
+      <!-- Categorías existentes -->
+      <ol class="cat-lista">
+        
+          <li class="panel cat" id="categoria-1">
+            <div class="cat__cabecera">
+              <div class="cat__orden" aria-label="Orden en el menú">
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="-1">
+                  <button type="submit" class="cat__flecha" disabled aria-label="Subir Mates en el menú" title="Subir en el menú">▲</button>
+                </form>
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="1">
+                  <button type="submit" class="cat__flecha"  aria-label="Bajar Mates en el menú" title="Bajar en el menú">▼</button>
+                </form>
+              </div>
+
+              <div class="cat__titulo">
+                <h2 class="cat__nombre">Mates</h2>
+                <p class="cat__datos">
+                  6 productos ·
+                  <a href="../categoria/mates.html" target="_blank" rel="noopener">/categoria/mates ↗</a>
+                </p>
+              </div>
+
+              <div class="cat__acciones">
+                <details class="cat__renombrar">
+                  <summary class="btn btn--linea btn--chico">Renombrar</summary>
+                  <form action="#" method="POST" class="cat-form cat-form--flotante" data-validar-nombre data-max="60">
+                    <label class="sr-only" for="renombrarCat1">Nuevo nombre</label>
+                    <input class="campo__control" type="text" id="renombrarCat1" name="nombre" value="Mates" maxlength="60" required>
+                    <button type="submit" class="btn btn--solido btn--chico">Guardar</button>
+                    <p class="cat-form__error" role="alert"></p>
+                  </form>
+                </details>
+
+                
+                  <button type="button" class="btn btn--linea btn--chico cat__borrar" disabled
+                          title="Tiene productos: pasalos a otra categoría para poder borrarla">Eliminar</button>
+                
+              </div>
+            </div>
+
+            <!-- Subcategorías -->
+            <div class="cat__subs">
+              <p class="cat__subtitulo">Subcategorías <small>(filtros de esta sección)</small></p>
+              
+                <ul class="subs">
+                  
+                    <li class="sub">
+                      <span class="sub__nombre">Torpedos</span>
+                      <span class="sub__cantidad" title="Productos en esta subcategoría">4</span>
+                      <details class="sub__editar">
+                        <summary aria-label="Renombrar Torpedos" title="Renombrar">✎</summary>
+                        <form action="#" method="POST" class="cat-form cat-form--flotante" data-validar-nombre data-max="40">
+                          <label class="sr-only" for="renombrarSub1">Nuevo nombre</label>
+                          <input class="campo__control" type="text" id="renombrarSub1" name="nombre" value="Torpedos" maxlength="40" required>
+                          <button type="submit" class="btn btn--solido btn--chico">Guardar</button>
+                          <p class="cat-form__error" role="alert"></p>
+                        </form>
+                      </details>
+                      <form action="#" method="POST" class="sub__borrar"
+                            data-confirmar="Se va a borrar “Torpedos”. 4 productos quedan en Mates, sin subcategoría."
+                            data-confirmar-titulo="¿Eliminar subcategoría?">
+                        <button type="submit" aria-label="Eliminar Torpedos" title="Eliminar">✕</button>
+                      </form>
+                    </li>
+                  
+                    <li class="sub">
+                      <span class="sub__nombre">Imperiales</span>
+                      <span class="sub__cantidad" title="Productos en esta subcategoría">1</span>
+                      <details class="sub__editar">
+                        <summary aria-label="Renombrar Imperiales" title="Renombrar">✎</summary>
+                        <form action="#" method="POST" class="cat-form cat-form--flotante" data-validar-nombre data-max="40">
+                          <label class="sr-only" for="renombrarSub2">Nuevo nombre</label>
+                          <input class="campo__control" type="text" id="renombrarSub2" name="nombre" value="Imperiales" maxlength="40" required>
+                          <button type="submit" class="btn btn--solido btn--chico">Guardar</button>
+                          <p class="cat-form__error" role="alert"></p>
+                        </form>
+                      </details>
+                      <form action="#" method="POST" class="sub__borrar"
+                            data-confirmar="Se va a borrar “Imperiales”. 1 producto queda en Mates, sin subcategoría."
+                            data-confirmar-titulo="¿Eliminar subcategoría?">
+                        <button type="submit" aria-label="Eliminar Imperiales" title="Eliminar">✕</button>
+                      </form>
+                    </li>
+                  
+                    <li class="sub">
+                      <span class="sub__nombre">Criollos</span>
+                      <span class="sub__cantidad" title="Productos en esta subcategoría">1</span>
+                      <details class="sub__editar">
+                        <summary aria-label="Renombrar Criollos" title="Renombrar">✎</summary>
+                        <form action="#" method="POST" class="cat-form cat-form--flotante" data-validar-nombre data-max="40">
+                          <label class="sr-only" for="renombrarSub3">Nuevo nombre</label>
+                          <input class="campo__control" type="text" id="renombrarSub3" name="nombre" value="Criollos" maxlength="40" required>
+                          <button type="submit" class="btn btn--solido btn--chico">Guardar</button>
+                          <p class="cat-form__error" role="alert"></p>
+                        </form>
+                      </details>
+                      <form action="#" method="POST" class="sub__borrar"
+                            data-confirmar="Se va a borrar “Criollos”. 1 producto queda en Mates, sin subcategoría."
+                            data-confirmar-titulo="¿Eliminar subcategoría?">
+                        <button type="submit" aria-label="Eliminar Criollos" title="Eliminar">✕</button>
+                      </form>
+                    </li>
+                  
+                </ul>
+              
+
+              <form action="#" method="POST" class="cat-form cat-form--sub" data-validar-nombre data-max="40">
+                <label class="sr-only" for="nuevaSub1">Nueva subcategoría de Mates</label>
+                <input class="campo__control" type="text" id="nuevaSub1" name="nombre" maxlength="40" required
+                       placeholder="Nueva subcategoría de Mates" autocomplete="off">
+                <button type="submit" class="btn btn--linea btn--chico">+ Agregar</button>
+                <p class="cat-form__error" role="alert"></p>
+              </form>
+            </div>
+          </li>
+        
+          <li class="panel cat" id="categoria-2">
+            <div class="cat__cabecera">
+              <div class="cat__orden" aria-label="Orden en el menú">
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="-1">
+                  <button type="submit" class="cat__flecha"  aria-label="Subir Termos en el menú" title="Subir en el menú">▲</button>
+                </form>
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="1">
+                  <button type="submit" class="cat__flecha"  aria-label="Bajar Termos en el menú" title="Bajar en el menú">▼</button>
+                </form>
+              </div>
+
+              <div class="cat__titulo">
+                <h2 class="cat__nombre">Termos</h2>
+                <p class="cat__datos">
+                  3 productos ·
+                  <a href="../categoria/termos.html" target="_blank" rel="noopener">/categoria/termos ↗</a>
+                </p>
+              </div>
+
+              <div class="cat__acciones">
+                <details class="cat__renombrar">
+                  <summary class="btn btn--linea btn--chico">Renombrar</summary>
+                  <form action="#" method="POST" class="cat-form cat-form--flotante" data-validar-nombre data-max="60">
+                    <label class="sr-only" for="renombrarCat2">Nuevo nombre</label>
+                    <input class="campo__control" type="text" id="renombrarCat2" name="nombre" value="Termos" maxlength="60" required>
+                    <button type="submit" class="btn btn--solido btn--chico">Guardar</button>
+                    <p class="cat-form__error" role="alert"></p>
+                  </form>
+                </details>
+
+                
+                  <button type="button" class="btn btn--linea btn--chico cat__borrar" disabled
+                          title="Tiene productos: pasalos a otra categoría para poder borrarla">Eliminar</button>
+                
+              </div>
+            </div>
+
+            <!-- Subcategorías -->
+            <div class="cat__subs">
+              <p class="cat__subtitulo">Subcategorías <small>(filtros de esta sección)</small></p>
+              
+                <ul class="subs">
+                  
+                    <li class="sub">
+                      <span class="sub__nombre">Clásicos</span>
+                      <span class="sub__cantidad" title="Productos en esta subcategoría">1</span>
+                      <details class="sub__editar">
+                        <summary aria-label="Renombrar Clásicos" title="Renombrar">✎</summary>
+                        <form action="#" method="POST" class="cat-form cat-form--flotante" data-validar-nombre data-max="40">
+                          <label class="sr-only" for="renombrarSub4">Nuevo nombre</label>
+                          <input class="campo__control" type="text" id="renombrarSub4" name="nombre" value="Clásicos" maxlength="40" required>
+                          <button type="submit" class="btn btn--solido btn--chico">Guardar</button>
+                          <p class="cat-form__error" role="alert"></p>
+                        </form>
+                      </details>
+                      <form action="#" method="POST" class="sub__borrar"
+                            data-confirmar="Se va a borrar “Clásicos”. 1 producto queda en Termos, sin subcategoría."
+                            data-confirmar-titulo="¿Eliminar subcategoría?">
+                        <button type="submit" aria-label="Eliminar Clásicos" title="Eliminar">✕</button>
+                      </form>
+                    </li>
+                  
+                    <li class="sub">
+                      <span class="sub__nombre">Garrafas</span>
+                      <span class="sub__cantidad" title="Productos en esta subcategoría">1</span>
+                      <details class="sub__editar">
+                        <summary aria-label="Renombrar Garrafas" title="Renombrar">✎</summary>
+                        <form action="#" method="POST" class="cat-form cat-form--flotante" data-validar-nombre data-max="40">
+                          <label class="sr-only" for="renombrarSub5">Nuevo nombre</label>
+                          <input class="campo__control" type="text" id="renombrarSub5" name="nombre" value="Garrafas" maxlength="40" required>
+                          <button type="submit" class="btn btn--solido btn--chico">Guardar</button>
+                          <p class="cat-form__error" role="alert"></p>
+                        </form>
+                      </details>
+                      <form action="#" method="POST" class="sub__borrar"
+                            data-confirmar="Se va a borrar “Garrafas”. 1 producto queda en Termos, sin subcategoría."
+                            data-confirmar-titulo="¿Eliminar subcategoría?">
+                        <button type="submit" aria-label="Eliminar Garrafas" title="Eliminar">✕</button>
+                      </form>
+                    </li>
+                  
+                    <li class="sub">
+                      <span class="sub__nombre">Compactos</span>
+                      <span class="sub__cantidad" title="Productos en esta subcategoría">1</span>
+                      <details class="sub__editar">
+                        <summary aria-label="Renombrar Compactos" title="Renombrar">✎</summary>
+                        <form action="#" method="POST" class="cat-form cat-form--flotante" data-validar-nombre data-max="40">
+                          <label class="sr-only" for="renombrarSub6">Nuevo nombre</label>
+                          <input class="campo__control" type="text" id="renombrarSub6" name="nombre" value="Compactos" maxlength="40" required>
+                          <button type="submit" class="btn btn--solido btn--chico">Guardar</button>
+                          <p class="cat-form__error" role="alert"></p>
+                        </form>
+                      </details>
+                      <form action="#" method="POST" class="sub__borrar"
+                            data-confirmar="Se va a borrar “Compactos”. 1 producto queda en Termos, sin subcategoría."
+                            data-confirmar-titulo="¿Eliminar subcategoría?">
+                        <button type="submit" aria-label="Eliminar Compactos" title="Eliminar">✕</button>
+                      </form>
+                    </li>
+                  
+                </ul>
+              
+
+              <form action="#" method="POST" class="cat-form cat-form--sub" data-validar-nombre data-max="40">
+                <label class="sr-only" for="nuevaSub2">Nueva subcategoría de Termos</label>
+                <input class="campo__control" type="text" id="nuevaSub2" name="nombre" maxlength="40" required
+                       placeholder="Nueva subcategoría de Termos" autocomplete="off">
+                <button type="submit" class="btn btn--linea btn--chico">+ Agregar</button>
+                <p class="cat-form__error" role="alert"></p>
+              </form>
+            </div>
+          </li>
+        
+          <li class="panel cat" id="categoria-3">
+            <div class="cat__cabecera">
+              <div class="cat__orden" aria-label="Orden en el menú">
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="-1">
+                  <button type="submit" class="cat__flecha"  aria-label="Subir Bombillas en el menú" title="Subir en el menú">▲</button>
+                </form>
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="1">
+                  <button type="submit" class="cat__flecha"  aria-label="Bajar Bombillas en el menú" title="Bajar en el menú">▼</button>
+                </form>
+              </div>
+
+              <div class="cat__titulo">
+                <h2 class="cat__nombre">Bombillas</h2>
+                <p class="cat__datos">
+                  3 productos ·
+                  <a href="../categoria/bombillas.html" target="_blank" rel="noopener">/categoria/bombillas ↗</a>
+                </p>
+              </div>
+
+              <div class="cat__acciones">
+                <details class="cat__renombrar">
+                  <summary class="btn btn--linea btn--chico">Renombrar</summary>
+                  <form action="#" method="POST" class="cat-form cat-form--flotante" data-validar-nombre data-max="60">
+                    <label class="sr-only" for="renombrarCat3">Nuevo nombre</label>
+                    <input class="campo__control" type="text" id="renombrarCat3" name="nombre" value="Bombillas" maxlength="60" required>
+                    <button type="submit" class="btn btn--solido btn--chico">Guardar</button>
+                    <p class="cat-form__error" role="alert"></p>
+                  </form>
+                </details>
+
+                
+                  <button type="button" class="btn btn--linea btn--chico cat__borrar" disabled
+                          title="Tiene productos: pasalos a otra categoría para poder borrarla">Eliminar</button>
+                
+              </div>
+            </div>
+
+            <!-- Subcategorías -->
+            <div class="cat__subs">
+              <p class="cat__subtitulo">Subcategorías <small>(filtros de esta sección)</small></p>
+              
+                <ul class="subs">
+                  
+                    <li class="sub">
+                      <span class="sub__nombre">Bombillones de alpaca</span>
+                      <span class="sub__cantidad" title="Productos en esta subcategoría">3</span>
+                      <details class="sub__editar">
+                        <summary aria-label="Renombrar Bombillones de alpaca" title="Renombrar">✎</summary>
+                        <form action="#" method="POST" class="cat-form cat-form--flotante" data-validar-nombre data-max="40">
+                          <label class="sr-only" for="renombrarSub7">Nuevo nombre</label>
+                          <input class="campo__control" type="text" id="renombrarSub7" name="nombre" value="Bombillones de alpaca" maxlength="40" required>
+                          <button type="submit" class="btn btn--solido btn--chico">Guardar</button>
+                          <p class="cat-form__error" role="alert"></p>
+                        </form>
+                      </details>
+                      <form action="#" method="POST" class="sub__borrar"
+                            data-confirmar="Se va a borrar “Bombillones de alpaca”. 3 productos quedan en Bombillas, sin subcategoría."
+                            data-confirmar-titulo="¿Eliminar subcategoría?">
+                        <button type="submit" aria-label="Eliminar Bombillones de alpaca" title="Eliminar">✕</button>
+                      </form>
+                    </li>
+                  
+                </ul>
+              
+
+              <form action="#" method="POST" class="cat-form cat-form--sub" data-validar-nombre data-max="40">
+                <label class="sr-only" for="nuevaSub3">Nueva subcategoría de Bombillas</label>
+                <input class="campo__control" type="text" id="nuevaSub3" name="nombre" maxlength="40" required
+                       placeholder="Nueva subcategoría de Bombillas" autocomplete="off">
+                <button type="submit" class="btn btn--linea btn--chico">+ Agregar</button>
+                <p class="cat-form__error" role="alert"></p>
+              </form>
+            </div>
+          </li>
+        
+          <li class="panel cat" id="categoria-4">
+            <div class="cat__cabecera">
+              <div class="cat__orden" aria-label="Orden en el menú">
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="-1">
+                  <button type="submit" class="cat__flecha"  aria-label="Subir Bolsos materos en el menú" title="Subir en el menú">▲</button>
+                </form>
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="1">
+                  <button type="submit" class="cat__flecha"  aria-label="Bajar Bolsos materos en el menú" title="Bajar en el menú">▼</button>
+                </form>
+              </div>
+
+              <div class="cat__titulo">
+                <h2 class="cat__nombre">Bolsos materos</h2>
+                <p class="cat__datos">
+                  2 productos ·
+                  <a href="../categoria/bolsos-materos.html" target="_blank" rel="noopener">/categoria/bolsos-materos ↗</a>
+                </p>
+              </div>
+
+              <div class="cat__acciones">
+                <details class="cat__renombrar">
+                  <summary class="btn btn--linea btn--chico">Renombrar</summary>
+                  <form action="#" method="POST" class="cat-form cat-form--flotante" data-validar-nombre data-max="60">
+                    <label class="sr-only" for="renombrarCat4">Nuevo nombre</label>
+                    <input class="campo__control" type="text" id="renombrarCat4" name="nombre" value="Bolsos materos" maxlength="60" required>
+                    <button type="submit" class="btn btn--solido btn--chico">Guardar</button>
+                    <p class="cat-form__error" role="alert"></p>
+                  </form>
+                </details>
+
+                
+                  <button type="button" class="btn btn--linea btn--chico cat__borrar" disabled
+                          title="Tiene productos: pasalos a otra categoría para poder borrarla">Eliminar</button>
+                
+              </div>
+            </div>
+
+            <!-- Subcategorías -->
+            <div class="cat__subs">
+              <p class="cat__subtitulo">Subcategorías <small>(filtros de esta sección)</small></p>
+              
+                <ul class="subs">
+                  
+                    <li class="sub">
+                      <span class="sub__nombre">Cuero sintético</span>
+                      <span class="sub__cantidad" title="Productos en esta subcategoría">1</span>
+                      <details class="sub__editar">
+                        <summary aria-label="Renombrar Cuero sintético" title="Renombrar">✎</summary>
+                        <form action="#" method="POST" class="cat-form cat-form--flotante" data-validar-nombre data-max="40">
+                          <label class="sr-only" for="renombrarSub8">Nuevo nombre</label>
+                          <input class="campo__control" type="text" id="renombrarSub8" name="nombre" value="Cuero sintético" maxlength="40" required>
+                          <button type="submit" class="btn btn--solido btn--chico">Guardar</button>
+                          <p class="cat-form__error" role="alert"></p>
+                        </form>
+                      </details>
+                      <form action="#" method="POST" class="sub__borrar"
+                            data-confirmar="Se va a borrar “Cuero sintético”. 1 producto queda en Bolsos materos, sin subcategoría."
+                            data-confirmar-titulo="¿Eliminar subcategoría?">
+                        <button type="submit" aria-label="Eliminar Cuero sintético" title="Eliminar">✕</button>
+                      </form>
+                    </li>
+                  
+                    <li class="sub">
+                      <span class="sub__nombre">Canastas</span>
+                      <span class="sub__cantidad" title="Productos en esta subcategoría">1</span>
+                      <details class="sub__editar">
+                        <summary aria-label="Renombrar Canastas" title="Renombrar">✎</summary>
+                        <form action="#" method="POST" class="cat-form cat-form--flotante" data-validar-nombre data-max="40">
+                          <label class="sr-only" for="renombrarSub9">Nuevo nombre</label>
+                          <input class="campo__control" type="text" id="renombrarSub9" name="nombre" value="Canastas" maxlength="40" required>
+                          <button type="submit" class="btn btn--solido btn--chico">Guardar</button>
+                          <p class="cat-form__error" role="alert"></p>
+                        </form>
+                      </details>
+                      <form action="#" method="POST" class="sub__borrar"
+                            data-confirmar="Se va a borrar “Canastas”. 1 producto queda en Bolsos materos, sin subcategoría."
+                            data-confirmar-titulo="¿Eliminar subcategoría?">
+                        <button type="submit" aria-label="Eliminar Canastas" title="Eliminar">✕</button>
+                      </form>
+                    </li>
+                  
+                </ul>
+              
+
+              <form action="#" method="POST" class="cat-form cat-form--sub" data-validar-nombre data-max="40">
+                <label class="sr-only" for="nuevaSub4">Nueva subcategoría de Bolsos materos</label>
+                <input class="campo__control" type="text" id="nuevaSub4" name="nombre" maxlength="40" required
+                       placeholder="Nueva subcategoría de Bolsos materos" autocomplete="off">
+                <button type="submit" class="btn btn--linea btn--chico">+ Agregar</button>
+                <p class="cat-form__error" role="alert"></p>
+              </form>
+            </div>
+          </li>
+        
+          <li class="panel cat" id="categoria-5">
+            <div class="cat__cabecera">
+              <div class="cat__orden" aria-label="Orden en el menú">
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="-1">
+                  <button type="submit" class="cat__flecha"  aria-label="Subir Combos en el menú" title="Subir en el menú">▲</button>
+                </form>
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="1">
+                  <button type="submit" class="cat__flecha"  aria-label="Bajar Combos en el menú" title="Bajar en el menú">▼</button>
+                </form>
+              </div>
+
+              <div class="cat__titulo">
+                <h2 class="cat__nombre">Combos</h2>
+                <p class="cat__datos">
+                  6 productos ·
+                  <a href="../categoria/combos.html" target="_blank" rel="noopener">/categoria/combos ↗</a>
+                </p>
+              </div>
+
+              <div class="cat__acciones">
+                <details class="cat__renombrar">
+                  <summary class="btn btn--linea btn--chico">Renombrar</summary>
+                  <form action="#" method="POST" class="cat-form cat-form--flotante" data-validar-nombre data-max="60">
+                    <label class="sr-only" for="renombrarCat5">Nuevo nombre</label>
+                    <input class="campo__control" type="text" id="renombrarCat5" name="nombre" value="Combos" maxlength="60" required>
+                    <button type="submit" class="btn btn--solido btn--chico">Guardar</button>
+                    <p class="cat-form__error" role="alert"></p>
+                  </form>
+                </details>
+
+                
+                  <button type="button" class="btn btn--linea btn--chico cat__borrar" disabled
+                          title="Tiene productos: pasalos a otra categoría para poder borrarla">Eliminar</button>
+                
+              </div>
+            </div>
+
+            <!-- Subcategorías -->
+            <div class="cat__subs">
+              <p class="cat__subtitulo">Subcategorías <small>(filtros de esta sección)</small></p>
+              
+                <ul class="subs">
+                  
+                    <li class="sub">
+                      <span class="sub__nombre">Con termo</span>
+                      <span class="sub__cantidad" title="Productos en esta subcategoría">4</span>
+                      <details class="sub__editar">
+                        <summary aria-label="Renombrar Con termo" title="Renombrar">✎</summary>
+                        <form action="#" method="POST" class="cat-form cat-form--flotante" data-validar-nombre data-max="40">
+                          <label class="sr-only" for="renombrarSub10">Nuevo nombre</label>
+                          <input class="campo__control" type="text" id="renombrarSub10" name="nombre" value="Con termo" maxlength="40" required>
+                          <button type="submit" class="btn btn--solido btn--chico">Guardar</button>
+                          <p class="cat-form__error" role="alert"></p>
+                        </form>
+                      </details>
+                      <form action="#" method="POST" class="sub__borrar"
+                            data-confirmar="Se va a borrar “Con termo”. 4 productos quedan en Combos, sin subcategoría."
+                            data-confirmar-titulo="¿Eliminar subcategoría?">
+                        <button type="submit" aria-label="Eliminar Con termo" title="Eliminar">✕</button>
+                      </form>
+                    </li>
+                  
+                    <li class="sub">
+                      <span class="sub__nombre">Sin termo</span>
+                      <span class="sub__cantidad" title="Productos en esta subcategoría">2</span>
+                      <details class="sub__editar">
+                        <summary aria-label="Renombrar Sin termo" title="Renombrar">✎</summary>
+                        <form action="#" method="POST" class="cat-form cat-form--flotante" data-validar-nombre data-max="40">
+                          <label class="sr-only" for="renombrarSub11">Nuevo nombre</label>
+                          <input class="campo__control" type="text" id="renombrarSub11" name="nombre" value="Sin termo" maxlength="40" required>
+                          <button type="submit" class="btn btn--solido btn--chico">Guardar</button>
+                          <p class="cat-form__error" role="alert"></p>
+                        </form>
+                      </details>
+                      <form action="#" method="POST" class="sub__borrar"
+                            data-confirmar="Se va a borrar “Sin termo”. 2 productos quedan en Combos, sin subcategoría."
+                            data-confirmar-titulo="¿Eliminar subcategoría?">
+                        <button type="submit" aria-label="Eliminar Sin termo" title="Eliminar">✕</button>
+                      </form>
+                    </li>
+                  
+                </ul>
+              
+
+              <form action="#" method="POST" class="cat-form cat-form--sub" data-validar-nombre data-max="40">
+                <label class="sr-only" for="nuevaSub5">Nueva subcategoría de Combos</label>
+                <input class="campo__control" type="text" id="nuevaSub5" name="nombre" maxlength="40" required
+                       placeholder="Nueva subcategoría de Combos" autocomplete="off">
+                <button type="submit" class="btn btn--linea btn--chico">+ Agregar</button>
+                <p class="cat-form__error" role="alert"></p>
+              </form>
+            </div>
+          </li>
+        
+          <li class="panel cat" id="categoria-6">
+            <div class="cat__cabecera">
+              <div class="cat__orden" aria-label="Orden en el menú">
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="-1">
+                  <button type="submit" class="cat__flecha"  aria-label="Subir Yerbas en el menú" title="Subir en el menú">▲</button>
+                </form>
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="1">
+                  <button type="submit" class="cat__flecha" disabled aria-label="Bajar Yerbas en el menú" title="Bajar en el menú">▼</button>
+                </form>
+              </div>
+
+              <div class="cat__titulo">
+                <h2 class="cat__nombre">Yerbas</h2>
+                <p class="cat__datos">
+                  5 productos ·
+                  <a href="../categoria/yerbas.html" target="_blank" rel="noopener">/categoria/yerbas ↗</a>
+                </p>
+              </div>
+
+              <div class="cat__acciones">
+                <details class="cat__renombrar">
+                  <summary class="btn btn--linea btn--chico">Renombrar</summary>
+                  <form action="#" method="POST" class="cat-form cat-form--flotante" data-validar-nombre data-max="60">
+                    <label class="sr-only" for="renombrarCat6">Nuevo nombre</label>
+                    <input class="campo__control" type="text" id="renombrarCat6" name="nombre" value="Yerbas" maxlength="60" required>
+                    <button type="submit" class="btn btn--solido btn--chico">Guardar</button>
+                    <p class="cat-form__error" role="alert"></p>
+                  </form>
+                </details>
+
+                
+                  <button type="button" class="btn btn--linea btn--chico cat__borrar" disabled
+                          title="Tiene productos: pasalos a otra categoría para poder borrarla">Eliminar</button>
+                
+              </div>
+            </div>
+
+            <!-- Subcategorías -->
+            <div class="cat__subs">
+              <p class="cat__subtitulo">Subcategorías <small>(filtros de esta sección)</small></p>
+              
+                <ul class="subs">
+                  
+                    <li class="sub">
+                      <span class="sub__nombre">Uruguayas</span>
+                      <span class="sub__cantidad" title="Productos en esta subcategoría">3</span>
+                      <details class="sub__editar">
+                        <summary aria-label="Renombrar Uruguayas" title="Renombrar">✎</summary>
+                        <form action="#" method="POST" class="cat-form cat-form--flotante" data-validar-nombre data-max="40">
+                          <label class="sr-only" for="renombrarSub12">Nuevo nombre</label>
+                          <input class="campo__control" type="text" id="renombrarSub12" name="nombre" value="Uruguayas" maxlength="40" required>
+                          <button type="submit" class="btn btn--solido btn--chico">Guardar</button>
+                          <p class="cat-form__error" role="alert"></p>
+                        </form>
+                      </details>
+                      <form action="#" method="POST" class="sub__borrar"
+                            data-confirmar="Se va a borrar “Uruguayas”. 3 productos quedan en Yerbas, sin subcategoría."
+                            data-confirmar-titulo="¿Eliminar subcategoría?">
+                        <button type="submit" aria-label="Eliminar Uruguayas" title="Eliminar">✕</button>
+                      </form>
+                    </li>
+                  
+                    <li class="sub">
+                      <span class="sub__nombre">Brasileras</span>
+                      <span class="sub__cantidad" title="Productos en esta subcategoría">1</span>
+                      <details class="sub__editar">
+                        <summary aria-label="Renombrar Brasileras" title="Renombrar">✎</summary>
+                        <form action="#" method="POST" class="cat-form cat-form--flotante" data-validar-nombre data-max="40">
+                          <label class="sr-only" for="renombrarSub13">Nuevo nombre</label>
+                          <input class="campo__control" type="text" id="renombrarSub13" name="nombre" value="Brasileras" maxlength="40" required>
+                          <button type="submit" class="btn btn--solido btn--chico">Guardar</button>
+                          <p class="cat-form__error" role="alert"></p>
+                        </form>
+                      </details>
+                      <form action="#" method="POST" class="sub__borrar"
+                            data-confirmar="Se va a borrar “Brasileras”. 1 producto queda en Yerbas, sin subcategoría."
+                            data-confirmar-titulo="¿Eliminar subcategoría?">
+                        <button type="submit" aria-label="Eliminar Brasileras" title="Eliminar">✕</button>
+                      </form>
+                    </li>
+                  
+                    <li class="sub">
+                      <span class="sub__nombre">Argentinas</span>
+                      <span class="sub__cantidad" title="Productos en esta subcategoría">1</span>
+                      <details class="sub__editar">
+                        <summary aria-label="Renombrar Argentinas" title="Renombrar">✎</summary>
+                        <form action="#" method="POST" class="cat-form cat-form--flotante" data-validar-nombre data-max="40">
+                          <label class="sr-only" for="renombrarSub14">Nuevo nombre</label>
+                          <input class="campo__control" type="text" id="renombrarSub14" name="nombre" value="Argentinas" maxlength="40" required>
+                          <button type="submit" class="btn btn--solido btn--chico">Guardar</button>
+                          <p class="cat-form__error" role="alert"></p>
+                        </form>
+                      </details>
+                      <form action="#" method="POST" class="sub__borrar"
+                            data-confirmar="Se va a borrar “Argentinas”. 1 producto queda en Yerbas, sin subcategoría."
+                            data-confirmar-titulo="¿Eliminar subcategoría?">
+                        <button type="submit" aria-label="Eliminar Argentinas" title="Eliminar">✕</button>
+                      </form>
+                    </li>
+                  
+                </ul>
+              
+
+              <form action="#" method="POST" class="cat-form cat-form--sub" data-validar-nombre data-max="40">
+                <label class="sr-only" for="nuevaSub6">Nueva subcategoría de Yerbas</label>
+                <input class="campo__control" type="text" id="nuevaSub6" name="nombre" maxlength="40" required
+                       placeholder="Nueva subcategoría de Yerbas" autocomplete="off">
+                <button type="submit" class="btn btn--linea btn--chico">+ Agregar</button>
+                <p class="cat-form__error" role="alert"></p>
+              </form>
+            </div>
+          </li>
+        
+      </ol>
+
+    </main>
+  </div>
+</div>
+
+<!-- Modal de confirmación (lo usa admin.js con data-confirmar) -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitulo" hidden>
+  <div class="modal__caja">
+    <p class="modal__titulo" id="modalTitulo">¿Confirmás?</p>
+    <p class="modal__texto" id="modalTexto"></p>
+    <div class="modal__acciones">
+      <button type="button" class="btn btn--linea" id="modalCancelar">Cancelar</button>
+      <button type="button" class="btn btn--solido" id="modalAceptar">Eliminar</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+
+
+
+<script src="../js/admin.js"></script>
+
+<div class="notif-avisos" id="notifAvisos" aria-live="polite" aria-atomic="false"></div>
+<script src="../js/notificaciones.js"></script>
+
+
+<script src="../js/admin-categorias.js"></script>
+</body>
+</html>

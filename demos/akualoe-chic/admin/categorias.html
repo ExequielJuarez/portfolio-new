@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><script>(function(){var t;function toast(){var d=document.getElementById('__demo_toast');if(!d){d=document.createElement('div');d.id='__demo_toast';d.style.cssText='position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#0b1128;color:#fff;font:600 14px/1.4 system-ui,sans-serif;padding:12px 18px;border-radius:12px;border:1px solid #6366f1;box-shadow:0 10px 30px rgba(0,0,0,.4);z-index:2147483647;max-width:90vw;text-align:center;transition:opacity .3s';d.textContent='Vista de demostración: esta acción no está disponible acá';document.body.appendChild(d)}d.style.opacity=1;clearTimeout(t);t=setTimeout(function(){d.style.opacity=0},2200)}
+document.addEventListener('submit',function(e){e.preventDefault();e.stopImmediatePropagation();toast()},true);
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-demo-off]');if(a){e.preventDefault();toast()}},true);
+window.EventSource=function(){return {close:function(){},addEventListener:function(){},onmessage:null,onerror:null}};var f=window.fetch;window.fetch=function(u,i){var m=((i&&i.method)||(u&&u.method)||'GET').toUpperCase();if(m==='GET')return f.apply(this,arguments);toast();return Promise.reject(new Error('demo'))};
+var o=XMLHttpRequest.prototype.open;XMLHttpRequest.prototype.open=function(m,u){if(m&&m.toUpperCase()!=='GET'){toast()}return o.apply(this,arguments)}})();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categorías | Akualoe Chic</title>
+  <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+
+  <link rel="preload" href="../fonts/playfair-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/jost-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../css/fuentes.css">
+  <link rel="stylesheet" href="../css/base.css">
+  
+  
+    <link rel="stylesheet" href="../css/notificaciones.css">
+  
+  
+    <link rel="stylesheet" href="../css/admin.css">
+  
+    <link rel="stylesheet" href="../css/admin-categorias.css">
+  
+</head>
+<body>
+
+
+
+
+<div class="admin">
+  <!-- ═════════════ MENÚ LATERAL ═════════════ -->
+  <aside class="admin-lateral" id="adminLateral" aria-label="Menú del panel">
+    <div class="admin-lateral__marca">
+      
+<svg class="logo-svg logo-svg--horizontal admin-lateral__logo" viewBox="0 0 270 78" role="img" aria-label="Akualoe Chic">
+  <text x="135" y="46" text-anchor="middle" font-size="52" textLength="262" lengthAdjust="spacing" class="logo-svg__marca">AKUALOE</text>
+  <text x="140" y="70" text-anchor="middle" font-size="12" class="logo-svg__bajada">CHIC</text>
+</svg>
+
+      <span class="admin-lateral__etiqueta">Admin</span>
+    </div>
+
+    <nav class="admin-nav">
+      
+        <a href="../admin.html" class="admin-nav__link " >
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 13h6V4H4zM14 20h6v-9h-6zM4 20h6v-4H4zM14 7h6V4h-6z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          <span>Panel</span>
+          
+        </a>
+      
+        <a href="productos.html" class="admin-nav__link " >
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 8l8-4 8 4-8 4-8-4zM4 8v8l8 4 8-4V8M12 12v8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          <span>Productos</span>
+          
+            <span class="admin-nav__badge " data-badge="productos">18</span>
+          
+        </a>
+      
+        <a href="categorias.html" class="admin-nav__link activo" aria-current="page">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 6h7v5H4zM13 6h7v5h-7zM4 13h7v5H4zM15.5 13v5M13 15.5h5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/></svg>
+          <span>Categorías</span>
+          
+        </a>
+      
+        <a href="pedidos.html" class="admin-nav__link " >
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2zM9 8h6M9 12h6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/></svg>
+          <span>Pedidos</span>
+          
+            <span class="admin-nav__badge admin-nav__badge--fuerte" data-badge="pedidos">5</span>
+          
+        </a>
+      
+        <a href="arrepentimientos.html" class="admin-nav__link " >
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 14L4 9l5-5M4 9h10.5a5.5 5.5 0 010 11H11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/></svg>
+          <span>Arrepentimientos</span>
+          
+        </a>
+      
+      <a href="../index.html" class="admin-nav__link admin-nav__link--tienda">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 10l1.5-5h13L20 10M4 10v10h16V10M4 10h16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        <span>Ver tienda</span>
+        <span aria-hidden="true">↗</span>
+      </a>
+    </nav>
+
+    <div class="admin-usuario">
+      <span class="admin-usuario__inicial">A</span>
+      <span class="admin-usuario__datos">
+        <strong>Admin Tienda</strong>
+        <small>admin@tienda.com</small>
+      </span>
+      <form action="#" method="POST">
+        <button type="submit" class="admin-usuario__salir" aria-label="Cerrar sesión" title="Cerrar sesión">
+          <svg viewBox="0 0 24 24" width="18" height="18"><path d="M14 4h5v16h-5M10 8l-4 4 4 4M6 12h10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </form>
+    </div>
+  </aside>
+
+  <div class="admin-overlay" id="adminOverlay"></div>
+
+  <div class="admin-cuerpo">
+    <!-- Barra superior (celular / tablet) -->
+    <header class="admin-barra">
+      <button class="admin-barra__menu" id="adminMenuBtn" aria-label="Abrir menú" aria-controls="adminLateral" aria-expanded="false">
+        <span></span>
+      </button>
+      
+<svg class="logo-svg logo-svg--horizontal admin-lateral__logo" viewBox="0 0 270 78" role="img" aria-label="Akualoe Chic">
+  <text x="135" y="46" text-anchor="middle" font-size="52" textLength="262" lengthAdjust="spacing" class="logo-svg__marca">AKUALOE</text>
+  <text x="140" y="70" text-anchor="middle" font-size="12" class="logo-svg__bajada">CHIC</text>
+</svg>
+
+      <div class="admin-barra__acciones">
+        
+<div class="notif" id="notif">
+  <button type="button" class="icono-btn notif__btn" id="notifBtn" aria-label="Notificaciones" aria-expanded="false" aria-controls="notifPanel">
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 16V11a6 6 0 0112 0v5l1.5 2h-15L6 16z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M10 20.5a2 2 0 004 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <span class="notif__contador" id="notifContador" hidden>0</span>
+  </button>
+
+  <div class="notif__panel" id="notifPanel" role="dialog" aria-label="Notificaciones" hidden>
+    <div class="notif__cabecera">
+      <p class="notif__titulo">Notificaciones</p>
+      <button type="button" class="notif__leer" id="notifLeerTodas">Marcar todas como leídas</button>
+    </div>
+    <ul class="notif__lista" id="notifLista">
+      <li class="notif__vacio">Cargando…</li>
+    </ul>
+    <div class="notif__pie">
+      <a href="pedidos.html" class="notif__link">Ver pedidos →</a>
+      <button type="button" class="notif__opcion" id="notifSonido" aria-pressed="true">Sonido: sí</button>
+      <button type="button" class="notif__opcion" id="notifNavegador" hidden>Avisos del navegador</button>
+    </div>
+  </div>
+</div>
+
+        <span class="admin-usuario__inicial">A</span>
+      </div>
+    </header>
+
+    <main class="admin-main">
+
+
+      <div class="admin-cabecera">
+        <div>
+          <p class="admin-cabecera__migas"><a href="../admin.html">Panel</a> / Categorías</p>
+          <h1 class="admin-cabecera__titulo">Categorías</h1>
+          <p class="admin-cabecera__bajada">
+            Las categorías son las pestañas del menú de la tienda. Cada una tiene sus
+            <strong>subcategorías</strong>, que son los filtros de esa sección (por ejemplo, Vestidos → Largos, Midi).
+          </p>
+        </div>
+      </div>
+
+      <!-- Nueva categoría -->
+      <section class="panel cat-nueva" aria-labelledby="tituloNuevaCategoria">
+        <h2 class="panel__titulo" id="tituloNuevaCategoria">Nueva categoría</h2>
+        <form action="categorias.html" method="POST" class="cat-form" data-validar-nombre data-max="60">
+          <label class="sr-only" for="nuevaCategoria">Nombre de la categoría</label>
+          <input class="campo__control" type="text" id="nuevaCategoria" name="nombre" maxlength="60" required
+                 placeholder="Ej: Accesorios" autocomplete="off">
+          <button type="submit" class="btn btn--solido btn--chico">Agregar categoría</button>
+          <p class="cat-form__error" role="alert"></p>
+        </form>
+      </section>
+
+      <!-- Categorías existentes -->
+      <ol class="cat-lista">
+        
+          <li class="panel cat" id="categoria-1">
+            <div class="cat__cabecera">
+              <div class="cat__orden" aria-label="Orden en el menú">
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="-1">
+                  <button type="submit" class="cat__flecha" disabled aria-label="Subir Remeras y camisetas en el menú" title="Subir en el menú">▲</button>
+                </form>
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="1">
+                  <button type="submit" class="cat__flecha"  aria-label="Bajar Remeras y camisetas en el menú" title="Bajar en el menú">▼</button>
+                </form>
+              </div>
+
+              <div class="cat__titulo">
+                <h2 class="cat__nombre">Remeras y camisetas</h2>
+                <p class="cat__datos">
+                  3 productos ·
+                  <a href="../categoria/remeras-y-camisetas.html" target="_blank" rel="noopener">/categoria/remeras-y-camisetas ↗</a>
+                </p>
+              </div>
+
+              <div class="cat__acciones">
+                <details class="cat__renombrar">
+                  <summary class="btn btn--linea btn--chico">Renombrar</summary>
+                  <form action="#" method="POST" class="cat-form cat-form--flotante" data-validar-nombre data-max="60">
+                    <label class="sr-only" for="renombrarCat1">Nuevo nombre</label>
+                    <input class="campo__control" type="text" id="renombrarCat1" name="nombre" value="Remeras y camisetas" maxlength="60" required>
+                    <button type="submit" class="btn btn--solido btn--chico">Guardar</button>
+                    <p class="cat-form__error" role="alert"></p>
+                  </form>
+                </details>
+
+                
+                  <button type="button" class="btn btn--linea btn--chico cat__borrar" disabled
+                          title="Tiene productos: pasalos a otra categoría para poder borrarla">Eliminar</button>
+                
+              </div>
+            </div>
+
+            <!-- Subcategorías -->
+            <div class="cat__subs">
+              <p class="cat__subtitulo">Subcategorías <small>(filtros de esta sección)</small></p>
+              
+                <p class="cat__vacio">Todavía no tiene. Agregá la primera abajo.</p>
+              
+
+              <form action="#" method="POST" class="cat-form cat-form--sub" data-validar-nombre data-max="40">
+                <label class="sr-only" for="nuevaSub1">Nueva subcategoría de Remeras y camisetas</label>
+                <input class="campo__control" type="text" id="nuevaSub1" name="nombre" maxlength="40" required
+                       placeholder="Nueva subcategoría de Remeras y camisetas" autocomplete="off">
+                <button type="submit" class="btn btn--linea btn--chico">+ Agregar</button>
+                <p class="cat-form__error" role="alert"></p>
+              </form>
+            </div>
+          </li>
+        
+          <li class="panel cat" id="categoria-2">
+            <div class="cat__cabecera">
+              <div class="cat__orden" aria-label="Orden en el menú">
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="-1">
+                  <button type="submit" class="cat__flecha"  aria-label="Subir Blusas y camisas en el menú" title="Subir en el menú">▲</button>
+                </form>
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="1">
+                  <button type="submit" class="cat__flecha"  aria-label="Bajar Blusas y camisas en el menú" title="Bajar en el menú">▼</button>
+                </form>
+              </div>
+
+              <div class="cat__titulo">
+                <h2 class="cat__nombre">Blusas y camisas</h2>
+                <p class="cat__datos">
+                  0 productos ·
+                  <a href="../categoria/blusas-y-camisas.html" target="_blank" rel="noopener">/categoria/blusas-y-camisas ↗</a>
+                </p>
+              </div>
+
+              <div class="cat__acciones">
+                <details class="cat__renombrar">
+                  <summary class="btn btn--linea btn--chico">Renombrar</summary>
+                  <form action="#" method="POST" class="cat-form cat-form--flotante" data-validar-nombre data-max="60">
+                    <label class="sr-only" for="renombrarCat2">Nuevo nombre</label>
+                    <input class="campo__control" type="text" id="renombrarCat2" name="nombre" value="Blusas y camisas" maxlength="60" required>
+                    <button type="submit" class="btn btn--solido btn--chico">Guardar</button>
+                    <p class="cat-form__error" role="alert"></p>
+                  </form>
+                </details>
+
+                
+                  <form action="#" method="POST"
+                        data-confirmar="Se va a borrar la categoría “Blusas y camisas” y sus subcategorías. Deja de aparecer en el menú."
+                        data-confirmar-titulo="¿Eliminar categoría?">
+                    <button type="submit" class="btn btn--linea btn--chico cat__borrar">Eliminar</button>
+                  </form>
+                
+              </div>
+            </div>
+
+            <!-- Subcategorías -->
+            <div class="cat__subs">
+              <p class="cat__subtitulo">Subcategorías <small>(filtros de esta sección)</small></p>
+              
+                <p class="cat__vacio">Todavía no tiene. Agregá la primera abajo.</p>
+              
+
+              <form action="#" method="POST" class="cat-form cat-form--sub" data-validar-nombre data-max="40">
+                <label class="sr-only" for="nuevaSub2">Nueva subcategoría de Blusas y camisas</label>
+                <input class="campo__control" type="text" id="nuevaSub2" name="nombre" maxlength="40" required
+                       placeholder="Nueva subcategoría de Blusas y camisas" autocomplete="off">
+                <button type="submit" class="btn btn--linea btn--chico">+ Agregar</button>
+                <p class="cat-form__error" role="alert"></p>
+              </form>
+            </div>
+          </li>
+        
+          <li class="panel cat" id="categoria-3">
+            <div class="cat__cabecera">
+              <div class="cat__orden" aria-label="Orden en el menú">
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="-1">
+                  <button type="submit" class="cat__flecha"  aria-label="Subir Tops y musculosas en el menú" title="Subir en el menú">▲</button>
+                </form>
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="1">
+                  <button type="submit" class="cat__flecha"  aria-label="Bajar Tops y musculosas en el menú" title="Bajar en el menú">▼</button>
+                </form>
+              </div>
+
+              <div class="cat__titulo">
+                <h2 class="cat__nombre">Tops y musculosas</h2>
+                <p class="cat__datos">
+                  3 productos ·
+                  <a href="../categoria/tops-y-musculosas.html" target="_blank" rel="noopener">/categoria/tops-y-musculosas ↗</a>
+                </p>
+              </div>
+
+              <div class="cat__acciones">
+                <details class="cat__renombrar">
+                  <summary class="btn btn--linea btn--chico">Renombrar</summary>
+                  <form action="#" method="POST" class="cat-form cat-form--flotante" data-validar-nombre data-max="60">
+                    <label class="sr-only" for="renombrarCat3">Nuevo nombre</label>
+                    <input class="campo__control" type="text" id="renombrarCat3" name="nombre" value="Tops y musculosas" maxlength="60" required>
+                    <button type="submit" class="btn btn--solido btn--chico">Guardar</button>
+                    <p class="cat-form__error" role="alert"></p>
+                  </form>
+                </details>
+
+                
+                  <button type="button" class="btn btn--linea btn--chico cat__borrar" disabled
+                          title="Tiene productos: pasalos a otra categoría para poder borrarla">Eliminar</button>
+                
+              </div>
+            </div>
+
+            <!-- Subcategorías -->
+            <div class="cat__subs">
+              <p class="cat__subtitulo">Subcategorías <small>(filtros de esta sección)</small></p>
+              
+                <p class="cat__vacio">Todavía no tiene. Agregá la primera abajo.</p>
+              
+
+              <form action="#" method="POST" class="cat-form cat-form--sub" data-validar-nombre data-max="40">
+                <label class="sr-only" for="nuevaSub3">Nueva subcategoría de Tops y musculosas</label>
+                <input class="campo__control" type="text" id="nuevaSub3" name="nombre" maxlength="40" required
+                       placeholder="Nueva subcategoría de Tops y musculosas" autocomplete="off">
+                <button type="submit" class="btn btn--linea btn--chico">+ Agregar</button>
+                <p class="cat-form__error" role="alert"></p>
+              </form>
+            </div>
+          </li>
+        
+          <li class="panel cat" id="categoria-4">
+            <div class="cat__cabecera">
+              <div class="cat__orden" aria-label="Orden en el menú">
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="-1">
+                  <button type="submit" class="cat__flecha"  aria-label="Subir Buzos, sweaters y cárdigans en el menú" title="Subir en el menú">▲</button>
+                </form>
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="1">
+                  <button type="submit" class="cat__flecha"  aria-label="Bajar Buzos, sweaters y cárdigans en el menú" title="Bajar en el menú">▼</button>
+                </form>
+              </div>
+
+              <div class="cat__titulo">
+                <h2 class="cat__nombre">Buzos, sweaters y cárdigans</h2>
+                <p class="cat__datos">
+                  0 productos ·
+                  <a href="../categoria/buzos-sweaters-y-cardigans.html" target="_blank" rel="noopener">/categoria/buzos-sweaters-y-cardigans ↗</a>
+                </p>
+              </div>
+
+              <div class="cat__acciones">
+                <details class="cat__renombrar">
+                  <summary class="btn btn--linea btn--chico">Renombrar</summary>
+                  <form action="#" method="POST" class="cat-form cat-form--flotante" data-validar-nombre data-max="60">
+                    <label class="sr-only" for="renombrarCat4">Nuevo nombre</label>
+                    <input class="campo__control" type="text" id="renombrarCat4" name="nombre" value="Buzos, sweaters y cárdigans" maxlength="60" required>
+                    <button type="submit" class="btn btn--solido btn--chico">Guardar</button>
+                    <p class="cat-form__error" role="alert"></p>
+                  </form>
+                </details>
+
+                
+                  <form action="#" method="POST"
+                        data-confirmar="Se va a borrar la categoría “Buzos, sweaters y cárdigans” y sus subcategorías. Deja de aparecer en el menú."
+                        data-confirmar-titulo="¿Eliminar categoría?">
+                    <button type="submit" class="btn btn--linea btn--chico cat__borrar">Eliminar</button>
+                  </form>
+                
+              </div>
+            </div>
+
+            <!-- Subcategorías -->
+            <div class="cat__subs">
+              <p class="cat__subtitulo">Subcategorías <small>(filtros de esta sección)</small></p>
+              
+                <p class="cat__vacio">Todavía no tiene. Agregá la primera abajo.</p>
+              
+
+              <form action="#" method="POST" class="cat-form cat-form--sub" data-validar-nombre data-max="40">
+                <label class="sr-only" for="nuevaSub4">Nueva subcategoría de Buzos, sweaters y cárdigans</label>
+                <input class="campo__control" type="text" id="nuevaSub4" name="nombre" maxlength="40" required
+                       placeholder="Nueva subcategoría de Buzos, sweaters y cárdigans" autocomplete="off">
+                <button type="submit" class="btn btn--linea btn--chico">+ Agregar</button>
+                <p class="cat-form__error" role="alert"></p>
+              </form>
+            </div>
+          </li>
+        
+          <li class="panel cat" id="categoria-5">
+            <div class="cat__cabecera">
+              <div class="cat__orden" aria-label="Orden en el menú">
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="-1">
+                  <button type="submit" class="cat__flecha"  aria-label="Subir Camperas, blazers y abrigos en el menú" title="Subir en el menú">▲</button>
+                </form>
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="1">
+                  <button type="submit" class="cat__flecha"  aria-label="Bajar Camperas, blazers y abrigos en el menú" title="Bajar en el menú">▼</button>
+                </form>
+              </div>
+
+              <div class="cat__titulo">
+                <h2 class="cat__nombre">Camperas, blazers y abrigos</h2>
+                <p class="cat__datos">
+                  1 producto ·
+                  <a href="../categoria/camperas-blazers-y-abrigos.html" target="_blank" rel="noopener">/categoria/camperas-blazers-y-abrigos ↗</a>
+                </p>
+              </div>
+
+              <div class="cat__acciones">
+                <details class="cat__renombrar">
+                  <summary class="btn btn--linea btn--chico">Renombrar</summary>
+                  <form action="#" method="POST" class="cat-form cat-form--flotante" data-validar-nombre data-max="60">
+                    <label class="sr-only" for="renombrarCat5">Nuevo nombre</label>
+                    <input class="campo__control" type="text" id="renombrarCat5" name="nombre" value="Camperas, blazers y abrigos" maxlength="60" required>
+                    <button type="submit" class="btn btn--solido btn--chico">Guardar</button>
+                    <p class="cat-form__error" role="alert"></p>
+                  </form>
+                </details>
+
+                
+                  <button type="button" class="btn btn--linea btn--chico cat__borrar" disabled
+                          title="Tiene productos: pasalos a otra categoría para poder borrarla">Eliminar</button>
+                
+              </div>
+            </div>
+
+            <!-- Subcategorías -->
+            <div class="cat__subs">
+              <p class="cat__subtitulo">Subcategorías <small>(filtros de esta sección)</small></p>
+              
+                <p class="cat__vacio">Todavía no tiene. Agregá la primera abajo.</p>
+              
+
+              <form action="#" method="POST" class="cat-form cat-form--sub" data-validar-nombre data-max="40">
+                <label class="sr-only" for="nuevaSub5">Nueva subcategoría de Camperas, blazers y abrigos</label>
+                <input class="campo__control" type="text" id="nuevaSub5" name="nombre" maxlength="40" required
+                       placeholder="Nueva subcategoría de Camperas, blazers y abrigos" autocomplete="off">
+                <button type="submit" class="btn btn--linea btn--chico">+ Agregar</button>
+                <p class="cat-form__error" role="alert"></p>
+              </form>
+            </div>
+          </li>
+        
+          <li class="panel cat" id="categoria-6">
+            <div class="cat__cabecera">
+              <div class="cat__orden" aria-label="Orden en el menú">
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="-1">
+                  <button type="submit" class="cat__flecha"  aria-label="Subir Pantalones en el menú" title="Subir en el menú">▲</button>
+                </form>
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="1">
+                  <button type="submit" class="cat__flecha"  aria-label="Bajar Pantalones en el menú" title="Bajar en el menú">▼</button>
+                </form>
+              </div>
+
+              <div class="cat__titulo">
+                <h2 class="cat__nombre">Pantalones</h2>
+                <p class="cat__datos">
+                  1 producto ·
+                  <a href="../categoria/pantalones.html" target="_blank" rel="noopener">/categoria/pantalones ↗</a>
+                </p>
+              </div>
+
+              <div class="cat__acciones">
+                <details class="cat__renombrar">
+                  <summary class="btn btn--linea btn--chico">Renombrar</summary>
+                  <form action="#" method="POST" class="cat-form cat-form--flotante" data-validar-nombre data-max="60">
+                    <label class="sr-only" for="renombrarCat6">Nuevo nombre</label>
+                    <input class="campo__control" type="text" id="renombrarCat6" name="nombre" value="Pantalones" maxlength="60" required>
+                    <button type="submit" class="btn btn--solido btn--chico">Guardar</button>
+                    <p class="cat-form__error" role="alert"></p>
+                  </form>
+                </details>
+
+                
+                  <button type="button" class="btn btn--linea btn--chico cat__borrar" disabled
+                          title="Tiene productos: pasalos a otra categoría para poder borrarla">Eliminar</button>
+                
+              </div>
+            </div>
+
+            <!-- Subcategorías -->
+            <div class="cat__subs">
+              <p class="cat__subtitulo">Subcategorías <small>(filtros de esta sección)</small></p>
+              
+                <p class="cat__vacio">Todavía no tiene. Agregá la primera abajo.</p>
+              
+
+              <form action="#" method="POST" class="cat-form cat-form--sub" data-validar-nombre data-max="40">
+                <label class="sr-only" for="nuevaSub6">Nueva subcategoría de Pantalones</label>
+                <input class="campo__control" type="text" id="nuevaSub6" name="nombre" maxlength="40" required
+                       placeholder="Nueva subcategoría de Pantalones" autocomplete="off">
+                <button type="submit" class="btn btn--linea btn--chico">+ Agregar</button>
+                <p class="cat-form__error" role="alert"></p>
+              </form>
+            </div>
+          </li>
+        
+          <li class="panel cat" id="categoria-7">
+            <div class="cat__cabecera">
+              <div class="cat__orden" aria-label="Orden en el menú">
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="-1">
+                  <button type="submit" class="cat__flecha"  aria-label="Subir Jeans / Denim en el menú" title="Subir en el menú">▲</button>
+                </form>
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="1">
+                  <button type="submit" class="cat__flecha"  aria-label="Bajar Jeans / Denim en el menú" title="Bajar en el menú">▼</button>
+                </form>
+              </div>
+
+              <div class="cat__titulo">
+                <h2 class="cat__nombre">Jeans / Denim</h2>
+                <p class="cat__datos">
+                  2 productos ·
+                  <a href="../categoria/jeans-y-denim.html" target="_blank" rel="noopener">/categoria/jeans-y-denim ↗</a>
+                </p>
+              </div>
+
+              <div class="cat__acciones">
+                <details class="cat__renombrar">
+                  <summary class="btn btn--linea btn--chico">Renombrar</summary>
+                  <form action="#" method="POST" class="cat-form cat-form--flotante" data-validar-nombre data-max="60">
+                    <label class="sr-only" for="renombrarCat7">Nuevo nombre</label>
+                    <input class="campo__control" type="text" id="renombrarCat7" name="nombre" value="Jeans / Denim" maxlength="60" required>
+                    <button type="submit" class="btn btn--solido btn--chico">Guardar</button>
+                    <p class="cat-form__error" role="alert"></p>
+                  </form>
+                </details>
+
+                
+                  <button type="button" class="btn btn--linea btn--chico cat__borrar" disabled
+                          title="Tiene productos: pasalos a otra categoría para poder borrarla">Eliminar</button>
+                
+              </div>
+            </div>
+
+            <!-- Subcategorías -->
+            <div class="cat__subs">
+              <p class="cat__subtitulo">Subcategorías <small>(filtros de esta sección)</small></p>
+              
+                <p class="cat__vacio">Todavía no tiene. Agregá la primera abajo.</p>
+              
+
+              <form action="#" method="POST" class="cat-form cat-form--sub" data-validar-nombre data-max="40">
+                <label class="sr-only" for="nuevaSub7">Nueva subcategoría de Jeans / Denim</label>
+                <input class="campo__control" type="text" id="nuevaSub7" name="nombre" maxlength="40" required
+                       placeholder="Nueva subcategoría de Jeans / Denim" autocomplete="off">
+                <button type="submit" class="btn btn--linea btn--chico">+ Agregar</button>
+                <p class="cat-form__error" role="alert"></p>
+              </form>
+            </div>
+          </li>
+        
+          <li class="panel cat" id="categoria-8">
+            <div class="cat__cabecera">
+              <div class="cat__orden" aria-label="Orden en el menú">
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="-1">
+                  <button type="submit" class="cat__flecha"  aria-label="Subir Faldas y minis en el menú" title="Subir en el menú">▲</button>
+                </form>
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="1">
+                  <button type="submit" class="cat__flecha"  aria-label="Bajar Faldas y minis en el menú" title="Bajar en el menú">▼</button>
+                </form>
+              </div>
+
+              <div class="cat__titulo">
+                <h2 class="cat__nombre">Faldas y minis</h2>
+                <p class="cat__datos">
+                  2 productos ·
+                  <a href="../categoria/faldas-y-minis.html" target="_blank" rel="noopener">/categoria/faldas-y-minis ↗</a>
+                </p>
+              </div>
+
+              <div class="cat__acciones">
+                <details class="cat__renombrar">
+                  <summary class="btn btn--linea btn--chico">Renombrar</summary>
+                  <form action="#" method="POST" class="cat-form cat-form--flotante" data-validar-nombre data-max="60">
+                    <label class="sr-only" for="renombrarCat8">Nuevo nombre</label>
+                    <input class="campo__control" type="text" id="renombrarCat8" name="nombre" value="Faldas y minis" maxlength="60" required>
+                    <button type="submit" class="btn btn--solido btn--chico">Guardar</button>
+                    <p class="cat-form__error" role="alert"></p>
+                  </form>
+                </details>
+
+                
+                  <button type="button" class="btn btn--linea btn--chico cat__borrar" disabled
+                          title="Tiene productos: pasalos a otra categoría para poder borrarla">Eliminar</button>
+                
+              </div>
+            </div>
+
+            <!-- Subcategorías -->
+            <div class="cat__subs">
+              <p class="cat__subtitulo">Subcategorías <small>(filtros de esta sección)</small></p>
+              
+                <p class="cat__vacio">Todavía no tiene. Agregá la primera abajo.</p>
+              
+
+              <form action="#" method="POST" class="cat-form cat-form--sub" data-validar-nombre data-max="40">
+                <label class="sr-only" for="nuevaSub8">Nueva subcategoría de Faldas y minis</label>
+                <input class="campo__control" type="text" id="nuevaSub8" name="nombre" maxlength="40" required
+                       placeholder="Nueva subcategoría de Faldas y minis" autocomplete="off">
+                <button type="submit" class="btn btn--linea btn--chico">+ Agregar</button>
+                <p class="cat-form__error" role="alert"></p>
+              </form>
+            </div>
+          </li>
+        
+          <li class="panel cat" id="categoria-9">
+            <div class="cat__cabecera">
+              <div class="cat__orden" aria-label="Orden en el menú">
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="-1">
+                  <button type="submit" class="cat__flecha"  aria-label="Subir Shorts y bermudas en el menú" title="Subir en el menú">▲</button>
+                </form>
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="1">
+                  <button type="submit" class="cat__flecha"  aria-label="Bajar Shorts y bermudas en el menú" title="Bajar en el menú">▼</button>
+                </form>
+              </div>
+
+              <div class="cat__titulo">
+                <h2 class="cat__nombre">Shorts y bermudas</h2>
+                <p class="cat__datos">
+                  3 productos ·
+                  <a href="../categoria/shorts-y-bermudas.html" target="_blank" rel="noopener">/categoria/shorts-y-bermudas ↗</a>
+                </p>
+              </div>
+
+              <div class="cat__acciones">
+                <details class="cat__renombrar">
+                  <summary class="btn btn--linea btn--chico">Renombrar</summary>
+                  <form action="#" method="POST" class="cat-form cat-form--flotante" data-validar-nombre data-max="60">
+                    <label class="sr-only" for="renombrarCat9">Nuevo nombre</label>
+                    <input class="campo__control" type="text" id="renombrarCat9" name="nombre" value="Shorts y bermudas" maxlength="60" required>
+                    <button type="submit" class="btn btn--solido btn--chico">Guardar</button>
+                    <p class="cat-form__error" role="alert"></p>
+                  </form>
+                </details>
+
+                
+                  <button type="button" class="btn btn--linea btn--chico cat__borrar" disabled
+                          title="Tiene productos: pasalos a otra categoría para poder borrarla">Eliminar</button>
+                
+              </div>
+            </div>
+
+            <!-- Subcategorías -->
+            <div class="cat__subs">
+              <p class="cat__subtitulo">Subcategorías <small>(filtros de esta sección)</small></p>
+              
+                <p class="cat__vacio">Todavía no tiene. Agregá la primera abajo.</p>
+              
+
+              <form action="#" method="POST" class="cat-form cat-form--sub" data-validar-nombre data-max="40">
+                <label class="sr-only" for="nuevaSub9">Nueva subcategoría de Shorts y bermudas</label>
+                <input class="campo__control" type="text" id="nuevaSub9" name="nombre" maxlength="40" required
+                       placeholder="Nueva subcategoría de Shorts y bermudas" autocomplete="off">
+                <button type="submit" class="btn btn--linea btn--chico">+ Agregar</button>
+                <p class="cat-form__error" role="alert"></p>
+              </form>
+            </div>
+          </li>
+        
+          <li class="panel cat" id="categoria-10">
+            <div class="cat__cabecera">
+              <div class="cat__orden" aria-label="Orden en el menú">
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="-1">
+                  <button type="submit" class="cat__flecha"  aria-label="Subir Leggings / Calzas en el menú" title="Subir en el menú">▲</button>
+                </form>
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="1">
+                  <button type="submit" class="cat__flecha"  aria-label="Bajar Leggings / Calzas en el menú" title="Bajar en el menú">▼</button>
+                </form>
+              </div>
+
+              <div class="cat__titulo">
+                <h2 class="cat__nombre">Leggings / Calzas</h2>
+                <p class="cat__datos">
+                  0 productos ·
+                  <a href="../categoria/leggings-y-calzas.html" target="_blank" rel="noopener">/categoria/leggings-y-calzas ↗</a>
+                </p>
+              </div>
+
+              <div class="cat__acciones">
+                <details class="cat__renombrar">
+                  <summary class="btn btn--linea btn--chico">Renombrar</summary>
+                  <form action="#" method="POST" class="cat-form cat-form--flotante" data-validar-nombre data-max="60">
+                    <label class="sr-only" for="renombrarCat10">Nuevo nombre</label>
+                    <input class="campo__control" type="text" id="renombrarCat10" name="nombre" value="Leggings / Calzas" maxlength="60" required>
+                    <button type="submit" class="btn btn--solido btn--chico">Guardar</button>
+                    <p class="cat-form__error" role="alert"></p>
+                  </form>
+                </details>
+
+                
+                  <form action="#" method="POST"
+                        data-confirmar="Se va a borrar la categoría “Leggings / Calzas” y sus subcategorías. Deja de aparecer en el menú."
+                        data-confirmar-titulo="¿Eliminar categoría?">
+                    <button type="submit" class="btn btn--linea btn--chico cat__borrar">Eliminar</button>
+                  </form>
+                
+              </div>
+            </div>
+
+            <!-- Subcategorías -->
+            <div class="cat__subs">
+              <p class="cat__subtitulo">Subcategorías <small>(filtros de esta sección)</small></p>
+              
+                <p class="cat__vacio">Todavía no tiene. Agregá la primera abajo.</p>
+              
+
+              <form action="#" method="POST" class="cat-form cat-form--sub" data-validar-nombre data-max="40">
+                <label class="sr-only" for="nuevaSub10">Nueva subcategoría de Leggings / Calzas</label>
+                <input class="campo__control" type="text" id="nuevaSub10" name="nombre" maxlength="40" required
+                       placeholder="Nueva subcategoría de Leggings / Calzas" autocomplete="off">
+                <button type="submit" class="btn btn--linea btn--chico">+ Agregar</button>
+                <p class="cat-form__error" role="alert"></p>
+              </form>
+            </div>
+          </li>
+        
+          <li class="panel cat" id="categoria-11">
+            <div class="cat__cabecera">
+              <div class="cat__orden" aria-label="Orden en el menú">
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="-1">
+                  <button type="submit" class="cat__flecha"  aria-label="Subir Vestidos de día / Casuales en el menú" title="Subir en el menú">▲</button>
+                </form>
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="1">
+                  <button type="submit" class="cat__flecha"  aria-label="Bajar Vestidos de día / Casuales en el menú" title="Bajar en el menú">▼</button>
+                </form>
+              </div>
+
+              <div class="cat__titulo">
+                <h2 class="cat__nombre">Vestidos de día / Casuales</h2>
+                <p class="cat__datos">
+                  1 producto ·
+                  <a href="../categoria/vestidos-de-dia.html" target="_blank" rel="noopener">/categoria/vestidos-de-dia ↗</a>
+                </p>
+              </div>
+
+              <div class="cat__acciones">
+                <details class="cat__renombrar">
+                  <summary class="btn btn--linea btn--chico">Renombrar</summary>
+                  <form action="#" method="POST" class="cat-form cat-form--flotante" data-validar-nombre data-max="60">
+                    <label class="sr-only" for="renombrarCat11">Nuevo nombre</label>
+                    <input class="campo__control" type="text" id="renombrarCat11" name="nombre" value="Vestidos de día / Casuales" maxlength="60" required>
+                    <button type="submit" class="btn btn--solido btn--chico">Guardar</button>
+                    <p class="cat-form__error" role="alert"></p>
+                  </form>
+                </details>
+
+                
+                  <button type="button" class="btn btn--linea btn--chico cat__borrar" disabled
+                          title="Tiene productos: pasalos a otra categoría para poder borrarla">Eliminar</button>
+                
+              </div>
+            </div>
+
+            <!-- Subcategorías -->
+            <div class="cat__subs">
+              <p class="cat__subtitulo">Subcategorías <small>(filtros de esta sección)</small></p>
+              
+                <p class="cat__vacio">Todavía no tiene. Agregá la primera abajo.</p>
+              
+
+              <form action="#" method="POST" class="cat-form cat-form--sub" data-validar-nombre data-max="40">
+                <label class="sr-only" for="nuevaSub11">Nueva subcategoría de Vestidos de día / Casuales</label>
+                <input class="campo__control" type="text" id="nuevaSub11" name="nombre" maxlength="40" required
+                       placeholder="Nueva subcategoría de Vestidos de día / Casuales" autocomplete="off">
+                <button type="submit" class="btn btn--linea btn--chico">+ Agregar</button>
+                <p class="cat-form__error" role="alert"></p>
+              </form>
+            </div>
+          </li>
+        
+          <li class="panel cat" id="categoria-12">
+            <div class="cat__cabecera">
+              <div class="cat__orden" aria-label="Orden en el menú">
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="-1">
+                  <button type="submit" class="cat__flecha"  aria-label="Subir Vestidos de noche / Fiesta en el menú" title="Subir en el menú">▲</button>
+                </form>
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="1">
+                  <button type="submit" class="cat__flecha"  aria-label="Bajar Vestidos de noche / Fiesta en el menú" title="Bajar en el menú">▼</button>
+                </form>
+              </div>
+
+              <div class="cat__titulo">
+                <h2 class="cat__nombre">Vestidos de noche / Fiesta</h2>
+                <p class="cat__datos">
+                  2 productos ·
+                  <a href="../categoria/vestidos-de-noche.html" target="_blank" rel="noopener">/categoria/vestidos-de-noche ↗</a>
+                </p>
+              </div>
+
+              <div class="cat__acciones">
+                <details class="cat__renombrar">
+                  <summary class="btn btn--linea btn--chico">Renombrar</summary>
+                  <form action="#" method="POST" class="cat-form cat-form--flotante" data-validar-nombre data-max="60">
+                    <label class="sr-only" for="renombrarCat12">Nuevo nombre</label>
+                    <input class="campo__control" type="text" id="renombrarCat12" name="nombre" value="Vestidos de noche / Fiesta" maxlength="60" required>
+                    <button type="submit" class="btn btn--solido btn--chico">Guardar</button>
+                    <p class="cat-form__error" role="alert"></p>
+                  </form>
+                </details>
+
+                
+                  <button type="button" class="btn btn--linea btn--chico cat__borrar" disabled
+                          title="Tiene productos: pasalos a otra categoría para poder borrarla">Eliminar</button>
+                
+              </div>
+            </div>
+
+            <!-- Subcategorías -->
+            <div class="cat__subs">
+              <p class="cat__subtitulo">Subcategorías <small>(filtros de esta sección)</small></p>
+              
+                <p class="cat__vacio">Todavía no tiene. Agregá la primera abajo.</p>
+              
+
+              <form action="#" method="POST" class="cat-form cat-form--sub" data-validar-nombre data-max="40">
+                <label class="sr-only" for="nuevaSub12">Nueva subcategoría de Vestidos de noche / Fiesta</label>
+                <input class="campo__control" type="text" id="nuevaSub12" name="nombre" maxlength="40" required
+                       placeholder="Nueva subcategoría de Vestidos de noche / Fiesta" autocomplete="off">
+                <button type="submit" class="btn btn--linea btn--chico">+ Agregar</button>
+                <p class="cat-form__error" role="alert"></p>
+              </form>
+            </div>
+          </li>
+        
+          <li class="panel cat" id="categoria-13">
+            <div class="cat__cabecera">
+              <div class="cat__orden" aria-label="Orden en el menú">
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="-1">
+                  <button type="submit" class="cat__flecha"  aria-label="Subir Monos / Jumpsuits en el menú" title="Subir en el menú">▲</button>
+                </form>
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="1">
+                  <button type="submit" class="cat__flecha"  aria-label="Bajar Monos / Jumpsuits en el menú" title="Bajar en el menú">▼</button>
+                </form>
+              </div>
+
+              <div class="cat__titulo">
+                <h2 class="cat__nombre">Monos / Jumpsuits</h2>
+                <p class="cat__datos">
+                  0 productos ·
+                  <a href="../categoria/monos-y-jumpsuits.html" target="_blank" rel="noopener">/categoria/monos-y-jumpsuits ↗</a>
+                </p>
+              </div>
+
+              <div class="cat__acciones">
+                <details class="cat__renombrar">
+                  <summary class="btn btn--linea btn--chico">Renombrar</summary>
+                  <form action="#" method="POST" class="cat-form cat-form--flotante" data-validar-nombre data-max="60">
+                    <label class="sr-only" for="renombrarCat13">Nuevo nombre</label>
+                    <input class="campo__control" type="text" id="renombrarCat13" name="nombre" value="Monos / Jumpsuits" maxlength="60" required>
+                    <button type="submit" class="btn btn--solido btn--chico">Guardar</button>
+                    <p class="cat-form__error" role="alert"></p>
+                  </form>
+                </details>
+
+                
+                  <form action="#" method="POST"
+                        data-confirmar="Se va a borrar la categoría “Monos / Jumpsuits” y sus subcategorías. Deja de aparecer en el menú."
+                        data-confirmar-titulo="¿Eliminar categoría?">
+                    <button type="submit" class="btn btn--linea btn--chico cat__borrar">Eliminar</button>
+                  </form>
+                
+              </div>
+            </div>
+
+            <!-- Subcategorías -->
+            <div class="cat__subs">
+              <p class="cat__subtitulo">Subcategorías <small>(filtros de esta sección)</small></p>
+              
+                <p class="cat__vacio">Todavía no tiene. Agregá la primera abajo.</p>
+              
+
+              <form action="#" method="POST" class="cat-form cat-form--sub" data-validar-nombre data-max="40">
+                <label class="sr-only" for="nuevaSub13">Nueva subcategoría de Monos / Jumpsuits</label>
+                <input class="campo__control" type="text" id="nuevaSub13" name="nombre" maxlength="40" required
+                       placeholder="Nueva subcategoría de Monos / Jumpsuits" autocomplete="off">
+                <button type="submit" class="btn btn--linea btn--chico">+ Agregar</button>
+                <p class="cat-form__error" role="alert"></p>
+              </form>
+            </div>
+          </li>
+        
+          <li class="panel cat" id="categoria-14">
+            <div class="cat__cabecera">
+              <div class="cat__orden" aria-label="Orden en el menú">
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="-1">
+                  <button type="submit" class="cat__flecha"  aria-label="Subir Conjuntos y corpiños en el menú" title="Subir en el menú">▲</button>
+                </form>
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="1">
+                  <button type="submit" class="cat__flecha"  aria-label="Bajar Conjuntos y corpiños en el menú" title="Bajar en el menú">▼</button>
+                </form>
+              </div>
+
+              <div class="cat__titulo">
+                <h2 class="cat__nombre">Conjuntos y corpiños</h2>
+                <p class="cat__datos">
+                  0 productos ·
+                  <a href="../categoria/conjuntos-y-corpinos.html" target="_blank" rel="noopener">/categoria/conjuntos-y-corpinos ↗</a>
+                </p>
+              </div>
+
+              <div class="cat__acciones">
+                <details class="cat__renombrar">
+                  <summary class="btn btn--linea btn--chico">Renombrar</summary>
+                  <form action="#" method="POST" class="cat-form cat-form--flotante" data-validar-nombre data-max="60">
+                    <label class="sr-only" for="renombrarCat14">Nuevo nombre</label>
+                    <input class="campo__control" type="text" id="renombrarCat14" name="nombre" value="Conjuntos y corpiños" maxlength="60" required>
+                    <button type="submit" class="btn btn--solido btn--chico">Guardar</button>
+                    <p class="cat-form__error" role="alert"></p>
+                  </form>
+                </details>
+
+                
+                  <form action="#" method="POST"
+                        data-confirmar="Se va a borrar la categoría “Conjuntos y corpiños” y sus subcategorías. Deja de aparecer en el menú."
+                        data-confirmar-titulo="¿Eliminar categoría?">
+                    <button type="submit" class="btn btn--linea btn--chico cat__borrar">Eliminar</button>
+                  </form>
+                
+              </div>
+            </div>
+
+            <!-- Subcategorías -->
+            <div class="cat__subs">
+              <p class="cat__subtitulo">Subcategorías <small>(filtros de esta sección)</small></p>
+              
+                <p class="cat__vacio">Todavía no tiene. Agregá la primera abajo.</p>
+              
+
+              <form action="#" method="POST" class="cat-form cat-form--sub" data-validar-nombre data-max="40">
+                <label class="sr-only" for="nuevaSub14">Nueva subcategoría de Conjuntos y corpiños</label>
+                <input class="campo__control" type="text" id="nuevaSub14" name="nombre" maxlength="40" required
+                       placeholder="Nueva subcategoría de Conjuntos y corpiños" autocomplete="off">
+                <button type="submit" class="btn btn--linea btn--chico">+ Agregar</button>
+                <p class="cat-form__error" role="alert"></p>
+              </form>
+            </div>
+          </li>
+        
+          <li class="panel cat" id="categoria-15">
+            <div class="cat__cabecera">
+              <div class="cat__orden" aria-label="Orden en el menú">
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="-1">
+                  <button type="submit" class="cat__flecha"  aria-label="Subir Pijamas y camisones en el menú" title="Subir en el menú">▲</button>
+                </form>
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="1">
+                  <button type="submit" class="cat__flecha"  aria-label="Bajar Pijamas y camisones en el menú" title="Bajar en el menú">▼</button>
+                </form>
+              </div>
+
+              <div class="cat__titulo">
+                <h2 class="cat__nombre">Pijamas y camisones</h2>
+                <p class="cat__datos">
+                  0 productos ·
+                  <a href="../categoria/pijamas-y-camisones.html" target="_blank" rel="noopener">/categoria/pijamas-y-camisones ↗</a>
+                </p>
+              </div>
+
+              <div class="cat__acciones">
+                <details class="cat__renombrar">
+                  <summary class="btn btn--linea btn--chico">Renombrar</summary>
+                  <form action="#" method="POST" class="cat-form cat-form--flotante" data-validar-nombre data-max="60">
+                    <label class="sr-only" for="renombrarCat15">Nuevo nombre</label>
+                    <input class="campo__control" type="text" id="renombrarCat15" name="nombre" value="Pijamas y camisones" maxlength="60" required>
+                    <button type="submit" class="btn btn--solido btn--chico">Guardar</button>
+                    <p class="cat-form__error" role="alert"></p>
+                  </form>
+                </details>
+
+                
+                  <form action="#" method="POST"
+                        data-confirmar="Se va a borrar la categoría “Pijamas y camisones” y sus subcategorías. Deja de aparecer en el menú."
+                        data-confirmar-titulo="¿Eliminar categoría?">
+                    <button type="submit" class="btn btn--linea btn--chico cat__borrar">Eliminar</button>
+                  </form>
+                
+              </div>
+            </div>
+
+            <!-- Subcategorías -->
+            <div class="cat__subs">
+              <p class="cat__subtitulo">Subcategorías <small>(filtros de esta sección)</small></p>
+              
+                <p class="cat__vacio">Todavía no tiene. Agregá la primera abajo.</p>
+              
+
+              <form action="#" method="POST" class="cat-form cat-form--sub" data-validar-nombre data-max="40">
+                <label class="sr-only" for="nuevaSub15">Nueva subcategoría de Pijamas y camisones</label>
+                <input class="campo__control" type="text" id="nuevaSub15" name="nombre" maxlength="40" required
+                       placeholder="Nueva subcategoría de Pijamas y camisones" autocomplete="off">
+                <button type="submit" class="btn btn--linea btn--chico">+ Agregar</button>
+                <p class="cat-form__error" role="alert"></p>
+              </form>
+            </div>
+          </li>
+        
+          <li class="panel cat" id="categoria-16">
+            <div class="cat__cabecera">
+              <div class="cat__orden" aria-label="Orden en el menú">
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="-1">
+                  <button type="submit" class="cat__flecha"  aria-label="Subir Ropa térmica en el menú" title="Subir en el menú">▲</button>
+                </form>
+                <form action="#" method="POST">
+                  <input type="hidden" name="direccion" value="1">
+                  <button type="submit" class="cat__flecha" disabled aria-label="Bajar Ropa térmica en el menú" title="Bajar en el menú">▼</button>
+                </form>
+              </div>
+
+              <div class="cat__titulo">
+                <h2 class="cat__nombre">Ropa térmica</h2>
+                <p class="cat__datos">
+                  0 productos ·
+                  <a href="../categoria/ropa-termica.html" target="_blank" rel="noopener">/categoria/ropa-termica ↗</a>
+                </p>
+              </div>
+
+              <div class="cat__acciones">
+                <details class="cat__renombrar">
+                  <summary class="btn btn--linea btn--chico">Renombrar</summary>
+                  <form action="#" method="POST" class="cat-form cat-form--flotante" data-validar-nombre data-max="60">
+                    <label class="sr-only" for="renombrarCat16">Nuevo nombre</label>
+                    <input class="campo__control" type="text" id="renombrarCat16" name="nombre" value="Ropa térmica" maxlength="60" required>
+                    <button type="submit" class="btn btn--solido btn--chico">Guardar</button>
+                    <p class="cat-form__error" role="alert"></p>
+                  </form>
+                </details>
+
+                
+                  <form action="#" method="POST"
+                        data-confirmar="Se va a borrar la categoría “Ropa térmica” y sus subcategorías. Deja de aparecer en el menú."
+                        data-confirmar-titulo="¿Eliminar categoría?">
+                    <button type="submit" class="btn btn--linea btn--chico cat__borrar">Eliminar</button>
+                  </form>
+                
+              </div>
+            </div>
+
+            <!-- Subcategorías -->
+            <div class="cat__subs">
+              <p class="cat__subtitulo">Subcategorías <small>(filtros de esta sección)</small></p>
+              
+                <p class="cat__vacio">Todavía no tiene. Agregá la primera abajo.</p>
+              
+
+              <form action="#" method="POST" class="cat-form cat-form--sub" data-validar-nombre data-max="40">
+                <label class="sr-only" for="nuevaSub16">Nueva subcategoría de Ropa térmica</label>
+                <input class="campo__control" type="text" id="nuevaSub16" name="nombre" maxlength="40" required
+                       placeholder="Nueva subcategoría de Ropa térmica" autocomplete="off">
+                <button type="submit" class="btn btn--linea btn--chico">+ Agregar</button>
+                <p class="cat-form__error" role="alert"></p>
+              </form>
+            </div>
+          </li>
+        
+      </ol>
+
+    </main>
+  </div>
+</div>
+
+<!-- Modal de confirmación (lo usa admin.js con data-confirmar) -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitulo" hidden>
+  <div class="modal__caja">
+    <p class="modal__titulo" id="modalTitulo">¿Confirmás?</p>
+    <p class="modal__texto" id="modalTexto"></p>
+    <div class="modal__acciones">
+      <button type="button" class="btn btn--linea" id="modalCancelar">Cancelar</button>
+      <button type="button" class="btn btn--solido" id="modalAceptar">Eliminar</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+
+
+
+<script src="../js/admin.js"></script>
+
+<div class="notif-avisos" id="notifAvisos" aria-live="polite" aria-atomic="false"></div>
+<script src="../js/notificaciones.js"></script>
+
+
+<script src="../js/admin-categorias.js"></script>
+</body>
+</html>

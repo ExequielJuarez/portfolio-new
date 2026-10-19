@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><script>(function(){var t;function toast(){var d=document.getElementById('__demo_toast');if(!d){d=document.createElement('div');d.id='__demo_toast';d.style.cssText='position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#0b1128;color:#fff;font:600 14px/1.4 system-ui,sans-serif;padding:12px 18px;border-radius:12px;border:1px solid #6366f1;box-shadow:0 10px 30px rgba(0,0,0,.4);z-index:2147483647;max-width:90vw;text-align:center;transition:opacity .3s';d.textContent='Vista de demostración: esta acción no está disponible acá';document.body.appendChild(d)}d.style.opacity=1;clearTimeout(t);t=setTimeout(function(){d.style.opacity=0},2200)}
+document.addEventListener('submit',function(e){e.preventDefault();e.stopImmediatePropagation();toast()},true);
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-demo-off]');if(a){e.preventDefault();toast()}},true);
+window.EventSource=function(){return {close:function(){},addEventListener:function(){},onmessage:null,onerror:null}};var f=window.fetch;window.fetch=function(u,i){var m=((i&&i.method)||(u&&u.method)||'GET').toUpperCase();if(m==='GET')return f.apply(this,arguments);toast();return Promise.reject(new Error('demo'))};
+var o=XMLHttpRequest.prototype.open;XMLHttpRequest.prototype.open=function(m,u){if(m&&m.toUpperCase()!=='GET'){toast()}return o.apply(this,arguments)}})();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos | Matilda Boutique</title>
+  <meta name="description" content="Matilda Boutique: moda femenina con detalles que se notan. Remeras, abrigos, jeans y más, con envíos a todo el país.">
+  <meta name="theme-color" content="#f8f4ee">
+  <link rel="icon" href="../img/marca/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="../img/marca/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400;1,6..96,500&family=Jost:wght@300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/base.css">
+  
+  
+    <link rel="stylesheet" href="../css/notificaciones.css">
+  
+  
+    <link rel="stylesheet" href="../css/admin.css">
+  
+    <link rel="stylesheet" href="../css/admin-productos.css">
+  
+</head>
+<body>
+
+
+
+
+<div class="admin">
+  <!-- ═════════════ MENÚ LATERAL ═════════════ -->
+  <aside class="admin-lateral" id="adminLateral" aria-label="Menú del panel">
+    <div class="admin-lateral__marca">
+      <img class="admin-lateral__logo" src="../img/marca/logo-claro.png" alt="Matilda boutique">
+      <span class="admin-lateral__etiqueta">Admin</span>
+    </div>
+
+    <nav class="admin-nav">
+      
+        <a href="../admin.html" class="admin-nav__link " >
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 13h6V4H4zM14 20h6v-9h-6zM4 20h6v-4H4zM14 7h6V4h-6z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          <span>Panel</span>
+          
+        </a>
+      
+        <a href="productos.html" class="admin-nav__link activo" aria-current="page">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 8l8-4 8 4-8 4-8-4zM4 8v8l8 4 8-4V8M12 12v8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          <span>Productos</span>
+          
+            <span class="admin-nav__badge " data-badge="productos">29</span>
+          
+        </a>
+      
+        <a href="pedidos.html" class="admin-nav__link " >
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2zM9 8h6M9 12h6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/></svg>
+          <span>Pedidos</span>
+          
+            <span class="admin-nav__badge admin-nav__badge--fuerte" data-badge="pedidos">4</span>
+          
+        </a>
+      
+      <a href="../index.html" class="admin-nav__link admin-nav__link--tienda">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 10l1.5-5h13L20 10M4 10v10h16V10M4 10h16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        <span>Ver tienda</span>
+        <span aria-hidden="true">↗</span>
+      </a>
+    </nav>
+
+    <div class="admin-usuario">
+      <span class="admin-usuario__inicial">A</span>
+      <span class="admin-usuario__datos">
+        <strong>Admin Tienda</strong>
+        <small>admin@tienda.com</small>
+      </span>
+      <form action="#" method="POST">
+        <button type="submit" class="admin-usuario__salir" aria-label="Cerrar sesión" title="Cerrar sesión">
+          <svg viewBox="0 0 24 24" width="18" height="18"><path d="M14 4h5v16h-5M10 8l-4 4 4 4M6 12h10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </form>
+    </div>
+  </aside>
+
+  <div class="admin-overlay" id="adminOverlay"></div>
+
+  <div class="admin-cuerpo">
+    <!-- Barra superior (celular / tablet) -->
+    <header class="admin-barra">
+      <button class="admin-barra__menu" id="adminMenuBtn" aria-label="Abrir menú" aria-controls="adminLateral" aria-expanded="false">
+        <span></span>
+      </button>
+      <img class="admin-lateral__logo" src="../img/marca/logo-claro.png" alt="Matilda boutique">
+      <div class="admin-barra__acciones">
+        
+<div class="notif" id="notif">
+  <button type="button" class="icono-btn notif__btn" id="notifBtn" aria-label="Notificaciones" aria-expanded="false" aria-controls="notifPanel">
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 16V11a6 6 0 0112 0v5l1.5 2h-15L6 16z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M10 20.5a2 2 0 004 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <span class="notif__contador" id="notifContador" hidden>0</span>
+  </button>
+
+  <div class="notif__panel" id="notifPanel" role="dialog" aria-label="Notificaciones" hidden>
+    <div class="notif__cabecera">
+      <p class="notif__titulo">Notificaciones</p>
+      <button type="button" class="notif__leer" id="notifLeerTodas">Marcar todas como leídas</button>
+    </div>
+    <ul class="notif__lista" id="notifLista">
+      <li class="notif__vacio">Cargando…</li>
+    </ul>
+    <div class="notif__pie">
+      <a href="pedidos.html" class="notif__link">Ver pedidos →</a>
+      <button type="button" class="notif__opcion" id="notifSonido" aria-pressed="true">Sonido: sí</button>
+      <button type="button" class="notif__opcion" id="notifNavegador" hidden>Avisos del navegador</button>
+    </div>
+  </div>
+</div>
+
+        <span class="admin-usuario__inicial">A</span>
+      </div>
+    </header>
+
+    <main class="admin-main">
+
+
+
+
+      <div class="admin-cabecera">
+        <div>
+          <p class="admin-cabecera__migas"><a href="../admin.html">Panel</a> / Productos</p>
+          <h1 class="admin-cabecera__titulo">Productos</h1>
+          <p class="admin-cabecera__bajada">
+            29 en catálogo · <strong id="unidadesTotales">410</strong> unidades en stock ·
+            valor al costo <strong id="valorStock">$8,6 M</strong>
+          </p>
+        </div>
+        <div class="admin-cabecera__acciones">
+          <a href="productos/nuevo.html" class="btn btn--solido btn--chico">+ Nuevo producto</a>
+        </div>
+      </div>
+
+      <!-- Filtros (funcionan sin JS: es un formulario GET) -->
+      <form class="filtros-admin" id="filtrosProductos" action="productos.html" method="GET" role="search">
+        <label class="filtros-admin__buscar">
+          <span class="sr-only">Buscar producto</span>
+          <svg viewBox="0 0 24 24" width="16" height="16"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <input class="campo__control" type="search" name="q" value="" placeholder="Buscar por nombre o código">
+        </label>
+        <select class="campo__control" name="categoria" aria-label="Categoría">
+          <option value="">Todas las categorías</option>
+          
+            <option value="Remeras" >Remeras</option>
+          
+            <option value="Abrigos" >Abrigos</option>
+          
+            <option value="Jeans y pantalones" >Jeans y pantalones</option>
+          
+            <option value="Vestidos" >Vestidos</option>
+          
+            <option value="Accesorios" >Accesorios</option>
+          
+            <option value="Conjuntos" >Conjuntos</option>
+          
+        </select>
+        <select class="campo__control" name="stock" aria-label="Stock">
+          <option value="">Todo el stock</option>
+          <option value="bajo" >Stock bajo (≤ 5)</option>
+          <option value="sin" >Sin stock</option>
+        </select>
+        <select class="campo__control" name="orden" aria-label="Ordenar">
+          <option value="nombre" selected>Nombre A–Z</option>
+          <option value="precio-desc" >Mayor precio</option>
+          <option value="margen-desc" >Mayor margen</option>
+          <option value="stock-asc" >Menos stock</option>
+        </select>
+        <noscript><button class="btn btn--solido btn--chico" type="submit">Filtrar</button></noscript>
+      </form>
+
+      
+
+      
+        <div class="panel panel--tabla">
+          <table class="tabla tabla--productos">
+            <thead>
+              <tr>
+                <th>Producto</th>
+                <th class="num">Precio</th>
+                <th class="num">Costo</th>
+                <th class="num">Margen</th>
+                <th>Stock</th>
+                <th><span class="sr-only">Acciones</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              
+                <tr data-id="23">
+                  <td data-label="Producto">
+                    <a href="productos/23.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/accesorios/aro1a.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Aros Argolla Plata 925 con Estrella</strong>
+                        <small>#0023 · Accesorios</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$14.900,00</td>
+                  <td class="num" data-label="Costo">$6.000,00</td>
+                  <td class="num" data-label="Margen">
+                    <span class="margen">59,7%</span>
+                    <small class="margen__monto">$9 mil c/u</small>
+                  </td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="23">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="25" min="0" inputmode="numeric" aria-label="Stock de Aros Argolla Plata 925 con Estrella">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--ok" data-stock-tag>OK</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/23.html" class="accion" title="Ver" aria-label="Ver Aros Argolla Plata 925 con Estrella">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Aros Argolla Plata 925 con Estrella">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Aros Argolla Plata 925 con Estrella” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Aros Argolla Plata 925 con Estrella">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="5">
+                  <td data-label="Producto">
+                    <a href="productos/5.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/remeras/remera5a.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Camisa Bordada Blanca</strong>
+                        <small>#0005 · Remeras</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$32.900,00</td>
+                  <td class="num" data-label="Costo">$15.500,00</td>
+                  <td class="num" data-label="Margen">
+                    <span class="margen">52,9%</span>
+                    <small class="margen__monto">$17 mil c/u</small>
+                  </td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="5">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="9" min="0" inputmode="numeric" aria-label="Stock de Camisa Bordada Blanca">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--ok" data-stock-tag>OK</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/5.html" class="accion" title="Ver" aria-label="Ver Camisa Bordada Blanca">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Camisa Bordada Blanca">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Camisa Bordada Blanca” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Camisa Bordada Blanca">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="10">
+                  <td data-label="Producto">
+                    <a href="productos/10.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/abrigos/abrigo3a.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Campera Biker Chocolate</strong>
+                        <small>#0010 · Abrigos</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$92.000,00</td>
+                  <td class="num" data-label="Costo">$50.000,00</td>
+                  <td class="num" data-label="Margen">
+                    <span class="margen">45,7%</span>
+                    <small class="margen__monto">$42 mil c/u</small>
+                  </td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="10">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="6" min="0" inputmode="numeric" aria-label="Stock de Campera Biker Chocolate">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--ok" data-stock-tag>OK</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/10.html" class="accion" title="Ver" aria-label="Ver Campera Biker Chocolate">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Campera Biker Chocolate">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Campera Biker Chocolate” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Campera Biker Chocolate">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="8">
+                  <td data-label="Producto">
+                    <a href="productos/8.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/abrigos/abrigo1a.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Campera Cuero Eco Bordó</strong>
+                        <small>#0008 · Abrigos</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$89.000,00</td>
+                  <td class="num" data-label="Costo">$48.000,00</td>
+                  <td class="num" data-label="Margen">
+                    <span class="margen">46,1%</span>
+                    <small class="margen__monto">$41 mil c/u</small>
+                  </td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="8">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="8" min="0" inputmode="numeric" aria-label="Stock de Campera Cuero Eco Bordó">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--ok" data-stock-tag>OK</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/8.html" class="accion" title="Ver" aria-label="Ver Campera Cuero Eco Bordó">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Campera Cuero Eco Bordó">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Campera Cuero Eco Bordó” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Campera Cuero Eco Bordó">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="9">
+                  <td data-label="Producto">
+                    <a href="productos/9.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/abrigos/abrigo2a.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Campera Gamuzada Marrón</strong>
+                        <small>#0009 · Abrigos</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$78.000,00</td>
+                  <td class="num" data-label="Costo">$41.000,00</td>
+                  <td class="num" data-label="Margen">
+                    <span class="margen">47,4%</span>
+                    <small class="margen__monto">$37 mil c/u</small>
+                  </td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="9">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="11" min="0" inputmode="numeric" aria-label="Stock de Campera Gamuzada Marrón">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--ok" data-stock-tag>OK</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/9.html" class="accion" title="Ver" aria-label="Ver Campera Gamuzada Marrón">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Campera Gamuzada Marrón">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Campera Gamuzada Marrón” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Campera Gamuzada Marrón">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="12">
+                  <td data-label="Producto">
+                    <a href="productos/12.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/abrigos/abrigo4b.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Campera Jean Celeste</strong>
+                        <small>#0012 · Abrigos</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$54.000,00</td>
+                  <td class="num" data-label="Costo">$27.000,00</td>
+                  <td class="num" data-label="Margen">
+                    <span class="margen">50%</span>
+                    <small class="margen__monto">$27 mil c/u</small>
+                  </td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="12">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="15" min="0" inputmode="numeric" aria-label="Stock de Campera Jean Celeste">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--ok" data-stock-tag>OK</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/12.html" class="accion" title="Ver" aria-label="Ver Campera Jean Celeste">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Campera Jean Celeste">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Campera Jean Celeste” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Campera Jean Celeste">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="11">
+                  <td data-label="Producto">
+                    <a href="productos/11.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/abrigos/abrigo4a.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Campera Jean Vintage</strong>
+                        <small>#0011 · Abrigos</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$54.000,00</td>
+                  <td class="num" data-label="Costo">$27.000,00</td>
+                  <td class="num" data-label="Margen">
+                    <span class="margen">50%</span>
+                    <small class="margen__monto">$27 mil c/u</small>
+                  </td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="11">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="13" min="0" inputmode="numeric" aria-label="Stock de Campera Jean Vintage">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--ok" data-stock-tag>OK</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/11.html" class="accion" title="Ver" aria-label="Ver Campera Jean Vintage">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Campera Jean Vintage">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Campera Jean Vintage” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Campera Jean Vintage">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="3">
+                  <td data-label="Producto">
+                    <a href="productos/3.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/remeras/remera3a.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Chaleco Rayado con Botones</strong>
+                        <small>#0003 · Remeras</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$24.900,00</td>
+                  <td class="num" data-label="Costo">$11.500,00</td>
+                  <td class="num" data-label="Margen">
+                    <span class="margen">53,8%</span>
+                    <small class="margen__monto">$13 mil c/u</small>
+                  </td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="3">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="14" min="0" inputmode="numeric" aria-label="Stock de Chaleco Rayado con Botones">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--ok" data-stock-tag>OK</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/3.html" class="accion" title="Ver" aria-label="Ver Chaleco Rayado con Botones">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Chaleco Rayado con Botones">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Chaleco Rayado con Botones” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Chaleco Rayado con Botones">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="25">
+                  <td data-label="Producto">
+                    <a href="productos/25.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/outifits/outfit2.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Conjunto Blusa Blanca y Mini Arena</strong>
+                        <small>#0025 · Conjuntos</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$58.900,00</td>
+                  <td class="num" data-label="Costo">$29.000,00</td>
+                  <td class="num" data-label="Margen">
+                    <span class="margen">50,8%</span>
+                    <small class="margen__monto">$30 mil c/u</small>
+                  </td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="25">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="10" min="0" inputmode="numeric" aria-label="Stock de Conjunto Blusa Blanca y Mini Arena">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--ok" data-stock-tag>OK</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/25.html" class="accion" title="Ver" aria-label="Ver Conjunto Blusa Blanca y Mini Arena">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Conjunto Blusa Blanca y Mini Arena">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Conjunto Blusa Blanca y Mini Arena” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Conjunto Blusa Blanca y Mini Arena">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="26">
+                  <td data-label="Producto">
+                    <a href="productos/26.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/outifits/outfit1.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Conjunto Camisa y Short Marrón</strong>
+                        <small>#0026 · Conjuntos</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$54.900,00</td>
+                  <td class="num" data-label="Costo">$27.000,00</td>
+                  <td class="num" data-label="Margen">
+                    <span class="margen">50,8%</span>
+                    <small class="margen__monto">$28 mil c/u</small>
+                  </td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="26">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="8" min="0" inputmode="numeric" aria-label="Stock de Conjunto Camisa y Short Marrón">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--ok" data-stock-tag>OK</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/26.html" class="accion" title="Ver" aria-label="Ver Conjunto Camisa y Short Marrón">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Conjunto Camisa y Short Marrón">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Conjunto Camisa y Short Marrón” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Conjunto Camisa y Short Marrón">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="28">
+                  <td data-label="Producto">
+                    <a href="productos/28.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/outifits/outfit4.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Conjunto Chaleco y Pollera Larga</strong>
+                        <small>#0028 · Conjuntos</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$62.900,00</td>
+                  <td class="num" data-label="Costo">$31.000,00</td>
+                  <td class="num" data-label="Margen">
+                    <span class="margen">50,7%</span>
+                    <small class="margen__monto">$32 mil c/u</small>
+                  </td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="28">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="7" min="0" inputmode="numeric" aria-label="Stock de Conjunto Chaleco y Pollera Larga">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--ok" data-stock-tag>OK</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/28.html" class="accion" title="Ver" aria-label="Ver Conjunto Chaleco y Pollera Larga">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Conjunto Chaleco y Pollera Larga">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Conjunto Chaleco y Pollera Larga” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Conjunto Chaleco y Pollera Larga">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="27">
+                  <td data-label="Producto">
+                    <a href="productos/27.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/outifits/outfit3.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Conjunto Top Amarillo y Short Arena</strong>
+                        <small>#0027 · Conjuntos</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$52.900,00</td>
+                  <td class="num" data-label="Costo">$26.000,00</td>
+                  <td class="num" data-label="Margen">
+                    <span class="margen">50,9%</span>
+                    <small class="margen__monto">$27 mil c/u</small>
+                  </td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="27">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="9" min="0" inputmode="numeric" aria-label="Stock de Conjunto Top Amarillo y Short Arena">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--ok" data-stock-tag>OK</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/27.html" class="accion" title="Ver" aria-label="Ver Conjunto Top Amarillo y Short Arena">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Conjunto Top Amarillo y Short Arena">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Conjunto Top Amarillo y Short Arena” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Conjunto Top Amarillo y Short Arena">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="19">
+                  <td data-label="Producto">
+                    <a href="productos/19.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/pantalones/jean1a.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Jean Azul Oscuro Acampanado</strong>
+                        <small>#0019 · Jeans y pantalones</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$49.900,00</td>
+                  <td class="num" data-label="Costo">$24.000,00</td>
+                  <td class="num" data-label="Margen">
+                    <span class="margen">51,9%</span>
+                    <small class="margen__monto">$26 mil c/u</small>
+                  </td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="19">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="16" min="0" inputmode="numeric" aria-label="Stock de Jean Azul Oscuro Acampanado">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--ok" data-stock-tag>OK</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/19.html" class="accion" title="Ver" aria-label="Ver Jean Azul Oscuro Acampanado">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Jean Azul Oscuro Acampanado">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Jean Azul Oscuro Acampanado” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Jean Azul Oscuro Acampanado">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="20">
+                  <td data-label="Producto">
+                    <a href="productos/20.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/pantalones/pantalon2a.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Jean Recto Tiro Alto Celeste</strong>
+                        <small>#0020 · Jeans y pantalones</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$49.900,00</td>
+                  <td class="num" data-label="Costo">$24.000,00</td>
+                  <td class="num" data-label="Margen">
+                    <span class="margen">51,9%</span>
+                    <small class="margen__monto">$26 mil c/u</small>
+                  </td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="20">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="20" min="0" inputmode="numeric" aria-label="Stock de Jean Recto Tiro Alto Celeste">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--ok" data-stock-tag>OK</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/20.html" class="accion" title="Ver" aria-label="Ver Jean Recto Tiro Alto Celeste">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Jean Recto Tiro Alto Celeste">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Jean Recto Tiro Alto Celeste” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Jean Recto Tiro Alto Celeste">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="21">
+                  <td data-label="Producto">
+                    <a href="productos/21.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/pantalones/pantalon3a.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Jean Wide Leg Azul</strong>
+                        <small>#0021 · Jeans y pantalones</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$51.900,00</td>
+                  <td class="num" data-label="Costo">$25.000,00</td>
+                  <td class="num" data-label="Margen">
+                    <span class="margen">51,8%</span>
+                    <small class="margen__monto">$27 mil c/u</small>
+                  </td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="21">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="14" min="0" inputmode="numeric" aria-label="Stock de Jean Wide Leg Azul">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--ok" data-stock-tag>OK</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/21.html" class="accion" title="Ver" aria-label="Ver Jean Wide Leg Azul">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Jean Wide Leg Azul">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Jean Wide Leg Azul” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Jean Wide Leg Azul">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="22">
+                  <td data-label="Producto">
+                    <a href="productos/22.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/pantalones/pantalon4a.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Pantalón Sastrero Marrón</strong>
+                        <small>#0022 · Jeans y pantalones</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$46.900,00</td>
+                  <td class="num" data-label="Costo">$22.500,00</td>
+                  <td class="num" data-label="Margen">
+                    <span class="margen">52%</span>
+                    <small class="margen__monto">$24 mil c/u</small>
+                  </td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="22">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="12" min="0" inputmode="numeric" aria-label="Stock de Pantalón Sastrero Marrón">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--ok" data-stock-tag>OK</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/22.html" class="accion" title="Ver" aria-label="Ver Pantalón Sastrero Marrón">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Pantalón Sastrero Marrón">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Pantalón Sastrero Marrón” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Pantalón Sastrero Marrón">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="24">
+                  <td data-label="Producto">
+                    <a href="productos/24.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/accesorios/pulsera1a.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Pulseras Rígidas Plata y Rosé</strong>
+                        <small>#0024 · Accesorios</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$12.900,00</td>
+                  <td class="num" data-label="Costo">$5.000,00</td>
+                  <td class="num" data-label="Margen">
+                    <span class="margen">61,2%</span>
+                    <small class="margen__monto">$8 mil c/u</small>
+                  </td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="24">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="0" min="0" inputmode="numeric" aria-label="Stock de Pulseras Rígidas Plata y Rosé">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--sin" data-stock-tag>Sin stock</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/24.html" class="accion" title="Ver" aria-label="Ver Pulseras Rígidas Plata y Rosé">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Pulseras Rígidas Plata y Rosé">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Pulseras Rígidas Plata y Rosé” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Pulseras Rígidas Plata y Rosé">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="7">
+                  <td data-label="Producto">
+                    <a href="productos/7.html" class="producto-celda">
+                      <span class="mini"><img src="../img/catalogo/remera-paris-blanca.webp" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Remera Paris Queens Blanca</strong>
+                        <small>#0007 · Remeras</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$25.000,00</td>
+                  <td class="num" data-label="Costo">$12.500,00</td>
+                  <td class="num" data-label="Margen">
+                    <span class="margen">50%</span>
+                    <small class="margen__monto">$13 mil c/u</small>
+                  </td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="7">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="40" min="0" inputmode="numeric" aria-label="Stock de Remera Paris Queens Blanca">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--ok" data-stock-tag>OK</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/7.html" class="accion" title="Ver" aria-label="Ver Remera Paris Queens Blanca">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Remera Paris Queens Blanca">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Remera Paris Queens Blanca” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Remera Paris Queens Blanca">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="6">
+                  <td data-label="Producto">
+                    <a href="productos/6.html" class="producto-celda">
+                      <span class="mini"><img src="../img/catalogo/remera-paris-negra.webp" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Remera Paris Queens Negra</strong>
+                        <small>#0006 · Remeras</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$25.000,00</td>
+                  <td class="num" data-label="Costo">$12.500,00</td>
+                  <td class="num" data-label="Margen">
+                    <span class="margen">50%</span>
+                    <small class="margen__monto">$13 mil c/u</small>
+                  </td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="6">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="34" min="0" inputmode="numeric" aria-label="Stock de Remera Paris Queens Negra">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--ok" data-stock-tag>OK</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/6.html" class="accion" title="Ver" aria-label="Ver Remera Paris Queens Negra">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Remera Paris Queens Negra">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Remera Paris Queens Negra” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Remera Paris Queens Negra">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="4">
+                  <td data-label="Producto">
+                    <a href="productos/4.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/remeras/remera4.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Remera Roma Blanca</strong>
+                        <small>#0004 · Remeras</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$19.500,00</td>
+                  <td class="num" data-label="Costo">$9.000,00</td>
+                  <td class="num" data-label="Margen">
+                    <span class="margen">53,8%</span>
+                    <small class="margen__monto">$11 mil c/u</small>
+                  </td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="4">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="18" min="0" inputmode="numeric" aria-label="Stock de Remera Roma Blanca">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--ok" data-stock-tag>OK</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/4.html" class="accion" title="Ver" aria-label="Ver Remera Roma Blanca">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Remera Roma Blanca">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Remera Roma Blanca” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Remera Roma Blanca">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="2">
+                  <td data-label="Producto">
+                    <a href="productos/2.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/remeras/remera2a.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Remera The Beach Club Blanca</strong>
+                        <small>#0002 · Remeras</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$19.500,00</td>
+                  <td class="num" data-label="Costo">$9.000,00</td>
+                  <td class="num" data-label="Margen">
+                    <span class="margen">53,8%</span>
+                    <small class="margen__monto">$11 mil c/u</small>
+                  </td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="2">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="30" min="0" inputmode="numeric" aria-label="Stock de Remera The Beach Club Blanca">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--ok" data-stock-tag>OK</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/2.html" class="accion" title="Ver" aria-label="Ver Remera The Beach Club Blanca">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="productos/2/editar.html" class="accion" title="Editar" aria-label="Editar Remera The Beach Club Blanca">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Remera The Beach Club Blanca” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Remera The Beach Club Blanca">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="1">
+                  <td data-label="Producto">
+                    <a href="productos/1.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/remeras/remera1a.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Remera Wanderlust Crema</strong>
+                        <small>#0001 · Remeras</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$19.500,00</td>
+                  <td class="num" data-label="Costo">$9.000,00</td>
+                  <td class="num" data-label="Margen">
+                    <span class="margen">53,8%</span>
+                    <small class="margen__monto">$11 mil c/u</small>
+                  </td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="1">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="24" min="0" inputmode="numeric" aria-label="Stock de Remera Wanderlust Crema">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--ok" data-stock-tag>OK</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/1.html" class="accion" title="Ver" aria-label="Ver Remera Wanderlust Crema">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="productos/1/editar.html" class="accion" title="Editar" aria-label="Editar Remera Wanderlust Crema">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Remera Wanderlust Crema” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Remera Wanderlust Crema">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="29">
+                  <td data-label="Producto">
+                    <a href="productos/29.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/abrigos/outfits1a.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Saco Camel con Top y Short Cuero</strong>
+                        <small>#0029 · Conjuntos</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$69.900,00</td>
+                  <td class="num" data-label="Costo">$34.000,00</td>
+                  <td class="num" data-label="Margen">
+                    <span class="margen">51,4%</span>
+                    <small class="margen__monto">$36 mil c/u</small>
+                  </td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="29">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="6" min="0" inputmode="numeric" aria-label="Stock de Saco Camel con Top y Short Cuero">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--ok" data-stock-tag>OK</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/29.html" class="accion" title="Ver" aria-label="Ver Saco Camel con Top y Short Cuero">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Saco Camel con Top y Short Cuero">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Saco Camel con Top y Short Cuero” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Saco Camel con Top y Short Cuero">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="13">
+                  <td data-label="Producto">
+                    <a href="productos/13.html" class="producto-celda">
+                      <span class="mini"><img src="../img/catalogo/tapado-camel.webp" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Tapado Largo Camel</strong>
+                        <small>#0013 · Abrigos</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$119.000,00</td>
+                  <td class="num" data-label="Costo">$62.000,00</td>
+                  <td class="num" data-label="Margen">
+                    <span class="margen">47,9%</span>
+                    <small class="margen__monto">$57 mil c/u</small>
+                  </td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="13">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="18" min="0" inputmode="numeric" aria-label="Stock de Tapado Largo Camel">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--ok" data-stock-tag>OK</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/13.html" class="accion" title="Ver" aria-label="Ver Tapado Largo Camel">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Tapado Largo Camel">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Tapado Largo Camel” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Tapado Largo Camel">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="15">
+                  <td data-label="Producto">
+                    <a href="productos/15.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/vestidos/vestido2.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Vestido Blanco Mangas Globo</strong>
+                        <small>#0015 · Vestidos</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$39.900,00</td>
+                  <td class="num" data-label="Costo">$19.000,00</td>
+                  <td class="num" data-label="Margen">
+                    <span class="margen">52,4%</span>
+                    <small class="margen__monto">$21 mil c/u</small>
+                  </td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="15">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="10" min="0" inputmode="numeric" aria-label="Stock de Vestido Blanco Mangas Globo">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--ok" data-stock-tag>OK</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/15.html" class="accion" title="Ver" aria-label="Ver Vestido Blanco Mangas Globo">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Vestido Blanco Mangas Globo">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Vestido Blanco Mangas Globo” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Vestido Blanco Mangas Globo">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="14">
+                  <td data-label="Producto">
+                    <a href="productos/14.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/vestidos/vestido1a.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Vestido Corto Crudo Breteles</strong>
+                        <small>#0014 · Vestidos</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$36.900,00</td>
+                  <td class="num" data-label="Costo">$17.500,00</td>
+                  <td class="num" data-label="Margen">
+                    <span class="margen">52,6%</span>
+                    <small class="margen__monto">$19 mil c/u</small>
+                  </td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="14">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="12" min="0" inputmode="numeric" aria-label="Stock de Vestido Corto Crudo Breteles">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--ok" data-stock-tag>OK</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/14.html" class="accion" title="Ver" aria-label="Ver Vestido Corto Crudo Breteles">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Vestido Corto Crudo Breteles">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Vestido Corto Crudo Breteles” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Vestido Corto Crudo Breteles">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="16">
+                  <td data-label="Producto">
+                    <a href="productos/16.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/vestidos/vestido3a.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Vestido Halter Crudo</strong>
+                        <small>#0016 · Vestidos</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$37.900,00</td>
+                  <td class="num" data-label="Costo">$18.000,00</td>
+                  <td class="num" data-label="Margen">
+                    <span class="margen">52,5%</span>
+                    <small class="margen__monto">$20 mil c/u</small>
+                  </td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="16">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="9" min="0" inputmode="numeric" aria-label="Stock de Vestido Halter Crudo">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--ok" data-stock-tag>OK</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/16.html" class="accion" title="Ver" aria-label="Ver Vestido Halter Crudo">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Vestido Halter Crudo">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Vestido Halter Crudo” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Vestido Halter Crudo">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="17">
+                  <td data-label="Producto">
+                    <a href="productos/17.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/vestidos/vestido4a.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Vestido Largo Floral Blanco</strong>
+                        <small>#0017 · Vestidos</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$52.900,00</td>
+                  <td class="num" data-label="Costo">$26.000,00</td>
+                  <td class="num" data-label="Margen">
+                    <span class="margen">50,9%</span>
+                    <small class="margen__monto">$27 mil c/u</small>
+                  </td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="17">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="7" min="0" inputmode="numeric" aria-label="Stock de Vestido Largo Floral Blanco">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--ok" data-stock-tag>OK</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/17.html" class="accion" title="Ver" aria-label="Ver Vestido Largo Floral Blanco">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Vestido Largo Floral Blanco">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Vestido Largo Floral Blanco” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Vestido Largo Floral Blanco">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+                <tr data-id="18">
+                  <td data-label="Producto">
+                    <a href="productos/18.html" class="producto-celda">
+                      <span class="mini"><img src="../img/productos/vestidos/vestido5a.jpg" alt=""></span>
+                      <span class="producto-celda__texto">
+                        <strong>Vestido Largo Terracota Estampado</strong>
+                        <small>#0018 · Vestidos</small>
+                      </span>
+                    </a>
+                  </td>
+                  <td class="num" data-label="Precio">$54.900,00</td>
+                  <td class="num" data-label="Costo">$27.500,00</td>
+                  <td class="num" data-label="Margen">
+                    <span class="margen">49,9%</span>
+                    <small class="margen__monto">$27 mil c/u</small>
+                  </td>
+                  <td data-label="Stock">
+                    <div class="stock-ajuste" data-stock-id="18">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="-1" aria-label="Restar 1 de stock">−</button>
+                      <input type="number" class="stock-ajuste__input" value="5" min="0" inputmode="numeric" aria-label="Stock de Vestido Largo Terracota Estampado">
+                      <button type="button" class="stock-ajuste__btn" data-cambio="1" aria-label="Sumar 1 de stock">+</button>
+                    </div>
+                    <span class="stock-tag stock-tag--bajo" data-stock-tag>Bajo</span>
+                  </td>
+                  <td class="acciones">
+                    <a href="productos/18.html" class="accion" title="Ver" aria-label="Ver Vestido Largo Terracota Estampado">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </a>
+                    <a href="#" data-demo-off class="accion" title="Editar" aria-label="Editar Vestido Largo Terracota Estampado">
+                      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M4 20h4L19 9l-4-4L4 16v4zM13 7l4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </a>
+                    <form action="#" method="POST"
+                          data-confirmar="Se va a borrar “Vestido Largo Terracota Estampado” del catálogo. Esta acción no se puede deshacer."
+                          data-confirmar-titulo="¿Eliminar producto?">
+                      <button type="submit" class="accion accion--borrar" title="Eliminar" aria-label="Eliminar Vestido Largo Terracota Estampado">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      
+
+    </main>
+  </div>
+</div>
+
+<!-- Modal de confirmación (lo usa admin.js con data-confirmar) -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitulo" hidden>
+  <div class="modal__caja">
+    <p class="modal__titulo" id="modalTitulo">¿Confirmás?</p>
+    <p class="modal__texto" id="modalTexto"></p>
+    <div class="modal__acciones">
+      <button type="button" class="btn btn--linea" id="modalCancelar">Cancelar</button>
+      <button type="button" class="btn btn--solido" id="modalAceptar">Eliminar</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+
+
+
+<script src="../js/admin.js"></script>
+
+<div class="notif-avisos" id="notifAvisos" aria-live="polite" aria-atomic="false"></div>
+<script src="../js/notificaciones.js"></script>
+
+
+<script src="../js/admin-productos.js"></script>
+</body>
+</html>

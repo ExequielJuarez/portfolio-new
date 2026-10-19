@@ -216,3 +216,11 @@ main,.footer{position:relative;z-index:1}
 .hero .grad{background-size:200% 100%;animation:shine 6s ease-in-out infinite alternate}
 @keyframes shine{to{background-position:100% 0}}
 @media (max-width:760px){.floor{height:34%;background-size:44px 44px}}
+
+.badges{display:flex;flex-wrap:wrap;gap:6px}
+.badge--admin{color:#c4b5fd;background:rgba(99,102,241,.14);border-color:rgba(99,102,241,.4)}
+.viewer__mode{display:flex;flex:none;border:1px solid var(--line);border-radius:9px;overflow:hidden}
+.viewer__mode[hidden]{display:none}
+.viewer__top .viewer__mode button{width:auto;height:34px;padding:0 14px;border:0;border-radius:0;font:600 .82rem Inter,sans-serif;color:var(--muted)}
+.viewer__top .viewer__mode button.on{background:var(--grad) border-box;color:#fff}
+@media (max-width:640px){.viewer__top .viewer__mode button{padding:0 9px;font-size:.74rem}}

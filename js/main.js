@@ -31,18 +31,18 @@ const PROJECTS = [
 
 // Copia navegable de cada proyecto (carpeta demos/)
 const DEMOS = {
-  "santiago-mates.webp": "demos/santiago-mates/index.html",
-  "matilda-boutique.webp": "demos/matilda-boutique/index.html",
-  "akualoe-chic.webp": "demos/akualoe-chic/index.html",
-  "huella-negra.webp": "demos/huella-negra/index.html",
-  "sistema-negocio.webp": "demos/sistema-negocio/index.html",
-  "jb-sushi.webp": "demos/jb-sushi/index.html",
-  "sora-sushi.webp": "demos/sora-sushi/index.html",
-  "street-burger.webp": "demos/street-burger/index.html",
-  "landing-dentista.webp": "demos/landings/dentista/index.html",
-  "landing-abogado.webp": "demos/landings/abogado/index.html",
-  "landing-veterinario.webp": "demos/landings/veterinario/index.html",
-  "landing-medico.webp": "demos/landings/medico/index.html",
+  "santiago-mates.webp": { u: "demos/santiago-mates/index.html", a: "demos/santiago-mates/admin.html" },
+  "matilda-boutique.webp": { u: "demos/matilda-boutique/index.html", a: "demos/matilda-boutique/admin.html" },
+  "akualoe-chic.webp": { u: "demos/akualoe-chic/index.html", a: "demos/akualoe-chic/admin.html" },
+  "huella-negra.webp": { u: "demos/huella-negra/index.html", a: "demos/huella-negra/admin.html" },
+  "sistema-negocio.webp": { u: "demos/sistema-negocio/index.html" },
+  "jb-sushi.webp": { u: "demos/jb-sushi/index.html" },
+  "sora-sushi.webp": { u: "demos/sora-sushi/index.html" },
+  "street-burger.webp": { u: "demos/street-burger/index.html", a: "demos/street-burger/admin/index.html" },
+  "landing-dentista.webp": { u: "demos/landings/dentista/index.html" },
+  "landing-abogado.webp": { u: "demos/landings/abogado/index.html" },
+  "landing-veterinario.webp": { u: "demos/landings/veterinario/index.html" },
+  "landing-medico.webp": { u: "demos/landings/medico/index.html" },
 };
 
 const $ = (s) => document.querySelector(s);
@@ -58,7 +58,7 @@ $("#tech").innerHTML = TECH.map(([n, r, c]) => `
 // Proyectos
 $("#projects").innerHTML = PROJECTS.map((p) => `
   <article class="card proj reveal" data-cat="${p.c}">
-    <div class="shot" style="--p1:${p.p[0]};--p2:${p.p[1]}" data-demo="${DEMOS[p.img]}" data-title="${esc(p.t)}" role="button" tabindex="0" aria-label="Ver demo de ${esc(p.t)}">
+    <div class="shot" style="--p1:${p.p[0]};--p2:${p.p[1]}" data-demo="${DEMOS[p.img].u}" data-admin="${DEMOS[p.img].a || ""}" data-title="${esc(p.t)}" role="button" tabindex="0" aria-label="Ver demo de ${esc(p.t)}">
       <div class="mock" aria-hidden="true">
         <div class="mock__bar"><i></i><i></i><i></i></div>
         <div class="mock__body"><div class="mock__hero"></div><div class="mock__row" style="--n:${p.n}"><b></b><b></b><b></b><b></b></div><div class="mock__line"></div></div>
@@ -66,11 +66,11 @@ $("#projects").innerHTML = PROJECTS.map((p) => `
       <img src="assets/projects/${p.img}" alt="Captura del proyecto ${esc(p.t)}" loading="lazy">
     </div>
     <div class="proj__body">
-      <span class="badge">${p.c}</span>
+      <div class="badges"><span class="badge">${p.c}</span>${DEMOS[p.img].a ? '<span class="badge badge--admin">+ Panel admin</span>' : ""}</div>
       <h3>${esc(p.t)}</h3>
       <p>${esc(p.d)}</p>
       <div class="tags">${p.s.map((x) => `<span>${esc(x)}</span>`).join("")}</div>
-      <button class="btn btn--primary demo-btn" data-demo="${DEMOS[p.img]}" data-title="${esc(p.t)}">Ver demo en vivo →</button>
+      <button class="btn btn--primary demo-btn" data-demo="${DEMOS[p.img].u}" data-admin="${DEMOS[p.img].a || ""}" data-title="${esc(p.t)}">Ver demo en vivo →</button>
     </div>
   </article>`).join("");
 
@@ -105,8 +105,10 @@ $("#year").textContent = new Date().getFullYear();
 // Visor de demos: navegás el proyecto dentro del portfolio
 const viewer = $("#viewer"), frame = $("#vframe"), stage = $("#vstage"), bar = $("#vurl");
 let lastFocus = null;
-const openDemo = (url, title) => {
+const openDemo = (url, title, admin) => {
   lastFocus = document.activeElement;
+  viewer.dataset.site = url; viewer.dataset.admin = admin || "";
+  $("#vmode").hidden = !admin; setMode("site");
   $("#vtitle").textContent = title;
   frame.src = url;
   bar.textContent = url.replace(/^demos\//, "").replace(/index\.html$/, "");
@@ -115,6 +117,9 @@ const openDemo = (url, title) => {
   document.body.classList.add("noscroll");
   if (window.veltaBg) window.veltaBg.pause(true);
   $("#vclose").focus();
+};
+const setMode = (m) => {
+  document.querySelectorAll("#vmode button").forEach((b) => b.classList.toggle("on", b.dataset.m === m));
 };
 const closeDemo = () => {
   viewer.hidden = true;
@@ -129,7 +134,7 @@ const setDevice = (d) => {
 };
 document.addEventListener("click", (e) => {
   const t = e.target.closest("[data-demo]");
-  if (t) openDemo(t.dataset.demo, t.dataset.title);
+  if (t) openDemo(t.dataset.demo, t.dataset.title, t.dataset.admin);
 });
 document.addEventListener("keydown", (e) => {
   if (viewer.hidden) return;
@@ -139,7 +144,7 @@ document.addEventListener("keydown", (e) => {
 });
 document.addEventListener("keydown", (e) => {
   const t = e.target.closest && e.target.closest(".shot[data-demo]");
-  if (viewer.hidden && t && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); openDemo(t.dataset.demo, t.dataset.title); }
+  if (viewer.hidden && t && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); openDemo(t.dataset.demo, t.dataset.title, t.dataset.admin); }
 });
 $("#vclose").addEventListener("click", closeDemo);
 viewer.addEventListener("click", (e) => { if (e.target === viewer) closeDemo(); });
@@ -188,3 +193,13 @@ document.addEventListener("pointermove", (e) => {
     setTimeout(tick, 22);
   }, 600);
 })();
+
+$("#vmode").addEventListener("click", (e) => {
+  const b = e.target.closest("button");
+  if (!b) return;
+  const url = b.dataset.m === "admin" ? viewer.dataset.admin : viewer.dataset.site;
+  if (!url) return;
+  setMode(b.dataset.m);
+  frame.src = url;
+  bar.textContent = url.replace(/^demos\//, "").replace(/index\.html$/, "");
+});
