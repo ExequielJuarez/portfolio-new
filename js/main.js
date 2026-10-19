@@ -10,8 +10,6 @@ const TECH = [
   ["Next.js", "Fullstack", "#ffffff"],
   ["HTML5", "Estructura", "#e44d26"],
   ["CSS3", "Diseño adaptativo", "#2965f1"],
-  ["Mercado Pago", "Pagos", "#00b1ea"],
-  ["Git & GitHub", "Versionado", "#f05133"],
 ];
 
 // Proyectos (capturas reales en assets/projects/)
@@ -110,7 +108,6 @@ let lastFocus = null;
 const openDemo = (url, title) => {
   lastFocus = document.activeElement;
   $("#vtitle").textContent = title;
-  $("#vnew").href = url;
   frame.src = url;
   bar.textContent = url.replace(/^demos\//, "").replace(/index\.html$/, "");
   setDevice("desktop");
@@ -153,6 +150,5 @@ frame.addEventListener("load", () => {
   try {
     const p = frame.contentWindow.location.pathname;
     if (p !== "/blank") bar.textContent = decodeURIComponent(p).replace(/^.*\/demos\//, "").replace(/index\.html$/, "");
-    $("#vnew").href = frame.contentWindow.location.href;
   } catch (_) {}
 });
