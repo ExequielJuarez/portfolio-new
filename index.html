@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <canvas id="bg" aria-hidden="true"></canvas>
+  <div id="progress" aria-hidden="true"></div>
   <header class="nav" id="nav">
     <div class="container nav__inner">
       <a href="#inicio" class="brand" aria-label="Velta Web"><img src="assets/logo.png" alt="Velta Web" height="54"></a>
@@ -31,6 +33,7 @@
   <main>
     <section class="hero" id="inicio">
       <div class="glow glow--a"></div><div class="glow glow--b"></div>
+      <div class="floor" aria-hidden="true"></div>
       <div class="container hero__grid">
         <div class="hero__text">
           <span class="pill"><i></i> Agencia de desarrollo web</span>
@@ -67,6 +70,7 @@
 
     <section class="section" id="servicios">
       <div class="container">
+        <span class="eyebrow">01 · servicios</span>
         <h2>Nuestros servicios</h2>
         <p class="sub">Todo lo que tu empresa necesita para brillar online</p>
         <div class="grid grid--4">
@@ -80,6 +84,7 @@
 
     <section class="section section--alt" id="tecnologias">
       <div class="container">
+        <span class="eyebrow">02 · stack</span>
         <h2>Tecnologías que usamos</h2>
         <p class="sub">Un stack moderno, mantenible y listo para escalar</p>
         <div class="tech" id="tech"></div>
@@ -88,6 +93,7 @@
 
     <section class="section" id="proyectos">
       <div class="container">
+        <span class="eyebrow">03 · proyectos</span>
         <h2>Proyectos</h2>
         <p class="sub">Tocá un proyecto para navegarlo como si fuera el sitio real</p>
         <div class="filters" id="filters" role="tablist" aria-label="Filtrar proyectos"></div>
@@ -97,6 +103,7 @@
 
     <section class="section section--alt" id="planes">
       <div class="container">
+        <span class="eyebrow">04 · planes</span>
         <h2>Planes</h2>
         <p class="sub">Elegí el punto de partida; después lo ajustamos a tu negocio</p>
         <div class="grid grid--3">
@@ -148,6 +155,7 @@
     </div>
   </div>
 
+  <script src="js/bg.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

@@ -113,10 +113,12 @@ const openDemo = (url, title) => {
   setDevice("desktop");
   viewer.hidden = false;
   document.body.classList.add("noscroll");
+  if (window.veltaBg) window.veltaBg.pause(true);
   $("#vclose").focus();
 };
 const closeDemo = () => {
   viewer.hidden = true;
+  if (window.veltaBg) window.veltaBg.pause(false);
   frame.src = "about:blank";
   document.body.classList.remove("noscroll");
   if (lastFocus) lastFocus.focus();
@@ -155,3 +157,34 @@ frame.addEventListener("load", () => {
 
 // Si una captura no existe, se queda la maqueta de color (sin handlers inline por la CSP)
 document.querySelectorAll(".shot img").forEach((img) => img.addEventListener("error", () => img.remove()));
+
+// Barra de progreso de scroll
+const prog = $("#progress");
+const updProg = () => { const m = document.documentElement.scrollHeight - innerHeight; prog.style.width = (m > 0 ? (scrollY / m) * 100 : 0) + "%"; };
+addEventListener("scroll", updProg, { passive: true }); updProg();
+
+// Brillo que sigue al mouse en las tarjetas
+document.addEventListener("pointermove", (e) => {
+  const c = e.target.closest && e.target.closest(".card");
+  if (!c) return;
+  const r = c.getBoundingClientRect();
+  c.style.setProperty("--mx", e.clientX - r.left + "px");
+  c.style.setProperty("--my", e.clientY - r.top + "px");
+}, { passive: true });
+
+// Efecto de tipeo en la ventana de código
+(() => {
+  const el = document.querySelector(".code pre code");
+  if (!el || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const pre = el.parentElement; pre.style.minHeight = pre.offsetHeight + "px";
+  const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT), nodes = [];
+  while (walker.nextNode()) nodes.push(walker.currentNode);
+  const full = nodes.map((n) => n.textContent); nodes.forEach((n) => (n.textContent = ""));
+  let ni = 0, ci = 0;
+  setTimeout(function tick() {
+    if (ni >= nodes.length) return;
+    ci += 2; nodes[ni].textContent = full[ni].slice(0, ci);
+    if (ci >= full[ni].length) { ni++; ci = 0; }
+    setTimeout(tick, 22);
+  }, 600);
+})();
