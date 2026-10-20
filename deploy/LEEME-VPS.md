@@ -41,10 +41,18 @@ Lo que hace esa configuración:
 - Límite de pedidos y conexiones por IP, y timeouts cortos contra ataques lentos.
 - Cabeceras de seguridad: CSP, HSTS, anti-clickjacking, nosniff, etc. Las demos solo se pueden enmarcar desde tu propio sitio y no pueden enviar formularios.
 
+## 2b. Ya con HTTPS: actualizar nginx sin romper el certificado
+`deploy/nginx.conf` ya viene listo para `veltaweb.com.ar` con HTTPS, redirección de `http` a `https`, de `www` a la dirección sin `www`, y las rutas permitidas (incluidas las páginas de servicio y el sitemap). Después de emitir el certificado con certbot, se aplica con:
+```bash
+cd /root/portfolio-new && git pull && ./deploy/aplicar-nginx.sh
+```
+El script hace copia de seguridad en `/root/nginx-backup-...`, valida la configuración y, si algo falla, vuelve a la anterior.
+
 ## 3. Subir el sitio
 ```bash
 ./deploy/publicar.sh deploy@IP-DEL-VPS
 ```
+Si publicás desde la propia VPS (clonando el repositorio), usá el `rsync` local que figura en la conversación de despliegue; la lista de archivos permitidos es la misma: `index.html`, `css/`, `js/`, `assets/`, `demos/`, las 4 carpetas de servicios, `robots.txt` y `sitemap.xml`.
 El script copia solo los archivos del sitio, con permisos de solo lectura.
 
 ## 4. Contra caídas por ataques de tráfico (DDoS)
@@ -57,3 +65,10 @@ Un firewall en la VPS no alcanza contra un ataque grande. Lo más efectivo y gra
 
 ## 6. Limpieza recomendada del repositorio
 `src/`, `package.json`, `package-lock.json` y `.sequelizerc` son restos de un backend que este portfolio no usa y no se publican. Podés borrarlos del repo para evitar confusiones. Si algún día los usás, nunca subas un `.env` al repositorio.
+
+## 7. Posicionamiento (SEO) después de publicar
+1. **Google Search Console** (search.google.com/search-console): agregá la propiedad `https://veltaweb.com.ar` (por prefijo de URL), verificala y enviá `https://veltaweb.com.ar/sitemap.xml`. Pedí la indexación de la página principal.
+2. **Ficha de empresa en Google (Business Profile)**: es lo que más ayuda para búsquedas locales como "páginas web Santiago del Estero". Creá la ficha con el nombre "Velta Web", la categoría de diseño o desarrollo web, y el enlace a la web.
+3. **Instagram:** poné `https://veltaweb.com.ar` como enlace en la biografía de @velta.web.
+4. **Enlaces y reseñas:** los enlaces desde otros sitios y las reseñas reales de clientes son lo que más sube posiciones a largo plazo.
+5. Cuando tengas número de WhatsApp: editá `WA_NUMBER` en `js/contact.js` y los botones pasan a abrir WhatsApp con el mensaje ya escrito.

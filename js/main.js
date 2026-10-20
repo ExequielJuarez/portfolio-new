@@ -51,7 +51,7 @@ const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">"
 // Tecnologías
 $("#tech").innerHTML = TECH.map(([n, r, c]) => `
   <div class="chip reveal" style="--c:${c}">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="${c}" opacity=".18"/><text x="12" y="16" text-anchor="middle" font-size="10" font-weight="800" fill="${c}" font-family="Inter,sans-serif">${esc(n.slice(0, 2))}</text></svg>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="${c}" opacity=".18"/><text x="12" y="16" text-anchor="middle" font-size="10" font-weight="800" fill="${c}" font-family="Karla,sans-serif">${esc(n.slice(0, 2))}</text></svg>
     <div>${esc(n)}<small>${esc(r)}</small></div>
   </div>`).join("");
 
@@ -110,6 +110,7 @@ const openDemo = (url, title, admin) => {
   viewer.dataset.site = url; viewer.dataset.admin = admin || "";
   $("#vmode").hidden = !admin; setMode("site");
   $("#vtitle").textContent = title;
+  $("#vquiero").dataset.msg = `Hola Velta Web, vi el proyecto «${title}» en su portfolio y me gustaría algo similar para mi negocio. ¿Podemos conversar?`;
   frame.src = url;
   bar.textContent = url.replace(/^demos\//, "").replace(/index\.html$/, "");
   setDevice("desktop");
