@@ -59,13 +59,51 @@
     });
   }
 
+  // Ventana con el mensaje: Instagram no deja prellenar el texto, así que se muestra, se copia y se abre el chat
+  let modal, lastFocus;
+  function buildModal() {
+    modal = document.createElement("div");
+    modal.id = "cmodal"; modal.className = "cmodal"; modal.hidden = true;
+    modal.setAttribute("role", "dialog"); modal.setAttribute("aria-modal", "true"); modal.setAttribute("aria-labelledby", "cm-title");
+    modal.innerHTML = `<div class="cmodal__box">
+      <button class="cmodal__x" type="button" aria-label="Cerrar"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      <h3 id="cm-title">Tu mensaje para Velta Web</h3>
+      <p class="cmodal__hint">Revisalo o editalo. Al tocar el botón lo copiamos y abrimos nuestro Instagram: solo tenés que <b>pegarlo en el chat</b> y enviarlo.</p>
+      <textarea id="cm-msg" rows="4" aria-label="Mensaje"></textarea>
+      <div class="cmodal__btns">
+        <a id="cm-go" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Copiar y abrir Instagram</a>
+        <button id="cm-copy" class="btn btn--ghost" type="button">Solo copiar</button>
+      </div>
+      <p class="cmodal__ok" id="cm-ok" role="status" hidden>Mensaje copiado. Pegalo en el chat de Instagram y envialo.</p>
+    </div>`;
+    document.body.appendChild(modal);
+    const ta = modal.querySelector("#cm-msg"), ok = modal.querySelector("#cm-ok");
+    const done = () => { ok.hidden = false; };
+    modal.querySelector("#cm-go").addEventListener("click", () => { copy(ta.value).then(done, done); });
+    modal.querySelector("#cm-copy").addEventListener("click", () => { copy(ta.value).then(done, () => { ta.select(); }); });
+    modal.querySelector(".cmodal__x").addEventListener("click", closeModal);
+    modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener("keydown", (e) => { if (!modal.hidden && e.key === "Escape") { e.stopPropagation(); closeModal(); } }, true);
+  }
+  function openModal(msg) {
+    if (!modal) buildModal();
+    lastFocus = document.activeElement;
+    modal.querySelector("#cm-msg").value = msg;
+    modal.querySelector("#cm-go").href = contactUrl(msg);
+    modal.querySelector("#cm-ok").hidden = true;
+    modal.hidden = false;
+    modal.querySelector("#cm-go").focus();
+  }
+  function closeModal() { modal.hidden = true; if (lastFocus && lastFocus.focus) lastFocus.focus(); }
+
   // Cualquier elemento con data-contact="landing|ecommerce|web|sistema|general|project" (+ data-msg opcional)
   document.addEventListener("click", (e) => {
     const a = e.target.closest("[data-contact]");
     if (!a) return;
     const msg = a.dataset.msg || message(a.dataset.contact);
-    a.href = contactUrl(msg); a.target = "_blank"; a.rel = "noopener noreferrer";
-    if (!WA_NUMBER) copy(msg).then(() => toast("Copiamos tu mensaje: pegalo en el chat de Instagram y envialo."), () => {});
+    if (WA_NUMBER) { a.href = contactUrl(msg); a.target = "_blank"; a.rel = "noopener noreferrer"; return; } // WhatsApp sí admite el texto en el link
+    e.preventDefault();
+    openModal(msg);
   });
   document.addEventListener("click", (e) => {
     const b = e.target.closest(".cur-toggle button");
