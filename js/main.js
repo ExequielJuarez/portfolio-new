@@ -112,10 +112,12 @@ const openDemo = (url, title, admin) => {
   setDevice("desktop");
   viewer.hidden = false;
   document.body.classList.add("noscroll");
+  if (window.veltaBg) window.veltaBg.pause(true);
   $("#vclose").focus();
 };
 const closeDemo = () => {
   viewer.hidden = true; frame.src = "about:blank";
+  if (window.veltaBg) window.veltaBg.pause(false);
   document.body.classList.remove("noscroll");
   if (lastFocus) lastFocus.focus();
 };
@@ -148,3 +150,20 @@ frame.addEventListener("load", () => {
     if (p !== "/blank" && p !== "blank") bar.textContent = label(decodeURIComponent(p));
   } catch (_) {}
 });
+
+// ---- Efecto de tipeo en la ventana de código (una sola animación protagonista en el inicio) ----
+(() => {
+  const el = $(".code code");
+  if (!el || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const pre = el.parentElement; pre.style.minHeight = pre.offsetHeight + "px";
+  const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT), nodes = [];
+  while (walker.nextNode()) if (walker.currentNode.parentElement !== el) nodes.push(walker.currentNode);
+  const full = nodes.map((n) => n.textContent); nodes.forEach((n) => (n.textContent = ""));
+  let ni = 0, ci = 0;
+  setTimeout(function tick() {
+    if (ni >= nodes.length) return;
+    ci += 2; nodes[ni].textContent = full[ni].slice(0, ci);
+    if (ci >= full[ni].length) { ni++; ci = 0; }
+    setTimeout(tick, 22);
+  }, 500);
+})();

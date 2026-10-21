@@ -26,7 +26,7 @@
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="preload" href="/assets/fonts/fraunces-900.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/karla-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/css/style.css?v=20261021c">
+  <link rel="stylesheet" href="/css/style.css?v=20261021e">
   <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": ["ProfessionalService", "LocalBusiness"], "@id": "https://veltaweb.com.ar/#org", "name": "Velta Web", "alternateName": ["Velta", "VeltaWeb"], "url": "https://veltaweb.com.ar/", "logo": {"@type": "ImageObject", "url": "https://veltaweb.com.ar/assets/icon-512.png"}, "image": "https://veltaweb.com.ar/assets/og.png", "description": "Diseño y desarrollo de páginas web, landing pages, tiendas online (e-commerce) y sistemas a medida en Santiago del Estero y toda Argentina.", "address": {"@type": "PostalAddress", "addressLocality": "Santiago del Estero", "addressRegion": "Santiago del Estero", "addressCountry": "AR"}, "areaServed": [{"@type": "State", "name": "Santiago del Estero"}, {"@type": "Country", "name": "Argentina"}], "knowsLanguage": "es", "sameAs": ["https://www.instagram.com/velta.web/"], "priceRange": "$$"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://veltaweb.com.ar/"}, {"@type": "ListItem", "position": 2, "name": "Landing pages", "item": "https://veltaweb.com.ar/landing-pages/"}]}, {"@type": "Service", "@id": "https://veltaweb.com.ar/landing-pages/#service", "name": "Landing pages", "description": "Landing pages rápidas, adaptables y orientadas a conseguir consultas. Desde US$150 o $200.000 ARS. Velta Web, desarrollo web en Santiago del Estero.", "provider": {"@id": "https://veltaweb.com.ar/#org"}, "areaServed": [{"@type": "Country", "name": "Argentina"}], "url": "https://veltaweb.com.ar/landing-pages/", "offers": [{"@type": "Offer", "price": 200000, "priceCurrency": "ARS", "eligibleRegion": "AR", "priceSpecification": {"@type": "PriceSpecification", "price": 200000, "priceCurrency": "ARS", "minPrice": 200000}}, {"@type": "Offer", "price": 150, "priceCurrency": "USD", "priceSpecification": {"@type": "PriceSpecification", "price": 150, "priceCurrency": "USD", "minPrice": 150}}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cuánto cuesta una landing page?", "acceptedAnswer": {"@type": "Answer", "text": "Desde $200.000 ARS (US$150). El valor final depende del contenido y de las funciones que necesites."}}, {"@type": "Question", "name": "¿En cuánto tiempo está lista?", "acceptedAnswer": {"@type": "Answer", "text": "Es el proyecto más rápido de armar. El plazo depende del contenido que tengas preparado y te lo confirmamos en la propuesta."}}, {"@type": "Question", "name": "¿Puedo pasar después a una web completa?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, una landing puede crecer hacia un sitio de varias secciones o una tienda online."}}]}]}</script>
 </head>
 <body>
@@ -35,6 +35,7 @@
 <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".7" fill="currentColor"/></symbol>
 </defs></svg>
   <div class="backdrop" aria-hidden="true"></div>
+  <canvas id="bg" aria-hidden="true"></canvas>
   <header class="nav nav--simple scrolled">
     <div class="container nav__inner">
       <a href="/" class="brand" aria-label="Velta Web, inicio"><img src="/assets/logo.png" alt="Velta Web" width="148" height="50"></a>
@@ -48,7 +49,7 @@
     <section class="page-hero">
       <div class="container">
         <nav class="breadcrumb" aria-label="Ruta"><a href="/">Inicio</a> / <span>Landing pages</span></nav>
-        <h1>Landing pages que <span class="mark mark--wrap">convierten visitas en clientes</span></h1>
+        <h1>Landing pages que <span class="grad">convierten visitas en clientes</span></h1>
         <p class="lead">Una landing page es una página enfocada en una sola acción: que te escriban, te llamen o compren. Rápida, clara y pensada para convertir.</p>
         <div class="actions"><a href="https://ig.me/m/velta.web" target="_blank" rel="noopener noreferrer" data-contact="landing" class="btn btn--primary">Quiero mi landing <svg class="ico-svg" aria-hidden="true"><use href="#i-arrow"/></svg></a><a href="/#proyectos" class="btn btn--ghost">Ver ejemplos</a></div>
       </div>
@@ -90,6 +91,7 @@
       <div class="footer__legal"><span>© 2026 Velta Web</span><span>veltaweb.com.ar</span></div>
     </div>
   </footer>
-  <script src="/js/contact.js?v=20261021c"></script>
+  <script src="/js/contact.js?v=20261021e"></script>
+  <script src="/js/bg.js?v=20261021e"></script>
 </body>
 </html>

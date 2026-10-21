@@ -1,12 +1,12 @@
 import sys,json,os; sys.path.insert(0,os.path.dirname(os.path.abspath(__file__))); from seo_data import *
-V="20261021c"
+V="20261021e"
 IGA='href="https://ig.me/m/velta.web" target="_blank" rel="noopener noreferrer"'
 IGSVG='<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".6" fill="currentColor"/></svg>'
 PAGES=[
 dict(slug="paginas-web-santiago-del-estero",key="web",name="Páginas web",
  title="Páginas web en Santiago del Estero | Velta Web",
  desc="Diseño de páginas web profesionales en Santiago del Estero: rápidas, responsive y optimizadas para Google. Pedí tu presupuesto con Velta Web.",
- h1="Páginas web en <span class=\"mark mark--wrap\">Santiago del Estero</span>",
+ h1="Páginas web en <span class=\"grad\">Santiago del Estero</span>",
  lead="Diseñamos y desarrollamos páginas web profesionales para comercios, profesionales y empresas de Santiago del Estero y de toda Argentina.",
  prose=[("Una web que te encuentren y te elijan","Tener una página web propia te permite mostrar tus servicios las 24 horas, generar confianza y aparecer cuando tus clientes buscan en Google. Desde Santiago del Estero trabajamos con negocios de la capital, La Banda, Termas de Río Hondo y el interior de la provincia, y también de forma remota con clientes de otras provincias."),
         ("Rápidas, adaptables y pensadas para Google","Cada sitio se desarrolla a medida, sin plantillas genéricas, con carga veloz, diseño responsive para celulares, tablets y computadoras, y una estructura preparada para posicionarse en los buscadores.")],
@@ -18,7 +18,7 @@ dict(slug="paginas-web-santiago-del-estero",key="web",name="Páginas web",
 dict(slug="tiendas-online-ecommerce",key="ecommerce",name="Tiendas online",
  title="Tiendas online y e-commerce en Argentina | Velta Web",
  desc="Creamos tiendas online a medida con carrito, pagos integrados y panel de administración. Desde US$300 o $400.000 ARS. Velta Web, Santiago del Estero.",
- h1="Tiendas online y <span class=\"mark mark--wrap\">e&#8209;commerce en Argentina</span>",
+ h1="Tiendas online y <span class=\"grad\">e&#8209;commerce en Argentina</span>",
  lead="Creamos tiendas online a medida para que vendas tus productos a todo el país y al exterior, con carrito, favoritos, pagos integrados y un panel para administrar todo.",
  prose=[("Vendé las 24 horas","Una tienda online te permite recibir pedidos en cualquier momento, ordenar tu catálogo y llevar el control de tus ventas desde un panel de administración simple."),
         ("Hecha a medida, con ejemplos reales","En nuestro portfolio podés recorrer tiendas de indumentaria y de otros rubros, ver cómo se compra y entrar al panel de administración con pedidos de ejemplo: <a class=\"more\" href=\"/#proyectos\">ver proyectos</a>.")],
@@ -30,7 +30,7 @@ dict(slug="tiendas-online-ecommerce",key="ecommerce",name="Tiendas online",
 dict(slug="landing-pages",key="landing",name="Landing pages",
  title="Landing pages que convierten | Velta Web Argentina",
  desc="Landing pages rápidas, adaptables y orientadas a conseguir consultas. Desde US$150 o $200.000 ARS. Velta Web, desarrollo web en Santiago del Estero.",
- h1="Landing pages que <span class=\"mark mark--wrap\">convierten visitas en clientes</span>",
+ h1="Landing pages que <span class=\"grad\">convierten visitas en clientes</span>",
  lead="Una landing page es una página enfocada en una sola acción: que te escriban, te llamen o compren. Rápida, clara y pensada para convertir.",
  prose=[("Ideal para campañas y lanzamientos","Si vas a promocionar un servicio, un producto o una oferta, una landing concentra todo el mensaje en un solo lugar y le facilita a tu cliente dar el siguiente paso, sin distracciones."),
         ("Clara, veloz y adaptable","Cuidamos el diseño, la velocidad de carga y que se vea perfecta en el celular, donde hoy llega la mayoría de las visitas. Ya armamos landings para distintos rubros, como odontología, abogacía, veterinaria y medicina, que podés ver en nuestros proyectos.")],
@@ -42,7 +42,7 @@ dict(slug="landing-pages",key="landing",name="Landing pages",
 dict(slug="sistemas-a-medida",key="sistema",name="Sistemas a medida",
  title="Sistemas de gestión a medida para empresas | Velta Web",
  desc="Desarrollamos sistemas a medida: ventas, stock, clientes, turnos y reportes adaptados a tu negocio. Velta Web, Santiago del Estero y toda Argentina.",
- h1="Sistemas de gestión <span class=\"mark mark--wrap\">a medida para tu negocio</span>",
+ h1="Sistemas de gestión <span class=\"grad\">a medida para tu negocio</span>",
  lead="Desarrollamos sistemas para controlar ventas, stock, clientes, turnos y reportes, adaptados a cómo trabaja tu negocio.",
  prose=[("Dejá las planillas y los cuadernos","Si hoy llevás tu negocio en planillas o a mano, un sistema a medida ordena la información, evita errores y te muestra cómo viene el negocio en tiempo real."),
         ("Pensado para tu rubro","No usamos una solución genérica: definimos con vos qué necesitás y lo desarrollamos. En el portfolio hay una demo navegable de un sistema para comercios con punto de venta, caja, stock, clientes, facturas y reportes: <a class=\"more\" href=\"/#proyectos\">ver proyectos</a>.")],
@@ -109,6 +109,7 @@ def page(p):
 <body>
   {SPRITE}
   <div class="backdrop" aria-hidden="true"></div>
+  <canvas id="bg" aria-hidden="true"></canvas>
   <header class="nav nav--simple scrolled">
     <div class="container nav__inner">
       <a href="/" class="brand" aria-label="Velta Web, inicio"><img src="/assets/logo.png" alt="Velta Web" width="148" height="50"></a>
@@ -163,6 +164,7 @@ def page(p):
     </div>
   </footer>
   <script src="/js/contact.js?v={V}"></script>
+  <script src="/js/bg.js?v={V}"></script>
 </body>
 </html>'''
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
