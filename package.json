@@ -1,15 +1,15 @@
 {
-  "name": "emprendimiento",
+  "name": "velta-web",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/app.js ",
-    "db:instalar": "node database/instalar.js"
+    "start": "node tools/serve.js",
+    "dev": "node tools/serve.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "Portfolio de Velta Web (sitio estático)",
   "dependencies": {
     "bcryptjs": "^3.0.3",
     "dotenv": "^17.4.2",
