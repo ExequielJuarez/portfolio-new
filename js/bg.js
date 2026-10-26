@@ -5,11 +5,11 @@
   const ctx = c.getContext("2d");
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const COLORS = ["155,225,255", "1,176,249"];
-  let w, h, pts = [], pulses = [], paused = false, lastPulse = 0;
+  let w, h, pts = [], pulses = [], paused = false, heroHidden = false, lastPulse = 0;
   const mouse = { x: -9999, y: -9999 };
 
   function size() {
-    const dpr = Math.min(devicePixelRatio || 1, 2);
+    const dpr = Math.min(devicePixelRatio || 1, 1.5);
     w = innerWidth; h = innerHeight;
     c.width = w * dpr; c.height = h * dpr;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -72,7 +72,7 @@
   }
 
   function loop(t) {
-    if (!paused && !document.hidden) draw(t);
+    if (!paused && !heroHidden && !document.hidden) draw(t);
     if (!reduce) requestAnimationFrame(loop);
   }
 
@@ -80,6 +80,8 @@
   addEventListener("resize", () => { size(); if (reduce) draw(0); });
   addEventListener("pointermove", (e) => { mouse.x = e.clientX; mouse.y = e.clientY; }, { passive: true });
   addEventListener("pointerleave", () => { mouse.x = mouse.y = -9999; });
+  const heroEl = document.querySelector(".hero, .page-hero");
+  if (heroEl && "IntersectionObserver" in window) new IntersectionObserver(([e]) => { heroHidden = !e.isIntersecting; }).observe(heroEl);
   window.veltaBg = { pause: (v) => { paused = v; } };
   if (reduce) draw(0); else requestAnimationFrame(loop);
 })();

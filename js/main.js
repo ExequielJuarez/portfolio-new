@@ -38,7 +38,7 @@ const PROJECTS = [
 
 // ---- Proyectos ----
 $("#projects").innerHTML = PROJECTS.map((p) => {
-  const d = DEMOS[p.img], slug = d.u.split("/")[2];
+  const d = DEMOS[p.img], slug = d.u.split("/").slice(2, -1).join("/");
   return `<article class="card proj reveal" data-cat="${p.c}">
     <div class="shot" data-demo="${d.u}" data-admin="${d.a || ""}" data-title="${esc(p.t)}" role="button" tabindex="0" aria-label="Ver demo de ${esc(p.t)}">
       <div class="shot__bar"><i></i><i></i><i></i><span>veltaweb.com.ar/demos/${slug}</span></div>
