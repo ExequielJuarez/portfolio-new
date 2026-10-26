@@ -15,7 +15,7 @@ const TYPES = {
   ".woff2": "font/woff2", ".ico": "image/x-icon", ".mp4": "video/mp4", ".webm": "video/webm",
 };
 
-http.createServer((req, res) => {
+const server = http.createServer((req, res) => {
   let url;
   try { url = decodeURIComponent(new URL(req.url, "http://x").pathname); } catch { res.writeHead(400).end("Solicitud inválida"); return; }
   if (PAGES.some((p) => url === "/" + p)) { res.writeHead(301, { Location: url + "/" }).end(); return; }
@@ -27,4 +27,14 @@ http.createServer((req, res) => {
     res.writeHead(200, { "Content-Type": TYPES[path.extname(file).toLowerCase()] || "application/octet-stream", "Cache-Control": "no-cache" });
     res.end(data);
   });
-}).listen(PORT, () => console.log(`Velta Web en http://localhost:${PORT}  (Ctrl+C para cortar)`));
+});
+
+// Si el puerto está ocupado, prueba con los siguientes (3000, 3001, 3002...)
+let port = Number(PORT), intentos = 0;
+server.on("error", (e) => {
+  if (e.code === "EADDRINUSE" && intentos++ < 10) { port++; server.listen(port); return; }
+  console.error("No se pudo iniciar el servidor:", e.message);
+  process.exit(1);
+});
+server.on("listening", () => console.log(`Velta Web en http://localhost:${port}  (Ctrl+C para cortar)`));
+server.listen(port);
