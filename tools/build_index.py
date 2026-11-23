@@ -4,7 +4,7 @@ HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 from seo_data import *
 from PIL import Image
 ROOT = os.path.dirname(HERE)
-V = "20261123v7"
+V = "20261123v8"
 w, h = Image.open(os.path.join(ROOT, "assets/logo-dark.png")).size
 IGA = 'href="https://ig.me/m/velta.web" target="_blank" rel="noopener noreferrer"'
 def ic(n): return f'<svg class="ico-svg" aria-hidden="true"><use href="#i-{n}"/></svg>'
@@ -119,11 +119,6 @@ html = f'''<!DOCTYPE html>
             <li>Paneles de administración</li>
             <li>Para Argentina y el exterior</li>
           </ul>
-        </div>
-        <div class="hero__visual" aria-hidden="true">
-          <figure class="mock m1"><div class="mock__bar"><i></i><i></i><i></i></div><img src="/assets/projects/fressia.webp" alt="" width="1280" height="800" decoding="async"></figure>
-          <figure class="mock m2"><div class="mock__bar"><i></i><i></i><i></i></div><img src="/assets/projects/toplevel.webp" alt="" width="1280" height="800" decoding="async"></figure>
-          <figure class="mock m3"><div class="mock__bar"><i></i><i></i><i></i></div><img src="/assets/projects/magictecno.webp" alt="" width="1280" height="800" decoding="async"></figure>
         </div>
       </div>
     </section>
