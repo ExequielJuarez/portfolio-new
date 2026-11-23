@@ -4,7 +4,7 @@ HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 from seo_data import *
 from PIL import Image
 ROOT = os.path.dirname(HERE)
-V = "20261123v2"
+V = "20261123v3"
 w, h = Image.open(os.path.join(ROOT, "assets/logo-dark.png")).size
 IGA = 'href="https://ig.me/m/velta.web" target="_blank" rel="noopener noreferrer"'
 def ic(n): return f'<svg class="ico-svg" aria-hidden="true"><use href="#i-{n}"/></svg>'
@@ -80,8 +80,7 @@ html = f'''<!DOCTYPE html>
   <meta name="twitter:image" content="{SITE}/assets/og.png">
   <link rel="icon" href="/assets/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-  <link rel="preload" href="/assets/fonts/fraunces-900.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/fonts/karla-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/css/style.css?v={V}">
   <script type="application/ld+json">{ld}</script>
 </head>
@@ -93,6 +92,7 @@ html = f'''<!DOCTYPE html>
       <a href="/" class="brand" aria-label="Velta Web, inicio"><img src="/assets/logo-dark.png" alt="Velta Web" width="{round(46*w/h)}" height="46"></a>
       <nav class="nav__links" id="menu" aria-label="Principal">
         <a href="#servicios">Servicios</a>
+        <a href="#proyectos">Proyectos</a>
         <a href="#planes">Planes</a>
         <a href="#tecnologias">Tecnologías</a>
         <a href="#preguntas">Preguntas</a>
@@ -114,7 +114,7 @@ html = f'''<!DOCTYPE html>
           <p class="lead">Desarrollamos páginas web, tiendas online y sistemas de gestión para que puedas mostrar, organizar y hacer crecer tu negocio.</p>
           <div class="actions">
             <a {IGA} data-contact="general" class="btn btn--primary">Empezar ahora {ic('arrow')}</a>
-            <a href="#servicios" class="btn btn--ghost">Ver servicios</a>
+            <a href="#proyectos" class="btn btn--ghost">Ver proyectos</a>
           </div>
           <div class="hero__proof">
             <span>{ic('check')}Diseño 100% responsive</span>
@@ -133,6 +133,7 @@ html = f'''<!DOCTYPE html>
         </div>
       </div>
       <div class="container stats">
+        <div class="reveal"><b>12</b><span>Proyectos y demos</span></div>
         <div class="reveal"><b>100%</b><span>Diseño responsive</span></div>
         <div class="reveal"><b>4</b><span>Tipos de solución</span></div>
         <div class="reveal"><b>A medida</b><span>Sin plantillas</span></div>
@@ -152,10 +153,30 @@ html = f'''<!DOCTYPE html>
       </div>
     </section>
 
-    <section class="section section--alt" id="proceso">
+    <section class="section section--alt" id="proyectos">
       <div class="container">
         <div class="sec-head">
-          <span class="eyebrow">02 · proceso</span>
+          <span class="eyebrow">02 · proyectos</span>
+          <h2>Mirá cómo se ve y cómo funciona</h2>
+          <p class="sub">Deslizá, arrastrá o usá las flechas. Tocá un proyecto y navegalo como si fuera el sitio real; las tiendas y la hamburguesería incluyen su panel de administración.</p>
+        </div>
+      </div>
+      <div class="carousel" id="carousel" role="region" aria-roledescription="carrusel" aria-label="Proyectos">
+        <div class="carousel__track" id="projects" tabindex="0"></div>
+        <div class="container carousel__ctrl">
+          <div class="carousel__bar" aria-hidden="true"><i id="cbar"></i></div>
+          <div class="carousel__btns">
+            <button id="cprev" class="cbtn" aria-label="Proyecto anterior"><svg class="ico-svg" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+            <button id="cnext" class="cbtn" aria-label="Proyecto siguiente"><svg class="ico-svg" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="proceso">
+      <div class="container">
+        <div class="sec-head">
+          <span class="eyebrow">03 · proceso</span>
           <h2>Simple, claro y sin sorpresas</h2>
         </div>
         <div class="process">
@@ -164,10 +185,10 @@ html = f'''<!DOCTYPE html>
       </div>
     </section>
 
-    <section class="section" id="planes">
+    <section class="section section--alt" id="planes">
       <div class="container">
         <div class="sec-head">
-          <span class="eyebrow">03 · planes</span>
+          <span class="eyebrow">04 · planes</span>
           <h2>Elegí el punto de partida</h2>
           <p class="sub">Cada proyecto se presupuesta según lo que necesites. Contanos tu idea y te armamos una propuesta sin cargo.</p>
         </div>
@@ -177,10 +198,10 @@ html = f'''<!DOCTYPE html>
       </div>
     </section>
 
-    <section class="section section--alt" id="tecnologias">
+    <section class="section" id="tecnologias">
       <div class="container">
         <div class="sec-head">
-          <span class="eyebrow">04 · stack</span>
+          <span class="eyebrow">05 · stack</span>
           <h2>Tecnologías modernas, listas para escalar</h2>
           <p class="sub">Un stack mantenible y rápido, elegido para que tu proyecto crezca sin rehacerlo.</p>
         </div>
@@ -190,10 +211,10 @@ html = f'''<!DOCTYPE html>
       </div>
     </section>
 
-    <section class="section" id="preguntas">
+    <section class="section section--alt" id="preguntas">
       <div class="container container--narrow faq-wrap">
         <div class="sec-head">
-          <span class="eyebrow">05 · preguntas</span>
+          <span class="eyebrow">06 · preguntas</span>
           <h2>Preguntas frecuentes</h2>
           <p class="sub">Lo que más nos consultan sobre páginas web y tiendas online.</p>
           <a {IGA} data-contact="general" class="btn btn--primary">Hacernos otra pregunta</a>
@@ -225,6 +246,34 @@ html = f'''<!DOCTYPE html>
       <div class="footer__legal"><span>© <span id="year">2026</span> Velta Web</span><span>veltaweb.com.ar</span></div>
     </div>
   </footer>
+
+  <div class="viewer" id="viewer" hidden role="dialog" aria-modal="true" aria-labelledby="vtitle">
+    <div class="viewer__win">
+      <div class="viewer__top">
+        <div class="viewer__nav">
+          <button id="vback" aria-label="Atrás"><svg class="ico-svg" viewBox="0 0 24 24" width="18" height="18"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+          <button id="vfwd" aria-label="Adelante"><svg class="ico-svg" viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <button id="vreload" aria-label="Recargar"><svg class="ico-svg" viewBox="0 0 24 24" width="18" height="18"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7"/></svg></button>
+        </div>
+        <div class="viewer__addr"><span id="vtitle">Demo</span><code id="vurl"></code></div>
+        <div class="viewer__mode" id="vmode" hidden role="group" aria-label="Qué ver">
+          <button data-m="site" class="on">Sitio</button>
+          <button data-m="admin">Panel admin</button>
+        </div>
+        <div class="viewer__devices" id="vdevices">
+          <button data-d="desktop" class="on" aria-label="Escritorio" title="Escritorio"><svg class="ico-svg" viewBox="0 0 24 24" width="18" height="18"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></button>
+          <button data-d="tablet" aria-label="Tablet" title="Tablet"><svg class="ico-svg" viewBox="0 0 24 24" width="18" height="18"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M11 18h2"/></svg></button>
+          <button data-d="mobile" aria-label="Celular" title="Celular"><svg class="ico-svg" viewBox="0 0 24 24" width="18" height="18"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M11 18.5h2"/></svg></button>
+        </div>
+        <a id="vquiero" class="btn btn--primary viewer__cta" {IGA} data-contact="project">Quiero algo así</a>
+        <button id="vclose" class="viewer__x" aria-label="Cerrar demo"><svg class="ico-svg" viewBox="0 0 24 24" width="18" height="18"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </div>
+      <div class="viewer__stage" id="vstage" data-device="desktop">
+        <iframe id="vframe" title="Demostración del proyecto" sandbox="allow-scripts allow-same-origin allow-forms allow-popups" src="about:blank"></iframe>
+      </div>
+      <p class="viewer__hint">Copia de demostración: navegá libremente. Carrito, pagos y formularios están desactivados.</p>
+    </div>
+  </div>
 
   <script src="/js/contact.js?v={V}"></script>
   <script src="/js/main.js?v={V}"></script>

@@ -1,5 +1,5 @@
 import sys,json,os; sys.path.insert(0,os.path.dirname(os.path.abspath(__file__))); from seo_data import *
-V="20261123v2"
+V="20261123v3"
 IGA='href="https://ig.me/m/velta.web" target="_blank" rel="noopener noreferrer"'
 IGSVG='<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".6" fill="currentColor"/></svg>'
 PAGES=[
@@ -96,8 +96,7 @@ def page(p):
   <meta name="twitter:image" content="{SITE}/assets/og.png">
   <link rel="icon" href="/assets/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-  <link rel="preload" href="/assets/fonts/fraunces-900.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/fonts/karla-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/css/style.css?v={V}">
   <script type="application/ld+json">{ldj}</script>
 </head>
@@ -107,7 +106,7 @@ def page(p):
     <div class="container nav__inner">
       <a href="/" class="brand" aria-label="Velta Web, inicio"><img src="/assets/logo-dark.png" alt="Velta Web" width="148" height="50"></a>
       <nav class="nav__links" aria-label="Principal">
-        <a href="/#servicios">Servicios</a><a href="/#planes">Planes</a><a href="/#tecnologias">Tecnologías</a>
+        <a href="/#servicios">Servicios</a><a href="/#proyectos">Proyectos</a><a href="/#planes">Planes</a><a href="/#tecnologias">Tecnologías</a>
         <a {IGA} data-contact="{p['key']}" class="btn btn--primary nav__cta">Cotizar proyecto</a>
       </nav>
     </div>
@@ -118,7 +117,7 @@ def page(p):
         <nav class="breadcrumb" aria-label="Ruta"><a href="/">Inicio</a> / <span>{p['name']}</span></nav>
         <h1>{p['h1']}</h1>
         <p class="lead">{p['lead']}</p>
-        <div class="actions"><a {IGA} data-contact="{p['key']}" class="btn btn--primary">{cta} {ic('arrow')}</a><a href="/#servicios" class="btn btn--ghost">Ver otros servicios</a></div>
+        <div class="actions"><a {IGA} data-contact="{p['key']}" class="btn btn--primary">{cta} {ic('arrow')}</a><a href="/#proyectos" class="btn btn--ghost">Ver proyectos</a></div>
       </div>
     </section>
     <section class="section">
