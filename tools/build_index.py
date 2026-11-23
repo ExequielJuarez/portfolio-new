@@ -4,7 +4,7 @@ HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 from seo_data import *
 from PIL import Image
 ROOT = os.path.dirname(HERE)
-V = "20261123v5"
+V = "20261123v6"
 w, h = Image.open(os.path.join(ROOT, "assets/logo-dark.png")).size
 IGA = 'href="https://ig.me/m/velta.web" target="_blank" rel="noopener noreferrer"'
 def ic(n): return f'<svg class="ico-svg" aria-hidden="true"><use href="#i-{n}"/></svg>'
@@ -90,7 +90,6 @@ html = f'''<!DOCTYPE html>
     <div class="container nav__inner">
       <a href="/" class="brand" aria-label="Velta Web, inicio"><img src="/assets/logo-dark.png" alt="Velta Web" width="{round(46*w/h)}" height="46"></a>
       <nav class="nav__links" id="menu" aria-label="Principal">
-        <a href="#servicios">Servicios</a>
         <a href="#proyectos">Proyectos</a>
         <a href="#planes">Planes</a>
         <a href="#tecnologias">Tecnologías</a>
@@ -135,28 +134,16 @@ html = f'''<!DOCTYPE html>
       </div>
     </section>
 
-    <section class="section" id="servicios">
-      <div class="container">
-        <div class="sec-head">
-          <span class="eyebrow">01 · servicios</span>
-          <h2>Todo lo que tu negocio necesita para brillar online</h2>
-          <p class="sub">Desde una landing hasta un sistema de gestión completo: lo diseñamos y lo desarrollamos a tu medida.</p>
-        </div>
-        <div class="bento">
-          {services}
-        </div>
-      </div>
-    </section>
-
     <section class="section section--alt" id="proyectos">
       <div class="container">
         <div class="sec-head">
-          <span class="eyebrow">02 · proyectos</span>
+          <span class="eyebrow">01 · proyectos</span>
           <h2>Mirá cómo se ve y cómo funciona</h2>
           <p class="sub">Deslizá o usá las flechas. Tocá el proyecto del centro y navegalo como si fuera el sitio real.</p>
         </div>
       </div>
       <div class="carousel" id="carousel" role="region" aria-roledescription="carrusel" aria-label="Proyectos">
+        <p class="carousel__cat" id="ccat" aria-live="polite"></p>
         <div class="carousel__track" id="projects" tabindex="0"></div>
         <div class="carousel__ctrl">
           <button id="cprev" class="cbtn" aria-label="Proyecto anterior"><svg class="ico-svg" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
@@ -169,7 +156,7 @@ html = f'''<!DOCTYPE html>
     <section class="section" id="proceso">
       <div class="container">
         <div class="sec-head">
-          <span class="eyebrow">03 · proceso</span>
+          <span class="eyebrow">02 · proceso</span>
           <h2>Simple, claro y sin sorpresas</h2>
         </div>
         <div class="process">
@@ -181,7 +168,7 @@ html = f'''<!DOCTYPE html>
     <section class="section section--alt" id="planes">
       <div class="container">
         <div class="sec-head">
-          <span class="eyebrow">04 · planes</span>
+          <span class="eyebrow">03 · planes</span>
           <h2>Elegí el punto de partida</h2>
           <p class="sub">Cada proyecto se presupuesta según lo que necesites. Contanos tu idea y te armamos una propuesta sin cargo.</p>
         </div>
@@ -194,7 +181,7 @@ html = f'''<!DOCTYPE html>
     <section class="section" id="tecnologias">
       <div class="container">
         <div class="sec-head">
-          <span class="eyebrow">05 · stack</span>
+          <span class="eyebrow">04 · stack</span>
           <h2>Tecnologías modernas, listas para escalar</h2>
           <p class="sub">Un stack mantenible y rápido, elegido para que tu proyecto crezca sin rehacerlo.</p>
         </div>
@@ -207,7 +194,7 @@ html = f'''<!DOCTYPE html>
     <section class="section section--alt" id="preguntas">
       <div class="container container--narrow faq-wrap">
         <div class="sec-head">
-          <span class="eyebrow">06 · preguntas</span>
+          <span class="eyebrow">05 · preguntas</span>
           <h2>Preguntas frecuentes</h2>
           <p class="sub">Lo que más nos consultan sobre páginas web y tiendas online.</p>
           <a {IGA} data-contact="general" class="btn btn--primary">Hacernos otra pregunta</a>

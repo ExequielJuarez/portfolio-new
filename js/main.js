@@ -29,7 +29,7 @@ track.innerHTML = PROJECTS.map((p, i) => {
       <div class="shot__view"><img src="/assets/projects/${p.img}" alt="Captura del proyecto ${esc(p.t)}" width="1280" height="800" loading="lazy" decoding="async" draggable="false"></div>
     </div>
     <div class="proj__body">
-      <div class="badges"><span class="badge">${p.c}</span>${p.a ? '<span class="badge badge--admin">+ Panel admin</span>' : ""}</div>
+      ${p.a ? '<div class="badges"><span class="badge badge--admin">+ Panel admin</span></div>' : ""}
       <h3>${esc(p.t)}</h3>
       <p>${esc(p.d)}</p>
       <span class="proj__go">Ver sitio en vivo ${ICON_OPEN}</span>
@@ -40,7 +40,7 @@ track.innerHTML = PROJECTS.map((p, i) => {
 const carousel = $("#carousel"), dots = $("#cdots");
 const slides = $$(".proj", track);
 dots.innerHTML = slides.map((_, i) => `<button role="tab" data-i="${i}" aria-label="Ir al proyecto ${i + 1}"></button>`).join("");
-const dotEls = $$("button", dots);
+const dotEls = $$("button", dots), ccat = $("#ccat");
 let current = 0;
 const centerOf = (el) => el.offsetLeft + el.offsetWidth / 2 - track.clientWidth / 2;
 const goTo = (i, smooth = true) => {
@@ -52,6 +52,7 @@ const paint = () => {
   let best = 0, bd = Infinity;
   slides.forEach((el, i) => { const d = Math.abs(el.offsetLeft + el.offsetWidth / 2 - mid); if (d < bd) { bd = d; best = i; } });
   current = best;
+  if (ccat.textContent !== PROJECTS[best].c) ccat.textContent = PROJECTS[best].c;
   slides.forEach((el, i) => { el.classList.toggle("is-active", i === best); el.setAttribute("aria-current", i === best); });
   dotEls.forEach((d, i) => { d.classList.toggle("on", i === best); d.setAttribute("aria-selected", i === best); });
 };
