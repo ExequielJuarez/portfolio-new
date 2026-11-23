@@ -4,8 +4,8 @@ HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 from seo_data import *
 from PIL import Image
 ROOT = os.path.dirname(HERE)
-V = "20261026e"
-w, h = Image.open(os.path.join(ROOT, "assets/logo.png")).size
+V = "20261123v2"
+w, h = Image.open(os.path.join(ROOT, "assets/logo-dark.png")).size
 IGA = 'href="https://ig.me/m/velta.web" target="_blank" rel="noopener noreferrer"'
 def ic(n): return f'<svg class="ico-svg" aria-hidden="true"><use href="#i-{n}"/></svg>'
 SPRITE = '''<svg class="sprite" aria-hidden="true" focusable="false"><defs>
@@ -62,8 +62,8 @@ html = f'''<!DOCTYPE html>
   <meta name="author" content="Velta Web">
   <meta name="geo.region" content="AR-G">
   <meta name="geo.placename" content="Santiago del Estero">
-  <meta name="theme-color" content="#010715">
-  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#FFFFFF">
+  <meta name="color-scheme" content="light">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_AR">
   <meta property="og:site_name" content="Velta Web">
@@ -87,15 +87,12 @@ html = f'''<!DOCTYPE html>
 </head>
 <body>
   {SPRITE}
-  <div class="backdrop" aria-hidden="true"></div>
-  <canvas id="bg" aria-hidden="true"></canvas>
 
   <header class="nav" id="nav">
     <div class="container nav__inner">
-      <a href="/" class="brand" aria-label="Velta Web, inicio"><img src="/assets/logo.png" alt="Velta Web" width="{round(46*w/h)}" height="46"></a>
+      <a href="/" class="brand" aria-label="Velta Web, inicio"><img src="/assets/logo-dark.png" alt="Velta Web" width="{round(46*w/h)}" height="46"></a>
       <nav class="nav__links" id="menu" aria-label="Principal">
         <a href="#servicios">Servicios</a>
-        <a href="#proyectos">Proyectos</a>
         <a href="#planes">Planes</a>
         <a href="#tecnologias">Tecnologías</a>
         <a href="#preguntas">Preguntas</a>
@@ -117,7 +114,7 @@ html = f'''<!DOCTYPE html>
           <p class="lead">Desarrollamos páginas web, tiendas online y sistemas de gestión para que puedas mostrar, organizar y hacer crecer tu negocio.</p>
           <div class="actions">
             <a {IGA} data-contact="general" class="btn btn--primary">Empezar ahora {ic('arrow')}</a>
-            <a href="#proyectos" class="btn btn--ghost">Ver proyectos</a>
+            <a href="#servicios" class="btn btn--ghost">Ver servicios</a>
           </div>
           <div class="hero__proof">
             <span>{ic('check')}Diseño 100% responsive</span>
@@ -136,7 +133,6 @@ html = f'''<!DOCTYPE html>
         </div>
       </div>
       <div class="container stats">
-        <div class="reveal"><b>12</b><span>Proyectos y demos</span></div>
         <div class="reveal"><b>100%</b><span>Diseño responsive</span></div>
         <div class="reveal"><b>4</b><span>Tipos de solución</span></div>
         <div class="reveal"><b>A medida</b><span>Sin plantillas</span></div>
@@ -156,22 +152,10 @@ html = f'''<!DOCTYPE html>
       </div>
     </section>
 
-    <section class="section" id="proyectos">
+    <section class="section section--alt" id="proceso">
       <div class="container">
         <div class="sec-head">
-          <span class="eyebrow">02 · proyectos</span>
-          <h2>Mirá cómo se ve y cómo funciona</h2>
-          <p class="sub">Tocá un proyecto y navegalo como si fuera el sitio real. Las tiendas y la hamburguesería incluyen su panel de administración.</p>
-        </div>
-        <div class="filters" id="filters" role="group" aria-label="Filtrar proyectos"></div>
-        <div class="grid-proj" id="projects"></div>
-      </div>
-    </section>
-
-    <section class="section" id="proceso">
-      <div class="container">
-        <div class="sec-head">
-          <span class="eyebrow">03 · proceso</span>
+          <span class="eyebrow">02 · proceso</span>
           <h2>Simple, claro y sin sorpresas</h2>
         </div>
         <div class="process">
@@ -183,7 +167,7 @@ html = f'''<!DOCTYPE html>
     <section class="section" id="planes">
       <div class="container">
         <div class="sec-head">
-          <span class="eyebrow">04 · planes</span>
+          <span class="eyebrow">03 · planes</span>
           <h2>Elegí el punto de partida</h2>
           <p class="sub">Cada proyecto se presupuesta según lo que necesites. Contanos tu idea y te armamos una propuesta sin cargo.</p>
         </div>
@@ -193,10 +177,10 @@ html = f'''<!DOCTYPE html>
       </div>
     </section>
 
-    <section class="section" id="tecnologias">
+    <section class="section section--alt" id="tecnologias">
       <div class="container">
         <div class="sec-head">
-          <span class="eyebrow">05 · stack</span>
+          <span class="eyebrow">04 · stack</span>
           <h2>Tecnologías modernas, listas para escalar</h2>
           <p class="sub">Un stack mantenible y rápido, elegido para que tu proyecto crezca sin rehacerlo.</p>
         </div>
@@ -209,7 +193,7 @@ html = f'''<!DOCTYPE html>
     <section class="section" id="preguntas">
       <div class="container container--narrow faq-wrap">
         <div class="sec-head">
-          <span class="eyebrow">06 · preguntas</span>
+          <span class="eyebrow">05 · preguntas</span>
           <h2>Preguntas frecuentes</h2>
           <p class="sub">Lo que más nos consultan sobre páginas web y tiendas online.</p>
           <a {IGA} data-contact="general" class="btn btn--primary">Hacernos otra pregunta</a>
@@ -234,7 +218,7 @@ html = f'''<!DOCTYPE html>
   <footer class="footer">
     <div class="container">
       <div class="footer__inner">
-        <div class="footer__col"><img src="/assets/logo.png" alt="Velta Web" width="{round(46*w/h)}" height="46"><p>Desarrollo web en Santiago del Estero, Argentina. Páginas web, tiendas online y sistemas a medida.</p></div>
+        <div class="footer__col"><img src="/assets/logo-dark.png" alt="Velta Web" width="{round(46*w/h)}" height="46"><p>Desarrollo web en Santiago del Estero, Argentina. Páginas web, tiendas online y sistemas a medida.</p></div>
         <nav class="footer__col" aria-label="Servicios"><h4>Servicios</h4><a href="/paginas-web-santiago-del-estero/">Páginas web</a><a href="/landing-pages/">Landing pages</a><a href="/tiendas-online-ecommerce/">Tiendas online</a><a href="/sistemas-a-medida/">Sistemas a medida</a></nav>
         <div class="footer__col"><h4>Seguinos</h4><a class="social" href="https://www.instagram.com/velta.web/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Velta Web">{ic('ig')}<span>@velta.web</span></a></div>
       </div>
@@ -242,36 +226,7 @@ html = f'''<!DOCTYPE html>
     </div>
   </footer>
 
-  <div class="viewer" id="viewer" hidden role="dialog" aria-modal="true" aria-labelledby="vtitle">
-    <div class="viewer__win">
-      <div class="viewer__top">
-        <div class="viewer__nav">
-          <button id="vback" aria-label="Atrás"><svg class="ico-svg" viewBox="0 0 24 24" width="18" height="18"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
-          <button id="vfwd" aria-label="Adelante"><svg class="ico-svg" viewBox="0 0 24 24" width="18" height="18"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-          <button id="vreload" aria-label="Recargar"><svg class="ico-svg" viewBox="0 0 24 24" width="18" height="18"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7"/></svg></button>
-        </div>
-        <div class="viewer__addr"><span id="vtitle">Demo</span><code id="vurl"></code></div>
-        <div class="viewer__mode" id="vmode" hidden role="group" aria-label="Qué ver">
-          <button data-m="site" class="on">Sitio</button>
-          <button data-m="admin">Panel admin</button>
-        </div>
-        <div class="viewer__devices" id="vdevices">
-          <button data-d="desktop" class="on" aria-label="Escritorio" title="Escritorio"><svg class="ico-svg" viewBox="0 0 24 24" width="18" height="18"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></button>
-          <button data-d="tablet" aria-label="Tablet" title="Tablet"><svg class="ico-svg" viewBox="0 0 24 24" width="18" height="18"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M11 18h2"/></svg></button>
-          <button data-d="mobile" aria-label="Celular" title="Celular"><svg class="ico-svg" viewBox="0 0 24 24" width="18" height="18"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M11 18.5h2"/></svg></button>
-        </div>
-        <a id="vquiero" class="btn btn--primary viewer__cta" {IGA} data-contact="project">Quiero algo así</a>
-        <button id="vclose" class="viewer__x" aria-label="Cerrar demo"><svg class="ico-svg" viewBox="0 0 24 24" width="18" height="18"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
-      </div>
-      <div class="viewer__stage" id="vstage" data-device="desktop">
-        <iframe id="vframe" title="Demostración del proyecto" sandbox="allow-scripts allow-same-origin allow-forms allow-popups" src="about:blank"></iframe>
-      </div>
-      <p class="viewer__hint">Copia de demostración: navegá libremente. Carrito, pagos y formularios están desactivados.</p>
-    </div>
-  </div>
-
   <script src="/js/contact.js?v={V}"></script>
-  <script src="/js/bg.js?v={V}"></script>
   <script src="/js/main.js?v={V}"></script>
 </body>
 </html>

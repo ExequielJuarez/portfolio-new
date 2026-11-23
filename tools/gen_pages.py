@@ -1,5 +1,5 @@
 import sys,json,os; sys.path.insert(0,os.path.dirname(os.path.abspath(__file__))); from seo_data import *
-V="20261026e"
+V="20261123v2"
 IGA='href="https://ig.me/m/velta.web" target="_blank" rel="noopener noreferrer"'
 IGSVG='<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".6" fill="currentColor"/></svg>'
 PAGES=[
@@ -21,7 +21,7 @@ dict(slug="tiendas-online-ecommerce",key="ecommerce",name="Tiendas online",
  h1="Tiendas online y <span class=\"grad\">e&#8209;commerce en Argentina</span>",
  lead="Creamos tiendas online a medida para que vendas tus productos a todo el país y al exterior, con carrito, favoritos, pagos integrados y un panel para administrar todo.",
  prose=[("Vendé las 24 horas","Una tienda online te permite recibir pedidos en cualquier momento, ordenar tu catálogo y llevar el control de tus ventas desde un panel de administración simple."),
-        ("Hecha a medida, con ejemplos reales","En nuestro portfolio podés recorrer tiendas de indumentaria y de otros rubros, ver cómo se compra y entrar al panel de administración con pedidos de ejemplo: <a class=\"more\" href=\"/#proyectos\">ver proyectos</a>.")],
+        ("Hecha a medida","Diseñamos cada tienda según tu rubro y tu catálogo, con una compra simple para el cliente y un panel de administración claro para vos, que te permite cargar productos, ver pedidos y seguir tus ventas.")],
  inc=["Catálogo con categorías y fichas de producto","Carrito de compras y favoritos","Pagos integrados","Panel de administración: productos, pedidos y reportes de ventas","Diseño responsive para comprar desde el celular","Base de datos y soporte"],
  faq=[("¿Cuánto cuesta una tienda online?","Depende de la cantidad de productos y de las funciones que necesites. Te armamos una propuesta sin cargo."),
       ("¿Puedo administrar la tienda yo mismo?","Sí. Incluye un panel de administración para cargar productos, cambiar precios, ver pedidos y reportes de ventas."),
@@ -33,7 +33,7 @@ dict(slug="landing-pages",key="landing",name="Landing pages",
  h1="Landing pages que <span class=\"grad\">convierten visitas en clientes</span>",
  lead="Una landing page es una página enfocada en una sola acción: que te escriban, te llamen o compren. Rápida, clara y pensada para convertir.",
  prose=[("Ideal para campañas y lanzamientos","Si vas a promocionar un servicio, un producto o una oferta, una landing concentra todo el mensaje en un solo lugar y le facilita a tu cliente dar el siguiente paso, sin distracciones."),
-        ("Clara, veloz y adaptable","Cuidamos el diseño, la velocidad de carga y que se vea perfecta en el celular, donde hoy llega la mayoría de las visitas. Ya armamos landings para distintos rubros, como odontología, abogacía, veterinaria y medicina, que podés ver en nuestros proyectos.")],
+        ("Clara, veloz y adaptable","Cuidamos el diseño, la velocidad de carga y que se vea perfecta en el celular, donde hoy llega la mayoría de las visitas. Las adaptamos a cada rubro, como odontología, abogacía, veterinaria o medicina.")],
  inc=["Diseño adaptativo para celular y computadora","Contacto directo por Instagram o WhatsApp","SEO básico y carga veloz","Estructura orientada a conversión","Botones de acción y formularios"],
  faq=[("¿Cuánto cuesta una landing page?","Depende del contenido y de las funciones que necesites. Te armamos una propuesta sin cargo."),
       ("¿En cuánto tiempo está lista?","Es el proyecto más rápido de armar. El plazo depende del contenido que tengas preparado y te lo confirmamos en la propuesta."),
@@ -45,10 +45,10 @@ dict(slug="sistemas-a-medida",key="sistema",name="Sistemas a medida",
  h1="Sistemas de gestión <span class=\"grad\">a medida para tu negocio</span>",
  lead="Desarrollamos sistemas para controlar ventas, stock, clientes, turnos y reportes, adaptados a cómo trabaja tu negocio.",
  prose=[("Dejá las planillas y los cuadernos","Si hoy llevás tu negocio en planillas o a mano, un sistema a medida ordena la información, evita errores y te muestra cómo viene el negocio en tiempo real."),
-        ("Pensado para tu rubro","No usamos una solución genérica: definimos con vos qué necesitás y lo desarrollamos. En el portfolio hay una demo navegable de un sistema para comercios con punto de venta, caja, stock, clientes, facturas y reportes: <a class=\"more\" href=\"/#proyectos\">ver proyectos</a>.")],
+        ("Pensado para tu rubro","No usamos una solución genérica: definimos con vos qué necesitás y lo desarrollamos. Por ejemplo, un sistema para comercios con punto de venta, caja, stock, clientes, facturas y reportes.")],
  inc=["Punto de venta y caja","Control de stock y productos","Clientes y proveedores","Compras y comprobantes internos","Reportes y paneles de control","Usuarios con permisos por rol"],
  faq=[("¿Cuánto cuesta un sistema a medida?","Se cotiza según lo que necesites. Contanos tu caso y te armamos una propuesta sin cargo."),
-      ("¿Puedo ver un ejemplo?","Sí. En la sección de proyectos hay una demo navegable de un sistema de gestión para comercios."),
+      ("¿Para qué tipo de negocios sirve?","Para comercios, consultorios, gastronomía y servicios en general: lo definimos con vos según cómo trabajás hoy."),
       ("¿Se usa desde el celular?","El sistema funciona desde el navegador, por lo que podés acceder desde cualquier dispositivo con internet.")],
  price=None, related=["paginas-web-santiago-del-estero","landing-pages","tiendas-online-ecommerce"]),
 ]
@@ -81,8 +81,8 @@ def page(p):
   <link rel="canonical" href="{url}">
   <meta name="geo.region" content="AR-G">
   <meta name="geo.placename" content="Santiago del Estero">
-  <meta name="theme-color" content="#010715">
-  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#FFFFFF">
+  <meta name="color-scheme" content="light">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_AR">
   <meta property="og:site_name" content="Velta Web">
@@ -103,13 +103,11 @@ def page(p):
 </head>
 <body>
   {SPRITE}
-  <div class="backdrop" aria-hidden="true"></div>
-  <canvas id="bg" aria-hidden="true"></canvas>
   <header class="nav nav--simple scrolled">
     <div class="container nav__inner">
-      <a href="/" class="brand" aria-label="Velta Web, inicio"><img src="/assets/logo.png" alt="Velta Web" width="148" height="50"></a>
+      <a href="/" class="brand" aria-label="Velta Web, inicio"><img src="/assets/logo-dark.png" alt="Velta Web" width="148" height="50"></a>
       <nav class="nav__links" aria-label="Principal">
-        <a href="/#servicios">Servicios</a><a href="/#proyectos">Proyectos</a><a href="/#planes">Planes</a>
+        <a href="/#servicios">Servicios</a><a href="/#planes">Planes</a><a href="/#tecnologias">Tecnologías</a>
         <a {IGA} data-contact="{p['key']}" class="btn btn--primary nav__cta">Cotizar proyecto</a>
       </nav>
     </div>
@@ -120,7 +118,7 @@ def page(p):
         <nav class="breadcrumb" aria-label="Ruta"><a href="/">Inicio</a> / <span>{p['name']}</span></nav>
         <h1>{p['h1']}</h1>
         <p class="lead">{p['lead']}</p>
-        <div class="actions"><a {IGA} data-contact="{p['key']}" class="btn btn--primary">{cta} {ic('arrow')}</a><a href="/#proyectos" class="btn btn--ghost">Ver ejemplos</a></div>
+        <div class="actions"><a {IGA} data-contact="{p['key']}" class="btn btn--primary">{cta} {ic('arrow')}</a><a href="/#servicios" class="btn btn--ghost">Ver otros servicios</a></div>
       </div>
     </section>
     <section class="section">
@@ -151,7 +149,7 @@ def page(p):
   <footer class="footer">
     <div class="container">
       <div class="footer__inner">
-        <div class="footer__col"><img src="/assets/logo.png" alt="Velta Web" width="136" height="46"><p>Desarrollo web en Santiago del Estero, Argentina. Páginas web, tiendas online y sistemas a medida.</p></div>
+        <div class="footer__col"><img src="/assets/logo-dark.png" alt="Velta Web" width="136" height="46"><p>Desarrollo web en Santiago del Estero, Argentina. Páginas web, tiendas online y sistemas a medida.</p></div>
         <nav class="footer__col" aria-label="Servicios"><h4>Servicios</h4><a href="/paginas-web-santiago-del-estero/">Páginas web</a><a href="/landing-pages/">Landing pages</a><a href="/tiendas-online-ecommerce/">Tiendas online</a><a href="/sistemas-a-medida/">Sistemas a medida</a></nav>
         <div class="footer__col"><h4>Seguinos</h4><a class="social" href="https://www.instagram.com/velta.web/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Velta Web">{ic('ig')}<span>@velta.web</span></a></div>
       </div>
@@ -159,7 +157,6 @@ def page(p):
     </div>
   </footer>
   <script src="/js/contact.js?v={V}"></script>
-  <script src="/js/bg.js?v={V}"></script>
 </body>
 </html>'''
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

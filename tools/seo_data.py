@@ -5,8 +5,8 @@ FAQ=[
 ("¿Hacen páginas web en Santiago del Estero?","Sí. Velta Web está en Santiago del Estero y desarrolla páginas web, landing pages, tiendas online y sistemas a medida para negocios de la capital, La Banda, Termas de Río Hondo y el interior de la provincia, además de clientes de toda Argentina."),
 ("¿Trabajan con clientes de otras provincias y del exterior?","Sí. Trabajamos de forma 100% remota con clientes de toda Argentina y de otros países, por videollamada o chat."),
 ("¿Cuánto cuesta una página web?","Depende del alcance: cantidad de secciones, funciones y diseño. Contanos qué necesitás y te armamos una propuesta sin cargo, adaptada a tu proyecto."),
-("¿Qué incluye una tienda online?","Catálogo de productos, carrito de compras, favoritos, pagos integrados y un panel de administración para cargar productos y ver pedidos. Podés recorrer ejemplos reales en la sección de proyectos."),
-("¿Mi sitio se va a ver bien en el celular?","Sí. Todos nuestros proyectos son responsive: se adaptan a celulares, tablets y computadoras. Podés comprobarlo en el visor de demos, que permite cambiar entre dispositivos."),
+("¿Qué incluye una tienda online?","Catálogo de productos, carrito de compras, favoritos, pagos integrados y un panel de administración para cargar productos y ver pedidos."),
+("¿Mi sitio se va a ver bien en el celular?","Sí. Todos nuestros proyectos son responsive: se adaptan a celulares, tablets y computadoras. Lo probamos en distintos tamaños de pantalla antes de entregarlo."),
 ("¿Cómo empiezo?","Escribinos por Instagram desde el botón «Hablar con Velta Web», contanos tu idea y te armamos una propuesta sin cargo."),
 ]
 def faq_ld(items): return {"@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}} for q,a in items]}
