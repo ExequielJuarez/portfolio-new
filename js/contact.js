@@ -12,7 +12,7 @@
   };
 
   const message = (key) => MSG[key] || MSG.general;
-  const contactUrl = (msg) => (WA_NUMBER ? `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}` : `https://ig.me/m/${IG_USER}`);
+  const contactUrl = (msg) => (WA_NUMBER ? `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}` : `https://www.instagram.com/${IG_USER}/`);
 
   function toast(text) {
     let t = document.getElementById("toast");
@@ -36,7 +36,7 @@
     const msg = a.dataset.msg || message(a.dataset.contact);
     a.href = contactUrl(msg); a.target = "_blank"; a.rel = "noopener noreferrer";
     // Instagram no admite texto prellenado: se copia el mensaje para pegarlo en el chat
-    if (!WA_NUMBER) copy(msg).then(() => toast("Copiamos tu mensaje: pegalo en el chat de Instagram y envialo."), () => {});
+    if (!WA_NUMBER) copy(msg).then(() => toast("Copiamos tu mensaje: tocá «Mensaje» en nuestro perfil de Instagram y pegalo."), () => {});
   });
 
   window.Velta = { message, contactUrl };
