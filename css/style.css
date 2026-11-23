@@ -176,7 +176,7 @@ h3{font-weight:650;font-size:1.15rem;letter-spacing:-.02em;line-height:1.25}
 
 /* Pie */
 .footer{border-top:1px solid var(--line);padding:56px 0 28px;margin-top:clamp(40px,6vw,72px)}
-.footer__inner{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px}
+.footer__inner{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:36px}
 .footer__col img{height:40px;width:auto;margin-bottom:16px}
 .footer__col p{color:var(--muted);font-size:.94rem;max-width:36ch}
 .footer__col h4{font:700 .78rem/1 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
@@ -331,3 +331,9 @@ h3{font-weight:650;font-size:1.15rem;letter-spacing:-.02em;line-height:1.25}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
   .reveal{opacity:1;transform:none}
 }
+
+/* Texto de presentación (SEO) */
+.prose-home h2{margin-bottom:18px;max-width:22ch}
+.prose-home p{color:var(--text-2);margin-top:14px;max-width:70ch;text-wrap:pretty}
+.prose-home a{color:var(--accent);font-weight:600;text-decoration:underline;text-decoration-color:var(--indigo-300);text-underline-offset:3px}
+@media (max-width:1020px){.footer__inner{grid-template-columns:1fr 1fr}}

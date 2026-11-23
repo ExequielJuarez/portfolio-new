@@ -1,5 +1,5 @@
 import sys,json,os; sys.path.insert(0,os.path.dirname(os.path.abspath(__file__))); from seo_data import *
-V="20261123v11"
+V="20261123v12"
 IGA='href="https://www.instagram.com/velta.web/" target="_blank" rel="noopener noreferrer"'
 IGSVG='<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".6" fill="currentColor"/></svg>'
 PAGES=[
@@ -51,6 +51,42 @@ dict(slug="sistemas-a-medida",key="sistema",name="Sistemas a medida",
       ("¿Para qué tipo de negocios sirve?","Para comercios, consultorios, gastronomía y servicios en general: lo definimos con vos según cómo trabajás hoy."),
       ("¿Se usa desde el celular?","El sistema funciona desde el navegador, por lo que podés acceder desde cualquier dispositivo con internet.")],
  price=None, related=["paginas-web-santiago-del-estero","landing-pages","tiendas-online-ecommerce"]),
+dict(slug="programador-santiago-del-estero",key="general",name="Programador en Santiago del Estero",
+ title="Programador en Santiago del Estero | Velta Web",
+ desc="Programador web en Santiago del Estero: páginas web, tiendas online y sistemas a medida. Presupuesto sin cargo con Velta Web.",
+ h1="Programador web en <span class=\"grad\">Santiago del Estero</span>",
+ lead="Somos programadores con base en Santiago del Estero. Desarrollamos páginas web, tiendas online y sistemas a medida para negocios de la capital, La Banda, Termas de Río Hondo y toda la provincia.",
+ prose=[("Un programador cerca tuyo, con trato directo","Contratar a un programador de tu zona significa hablar con quien realmente desarrolla tu proyecto, coordinar reuniones cuando lo necesites y tener soporte después de la entrega. Trabajamos con comercios, consultorios, estudios profesionales, gastronomía e indumentaria de Santiago del Estero."),
+        ("Qué programamos","Páginas web institucionales, landing pages para campañas, tiendas online con carrito y panel de administración, y sistemas de gestión para ventas, stock, clientes y turnos. Todo se desarrolla a medida, con diseño adaptable a celulares y buenas prácticas para aparecer en Google.")],
+ inc=["Páginas web y landing pages a medida","Tiendas online con pagos y panel de administración","Sistemas de gestión: ventas, stock, clientes y turnos","Diseño adaptable a celular, tablet y computadora","Optimización SEO para buscadores","Soporte y mejoras después del lanzamiento"],
+ faq=[("¿Cuánto cobra un programador web en Santiago del Estero?","Depende del alcance: cantidad de secciones, funciones y si necesitás tienda online o sistema. Te armamos una propuesta sin cargo, adaptada a tu proyecto."),
+      ("¿Puedo reunirme en persona?","Sí, podemos coordinar reuniones presenciales en Santiago del Estero y La Banda, o hacerlo por videollamada si te resulta más cómodo."),
+      ("¿Qué necesito para empezar?","Solo contarnos tu idea y tu negocio. Nosotros te guiamos con el dominio, el diseño y la publicación.")],
+ price=None, related=["programador-web-argentina","desarrollo-web-la-banda-termas-de-rio-hondo","paginas-web-santiago-del-estero"]),
+dict(slug="programador-web-argentina",key="general",name="Programador web en Argentina",
+ title="Programador web en Argentina | Velta Web",
+ desc="Programador web para toda Argentina: páginas web, tiendas online, landing pages y sistemas a medida, 100% remoto. Presupuesto sin cargo.",
+ h1="Programador web <span class=\"grad\">para toda Argentina</span>",
+ lead="Desarrollamos páginas web, tiendas online y sistemas a medida para clientes de todo el país, de forma 100% remota y con comunicación clara en cada etapa.",
+ prose=[("Trabajo remoto, resultados a medida","Desde Santiago del Estero trabajamos con clientes de Buenos Aires, Córdoba, Tucumán, Salta, Rosario y el resto del país. Las reuniones son por videollamada o chat, y te mostramos avances en cada etapa para que apruebes antes de seguir."),
+        ("Todo lo que necesita tu negocio online","Si buscás un programador web en Argentina para tu empresa, comercio o emprendimiento, podemos encargarnos del diseño, la programación, la publicación y el soporte. También desarrollamos tiendas online listas para vender a todo el país.")],
+ inc=["Páginas web a medida, sin plantillas","Tiendas online para vender a todo el país","Landing pages para campañas","Sistemas de gestión a medida","Atención por Instagram, videollamada o chat","Presupuesto sin cargo"],
+ faq=[("¿Trabajan con clientes de otras provincias?","Sí. Trabajamos de forma remota con clientes de toda Argentina y también del exterior."),
+      ("¿Cómo se coordina el proyecto a distancia?","Por Instagram, videollamada o chat. Definimos el alcance juntos y te mostramos los avances antes de publicar."),
+      ("¿Hacen facturas y contratos?","Podemos coordinar los detalles administrativos al armar la propuesta. Consultanos según tu caso.")],
+ price=None, related=["programador-santiago-del-estero","tiendas-online-ecommerce","sistemas-a-medida"]),
+dict(slug="desarrollo-web-la-banda-termas-de-rio-hondo",key="general",name="Desarrollo web en La Banda y Termas",
+ title="Desarrollo web en La Banda y Termas de Río Hondo | Velta Web",
+ desc="Páginas web y tiendas online para negocios de La Banda y Termas de Río Hondo. Programadores de Santiago del Estero, presupuesto sin cargo.",
+ h1="Desarrollo web en <span class=\"grad\">La Banda y Termas de Río Hondo</span>",
+ lead="Ayudamos a comercios, hoteles, restaurantes y profesionales de La Banda, Termas de Río Hondo y toda la provincia a tener presencia online profesional.",
+ prose=[("Presencia online para negocios de la provincia","Un buen sitio web te permite mostrar tus servicios, recibir consultas y aparecer cuando alguien busca en Google. En zonas turísticas como Termas de Río Hondo, además, ayuda a que los visitantes te encuentren y te contacten antes de llegar."),
+        ("Programadores de tu zona","Estamos en Santiago del Estero, muy cerca de La Banda y Termas, así que podemos coordinar reuniones presenciales o remotas, según prefieras.")],
+ inc=["Páginas web para hoteles, comercios y profesionales","Tiendas online con carrito y pagos","Botones de contacto directo por Instagram o WhatsApp","Diseño adaptable a celular","SEO local para búsquedas de tu zona","Soporte y actualizaciones"],
+ faq=[("¿Atienden negocios de La Banda y Termas de Río Hondo?","Sí. Trabajamos con negocios de toda la provincia, de forma presencial o remota."),
+      ("¿Sirve una web para un hotel o restaurante?","Sí: permite mostrar habitaciones o carta, recibir reservas y consultas, y aparecer en Google cuando te buscan."),
+      ("¿Cuánto tarda el proyecto?","Depende del contenido y las funciones. Te lo confirmamos en la propuesta.")],
+ price=None, related=["programador-santiago-del-estero","paginas-web-santiago-del-estero","landing-pages"]),
 ]
 BY={p['slug']:p for p in PAGES}
 def ic(n): return f'<svg class="ico-svg" aria-hidden="true"><use href="#i-{n}"/></svg>'
@@ -67,7 +103,7 @@ def page(p):
     prose="".join(f"<h2>{h}</h2><p>{t}</p>" for h,t in p['prose'])
     inc="".join(f"<li>{x}</li>" for x in p['inc'])
     pricebox='<span class="quote">Presupuesto a medida</span><p class="price-note">Te armamos una propuesta sin cargo según lo que necesites.</p>'
-    cta={"web":"Cotizar mi web","ecommerce":"Quiero mi tienda","landing":"Quiero mi landing","sistema":"Cotizar mi sistema"}[p['key']]
+    cta={"web":"Cotizar mi web","ecommerce":"Quiero mi tienda","landing":"Quiero mi landing","sistema":"Cotizar mi sistema","general":"Pedir presupuesto"}[p['key']]
     rel="".join(f'<a href="/{x}/">{BY[x]["name"]}</a>' for x in p['related'])
     faq="\n".join(f'<details><summary>{q}</summary><p>{a}</p></details>' for q,a in p['faq'])
     return f'''<!DOCTYPE html>
@@ -150,6 +186,7 @@ def page(p):
       <div class="footer__inner">
         <div class="footer__col"><img src="/assets/logo-dark.png" alt="Velta Web" width="136" height="46"><p>Desarrollo web en Santiago del Estero, Argentina. Páginas web, tiendas online y sistemas a medida.</p></div>
         <nav class="footer__col" aria-label="Servicios"><h4>Servicios</h4><a href="/paginas-web-santiago-del-estero/">Páginas web</a><a href="/landing-pages/">Landing pages</a><a href="/tiendas-online-ecommerce/">Tiendas online</a><a href="/sistemas-a-medida/">Sistemas a medida</a></nav>
+        <nav class="footer__col" aria-label="Zonas"><h4>Dónde trabajamos</h4><a href="/programador-santiago-del-estero/">Santiago del Estero</a><a href="/desarrollo-web-la-banda-termas-de-rio-hondo/">La Banda y Termas</a><a href="/programador-web-argentina/">Toda Argentina</a></nav>
         <div class="footer__col"><h4>Seguinos</h4><a class="social" href="https://www.instagram.com/velta.web/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Velta Web">{ic('ig')}<span>@velta.web</span></a></div>
       </div>
       <div class="footer__legal"><span>© 2026 Velta Web</span><span>veltaweb.com.ar</span></div>
@@ -163,3 +200,9 @@ for p in PAGES:
     os.makedirs(os.path.join(ROOT,p['slug']),exist_ok=True)
     open(os.path.join(ROOT,p['slug'],"index.html"),"w",encoding="utf-8").write(page(p))
 print("páginas:",[p['slug'] for p in PAGES])
+import datetime
+today = datetime.date.today().isoformat()
+urls = [("",1.0)] + [("/" + p["slug"] + "/", 0.8) for p in PAGES]
+sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(f'  <url><loc>{SITE}{u}</loc><lastmod>{today}</lastmod><changefreq>monthly</changefreq><priority>{pr}</priority></url>\n' for u, pr in urls) + '</urlset>\n'
+open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8").write(sm)
+print("sitemap:", len(urls), "urls")

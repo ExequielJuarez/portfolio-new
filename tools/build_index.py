@@ -4,7 +4,7 @@ HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 from seo_data import *
 from PIL import Image
 ROOT = os.path.dirname(HERE)
-V = "20261123v11"
+V = "20261123v12"
 w, h = Image.open(os.path.join(ROOT, "assets/logo-dark.png")).size
 IGA = 'href="https://www.instagram.com/velta.web/" target="_blank" rel="noopener noreferrer"'
 def ic(n): return f'<svg class="ico-svg" aria-hidden="true"><use href="#i-{n}"/></svg>'
@@ -39,7 +39,7 @@ stack = f'''<div class="stack__group card reveal"><h3>Interfaz</h3><div class="c
           <div class="stack__group card reveal"><h3>Servidor</h3><div class="chips">{chips([("Node.js","#6cc24a"),("Express","#e8ecff"),("EJS","#d9467a")])}</div></div>
           <div class="stack__group card reveal"><h3>Datos</h3><div class="chips">{chips([("MySQL","#01B0F9"),("Sequelize","#52b0e7")])}</div></div>'''
 proc = ''.join(f'<article class="card reveal"><h3>{t}</h3><p>{d}</p></article>' for t, d in [("Conversamos","Nos contás tu negocio y qué querés lograr. Sin tecnicismos."),("Diseñamos y desarrollamos","Armamos una propuesta y la construimos con tu aprobación en cada etapa."),("Publicamos y acompañamos","Lanzamos tu proyecto y te damos soporte para que siga creciendo.")])
-title = "Velta Web | Páginas web y tiendas online en Santiago del Estero"
+title = "Programador web en Santiago del Estero | Velta Web"
 graph = [ORG,
  {"@type":"WebSite","@id":SITE+"/#website","url":SITE+"/","name":"Velta Web","alternateName":["Velta","VeltaWeb"],"inLanguage":"es-AR","publisher":{"@id":SITE+"/#org"}},
  {"@type":"WebPage","@id":SITE+"/#webpage","url":SITE+"/","name":title,"isPartOf":{"@id":SITE+"/#website"},"about":{"@id":SITE+"/#org"},"inLanguage":"es-AR"},
@@ -55,7 +55,7 @@ html = f'''<!DOCTYPE html>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>{title}</title>
-  <meta name="description" content="Velta Web: diseño y desarrollo de páginas web, landing pages, tiendas online y sistemas a medida en Santiago del Estero y toda Argentina. Pedí tu presupuesto.">
+  <meta name="description" content="Velta Web: programadores web en Santiago del Estero y toda Argentina. Páginas web, tiendas online, landing pages y sistemas a medida. Presupuesto sin cargo.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="{SITE}/">
   <meta name="author" content="Velta Web">
@@ -67,7 +67,7 @@ html = f'''<!DOCTYPE html>
   <meta property="og:locale" content="es_AR">
   <meta property="og:site_name" content="Velta Web">
   <meta property="og:title" content="{title}">
-  <meta property="og:description" content="Páginas web, landing pages, tiendas online y sistemas a medida para tu negocio. Desarrollo web en Santiago del Estero y toda Argentina.">
+  <meta property="og:description" content="Programadores web en Santiago del Estero y toda Argentina: páginas web, tiendas online, landing pages y sistemas a medida.">
   <meta property="og:url" content="{SITE}/">
   <meta property="og:image" content="{SITE}/assets/og.png">
   <meta property="og:image:width" content="1200">
@@ -107,8 +107,8 @@ html = f'''<!DOCTYPE html>
       <div class="container hero__grid">
         <div class="hero__text">
           <span class="pill"><i></i>Desarrollo web · Santiago del Estero, Argentina</span>
-          <h1>Creamos sitios y sistemas <span class="grad">a la medida</span> de tu negocio</h1>
-          <p class="lead">Desarrollamos páginas web, tiendas online y sistemas de gestión para que puedas mostrar, organizar y hacer crecer tu negocio.</p>
+          <h1>Programadores web en <span class="grad">Santiago del Estero</span> y toda Argentina</h1>
+          <p class="lead">Programamos páginas web, tiendas online y sistemas de gestión a medida para que puedas mostrar, organizar y hacer crecer tu negocio.</p>
           <div class="actions">
             <a {IGA} data-contact="general" class="btn btn--primary">Empezar ahora {ic('arrow')}</a>
             <a href="#proyectos" class="btn btn--ghost">Ver proyectos</a>
@@ -166,10 +166,19 @@ html = f'''<!DOCTYPE html>
       </div>
     </section>
 
-    <section class="section" id="preguntas">
+    <section class="section" id="nosotros">
+      <div class="container container--narrow prose-home">
+        <span class="eyebrow">04 · nosotros</span>
+        <h2>Programadores web en Santiago del Estero, trabajando para toda Argentina</h2>
+        <p>Somos <strong>Velta Web</strong>, un equipo de programadores con base en Santiago del Estero. Desarrollamos <a href="/paginas-web-santiago-del-estero/">páginas web</a>, <a href="/tiendas-online-ecommerce/">tiendas online</a>, <a href="/landing-pages/">landing pages</a> y <a href="/sistemas-a-medida/">sistemas a medida</a> para comercios, profesionales y empresas de la capital, La Banda, Termas de Río Hondo y el interior de la provincia.</p>
+        <p>También trabajamos de forma remota como <a href="/programador-web-argentina/">programador web en toda Argentina</a>: reuniones por videollamada o chat, avances en cada etapa y soporte después del lanzamiento. Si buscás un <a href="/programador-santiago-del-estero/">programador en Santiago del Estero</a> que te acompañe de punta a punta, contanos tu idea y te armamos una propuesta sin cargo.</p>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="preguntas">
       <div class="container container--narrow faq-wrap">
         <div class="sec-head">
-          <span class="eyebrow">04 · preguntas</span>
+          <span class="eyebrow">05 · preguntas</span>
           <h2>Preguntas frecuentes</h2>
           <p class="sub">Lo que más nos consultan sobre páginas web y tiendas online.</p>
           <a {IGA} data-contact="general" class="btn btn--primary">Hacernos otra pregunta</a>
@@ -196,6 +205,7 @@ html = f'''<!DOCTYPE html>
       <div class="footer__inner">
         <div class="footer__col"><img src="/assets/logo-dark.png" alt="Velta Web" width="{round(46*w/h)}" height="46"><p>Desarrollo web en Santiago del Estero, Argentina. Páginas web, tiendas online y sistemas a medida.</p></div>
         <nav class="footer__col" aria-label="Servicios"><h4>Servicios</h4><a href="/paginas-web-santiago-del-estero/">Páginas web</a><a href="/landing-pages/">Landing pages</a><a href="/tiendas-online-ecommerce/">Tiendas online</a><a href="/sistemas-a-medida/">Sistemas a medida</a></nav>
+        <nav class="footer__col" aria-label="Zonas"><h4>Dónde trabajamos</h4><a href="/programador-santiago-del-estero/">Santiago del Estero</a><a href="/desarrollo-web-la-banda-termas-de-rio-hondo/">La Banda y Termas</a><a href="/programador-web-argentina/">Toda Argentina</a></nav>
         <div class="footer__col"><h4>Seguinos</h4><a class="social" href="https://www.instagram.com/velta.web/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Velta Web">{ic('ig')}<span>@velta.web</span></a></div>
       </div>
       <div class="footer__legal"><span>© <span id="year">2026</span> Velta Web</span><span>veltaweb.com.ar</span></div>

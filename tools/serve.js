@@ -6,7 +6,7 @@ const path = require("path");
 
 const ROOT = path.join(__dirname, "..");
 const PORT = process.env.PORT || 3000;
-const PAGES = ["paginas-web-santiago-del-estero", "tiendas-online-ecommerce", "landing-pages", "sistemas-a-medida"];
+const PAGES = ["paginas-web-santiago-del-estero", "tiendas-online-ecommerce", "landing-pages", "sistemas-a-medida", "programador-santiago-del-estero", "programador-web-argentina", "desarrollo-web-la-banda-termas-de-rio-hondo"];
 const PUBLIC = new RegExp(`^/(index\\.html|robots\\.txt|sitemap\\.xml|(css|js|assets|demos|${PAGES.join("|")})/.*)?$`);
 const TYPES = {
   ".html": "text/html; charset=utf-8", ".css": "text/css; charset=utf-8", ".js": "text/javascript; charset=utf-8",
