@@ -4,7 +4,7 @@ HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 from seo_data import *
 from PIL import Image
 ROOT = os.path.dirname(HERE)
-V = "20261123v9"
+V = "20261123v10"
 w, h = Image.open(os.path.join(ROOT, "assets/logo-dark.png")).size
 IGA = 'href="https://ig.me/m/velta.web" target="_blank" rel="noopener noreferrer"'
 def ic(n): return f'<svg class="ico-svg" aria-hidden="true"><use href="#i-{n}"/></svg>'
