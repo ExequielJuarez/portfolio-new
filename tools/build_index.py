@@ -4,7 +4,7 @@ HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 from seo_data import *
 from PIL import Image
 ROOT = os.path.dirname(HERE)
-V = "20261123v8"
+V = "20261123v9"
 w, h = Image.open(os.path.join(ROOT, "assets/logo-dark.png")).size
 IGA = 'href="https://ig.me/m/velta.web" target="_blank" rel="noopener noreferrer"'
 def ic(n): return f'<svg class="ico-svg" aria-hidden="true"><use href="#i-{n}"/></svg>'
@@ -92,7 +92,6 @@ html = f'''<!DOCTYPE html>
       <nav class="nav__links" id="menu" aria-label="Principal">
         <a href="#proyectos">Proyectos</a>
         <a href="#planes">Planes</a>
-        <a href="#tecnologias">Tecnologías</a>
         <a href="#preguntas">Preguntas</a>
         <a {IGA} data-contact="general" class="btn btn--primary nav__cta">Cotizar proyecto</a>
       </nav>
@@ -167,23 +166,10 @@ html = f'''<!DOCTYPE html>
       </div>
     </section>
 
-    <section class="section" id="tecnologias">
-      <div class="container">
-        <div class="sec-head">
-          <span class="eyebrow">04 · stack</span>
-          <h2>Tecnologías modernas, listas para escalar</h2>
-          <p class="sub">Un stack mantenible y rápido, elegido para que tu proyecto crezca sin rehacerlo.</p>
-        </div>
-        <div class="stack">
-          {stack}
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--alt" id="preguntas">
+    <section class="section" id="preguntas">
       <div class="container container--narrow faq-wrap">
         <div class="sec-head">
-          <span class="eyebrow">05 · preguntas</span>
+          <span class="eyebrow">04 · preguntas</span>
           <h2>Preguntas frecuentes</h2>
           <p class="sub">Lo que más nos consultan sobre páginas web y tiendas online.</p>
           <a {IGA} data-contact="general" class="btn btn--primary">Hacernos otra pregunta</a>

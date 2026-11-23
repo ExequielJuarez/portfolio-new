@@ -1,5 +1,5 @@
 import sys,json,os; sys.path.insert(0,os.path.dirname(os.path.abspath(__file__))); from seo_data import *
-V="20261123v8"
+V="20261123v9"
 IGA='href="https://ig.me/m/velta.web" target="_blank" rel="noopener noreferrer"'
 IGSVG='<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".6" fill="currentColor"/></svg>'
 PAGES=[
@@ -106,7 +106,7 @@ def page(p):
     <div class="container nav__inner">
       <a href="/" class="brand" aria-label="Velta Web, inicio"><img src="/assets/logo-dark.png" alt="Velta Web" width="148" height="50"></a>
       <nav class="nav__links" aria-label="Principal">
-        <a href="/#proyectos">Proyectos</a><a href="/#planes">Planes</a><a href="/#tecnologias">Tecnologías</a>
+        <a href="/#proyectos">Proyectos</a><a href="/#planes">Planes</a>
         <a {IGA} data-contact="{p['key']}" class="btn btn--primary nav__cta">Cotizar proyecto</a>
       </nav>
     </div>
