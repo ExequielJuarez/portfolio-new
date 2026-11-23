@@ -125,6 +125,7 @@ h3{font-weight:650;font-size:1.15rem;letter-spacing:-.02em;line-height:1.25}
 .ico .ico-svg{width:24px;height:24px}
 .bento{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 .bento .card{display:flex;flex-direction:column}
+.bento .card::before{content:"";width:32px;height:4px;margin-bottom:26px;border-radius:4px;background:linear-gradient(90deg,var(--indigo-500),var(--indigo-700))}
 .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
 .tags span{padding:5px 12px;border-radius:999px;background:var(--bg-alt);border:1px solid var(--line);font-size:.8rem;font-weight:600;color:var(--text-2)}
 .more{display:inline-flex;align-items:center;gap:8px;margin-top:auto;padding-top:22px;font-weight:700;font-size:.95rem;color:var(--accent)}

@@ -4,7 +4,7 @@ HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 from seo_data import *
 from PIL import Image
 ROOT = os.path.dirname(HERE)
-V = "20261123v4"
+V = "20261123v5"
 w, h = Image.open(os.path.join(ROOT, "assets/logo-dark.png")).size
 IGA = 'href="https://ig.me/m/velta.web" target="_blank" rel="noopener noreferrer"'
 def ic(n): return f'<svg class="ico-svg" aria-hidden="true"><use href="#i-{n}"/></svg>'
@@ -20,7 +20,7 @@ SPRITE = '''<svg class="sprite" aria-hidden="true" focusable="false"><defs>
 </defs></svg>'''
 def card(i, title, txt, tags, href, cls):
     t = "".join(f"<span>{x}</span>" for x in tags)
-    return f'<article class="card reveal {cls}"><div class="ico">{ic(i)}</div><h3>{title}</h3><p>{txt}</p><div class="tags">{t}</div><a class="more" href="{href}">Ver más {ic("arrow")}</a></article>'
+    return f'<article class="card reveal {cls}"><h3>{title}</h3><p>{txt}</p><div class="tags">{t}</div><a class="more" href="{href}">Ver más {ic("arrow")}</a></article>'
 services = "\n          ".join([
  card('layout','Páginas web','Sitios institucionales rápidos, responsive y optimizados para buscadores. Diseño a medida, sin plantillas.',['Diseño a medida','SEO','Responsive'],'/paginas-web-santiago-del-estero/','b-4'),
  card('bolt','Landing pages','Páginas de conversión claras y veloces para campañas y lanzamientos.',['Conversión','Rápidas'],'/landing-pages/','b-2'),
