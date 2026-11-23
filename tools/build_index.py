@@ -4,7 +4,7 @@ HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 from seo_data import *
 from PIL import Image
 ROOT = os.path.dirname(HERE)
-V = "20261123v3"
+V = "20261123v4"
 w, h = Image.open(os.path.join(ROOT, "assets/logo-dark.png")).size
 IGA = 'href="https://ig.me/m/velta.web" target="_blank" rel="noopener noreferrer"'
 def ic(n): return f'<svg class="ico-svg" aria-hidden="true"><use href="#i-{n}"/></svg>'
@@ -39,7 +39,6 @@ stack = f'''<div class="stack__group card reveal"><h3>Interfaz</h3><div class="c
           <div class="stack__group card reveal"><h3>Servidor</h3><div class="chips">{chips([("Node.js","#6cc24a"),("Express","#e8ecff"),("EJS","#d9467a")])}</div></div>
           <div class="stack__group card reveal"><h3>Datos</h3><div class="chips">{chips([("MySQL","#01B0F9"),("Sequelize","#52b0e7")])}</div></div>'''
 proc = ''.join(f'<article class="card reveal"><h3>{t}</h3><p>{d}</p></article>' for t, d in [("Conversamos","Nos contás tu negocio y qué querés lograr. Sin tecnicismos."),("Diseñamos y desarrollamos","Armamos una propuesta y la construimos con tu aprobación en cada etapa."),("Publicamos y acompañamos","Lanzamos tu proyecto y te damos soporte para que siga creciendo.")])
-code = '<span class="ln"><span class="c">// lo que hacemos en Velta Web</span></span><span class="ln"><span class="k">const</span> <span class="f">velta</span> = {</span><span class="ln">  <span class="p">servicios</span>: [</span><span class="ln">    <span class="s">"Webs"</span>, <span class="s">"Landings"</span>,</span><span class="ln">    <span class="s">"E-commerce"</span>, <span class="s">"Sistemas"</span></span><span class="ln">  ],</span><span class="ln">  <span class="p">stack</span>: [<span class="s">"Node"</span>, <span class="s">"Express"</span>, <span class="s">"MySQL"</span>],</span><span class="ln">  <span class="p">diseño</span>: <span class="s">"adaptativo"</span></span><span class="ln">};</span><span class="ln"></span><span class="ln"><span class="k">async function</span> <span class="f">crearProyecto</span>(cliente) {</span><span class="ln">  <span class="k">await</span> <span class="f">disenar</span>(cliente);</span><span class="ln">  <span class="k">await</span> <span class="f">desarrollar</span>(cliente);</span><span class="ln">  <span class="k">return</span> <span class="s">"En línea"</span><span class="cur"></span>;</span><span class="ln">}</span>'
 title = "Velta Web | Páginas web y tiendas online en Santiago del Estero"
 graph = [ORG,
  {"@type":"WebSite","@id":SITE+"/#website","url":SITE+"/","name":"Velta Web","alternateName":["Velta","VeltaWeb"],"inLanguage":"es-AR","publisher":{"@id":SITE+"/#org"}},
@@ -116,24 +115,20 @@ html = f'''<!DOCTYPE html>
             <a {IGA} data-contact="general" class="btn btn--primary">Empezar ahora {ic('arrow')}</a>
             <a href="#proyectos" class="btn btn--ghost">Ver proyectos</a>
           </div>
-          <div class="hero__proof">
-            <span>{ic('check')}Diseño 100% responsive</span>
-            <span>{ic('check')}Paneles de administración</span>
-            <span>{ic('check')}Para Argentina y el exterior</span>
-          </div>
+          <ul class="hero__proof">
+            <li>Diseño 100% responsive</li>
+            <li>Paneles de administración</li>
+            <li>Para Argentina y el exterior</li>
+          </ul>
         </div>
         <div class="hero__visual" aria-hidden="true">
-          <span class="float-chip fc1">{ic('check')}Diseño responsive</span>
-          <div class="code">
-            <div class="code__bar"><i></i><i></i><i></i><span class="code__tab">velta.config.js</span></div>
-            <pre><code>{code}</code></pre>
-            <div class="code__status"><span><i></i>En línea</span><span>JavaScript · UTF-8</span></div>
-          </div>
-          <span class="float-chip fc2">{ic('check')}SEO optimizado</span>
+          <figure class="mock m1"><div class="mock__bar"><i></i><i></i><i></i></div><img src="/assets/projects/fressia.webp" alt="" width="1280" height="800" decoding="async"></figure>
+          <figure class="mock m2"><div class="mock__bar"><i></i><i></i><i></i></div><img src="/assets/projects/toplevel.webp" alt="" width="1280" height="800" decoding="async"></figure>
+          <figure class="mock m3"><div class="mock__bar"><i></i><i></i><i></i></div><img src="/assets/projects/magictecno.webp" alt="" width="1280" height="800" decoding="async"></figure>
         </div>
       </div>
       <div class="container stats">
-        <div class="reveal"><b>12</b><span>Proyectos y demos</span></div>
+        <div class="reveal"><b>7</b><span>Proyectos en línea</span></div>
         <div class="reveal"><b>100%</b><span>Diseño responsive</span></div>
         <div class="reveal"><b>4</b><span>Tipos de solución</span></div>
         <div class="reveal"><b>A medida</b><span>Sin plantillas</span></div>
@@ -158,17 +153,15 @@ html = f'''<!DOCTYPE html>
         <div class="sec-head">
           <span class="eyebrow">02 · proyectos</span>
           <h2>Mirá cómo se ve y cómo funciona</h2>
-          <p class="sub">Deslizá, arrastrá o usá las flechas. Tocá un proyecto y navegalo como si fuera el sitio real; las tiendas y la hamburguesería incluyen su panel de administración.</p>
+          <p class="sub">Deslizá o usá las flechas. Tocá el proyecto del centro y navegalo como si fuera el sitio real.</p>
         </div>
       </div>
       <div class="carousel" id="carousel" role="region" aria-roledescription="carrusel" aria-label="Proyectos">
         <div class="carousel__track" id="projects" tabindex="0"></div>
-        <div class="container carousel__ctrl">
-          <div class="carousel__bar" aria-hidden="true"><i id="cbar"></i></div>
-          <div class="carousel__btns">
-            <button id="cprev" class="cbtn" aria-label="Proyecto anterior"><svg class="ico-svg" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
-            <button id="cnext" class="cbtn" aria-label="Proyecto siguiente"><svg class="ico-svg" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-          </div>
+        <div class="carousel__ctrl">
+          <button id="cprev" class="cbtn" aria-label="Proyecto anterior"><svg class="ico-svg" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+          <div class="carousel__dots" id="cdots" role="tablist" aria-label="Elegir proyecto"></div>
+          <button id="cnext" class="cbtn" aria-label="Proyecto siguiente"><svg class="ico-svg" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
         </div>
       </div>
     </section>

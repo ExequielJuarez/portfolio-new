@@ -1,97 +1,89 @@
-// Velta Web: carrusel de proyectos, visor de demos, menú y efectos
+// Velta Web: carrusel de proyectos, visor de demos, menú y aparición al scroll
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const ICON_OPEN = '<svg class="ico-svg" aria-hidden="true"><use href="#i-open"/></svg>';
 
-// Copia navegable de cada proyecto (carpeta demos/). "a" = panel de administración, si existe.
-const DEMOS = {
-  "santiago-mates.webp": { u: "/demos/santiago-mates/index.html", a: "/demos/santiago-mates/admin.html" },
-  "matilda-boutique.webp": { u: "/demos/matilda-boutique/index.html", a: "/demos/matilda-boutique/admin.html" },
-  "akualoe-chic.webp": { u: "/demos/akualoe-chic/index.html", a: "/demos/akualoe-chic/admin.html" },
-  "huella-negra.webp": { u: "/demos/huella-negra/index.html", a: "/demos/huella-negra/admin.html" },
-  "sistema-negocio.webp": { u: "/demos/sistema-negocio/index.html" },
-  "jb-sushi.webp": { u: "/demos/jb-sushi/index.html" },
-  "sora-sushi.webp": { u: "/demos/sora-sushi/index.html" },
-  "street-burger.webp": { u: "/demos/street-burger/index.html", a: "/demos/street-burger/admin/index.html" },
-  "landing-dentista.webp": { u: "/demos/landings/dentista/index.html" },
-  "landing-abogado.webp": { u: "/demos/landings/abogado/index.html" },
-  "landing-veterinario.webp": { u: "/demos/landings/veterinario/index.html" },
-  "landing-medico.webp": { u: "/demos/landings/medico/index.html" },
-};
-
+// Cada proyecto: "u" es la dirección que se abre en el visor (copia local en /demos o sitio en línea).
 const NODE = ["Node", "Express", "Sequelize", "MySQL"];
 const PROJECTS = [
-  { t: "Santiago Mates", d: "Tienda online de mates y accesorios con catálogo, carrito, favoritos, cuentas de cliente y panel de administración.", c: "E-commerce", img: "santiago-mates.webp", s: [...NODE, "EJS"] },
-  { t: "Matilda Boutique", d: "E-commerce de moda femenina con colecciones por temporada, favoritos, cuotas y atención por WhatsApp.", c: "E-commerce", img: "matilda-boutique.webp", s: [...NODE, "EJS"] },
-  { t: "Akualoe Chic", d: "Tienda de ropa con menú por categorías, buscador, carrito y checkout con envíos a todo el país.", c: "E-commerce", img: "akualoe-chic.webp", s: [...NODE, "EJS"] },
-  { t: "Huella Negra", d: "Tienda de indumentaria masculina con productos destacados, favoritos y compra en pocos pasos.", c: "E-commerce", img: "huella-negra.webp", s: [...NODE, "EJS"] },
-  { t: "Sistema de gestión", d: "Punto de venta, caja, stock, compras, clientes, facturas y reportes para kioscos y comercios.", c: "Sistemas", img: "sistema-negocio.webp", s: [...NODE, "EJS"] },
-  { t: "JB Sushi", d: "Sitio de restaurante con carta, reservas y galería, con diseño inmersivo y adaptativo.", c: "Gastronomía", img: "jb-sushi.webp", s: [...NODE, "EJS"] },
-  { t: "Sora Sushi Lounge", d: "Landing, carta y reservas con animaciones de scroll suave, parallax y carrito de pedido.", c: "Gastronomía", img: "sora-sushi.webp", s: ["Node", "Express", "MySQL", "GSAP"] },
-  { t: "Street Burger", d: "Carta digital para pedir en mesa o por delivery, con categorías, carrito y seguimiento de pedidos.", c: "Gastronomía", img: "street-burger.webp", s: [...NODE, "EJS"] },
-  { t: "Landing · Dentista", d: "Landing de clínica odontológica con tratamientos, cuotas y reserva de turnos.", c: "Landings", img: "landing-dentista.webp", s: ["HTML", "CSS", "JavaScript"] },
-  { t: "Landing · Estudio jurídico", d: "Página institucional elegante para estudio de abogados con áreas de práctica y consultas.", c: "Landings", img: "landing-abogado.webp", s: ["HTML", "CSS", "JavaScript"] },
-  { t: "Landing · Veterinaria", d: "Hospital veterinario con guardia 24 hs, plan de salud y botón de emergencias.", c: "Landings", img: "landing-veterinario.webp", s: ["HTML", "CSS", "JavaScript"] },
-  { t: "Landing · Médico", d: "Landing de consultorio con reserva de turnos por día y horario enviada por WhatsApp.", c: "Landings", img: "landing-medico.webp", s: ["HTML", "CSS", "JavaScript"] },
+  { t: "Fressia Indumentaria", d: "Tienda online de moda con novedades, categorías, favoritos, carrito y envíos a todo el país.", c: "E-commerce", img: "fressia.webp", u: "https://fressia.veltaweb.com.ar/", s: [...NODE, "EJS"] },
+  { t: "Top Level Barber Shop", d: "Barbería con tienda de insumos, turnos en línea, carrito y cuentas de cliente.", c: "Barbería", img: "toplevel.webp", u: "https://toplevel.veltaweb.com.ar/", s: [...NODE, "EJS"] },
+  { t: "Magic Tecno", d: "Juguetería y computación con catálogo por categorías, precios mayoristas y pedidos por WhatsApp.", c: "E-commerce", img: "magictecno.webp", u: "https://www.magictecno.veltaweb.com.ar/", s: [...NODE, "EJS"] },
+  { t: "OneBarber", d: "Venta de insumos y máquinas para barberías, con tienda online y atención por WhatsApp.", c: "Barbería", img: "onebarber.webp", u: "https://www.onebarber.veltaweb.com.ar/", s: [...NODE, "EJS"] },
+  { t: "Huella Negra", d: "Tienda de indumentaria masculina con productos destacados, favoritos, compra en pocos pasos y panel de administración.", c: "E-commerce", img: "huella-negra.webp", u: "/demos/huella-negra/index.html", a: "/demos/huella-negra/admin.html", s: [...NODE, "EJS"] },
+  { t: "Sistema de gestión", d: "Punto de venta, caja, stock, compras, clientes, facturas y reportes para kioscos y comercios.", c: "Sistemas", img: "sistema-negocio.webp", u: "/demos/sistema-negocio/index.html", s: [...NODE, "EJS"] },
+  { t: "Sora Sushi Lounge", d: "Landing, carta y reservas con animaciones de scroll suave, parallax y carrito de pedido.", c: "Gastronomía", img: "sora-sushi.webp", u: "/demos/sora-sushi/index.html", s: ["Node", "Express", "MySQL", "GSAP"] },
 ];
 
 const viewer = $("#viewer"), frame = $("#vframe"), stage = $("#vstage"), vbar = $("#vurl");
 
-// ---- Proyectos: carrusel ----
+// ---- Proyectos: carrusel con el proyecto activo al centro ----
 const track = $("#projects");
-track.innerHTML = PROJECTS.map((p) => {
-  const d = DEMOS[p.img], slug = d.u.split("/").slice(2, -1).join("/");
-  return `<article class="proj" data-demo="${d.u}" data-admin="${d.a || ""}" data-title="${esc(p.t)}" role="button" tabindex="0" aria-label="Ver demo de ${esc(p.t)}">
+const host = (u) => u.replace(/^https?:\/\//, "").replace(/\/$/, "");
+const shown = (u) => (u.startsWith("http") ? host(u) : "veltaweb.com.ar" + u.replace(/\/index\.html$/, ""));
+track.innerHTML = PROJECTS.map((p, i) => {
+  return `<article class="proj" data-i="${i}" data-demo="${p.u}" data-admin="${p.a || ""}" data-title="${esc(p.t)}" role="group" aria-roledescription="proyecto" aria-label="${i + 1} de ${PROJECTS.length}: ${esc(p.t)}">
     <div class="shot">
-      <div class="shot__bar"><i></i><i></i><i></i><span>veltaweb.com.ar/demos/${slug}</span></div>
+      <div class="shot__bar"><i></i><i></i><i></i><span>${shown(p.u)}</span></div>
       <div class="shot__view"><img src="/assets/projects/${p.img}" alt="Captura del proyecto ${esc(p.t)}" width="1280" height="800" loading="lazy" decoding="async" draggable="false"></div>
     </div>
     <div class="proj__body">
-      <div class="badges"><span class="badge">${p.c}</span>${d.a ? '<span class="badge badge--admin">+ Panel admin</span>' : ""}</div>
+      <div class="badges"><span class="badge">${p.c}</span>${p.a ? '<span class="badge badge--admin">+ Panel admin</span>' : ""}</div>
       <h3>${esc(p.t)}</h3>
       <p>${esc(p.d)}</p>
-      <div class="tags">${p.s.map((x) => `<span>${esc(x)}</span>`).join("")}</div>
-      <span class="proj__go">Ver demo en vivo ${ICON_OPEN}</span>
+      <span class="proj__go">Ver sitio en vivo ${ICON_OPEN}</span>
     </div>
   </article>`;
 }).join("");
 
-const carousel = $("#carousel"), bar = $("#cbar");
-const step = () => { const s = track.querySelector(".proj"); return s ? s.getBoundingClientRect().width + 20 : 320; };
-const atEnd = () => track.scrollLeft >= track.scrollWidth - track.clientWidth - 4;
-const go = (dir) => track.scrollBy({ left: dir * step(), behavior: "smooth" });
-const updateBar = () => {
-  const max = track.scrollWidth - track.clientWidth;
-  const view = track.clientWidth / track.scrollWidth;
-  bar.style.width = view * 100 + "%";
-  bar.style.transform = `translateX(${max > 0 ? (track.scrollLeft / max) * (1 / view - 1) * 100 : 0}%)`;
+const carousel = $("#carousel"), dots = $("#cdots");
+const slides = $$(".proj", track);
+dots.innerHTML = slides.map((_, i) => `<button role="tab" data-i="${i}" aria-label="Ir al proyecto ${i + 1}"></button>`).join("");
+const dotEls = $$("button", dots);
+let current = 0;
+const centerOf = (el) => el.offsetLeft + el.offsetWidth / 2 - track.clientWidth / 2;
+const goTo = (i, smooth = true) => {
+  i = Math.max(0, Math.min(slides.length - 1, i));
+  track.scrollTo({ left: centerOf(slides[i]), behavior: smooth ? "smooth" : "auto" });
 };
-track.addEventListener("scroll", updateBar, { passive: true });
-addEventListener("resize", updateBar);
-updateBar();
+const paint = () => {
+  const mid = track.scrollLeft + track.clientWidth / 2;
+  let best = 0, bd = Infinity;
+  slides.forEach((el, i) => { const d = Math.abs(el.offsetLeft + el.offsetWidth / 2 - mid); if (d < bd) { bd = d; best = i; } });
+  current = best;
+  slides.forEach((el, i) => { el.classList.toggle("is-active", i === best); el.setAttribute("aria-current", i === best); });
+  dotEls.forEach((d, i) => { d.classList.toggle("on", i === best); d.setAttribute("aria-selected", i === best); });
+};
+let raf = 0;
+track.addEventListener("scroll", () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(paint); }, { passive: true });
+addEventListener("resize", () => { goTo(current, false); paint(); });
+goTo(0, false); paint();
 
 // Avance automático suave: se detiene al interactuar, con el mouse encima, fuera de pantalla o con "reducir movimiento"
-let timer = null, visible = false, hover = false;
+let timer = null, visible = false, hover = false, dir = 1;
 let stopped = matchMedia("(prefers-reduced-motion: reduce)").matches;
 function stop() { stopped = true; clearInterval(timer); timer = null; }
 const tick = () => {
   if (document.hidden || hover || !visible || !viewer.hidden) return;
-  atEnd() ? track.scrollTo({ left: 0, behavior: "smooth" }) : go(1);
+  if (current >= slides.length - 1) dir = -1;
+  if (current <= 0) dir = 1;
+  goTo(current + dir);
 };
-if (!stopped) timer = setInterval(tick, 3600);
+if (!stopped) timer = setInterval(tick, 4200);
 carousel.addEventListener("pointerenter", (e) => { if (e.pointerType === "mouse") hover = true; });
 carousel.addEventListener("pointerleave", () => { hover = false; });
 carousel.addEventListener("touchstart", stop, { passive: true });
 carousel.addEventListener("focusin", stop);
 new IntersectionObserver((es) => { visible = es[0].isIntersecting; }, { threshold: 0.35 }).observe(carousel);
 
-$("#cprev").addEventListener("click", () => { stop(); go(-1); });
-$("#cnext").addEventListener("click", () => { stop(); go(1); });
+$("#cprev").addEventListener("click", () => { stop(); goTo(current - 1); });
+$("#cnext").addEventListener("click", () => { stop(); goTo(current + 1); });
+dots.addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) { stop(); goTo(+b.dataset.i); } });
 track.addEventListener("keydown", (e) => {
   if (e.target !== track) return;
-  if (e.key === "ArrowRight") { e.preventDefault(); stop(); go(1); }
-  if (e.key === "ArrowLeft") { e.preventDefault(); stop(); go(-1); }
+  if (e.key === "ArrowRight") { e.preventDefault(); stop(); goTo(current + 1); }
+  if (e.key === "ArrowLeft") { e.preventDefault(); stop(); goTo(current - 1); }
 });
 
 // Arrastrar con el mouse (en pantallas táctiles el deslizamiento ya es nativo)
@@ -109,19 +101,16 @@ addEventListener("pointermove", (e) => {
 const endDrag = () => {
   if (!drag) return;
   const was = moved; drag = null;
-  if (was) {
-    track.classList.remove("dragging");
-    track.scrollTo({ left: Math.round(track.scrollLeft / step()) * step(), behavior: "smooth" });
-  }
+  if (was) { track.classList.remove("dragging"); goTo(current); }
 };
 addEventListener("pointerup", endDrag);
 addEventListener("pointercancel", endDrag);
-// Si se arrastró, no se abre la demo al soltar
+// Si se arrastró, no se activa nada al soltar
 track.addEventListener("click", (e) => { if (moved) { e.stopPropagation(); e.preventDefault(); moved = false; } }, true);
 
 // ---- Visor de demos ----
 let lastFocus = null;
-const label = (u) => u.replace(/^\/demos\//, "").replace(/index\.html$/, "");
+const label = (u) => (u.startsWith("http") ? host(u) : u.replace(/^\/demos\//, "").replace(/index\.html$/, ""));
 const setDevice = (d) => { stage.dataset.device = d; $$("#vdevices button").forEach((b) => b.classList.toggle("on", b.dataset.d === d)); };
 const setMode = (m) => $$("#vmode button").forEach((b) => b.classList.toggle("on", b.dataset.m === m));
 const openDemo = (url, title, admin) => {
@@ -131,6 +120,7 @@ const openDemo = (url, title, admin) => {
   $("#vtitle").textContent = title;
   $("#vquiero").dataset.msg = `Hola Velta Web, vi el proyecto «${title}» en su portfolio y me gustaría algo similar para mi negocio. ¿Podemos conversar?`;
   frame.src = url; vbar.textContent = label(url);
+  $(".viewer__hint").textContent = url.startsWith("http") ? "Sitio en línea: navegalo libremente, como lo vería un cliente." : "Copia de demostración: navegá libremente. Carrito, pagos y formularios están desactivados.";
   setDevice("desktop");
   viewer.hidden = false;
   document.body.classList.add("noscroll");
@@ -141,11 +131,16 @@ const closeDemo = () => {
   document.body.classList.remove("noscroll");
   if (lastFocus) lastFocus.focus();
 };
-track.addEventListener("click", (e) => { const t = e.target.closest("[data-demo]"); if (t) openDemo(t.dataset.demo, t.dataset.title, t.dataset.admin); });
+track.addEventListener("click", (e) => {
+  const t = e.target.closest("[data-demo]");
+  if (!t) return;
+  if (+t.dataset.i !== current) { stop(); goTo(+t.dataset.i); return; }
+  openDemo(t.dataset.demo, t.dataset.title, t.dataset.admin);
+});
 document.addEventListener("keydown", (e) => {
   if (!viewer.hidden && e.key === "Escape") return closeDemo();
   const t = e.target.closest && e.target.closest(".proj[data-demo]");
-  if (viewer.hidden && t && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); openDemo(t.dataset.demo, t.dataset.title, t.dataset.admin); }
+  if (viewer.hidden && t && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); +t.dataset.i === current ? openDemo(t.dataset.demo, t.dataset.title, t.dataset.admin) : goTo(+t.dataset.i); }
 });
 $("#vclose").addEventListener("click", closeDemo);
 viewer.addEventListener("click", (e) => { if (e.target === viewer) closeDemo(); });
@@ -188,20 +183,3 @@ const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersec
 reveal.forEach((el) => io.observe(el));
 
 $("#year").textContent = new Date().getFullYear();
-
-// ---- Efecto de tipeo en la ventana de código ----
-(() => {
-  const el = $(".code code");
-  if (!el || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  const pre = el.parentElement; pre.style.minHeight = pre.offsetHeight + "px";
-  const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT), nodes = [];
-  while (walker.nextNode()) if (walker.currentNode.parentElement !== el) nodes.push(walker.currentNode);
-  const full = nodes.map((n) => n.textContent); nodes.forEach((n) => (n.textContent = ""));
-  let ni = 0, ci = 0;
-  setTimeout(function tick2() {
-    if (ni >= nodes.length) return;
-    ci += 2; nodes[ni].textContent = full[ni].slice(0, ci);
-    if (ci >= full[ni].length) { ni++; ci = 0; }
-    setTimeout(tick2, 22);
-  }, 500);
-})();
